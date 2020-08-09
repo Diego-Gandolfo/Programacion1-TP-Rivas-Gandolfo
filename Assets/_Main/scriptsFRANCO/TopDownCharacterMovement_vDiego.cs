@@ -26,11 +26,3 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, -angle);
     }
 }
-/*
- * ¿Cual es la ventaja de no tener una Variable mainCamera?
- * Si siempre vas a usar la MainCamera, no tiene sentido ponerlo en una Variable porque tenemos un comándo que nos dirije directamente a ella.
- * Por otro lado, tampoco tiene sentido que sea una Variable Pública. Las Variables Públicas solo tienen que ser para cosas que tengamos
- * que retocar/balancear o que tengamos que modificar durante la ejecución del juego.
- * 
- * Si la tenes como una Variable Pública es una cosa mas que tenes que arrastrar manualmente cada vez que usas el código.
-*/
