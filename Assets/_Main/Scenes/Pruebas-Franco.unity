@@ -431,8 +431,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1065439503}
   - component: {fileID: 1065439502}
-  - component: {fileID: 1065439500}
   - component: {fileID: 1065439501}
+  - component: {fileID: 1065439500}
   m_Layer: 0
   m_Name: platformLOOPMOVEMENT
   m_TagString: Untagged
