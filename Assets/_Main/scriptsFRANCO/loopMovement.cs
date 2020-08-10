@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class loopMovement : MonoBehaviour
+public class LoopMovement : MonoBehaviour
 {
     public float amplitude = 0.02f;
 

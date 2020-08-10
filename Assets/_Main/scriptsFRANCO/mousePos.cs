@@ -2,7 +2,7 @@
 using System.Net.Http.Headers;
 using UnityEngine;
 
-public class mousePos : MonoBehaviour
+public class MousePos : MonoBehaviour
 {
     public Transform target;
     public float speed;
