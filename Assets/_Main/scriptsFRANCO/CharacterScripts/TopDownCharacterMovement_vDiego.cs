@@ -7,7 +7,7 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
 {
     public float speed;
     public int health = 10;
-
+    public Animator animator;
 
     void Update()
     {
@@ -17,6 +17,11 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) direction -= Vector3.up;
         if (Input.GetKey(KeyCode.A)) direction -= Vector3.right;
         if (Input.GetKey(KeyCode.D)) direction += Vector3.right;
+
+        if (Input.GetButtonDown("Fire1"))
+            animator.SetTrigger("Attack");
+            
+        
 
         transform.position += direction * speed * Time.deltaTime; // PARA QUE NO SE COMPENSEN LAS VELOCIDADES CUANDO TOCAS POR EJEMPLO A Y W
 
