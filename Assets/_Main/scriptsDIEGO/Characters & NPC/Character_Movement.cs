@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character_Movement : MonoBehaviour
 {
-    // Variables de Movimiento y Rotacion
+    // Variables de Movimiento
     public float movementSpeed = 7;
     public float runMultiplier = 3;
 
