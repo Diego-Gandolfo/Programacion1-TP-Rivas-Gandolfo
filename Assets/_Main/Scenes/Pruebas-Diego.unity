@@ -595,6 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141378964}
   - component: {fileID: 1141378963}
+  - component: {fileID: 1141378965}
   m_Layer: 0
   m_Name: EnemigoMiron
   m_TagString: Untagged
@@ -630,6 +631,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1141378965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141378962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a836991194cf0745b865c0214ce602a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 1
 --- !u!1 &1430498921
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  health: 10
 --- !u!1 &1452653911
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  health: 10
 --- !u!114 &1744868996
 MonoBehaviour:
   m_ObjectHideFlags: 0
