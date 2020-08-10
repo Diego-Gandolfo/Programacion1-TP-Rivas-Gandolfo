@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Game_Manager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static Game_Manager instance;
 
     public void Awake()
     {
