@@ -20,8 +20,10 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
             animator.SetTrigger("Attack");
-            
-        
+
+        animator.SetFloat("Back", direction.x);
+        animator.SetFloat("Front", direction.y);
+        animator.SetFloat("Speed", direction.sqrMagnitude);
 
         transform.position += direction * speed * Time.deltaTime; // PARA QUE NO SE COMPENSEN LAS VELOCIDADES CUANDO TOCAS POR EJEMPLO A Y W
 
