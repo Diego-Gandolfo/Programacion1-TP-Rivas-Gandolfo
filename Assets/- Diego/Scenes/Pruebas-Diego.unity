@@ -133,8 +133,9 @@ GameObject:
   - component: {fileID: 24011518}
   - component: {fileID: 24011517}
   - component: {fileID: 24011520}
+  - component: {fileID: 24011521}
   m_Layer: 9
-  m_Name: Square_White (1)
+  m_Name: Enemy-Square_White (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,6 +252,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &24011521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24011516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b25f441d3bc8ea4fbb1993fb313d70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &118889060
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,8 +278,9 @@ GameObject:
   - component: {fileID: 118889062}
   - component: {fileID: 118889061}
   - component: {fileID: 118889064}
+  - component: {fileID: 118889065}
   m_Layer: 9
-  m_Name: Square_White (2)
+  m_Name: Enemy-Square_White (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,6 +397,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &118889065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118889060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b25f441d3bc8ea4fbb1993fb313d70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &226032997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,7 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPosition: {fileID: 1716440279}
-  targetLayerMask:
+  targetsLayerMask:
     serializedVersion: 2
     m_Bits: 512
   attackRange: 0.5
