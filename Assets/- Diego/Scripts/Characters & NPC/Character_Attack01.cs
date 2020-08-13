@@ -29,9 +29,9 @@ public class Character_Attack01 : MonoBehaviour
 
         foreach (Collider2D target in targetsHit)
         {
-            Debug.Log("Hit " + target.name);
             if (target.GetComponent<Health>() != null)
             {
+                Debug.Log("Hit " + target.name);
                 target.GetComponent<Health>().TakeDamage(damage);
             }
         }
