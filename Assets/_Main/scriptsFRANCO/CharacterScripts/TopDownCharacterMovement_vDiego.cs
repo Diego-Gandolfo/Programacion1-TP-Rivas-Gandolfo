@@ -23,7 +23,7 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
 
         animator.SetFloat("Back", direction.x);
         animator.SetFloat("Front", direction.y);
-        animator.SetFloat("Speed", direction.sqrMagnitude);
+        animator.SetFloat("Speed", direction.magnitude);
 
         transform.position += direction * speed * Time.deltaTime; // PARA QUE NO SE COMPENSEN LAS VELOCIDADES CUANDO TOCAS POR EJEMPLO A Y W
 
