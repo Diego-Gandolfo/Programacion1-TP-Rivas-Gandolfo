@@ -20,14 +20,24 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
             direction -= Vector3.up;
             animator.SetBool("Run", true);
         }
-        if (Input.GetKey(KeyCode.A)) direction -= Vector3.right;
-        if (Input.GetKey(KeyCode.D)) direction += Vector3.right;
+        if (Input.GetKey(KeyCode.A)) 
+        {
+            direction -= Vector3.right;
+            animator.SetBool("RunLeft", true);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            direction += Vector3.right;
+            animator.SetBool("RunRight", true);
+        }
 
         if (Input.GetButtonDown("Fire1"))
             animator.SetTrigger("Attack");
 
         //PARA QUE VUELVA A ESTADO IDLE!
         if (Input.GetKeyUp(KeyCode.S)) animator.SetBool("Run", false);
+        if (Input.GetKeyUp(KeyCode.A)) animator.SetBool("RunLeft", false);
+        if (Input.GetKeyUp(KeyCode.D)) animator.SetBool("RunRight", false);
 
         /*animator.SetFloat("Back", direction.x);
         animator.SetFloat("Front", direction.y);
