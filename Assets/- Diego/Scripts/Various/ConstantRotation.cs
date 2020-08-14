@@ -1,7 +1,7 @@
 ﻿/*
  * Este Script es bastante básico, pero lo comento igualmente.
  * 
- * Lo que hace es
+ * Lo que hace es Rotar un Objeto constantemente
 */
 
 using System.Collections;
