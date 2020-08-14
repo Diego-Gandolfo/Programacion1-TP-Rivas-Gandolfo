@@ -1,44 +1,49 @@
-﻿using System.Collections;
+﻿/*
+ * Script para realizar un Ataque Cuerpo a Cuerpo
+ * 
+ * Buscará en un área los Objetivos que tengan el LayerMask indicado y le aplicará un daño
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Character_Attack01 : MonoBehaviour
 {
-    [Header("Attack Area")]
-    public Transform attackPosition;
-    public LayerMask targetsLayerMask;
-    public float attackRange = 1.0f;
+    [Header("Attack Area")] // Esto es simplemente un Título para el Inspector
+    public Transform attackPosition; // Determinamos donde se ubicara el Centro del Golpe
+    public float attackRange = 1.0f; // Determinamos el Rango del Golpe
 
-    [Header("Attack Settings")]
-    public float damage = 10.0f;
-    public float attackCooldown = 1.0f;
-    private float cooldownTimer = 0.0f;
+    [Header("Attack Settings")] // Esto es simplemente un Título para el Inspector
+    public LayerMask targetsLayerMask; // Determinamos las LayerMask que pueden ser golpeadas por este Ataque
+    public float damage = 10.0f; // Determinamos el Daño que se aplicará a los Objetivos alcanzados
+    public float attackCooldown = 1.0f; // El tiempo que deberá transcurrir para volver a hacer el Ataque
+    private float cooldownTimer = 0.0f; // Variable que usaremos para verificar si ya paso el tiempo de Enfriamiento del Ataque
 
     private void Update()
     {
-        if ((Input.GetMouseButtonDown(0)) && (Time.time >= cooldownTimer))
+        if ((Input.GetMouseButtonDown(0)) && (Time.time >= cooldownTimer)) // Si hace Click Izquierdo y pasó el tiempo de Enfriamiento
         {
-            Attack();
-            cooldownTimer = Time.time + attackCooldown;
+            Attack(); // Realizamos el Ataque
+            cooldownTimer = Time.time + attackCooldown; // Sumamos el Tiempo de Enfriamiento y tiempo que lleva la aplicación ejecutandose (Time.time)
         }
     }
 
     private void Attack()
     {
-        Collider2D[] targetsHit = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, targetsLayerMask);
+        Collider2D[] targetsHit = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, targetsLayerMask); // Creamos un Array (vector o "lista") de Objetivos Golpeados, para esto creamos un Overlap que es como una especie de Collider
 
-        foreach (Collider2D target in targetsHit)
+        foreach (Collider2D target in targetsHit) // Esto es un bucle (como un for) que se fija cada Objetivo dentro de los Objetivos Alcanzados
         {
-            if (target.GetComponent<Health>() != null)
+            if (target.GetComponent<Health>() != null) // Nos fijamos si el Objetivo tiene componente Vida
             {
-                Debug.Log("Hit " + target.name);
-                target.GetComponent<Health>().TakeDamage(damage);
+                target.GetComponent<Health>().TakeDamage(damage); // Aplicamos el daño
             }
         }
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (attackPosition != null) Gizmos.DrawWireSphere(attackPosition.position, attackRange);
+        if (attackPosition != null) Gizmos.DrawWireSphere(attackPosition.position, attackRange); // Esto es para dibujar donde está el Overlap
     }
 }
