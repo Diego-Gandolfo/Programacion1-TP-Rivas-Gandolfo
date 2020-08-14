@@ -5,10 +5,7 @@ using UnityEngine;
 public class DamageArea : MonoBehaviour
 {
     private int damage = 2;   
-    void Update()
-    {
-        
-    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

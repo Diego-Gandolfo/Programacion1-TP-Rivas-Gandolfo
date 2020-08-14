@@ -8,7 +8,7 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
     public float speed;
     public int health = 10;
     public Animator animator;
-
+    public ParticleSystem blood;
 
     void Update()
     {
@@ -61,10 +61,14 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
 
     public void TakeEnemyDamage(int damage)
     {
+        Instantiate(blood, transform.position, Quaternion.identity);
+
+
         health -= damage;
 
         if (health <= 0)
             Die();
+        
     }
 
     private void Die()
