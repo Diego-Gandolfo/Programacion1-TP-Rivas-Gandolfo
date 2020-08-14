@@ -26,7 +26,7 @@ public class FindClosestObjetcWithTag : MonoBehaviour
 
     public GameObject FindClosestEnemy() // Funcion para realizar la búsqueda, es GameObject en lugar de void porque al terminar devolverá un GameObject
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag(targetTag); // Lista de GameObjects donde almacenamos todos los Objetos con el Tag designado
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(targetTag); // Array (vector o "lista") de GameObjects donde almacenamos todos los Objetos con el Tag designado
         GameObject closest = null; // Variable donde guardaremos el Objeto más cercano, la inicializamos en null por si no hubiese ningún Objeto con ese Tag en la Escena
         float closestDistance = Mathf.Infinity; // Variable donde iremos guardando la distancia más corta encontrada hasta el momento, la inicializamos en Infinito Positivo para que no haya ningún valor que vaya a ser mayor
 
