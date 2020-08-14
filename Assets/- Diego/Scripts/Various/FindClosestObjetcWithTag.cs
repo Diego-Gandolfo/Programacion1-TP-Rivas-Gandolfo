@@ -21,7 +21,7 @@ public class FindClosestObjetcWithTag : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F)) closestObject = FindClosestEnemy(); // Si apretamos LeftControl + F (al mismo tiempo) se hace una nueva búsqueda
+        if (Input.GetKeyDown(KeyCode.L)) closestObject = FindClosestEnemy(); // Si apretamos "L" se hace una nueva búsqueda
     }
 
     public GameObject FindClosestEnemy() // Funcion para realizar la búsqueda, es GameObject en lugar de void porque al terminar devolverá un GameObject

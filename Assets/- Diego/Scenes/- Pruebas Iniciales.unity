@@ -1335,8 +1335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef562d63625cddc4a87796501328ee76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
-  runMultiplier: 3
+  movementSpeed: 5
+  runMultiplier: 1.5
 --- !u!4 &2091397828
 Transform:
   m_ObjectHideFlags: 0
@@ -1380,9 +1380,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPosition: {fileID: 1716440279}
+  attackRange: 0.5
   targetsLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  attackRange: 0.5
   damage: 10
   attackCooldown: 1
