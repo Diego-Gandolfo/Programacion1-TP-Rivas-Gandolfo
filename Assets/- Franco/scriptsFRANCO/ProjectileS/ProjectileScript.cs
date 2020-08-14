@@ -8,6 +8,7 @@ public class ProjectileScript : MonoBehaviour
     private Transform player;
     private Vector2 target;
 
+    private int damage = 1;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -29,6 +30,12 @@ public class ProjectileScript : MonoBehaviour
         {
             DestroyProjectile();
             Debug.Log("destroyed");
+        }
+
+        PlayerHealth TopDownCharacter = Other.transform.GetComponent<PlayerHealth>();
+        if (TopDownCharacter != null)
+        {
+            TopDownCharacter.TakeDamage(damage);
         }
     }
 

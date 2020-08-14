@@ -583,6 +583,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.65
+--- !u!114 &719982295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719982291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0918978fdce73384692ceb6015683fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+  currentHealth: 0
+  blood: {fileID: 6556957853752805708, guid: 4e1c3f614571d944db5271ecabc11a10, type: 3}
 --- !u!1 &1006837035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1151,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3161050557945614760, guid: 8d429127ee702094d935c9c56952a525,
+        type: 3}
+      propertyPath: m_Name
+      value: Heart
+      objectReference: {fileID: 0}
     - target: {fileID: 3161050558049894312, guid: 8d429127ee702094d935c9c56952a525,
         type: 3}
       propertyPath: m_Name

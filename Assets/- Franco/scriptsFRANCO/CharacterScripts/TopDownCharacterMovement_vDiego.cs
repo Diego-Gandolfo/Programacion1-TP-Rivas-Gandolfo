@@ -59,7 +59,7 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
         */
     }
 
-    public void TakeEnemyDamage(int damage)
+    /*public void TakeEnemyDamage(int damage)
     {
         Instantiate(blood, transform.position, Quaternion.identity);
 
@@ -74,5 +74,5 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
     private void Die()
     {
         Destroy(this.gameObject);
-    }
+    }*/
 }

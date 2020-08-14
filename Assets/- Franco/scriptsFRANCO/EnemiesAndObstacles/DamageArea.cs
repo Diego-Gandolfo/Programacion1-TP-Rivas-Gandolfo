@@ -9,10 +9,10 @@ public class DamageArea : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TopDownCharacterMovement_vDiego TopDownCharacter = collision.transform.GetComponent<TopDownCharacterMovement_vDiego>();
+        PlayerHealth TopDownCharacter = collision.transform.GetComponent<PlayerHealth>();
         if (TopDownCharacter != null)
         {
-            TopDownCharacter.TakeEnemyDamage(damage);
+            TopDownCharacter.TakeDamage(damage);
             Debug.Log("im taking damage");
         }
             
