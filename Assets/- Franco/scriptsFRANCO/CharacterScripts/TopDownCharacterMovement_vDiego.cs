@@ -36,7 +36,10 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
         }
 
         if (Input.GetButtonDown("Fire1"))
+        {
             animator.SetTrigger("Attack");
+        }
+            
 
         //PARA QUE VUELVA A ESTADO IDLE!
         if (Input.GetKeyUp(KeyCode.S)) animator.SetBool("Run", false);

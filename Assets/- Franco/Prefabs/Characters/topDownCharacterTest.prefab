@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3161050558049894316}
   - component: {fileID: 3161050558049894307}
   - component: {fileID: 3161050558049894306}
+  - component: {fileID: 5441695767730611987}
   m_Layer: 0
   m_Name: topDownCharacterTest
   m_TagString: Untagged
@@ -131,6 +132,7 @@ MonoBehaviour:
   speed: 5
   health: 10
   animator: {fileID: 3161050558049894306}
+  blood: {fileID: 0}
 --- !u!50 &3161050558049894316
 Rigidbody2D:
   serializedVersion: 4
@@ -197,3 +199,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5441695767730611987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3161050558049894312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223492462c5534d4fb05bc95f668b61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

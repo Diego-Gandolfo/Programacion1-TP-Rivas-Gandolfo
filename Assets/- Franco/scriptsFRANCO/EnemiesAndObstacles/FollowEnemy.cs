@@ -9,14 +9,10 @@ public class FollowEnemy : MonoBehaviour
     public float retreatDistance;
     public Transform player;
 
-    private float timeBetweenShots;
-    public float starTimeBetweentShots;
-
-    public GameObject projectile;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        timeBetweenShots = starTimeBetweentShots;
+
     }
 
 
@@ -36,17 +32,6 @@ public class FollowEnemy : MonoBehaviour
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
-        }
-
-        //SI EL TIEMPO ENTRE DISPAROS ES MENOR O IGUAL A 0 SE INSTANCIA EL PROYECTIL Y ESTE TIEMPO ENTRE DISPAROS QUEDA IGUAL AL "EMPEZAR EL TIEMPO ENTRE DISPAROS"
-        if (timeBetweenShots <= 0)
-        {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            timeBetweenShots = starTimeBetweentShots;
-        }
-        else
-        {
-            timeBetweenShots -= Time.deltaTime;
         }
     }
 }
