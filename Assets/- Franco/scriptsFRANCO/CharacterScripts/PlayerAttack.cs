@@ -4,16 +4,34 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private int damage = 2;
+    public Transform attackPosition;
+    public float attackRange = 1.0f;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public LayerMask targetsLayerMask;
+    public float damage = 1.0f;
+    public float attackCooldown = 1.0f;
+    private float cooldownTimer = 0.0f;
+
+    private void Update()
     {
-        EnemyHealth enemy = collision.transform.GetComponent<EnemyHealth>();
-        if (enemy != null)
+        if (Input.GetButtonDown("Fire1") && Time.time >= cooldownTimer)
         {
-            enemy.TakePlayerDamage(damage);
-            Debug.Log("PlayerIsAttacking");
+            PlayerIs();
+            cooldownTimer = Time.time + attackCooldown;
         }
+    }
+    private void PlayerIs()
+    {
+        Collider2D[] targetshit = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, targetsLayerMask);
+
+        foreach (Collider2D target in targetshit)
+        {
+            if (target.GetComponent<EnemyHealth>() != null)
+            {
+                target.GetComponent<EnemyHealth>().TakePlayerDamage(damage);
+            }
+        }
+
 
     }
 }
