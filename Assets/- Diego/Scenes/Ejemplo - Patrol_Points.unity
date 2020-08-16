@@ -263,8 +263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -158}
-  m_SizeDelta: {x: 445.23718, y: 56.668518}
+  m_AnchoredPosition: {x: 0, y: -153.1}
+  m_SizeDelta: {x: 580.7715, y: 80.421936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223757103
 MonoBehaviour:
@@ -300,8 +300,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Ambos Sprites tienen el mismo Script
 
-    El Blanco recorre los puntos
-    de forma secuencial
+    (la diferencia es que uno tiene
+    la variable "random" en TRUE y el otro en FALSE))
+
+    El Blanco recorre los
+    puntos de forma secuencial
 
     El Negro los recorre de forma aleatoria'
 --- !u!222 &223757104
