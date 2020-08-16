@@ -50,9 +50,8 @@ public class Patrol_Points : MonoBehaviour
                 {
                     currentPoint++;
 
-                    if ((currentPoint - 1) >= patrolPoints.Length)
+                    if (currentPoint >= patrolPoints.Length)
                     {
-                        Debug.Log("Al menos lo intento...");
                         currentPoint = 0;
                     }
 
