@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579948573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.60648155, y: 0.6282588, z: 1.6210938}
+  m_LocalPosition: {x: 5.08, y: 1.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -220,15 +220,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Ambos Sprites tienen el mismo Script
-
-    (la diferencia es que uno tiene
-    la variable "random" en TRUE y el otro en FALSE))
-
-    El Blanco recorre los
-    puntos de forma secuencial
-
-    El Negro los recorre de forma aleatoria'
+  m_Text: El Sprite recorre de forma aleatoria la zona designada
 --- !u!222 &962680374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -271,10 +263,10 @@ MonoBehaviour:
   movemetSpeed: 3
   waitTime: 1
   patrolPoint: {fileID: 579948574}
-  minX: -7.5
-  maxX: 7.5
-  minY: -2
-  maxY: 4
+  minX: -1
+  maxX: 1
+  minY: -1
+  maxY: 1
 --- !u!212 &1069498997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -333,7 +325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069498995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -515,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009724172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
