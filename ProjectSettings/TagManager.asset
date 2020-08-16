@@ -16,7 +16,7 @@ TagManager:
   - 
   - Character
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 
@@ -39,6 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Items
+    uniqueID: 526874911
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Characters
+    uniqueID: 3342834661
     locked: 0

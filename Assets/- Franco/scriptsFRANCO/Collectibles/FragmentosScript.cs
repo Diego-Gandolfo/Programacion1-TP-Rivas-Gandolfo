@@ -6,9 +6,10 @@ public class FragmentosScript : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        TopDownCharacterMovement_vDiego TopDownCharacter = collision.GetComponent<TopDownCharacterMovement_vDiego>();
+        PlayerHealth TopDownCharacter = collision.GetComponent<PlayerHealth>();
         if (TopDownCharacter != null)
         {
+            Debug.Log("Im Being Collected");
             CounterScript.Amount += 1;
             Destroy(gameObject);
         }

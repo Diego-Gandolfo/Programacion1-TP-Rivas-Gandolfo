@@ -10,6 +10,11 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
     public Animator animator;
     public ParticleSystem blood;
 
+
+
+    private void Start()
+    {
+    }
     void Update()
     {
         var direction = Vector3.zero;
@@ -53,6 +58,9 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
         */
         transform.position += direction * speed * Time.deltaTime; // PARA QUE NO SE COMPENSEN LAS VELOCIDADES CUANDO TOCAS POR EJEMPLO A Y W
 
+
+
+
         /*Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // En lugar de tener una Variable mainCamera se puede usar directamente Camera.main
         Vector3 difference = mousePosition - this.transform.position;
 
@@ -78,4 +86,5 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
     {
         Destroy(this.gameObject);
     }*/
+    
 }

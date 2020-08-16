@@ -7,6 +7,7 @@ public class ShootingAI : MonoBehaviour
     private float timeBetweenShots;
     public float starTimeBetweentShots;
 
+    public Transform player;
     public GameObject projectile;
     void Start()
     {
@@ -16,6 +17,8 @@ public class ShootingAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(player);
+
         if (timeBetweenShots <= 0)
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
