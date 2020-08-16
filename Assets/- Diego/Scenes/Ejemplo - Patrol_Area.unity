@@ -220,7 +220,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "El Sprite recorre de forma aleatoria la zona designada\n(El \xC1rea se
+  m_Text: "El Sprite recorre de forma aleatoria la zona designada\n(El \xE1rea se
     puede ver en la pesta\xF1a Scene si seleccionamos al Square_White)"
 --- !u!222 &962680374
 CanvasRenderer:
@@ -263,11 +263,11 @@ MonoBehaviour:
   movemetSpeed: 3
   waitTime: 1
   patrolPoint: {fileID: 579948574}
-  minX: -1
-  maxX: 1
-  minY: -1
-  maxY: 1
-  minDistance: 0
+  minX: -8
+  maxX: 8
+  minY: -3
+  maxY: 3
+  minDistance: 1
 --- !u!212 &1069498997
 SpriteRenderer:
   m_ObjectHideFlags: 0
