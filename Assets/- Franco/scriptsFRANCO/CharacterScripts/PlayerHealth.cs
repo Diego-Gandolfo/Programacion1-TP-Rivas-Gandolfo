@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float maxHealth = 10f;
     public float currentHealth;
 
+    public GameObject player;
     public GameObject blood;
     void Start()
     {
@@ -21,6 +22,6 @@ public class PlayerHealth : MonoBehaviour
     }
     void Die()
     {
-        Destroy(gameObject);
+        Destroy(player);
     }
 }
