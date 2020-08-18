@@ -18,12 +18,22 @@ public class EnemySearch : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) > stopAt)
+        if ((player != null) && (objectWithTag != null)) // Chequeamos que el player y el objectWithTag estén en la Escena para que no tire errores
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, player.position) > stopAt)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            }
         }
 
-        Vector2 direction = new Vector2(objectWithTag.transform.position.x, objectWithTag.transform.position.y - transform.position.y);
-        transform.up = -direction;
+        if ((player != null) && (objectWithTag != null)) // Chequeamos que el player y el objectWithTag estén en la Escena para que no tire errores
+        {
+            Vector2 direction = new Vector2(objectWithTag.transform.position.x, objectWithTag.transform.position.y - transform.position.y);
+            transform.up = -direction;
+        }
+        else
+        {
+            transform.up = new Vector2(0,0); // Para que cuando no esté el Player se quede mirando para arriba
+        }
     }
 }
