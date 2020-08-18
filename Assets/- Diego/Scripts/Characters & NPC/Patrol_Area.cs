@@ -9,10 +9,10 @@ public class Patrol_Area : MonoBehaviour
     private float timer = 0.0f; // Variable que usaremos para llevar el control del tiempo
 
     public Transform patrolPoint; // Variable donde almacenaremos el centro del punto a patrullar
-    public float minX; // Cuanto hacia la izquierda del centro del punto se va a mover
-    public float maxX; // Cuanto hacia la derecha del centro del punto se va a mover
-    public float minY; // Cuanto hacia abajo del centro del punto se va a mover
-    public float maxY; // Cuanto hacia arriba del centro del punto se va a mover
+    public float minX; // Cuantas unidades se puede mover hacia la izquierda de patrolPoint
+    public float maxX; // Cuantas unidades se puede mover hacia la derecha de patrolPoint
+    public float minY; // Cuantas unidades se puede mover hacia la abajo de patrolPoint
+    public float maxY; // Cuantas unidades se puede mover hacia la arriba de patrolPoint
 
     private float relativelMinX; // Para almacenar el valor minX relativo, sin perder el valor de minX original
     private float relativeMaxX; // Para almacenar el valor maxX relativo, sin perder el valor de maxX original
