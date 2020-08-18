@@ -17,13 +17,16 @@ public class LookAtObjectWithTag2D : MonoBehaviour
 
     private void Start()
     {
-        objectWithTag = GameObject.FindGameObjectWithTag(tagObject); // Buscamos el Objeto que tiene el Tag elegido
+        if (tagObject != null) objectWithTag = GameObject.FindGameObjectWithTag(tagObject); // Buscamos el Objeto que tiene el Tag elegido
     }
 
     private void Update()
     {
-        Vector2 direction = new Vector2(objectWithTag.transform.position.x - transform.position.x, objectWithTag.transform.position.y - transform.position.y); // Calculamos la dirección a la que hay que mirar
+        if (objectWithTag != null)
+        {
+            Vector2 direction = new Vector2(objectWithTag.transform.position.x - transform.position.x, objectWithTag.transform.position.y - transform.position.y); // Calculamos la dirección a la que hay que mirar
 
-        transform.up = direction; // Actualizamos el Transform para que mire al Objeto con el Tag elegido
+            transform.up = direction; // Actualizamos el Transform para que mire al Objeto con el Tag elegido
+        }
     }
 }
