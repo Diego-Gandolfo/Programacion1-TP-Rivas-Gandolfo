@@ -5,59 +5,50 @@ using UnityEngine;
 public class Patrol_Area : MonoBehaviour
 {
     [Header("Enemy Settings")]
-    public float sizeX; // El tamaño del Enemigo en el Eje X
-    public float sizeY; // El tamaño del Enemigo en el Eje Y
+    public Vector2 enemySize; // El tamaño del Enemigo
 
     [Header("Patrol Settings")]
     public float movemetSpeed = 3.0f; // La velocidad que se desplaza al estar patrullando
     public float waitTime = 1.0f; // El tiempo que espera hasta en un punto antes de empezar a moverse al siguiente
     private float timer = 0.0f; // Variable que usaremos para llevar el control del tiempo
-
-    [Header("Patrol Point Settings")]
-    public Transform patrolPoint; // Variable donde almacenaremos el centro del punto a patrullar
-    private Vector3 positionSquere; // Almacenaremos la posicion del patrolPoint al activar el Objeto o el Componente
-    public float minX; // Cuantas unidades se puede mover hacia la izquierda de patrolPoint
-    public float maxX; // Cuantas unidades se puede mover hacia la derecha de patrolPoint
-    public float minY; // Cuantas unidades se puede mover hacia la abajo de patrolPoint
-    public float maxY; // Cuantas unidades se puede mover hacia la arriba de patrolPoint
-    private float relativelMinX; // Para almacenar el valor minX relativo, sin perder el valor de minX original
-    private float relativeMaxX; // Para almacenar el valor maxX relativo, sin perder el valor de maxX original
-    private float relativeMinY; // Para almacenar el valor minY relativo, sin perder el valor de minY original
-    private float relativeMaxY; // Para almacenar el valor maxY relativo, sin perder el valor de maxY original
-    private float widthSquere; // Para almacenar el ancho del area
-    private float heightSquere; // Para almacenar el alto del area
-
     public float minDistance; // Distancia minima que tiene que haber entre al
+    private GameObject patrolPosition; // Lo usaremos para asignar la posicion actual a la que debemos movernos
+
+    [Header("Patrol Area Settings")]
+    public Transform patrolCenter; // Variable donde almacenaremos el centro del punto a patrullar
+    public Vector2 areaSize; // Cuantas unidades se puede mover hacia la izquierda de patrolPoint
+    private float minX; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para X
+    private float maxX; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para X
+    private float minY; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para Y
+    private float maxY; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para Y
 
     private void OnEnable() // Cada vez que se activa el Objeto o el Componente
     {
-        positionSquere = patrolPoint.position; // Inicializamos la posicion del patrolPoint
-        widthSquere = Mathf.Abs(minX) + Mathf.Abs(maxX) + sizeX; // Inicializamos el ancho del Area sumando los valores absolutos de minX, maxX y sizeX
-        heightSquere = Mathf.Abs(minY) + Mathf.Abs(maxY) + sizeY; // Inicializamos el alto del Area sumando los valores absolutos de minY, maxY y sizeY
+        patrolPosition = new GameObject("Patrol Position"); // Creamos un nuevo GameObject que usaremos para determinar los puntos a los que debemos movernos
+        patrolPosition.SetActive(false); // Desactivamos el GameObject patroPosition
 
-        relativelMinX = minX + patrolPoint.position.x; // Inicializamos el valor relativo de minX
-        relativeMaxX = maxX + patrolPoint.position.x; // Inicializamos el valor relativo de maxX
-        relativeMinY = minY + patrolPoint.position.y; // Inicializamos el valor relativo de minY
-        relativeMaxY =maxY + patrolPoint.position.y; // Inicializamos el valor relativo de maxY
+        minX = (areaSize.x / -2) + patrolCenter.position.x; // Al Activar el Componente o el Objeto se almacenamos el valor Mínimo para X
+        maxX = (areaSize.x / 2) + patrolCenter.position.x; // Al Activar el Componente o el Objeto se almacenamos el valor Máximo para X
+        minY = (areaSize.y / -2) + patrolCenter.position.y; // Al Activar el Componente o el Objeto se almacenamos el valor Mínimo para Y
+        maxY = (areaSize.y / 2) + patrolCenter.position.y; // Al Activar el Componente o el Objeto se almacenamos el valor Máximo para Y
 
-        patrolPoint.position = new Vector2(Random.Range(relativelMinX, relativeMaxX), Random.Range(relativeMinY, relativeMaxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
+        patrolPosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
         timer = waitTime; // Inicializamos el contador al tiempo de espera deseado
     }
 
     private void Update()
     {
+        transform.position = Vector2.MoveTowards(transform.position, patrolPosition.transform.position, movemetSpeed * Time.deltaTime); // Nos movemos al punto indicado
 
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoint.position, movemetSpeed * Time.deltaTime); // Nos movemos al punto indicado
-
-        if (Vector2.Distance(transform.position, patrolPoint.position) < 0.2f) // Nos fijamos si ya estamos cerca del punto indicado (randomPoint)
+        if (Vector2.Distance(transform.position, patrolPosition.transform.position) < 0.2f) // Nos fijamos si ya estamos cerca del punto indicado (randomPoint)
         {
             if (timer <= 0) // Comprobamos si ya paso el tiempo de espera deseado
             {
-                patrolPoint.position = new Vector2(Random.Range(relativelMinX, relativeMaxX), Random.Range(relativeMinY, relativeMaxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
+                patrolPosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
 
-                while (Vector2.Distance(transform.position, patrolPoint.position) < minDistance) // Nos fijamos si la distancia del nuevo punto supera la Distancia Minima
+                while (Vector2.Distance(transform.position, patrolPosition.transform.position) < minDistance) // Nos fijamos si la distancia del nuevo punto supera la Distancia Minima
                 {
-                    patrolPoint.position = new Vector2(Random.Range(relativelMinX, relativeMaxX), Random.Range(relativeMinY, relativeMaxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
+                    patrolPosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
                 }
 
                 timer = waitTime; // Reiniciamos el Contador
@@ -71,6 +62,11 @@ public class Patrol_Area : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (patrolPoint != null) Gizmos.DrawWireCube(positionSquere, new Vector3(widthSquere, heightSquere, 0)); // Dibujamos un Gizmo para representar el Area donde va a patrullar
+        if (patrolCenter != null) Gizmos.DrawWireCube(patrolCenter.position, new Vector3(areaSize.x + enemySize.x, areaSize.y + enemySize.y, 0)); // Dibujamos un Gizmo para representar el Area donde va a patrullar
+    }
+
+    private void OnDisable()
+    {
+        Destroy(patrolPosition); // Al Desactivar el Objeto o el Componente destruimos el patrolPosition
     }
 }

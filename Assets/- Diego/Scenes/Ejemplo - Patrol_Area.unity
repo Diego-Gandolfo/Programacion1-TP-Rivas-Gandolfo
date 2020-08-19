@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579948574}
   m_Layer: 0
-  m_Name: Patrol Point
+  m_Name: Patrol Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579948573}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -260,16 +260,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8e8960f3fdc2042a6e19e496586320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeX: 1
-  sizeY: 1
+  enemySize: {x: 1, y: 1}
   movemetSpeed: 3
   waitTime: 1
-  patrolPoint: {fileID: 579948574}
-  minX: -8
-  maxX: 8
-  minY: -3
-  maxY: 3
-  minDistance: 1
+  minDistance: 2
+  patrolCenter: {fileID: 579948574}
+  areaSize: {x: 16, y: 6}
 --- !u!212 &1069498997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -327,7 +323,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069498995}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
