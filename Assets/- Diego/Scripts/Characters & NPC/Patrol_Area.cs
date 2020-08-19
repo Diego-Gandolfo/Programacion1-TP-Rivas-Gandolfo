@@ -8,11 +8,11 @@ public class Patrol_Area : MonoBehaviour
     public Vector2 enemySize; // El tamaño del Enemigo
 
     [Header("Patrol Settings")]
-    private GameObject patrolPosition; // Lo usaremos para asignar la posicion actual a la que debemos movernos
     public float movemetSpeed = 3.0f; // La velocidad que se desplaza al estar patrullando
     public float waitTime = 1.0f; // El tiempo que espera hasta en un punto antes de empezar a moverse al siguiente
     private float timer = 0.0f; // Variable que usaremos para llevar el control del tiempo
     public float minDistance; // Distancia minima que tiene que haber entre al
+    private GameObject patrolPosition; // Lo usaremos para asignar la posicion actual a la que debemos movernos
 
     [Header("Patrol Area Settings")]
     public Transform patrolCenter; // Variable donde almacenaremos el centro del punto a patrullar
