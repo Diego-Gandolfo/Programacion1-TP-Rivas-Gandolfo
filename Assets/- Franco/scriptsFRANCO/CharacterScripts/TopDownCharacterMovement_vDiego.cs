@@ -18,21 +18,25 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
         {
             direction += Vector3.up;
             animator.SetBool("RunUp", true);
+            SoundManager.PlaySound("Footsteps4");
         }
         if (Input.GetKey(KeyCode.S))
         {
             direction -= Vector3.up;
             animator.SetBool("Run", true);
+            //SoundManager.PlaySound("Footsteps4");
         }
         if (Input.GetKey(KeyCode.A)) 
         {
             direction -= Vector3.right;
             animator.SetBool("RunLeft", true);
+            //SoundManager.PlaySound("Footsteps4");
         }
         if (Input.GetKey(KeyCode.D))
         {
             direction += Vector3.right;
             animator.SetBool("RunRight", true);
+            //SoundManager.PlaySound("Footsteps4");
         }
 
         if (Input.GetButtonDown("Fire1"))
@@ -48,7 +52,7 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W)) animator.SetBool("RunUp", false);
      
 
-        transform.position += direction * speed * Time.deltaTime; // PARA QUE NO SE COMPENSEN LAS VELOCIDADES CUANDO TOCAS POR EJEMPLO A Y W
+        transform.position += direction * (speed * Time.deltaTime); // PARA QUE NO SE COMPENSEN LAS VELOCIDADES CUANDO TOCAS POR EJEMPLO A Y W
 
     } 
 }
