@@ -6,20 +6,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton : MonoBehaviour
+namespace OnceUponAMemory.Diego
 {
-    public static Singleton instance; // Variable donde se almacenará la primer instancia del Singleton, es una variable de su propia clase
-
-    public void Awake() // Cuando "se despierta" (es lo primero que se ejecuta, para más info https://docs.unity3d.com/Manual/ExecutionOrder.html) nos fijamos si ya existe otro Singleton
+    public class Singleton : MonoBehaviour
     {
-        if (instance != null)
+        public static Singleton instance; // Variable donde se almacenará la primer instancia del Singleton, es una variable de su propia clase
+
+        public void Awake() // Cuando "se despierta" (es lo primero que se ejecuta, para más info https://docs.unity3d.com/Manual/ExecutionOrder.html) nos fijamos si ya existe otro Singleton
         {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            if (instance != null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
         }
     }
 }

@@ -8,24 +8,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+namespace OnceUponAMemory.Diego
 {
-    [SerializeField] private float maxHealth = 100; // Asignamos la Vida Máxima, [SerializeField] se usa para mostrar en el Inspector una variable privada
-    public float currentHealth; // Iremos almacenando la Vida Actual
-
-    private void Start()
+    public class Health : MonoBehaviour
     {
-        currentHealth = maxHealth; // Inicializamos la Vida Actual igual a Vida Máxima
-    }
+        [SerializeField] private float maxHealth = 100; // Asignamos la Vida Máxima, [SerializeField] se usa para mostrar en el Inspector una variable privada
+        public float currentHealth; // Iremos almacenando la Vida Actual
 
-    public void TakeDamage(float damage) // Función para aplicar Daño, recibe un float y no devuelve nada
-    {
-        currentHealth -= damage; // Actualizamos la Vida Actual, restandole el Daño
-        if (currentHealth <= 0) Die(); // Si la Vida Actual es igual o menor a 0, llamamos la Función de Muerte
-    }
+        private void Start()
+        {
+            currentHealth = maxHealth; // Inicializamos la Vida Actual igual a Vida Máxima
+        }
 
-    private void Die()
-    {
-        Destroy(gameObject); // Destruimos el Objeto
+        public void TakeDamage(float damage) // Función para aplicar Daño, recibe un float y no devuelve nada
+        {
+            currentHealth -= damage; // Actualizamos la Vida Actual, restandole el Daño
+            if (currentHealth <= 0) Die(); // Si la Vida Actual es igual o menor a 0, llamamos la Función de Muerte
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject); // Destruimos el Objeto
+        }
     }
 }

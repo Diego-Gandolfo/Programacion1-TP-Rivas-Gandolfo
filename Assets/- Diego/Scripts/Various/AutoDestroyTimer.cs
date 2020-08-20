@@ -10,25 +10,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoDestroyTimer : MonoBehaviour
+namespace OnceUponAMemory.Diego
 {
-    public float timeToDestroy = 600; // Variable donde asignamos el tiempo a contar
-
-    private float timer; // Variable que usamos para llevar la cuenta
-
-    private void Start()
+    public class AutoDestroyTimer : MonoBehaviour
     {
-        timer = timeToDestroy; // Inicializamos el timer con el timeToDestroy
-    }
+        public float timeToDestroy = 600; // Variable donde asignamos el tiempo a contar
 
-    private void Update()
-    {
-        if (timer > 0) timer -= Time.deltaTime; // Si el timer es mayor a 0 le descontamos Time.deltaTime
-        else if (timer <= 0) Destroy(gameObject); // Si es menor o igual a 0 es que termino de contar y destruimos el Objeto
-    }
+        private float timer; // Variable que usamos para llevar la cuenta
 
-    public void ResetTimer()
-    {
-        timer = timeToDestroy; // Función de Reset por las dudas de que necesitemos reiniciar el contador
+        private void Start()
+        {
+            timer = timeToDestroy; // Inicializamos el timer con el timeToDestroy
+        }
+
+        private void Update()
+        {
+            if (timer > 0) timer -= Time.deltaTime; // Si el timer es mayor a 0 le descontamos Time.deltaTime
+            else if (timer <= 0) Destroy(gameObject); // Si es menor o igual a 0 es que termino de contar y destruimos el Objeto
+        }
+
+        public void ResetTimer()
+        {
+            timer = timeToDestroy; // Función de Reset por las dudas de que necesitemos reiniciar el contador
+        }
     }
 }

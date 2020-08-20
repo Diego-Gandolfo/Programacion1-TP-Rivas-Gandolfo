@@ -8,14 +8,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstantRotation : MonoBehaviour
+namespace OnceUponAMemory.Diego
 {
-    public Vector3 speedRotation; // Variable para asignar la Velocidad de Rotacion en los 3 Ejes
-
-    void Update()
+    public class ConstantRotation : MonoBehaviour
     {
-        Vector3 rotation = speedRotation * Time.deltaTime; // Variable para normalizar con Time.deltaTime la Velocidad de Rotacion
+        public Vector3 speedRotation; // Variable para asignar la Velocidad de Rotacion en los 3 Ejes
 
-        transform.Rotate(rotation); // Rotamos el Objeto
+        void Update()
+        {
+            Vector3 rotation = speedRotation * Time.deltaTime; // Variable para normalizar con Time.deltaTime la Velocidad de Rotacion
+
+            transform.Rotate(rotation); // Rotamos el Objeto
+        }
     }
 }

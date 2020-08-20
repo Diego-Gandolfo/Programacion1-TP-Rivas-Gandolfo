@@ -8,14 +8,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstantTranslation : MonoBehaviour
+namespace OnceUponAMemory.Diego
 {
-    public Vector3 speedTranslation; // Variable para asignar la Velocidad de Movimiento en los 3 Ejes
-
-    void Update()
+    public class ConstantTranslation : MonoBehaviour
     {
-        Vector3 translation = speedTranslation * Time.deltaTime; // Variable para normalizar con Time.deltaTime la Velocidad de Movimiento
+        public Vector3 speedTranslation; // Variable para asignar la Velocidad de Movimiento en los 3 Ejes
 
-        transform.Translate(translation); // Movemos el Objeto
+        void Update()
+        {
+            Vector3 translation = speedTranslation * Time.deltaTime; // Variable para normalizar con Time.deltaTime la Velocidad de Movimiento
+
+            transform.Translate(translation); // Movemos el Objeto
+        }
     }
 }

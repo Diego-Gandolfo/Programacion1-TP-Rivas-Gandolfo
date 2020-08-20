@@ -7,14 +7,17 @@
 using UnityEngine;
 using System.Collections;
 
-public class LookAtMouse2D : MonoBehaviour
+namespace OnceUponAMemory.Diego
 {
-    private void Update()
+    public class LookAtMouse2D : MonoBehaviour
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // Almacenamos las coordenadas de donde se encuentra el puntero del Mouse
+        private void Update()
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // Almacenamos las coordenadas de donde se encuentra el puntero del Mouse
 
-        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y); // Calculamos la dirección a la que hay que mirar
+            Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y); // Calculamos la dirección a la que hay que mirar
 
-        transform.up = direction; // Actualizamos el Transform para que mire al puntero del Mouse
+            transform.up = direction; // Actualizamos el Transform para que mire al puntero del Mouse
+        }
     }
 }

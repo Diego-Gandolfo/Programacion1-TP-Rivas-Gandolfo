@@ -6,7 +6,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level_Manager : MonoBehaviour
+namespace OnceUponAMemory.Diego
 {
+    public class LevelManager : MonoBehaviour
+    {
 
+    }
 }

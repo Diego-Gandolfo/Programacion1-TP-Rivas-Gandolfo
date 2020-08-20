@@ -10,23 +10,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAtObjectWithTag2D : MonoBehaviour
+namespace OnceUponAMemory.Diego
 {
-    public string tagObject; // Asignamos el Tag del Objeto a mirar
-    private GameObject objectWithTag; // Alacenaremos el Objeto con el Tag a mirar
-
-    private void Start()
+    public class LookAtObjectWithTag2D : MonoBehaviour
     {
-        if (tagObject != null) objectWithTag = GameObject.FindGameObjectWithTag(tagObject); // Buscamos el Objeto que tiene el Tag elegido
-    }
+        public string tagObject; // Asignamos el Tag del Objeto a mirar
+        private GameObject objectWithTag; // Alacenaremos el Objeto con el Tag a mirar
 
-    private void Update()
-    {
-        if (objectWithTag != null)
+        private void Start()
         {
-            Vector2 direction = new Vector2(objectWithTag.transform.position.x - transform.position.x, objectWithTag.transform.position.y - transform.position.y); // Calculamos la dirección a la que hay que mirar
+            if (tagObject != null) objectWithTag = GameObject.FindGameObjectWithTag(tagObject); // Buscamos el Objeto que tiene el Tag elegido
+        }
 
-            transform.up = direction; // Actualizamos el Transform para que mire al Objeto con el Tag elegido
+        private void Update()
+        {
+            if (objectWithTag != null)
+            {
+                Vector2 direction = new Vector2(objectWithTag.transform.position.x - transform.position.x, objectWithTag.transform.position.y - transform.position.y); // Calculamos la dirección a la que hay que mirar
+
+                transform.up = direction; // Actualizamos el Transform para que mire al Objeto con el Tag elegido
+            }
         }
     }
 }
