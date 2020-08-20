@@ -14,7 +14,7 @@ namespace OnceUponAMemory.Diego
     {
         [Header("Attack Area")] // Esto es simplemente un Título para el Inspector
         [SerializeField] private Transform attackPosition; // Determinamos donde se ubicara el Centro del Golpe
-        pub[SerializeField] privatelic float attackRange = 1.0f; // Determinamos el Rango del Golpe
+        [SerializeField] private float attackRange = 1.0f; // Determinamos el Rango del Golpe
 
         [Header("Attack Settings")] // Esto es simplemente un Título para el Inspector
         [SerializeField] private LayerMask targetsLayerMask; // Determinamos las LayerMask que pueden ser golpeadas por este Ataque
