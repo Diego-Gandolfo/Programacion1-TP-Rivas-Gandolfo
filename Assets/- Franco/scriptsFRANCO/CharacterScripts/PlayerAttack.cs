@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     private void PlayerIs()
     {
         Collider2D[] targetshit = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, targetsLayerMask);
-
+        Debug.Log(targetshit);
         foreach (Collider2D target in targetshit)
         {
             if (target.GetComponent<EnemyHealth>() != null)
