@@ -569,8 +569,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1720918984}
   - component: {fileID: 1720918983}
-  - component: {fileID: 1720918982}
-  - component: {fileID: 1720918981}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -578,39 +576,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1720918981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720918980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c15219cc20093774db3c89ccdb01f054, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPosition: {fileID: 0}
-  attackRange: 0.5
-  targetsLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  damage: 10
-  attackCooldown: 1
---- !u!114 &1720918982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720918980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b25f441d3bc8ea4fbb1993fb313d70d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
 --- !u!114 &1720918983
 MonoBehaviour:
   m_ObjectHideFlags: 0
