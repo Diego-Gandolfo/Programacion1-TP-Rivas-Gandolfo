@@ -14,8 +14,6 @@ namespace OnceUponAMemory.Diego
 
         [SerializeField] private Transform[] patrolPoints; // Array (vector o "lista") donde almacenaremos los puntos a patrullar
         private int nextPoint;
-//        private int randomPoint = 0; // Variable que usaremos para asignar un punto aleatorio de patrullaje
-//        private int currentPoint = 0; // Variable que usaremos para saber en que punto de patrullaje debemos usar
 
         private void Start()
         {
