@@ -11,8 +11,8 @@ namespace OnceUponAMemory.Diego
     public class CharacterMovement : MonoBehaviour
     {
         // Variables de Movimiento
-        public float movementSpeed = 7; // Configuramos la Velocidad de Movimiento
-        public float runMultiplier = 3; // Configuramos un Multiplicador para cuando corre
+        [SerializeField] private float movementSpeed = 7; // Configuramos la Velocidad de Movimiento
+        [SerializeField] private float runMultiplier = 3; // Configuramos un Multiplicador para cuando corre
 
         private void Update()
         {

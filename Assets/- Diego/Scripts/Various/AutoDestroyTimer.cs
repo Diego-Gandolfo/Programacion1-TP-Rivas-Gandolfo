@@ -14,8 +14,7 @@ namespace OnceUponAMemory.Diego
 {
     public class AutoDestroyTimer : MonoBehaviour
     {
-        public float timeToDestroy = 600; // Variable donde asignamos el tiempo a contar
-
+        [SerializeField] private float timeToDestroy = 600; // Variable donde asignamos el tiempo a contar
         private float timer; // Variable que usamos para llevar la cuenta
 
         private void Start()

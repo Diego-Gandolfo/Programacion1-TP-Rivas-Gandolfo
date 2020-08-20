@@ -7,18 +7,18 @@ namespace OnceUponAMemory.Diego
     public class PatrolArea : MonoBehaviour
     {
         [Header("Enemy Settings")]
-        public Vector2 enemySize; // El tamaño del Enemigo
+        [SerializeField] private Vector2 enemySize; // El tamaño del Enemigo
 
         [Header("Patrol Settings")]
-        public float movemetSpeed = 3.0f; // La velocidad que se desplaza al estar patrullando
-        public float waitTime = 1.0f; // El tiempo que espera hasta en un punto antes de empezar a moverse al siguiente
+        [SerializeField] private float movemetSpeed = 3.0f; // La velocidad que se desplaza al estar patrullando
+        [SerializeField] private float waitTime = 1.0f; // El tiempo que espera hasta en un punto antes de empezar a moverse al siguiente
         private float timer = 0.0f; // Variable que usaremos para llevar el control del tiempo
-        public float minDistance; // Distancia minima que tiene que haber entre al
+        [SerializeField] private float minDistance; // Distancia minima que tiene que haber entre al
         private GameObject patrolPosition; // Lo usaremos para asignar la posicion actual a la que debemos movernos
 
         [Header("Patrol Area Settings")]
-        public Transform patrolCenter; // Variable donde almacenaremos el centro del punto a patrullar
-        public Vector2 areaSize; // Cuantas unidades se puede mover hacia la izquierda de patrolPoint
+        [SerializeField] private Transform patrolCenter; // Variable donde almacenaremos el centro del punto a patrullar
+        [SerializeField] private Vector2 areaSize; // Cuantas unidades se puede mover hacia la izquierda de patrolPoint
         private float minX; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para X
         private float maxX; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para X
         private float minY; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para Y

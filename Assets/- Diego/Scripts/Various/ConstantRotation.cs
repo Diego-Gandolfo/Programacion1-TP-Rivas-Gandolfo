@@ -12,7 +12,7 @@ namespace OnceUponAMemory.Diego
 {
     public class ConstantRotation : MonoBehaviour
     {
-        public Vector3 speedRotation; // Variable para asignar la Velocidad de Rotacion en los 3 Ejes
+        [SerializeField] private Vector3 speedRotation; // Variable para asignar la Velocidad de Rotacion en los 3 Ejes
 
         void Update()
         {

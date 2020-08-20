@@ -12,7 +12,7 @@ namespace OnceUponAMemory.Diego
 {
     public class ConstantTranslation : MonoBehaviour
     {
-        public Vector3 speedTranslation; // Variable para asignar la Velocidad de Movimiento en los 3 Ejes
+        [SerializeField] private Vector3 speedTranslation; // Variable para asignar la Velocidad de Movimiento en los 3 Ejes
 
         void Update()
         {

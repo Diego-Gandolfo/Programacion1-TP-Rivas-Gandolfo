@@ -10,10 +10,10 @@ namespace OnceUponAMemory.Diego
 {
     public class ScreenManager : MonoBehaviour
     {
-        public int width = 1920; // Tamaño en Pixeles del Ancho de la Pantala
-        public int height = 1080; // Tamaño en Pixeles del Alto de la Pantalla
-        public bool fullScreen = true; // Si se ejecuta en Pantalla Completa
-        public int refreshRate = 60; // Si no entiendo mal, eso son los FPS que se ejecutará el juego
+        [SerializeField] private int width = 1920; // Tamaño en Pixeles del Ancho de la Pantala
+        [SerializeField] private int height = 1080; // Tamaño en Pixeles del Alto de la Pantalla
+        [SerializeField] private bool fullScreen = true; // Si se ejecuta en Pantalla Completa
+        [SerializeField] private int refreshRate = 60; // Si no entiendo mal, eso son los FPS que se ejecutará el juego
 
         private void Start()
         {

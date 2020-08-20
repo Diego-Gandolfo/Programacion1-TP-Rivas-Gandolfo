@@ -14,7 +14,7 @@ namespace OnceUponAMemory.Diego
 {
     public class LookAtObjectWithTag2D : MonoBehaviour
     {
-        public string tagObject; // Asignamos el Tag del Objeto a mirar
+        [SerializeField] private string tagObject; // Asignamos el Tag del Objeto a mirar
         private GameObject objectWithTag; // Alacenaremos el Objeto con el Tag a mirar
 
         private void Start()

@@ -12,7 +12,7 @@ namespace OnceUponAMemory.Diego
 {
     public class CursorManager : MonoBehaviour
     {
-        public bool cursorVisible = true; // Variable para determinar si el puntero de Mouse es visible
+        [SerializeField] private bool cursorVisible = true; // Variable para determinar si el puntero de Mouse es visible
 
         private void Start()
         {
