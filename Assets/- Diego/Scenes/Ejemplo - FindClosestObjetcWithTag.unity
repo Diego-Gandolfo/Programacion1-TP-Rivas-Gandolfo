@@ -520,8 +520,6 @@ GameObject:
   m_Component:
   - component: {fileID: 983131522}
   - component: {fileID: 983131521}
-  - component: {fileID: 983131520}
-  - component: {fileID: 983131519}
   - component: {fileID: 983131518}
   m_Layer: 0
   m_Name: Character
@@ -544,39 +542,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Enemy
   closestObject: {fileID: 0}
---- !u!114 &983131519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983131517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c15219cc20093774db3c89ccdb01f054, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackPosition: {fileID: 0}
-  attackRange: 0.5
-  targetsLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  damage: 10
-  attackCooldown: 1
---- !u!114 &983131520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983131517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b25f441d3bc8ea4fbb1993fb313d70d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
 --- !u!114 &983131521
 MonoBehaviour:
   m_ObjectHideFlags: 0
