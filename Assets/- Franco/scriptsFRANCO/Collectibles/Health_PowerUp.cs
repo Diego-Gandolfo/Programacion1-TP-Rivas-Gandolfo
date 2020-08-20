@@ -1,23 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Health_PowerUp : MonoBehaviour
 {
-    [SerializeField] private int healthBonus = 2;
+    public float healthBonus = 2;
     PlayerHealth playerHealth;
 
-    void Awake()
+    private void Start()
     {
         playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (playerHealth.currentHealth < playerHealth.maxHealth)
+        PlayerHealth player = collision.GetComponent<PlayerHealth>();
+        if (player != null && playerHealth.currentHealth < playerHealth.maxHealth)
         {
             Destroy(gameObject);
 
-            playerHealth.currentHealth = playerHealth.currentHealth + healthBonus;
-            
-        } 
+            playerHealth.currentHealth += healthBonus;
+        }
     }
 }
