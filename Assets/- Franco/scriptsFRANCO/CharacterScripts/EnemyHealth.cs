@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 10f;
-    public float currentHeatlh;
+    [SerializeField] private float maxHealth = 10;
+    [SerializeField] private float currentHeatlh;
 
+    
     public Health_Bar_Script enemyHealthBar;
     void Start()
     {
@@ -19,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
         currentHeatlh -= damage;
 
         enemyHealthBar.SetHealth(currentHeatlh);
+
 
         if (currentHeatlh <= 0) Die();
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TopDownCharacterMovement : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] private int speed = 5;
     public Camera mainCam;
     
     void Update()

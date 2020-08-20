@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Billboard_Script : MonoBehaviour
 {
-    public Transform cam;
-    public Transform enemy;
-    void LateUpdate()
+    
+    
+    private void LateUpdate()
     {
-        
+        transform.LookAt(Camera.main.transform);
+        transform.Rotate(0, 180, 0);
     }
 }
