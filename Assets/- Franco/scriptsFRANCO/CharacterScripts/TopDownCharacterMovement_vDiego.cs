@@ -18,7 +18,7 @@ public class TopDownCharacterMovement_vDiego : MonoBehaviour
         {
             direction += Vector3.up;
             animator.SetBool("RunUp", true);
-            SoundManager.PlaySound("Footsteps4");
+            //SoundManager.PlaySound("Footsteps4");
         }
         if (Input.GetKey(KeyCode.S))
         {
