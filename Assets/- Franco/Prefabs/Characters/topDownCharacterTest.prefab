@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  health: 10
   animator: {fileID: 3161050558049894306}
   blood: {fileID: 0}
 --- !u!50 &3161050558049894316
@@ -211,3 +210,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223492462c5534d4fb05bc95f668b61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPosition: {fileID: 0}
+  attackRange: 1
+  targetsLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 1
+  attackCooldown: 1
+  cooldownTimer: 0
