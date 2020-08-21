@@ -14,11 +14,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= cooldownTimer)
-        {
-            PlayerIs();
-            cooldownTimer = Time.time + attackCooldown;
-        }
+        if (!Input.GetButtonDown("Fire1") || !(Time.time >= cooldownTimer)) return;
+        PlayerIs();
+        cooldownTimer = Time.time + attackCooldown;
     }
     private void PlayerIs()
     {
@@ -29,9 +27,8 @@ public class PlayerAttack : MonoBehaviour
             if (target.GetComponent<EnemyHealth>() != null)
             {
                 target.GetComponent<EnemyHealth>().TakePlayerDamage(damage);
+                SoundManager.PlaySound("EnemyHitRebuild");
             }
         }
-
-
     }
 }

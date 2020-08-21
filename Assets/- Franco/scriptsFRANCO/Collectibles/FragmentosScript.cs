@@ -11,6 +11,7 @@ public class FragmentosScript : MonoBehaviour
         {
             Debug.Log("Im Being Collected");
             CounterScript.Amount += 1;
+            SoundManager.PlaySound("ItemPickUp");
             Destroy(gameObject);
         }
             
