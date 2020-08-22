@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TopDownCharacterMovement_vDiego : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 0;
 
     public Animator animator;
     public ParticleSystem blood;

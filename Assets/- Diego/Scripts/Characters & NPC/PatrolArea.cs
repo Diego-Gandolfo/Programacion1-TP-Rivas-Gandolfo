@@ -7,22 +7,22 @@ namespace OnceUponAMemory.Diego
     public class PatrolArea : MonoBehaviour
     {
         [Header("Enemy Settings")]
-        [SerializeField] private Vector2 enemySize; // El tamaño del Enemigo
+        [SerializeField] private Vector2 enemySize = new Vector2(0, 0); // El tamaño del Enemigo
 
         [Header("Patrol Settings")]
         [SerializeField] private float movemetSpeed = 3.0f; // La velocidad que se desplaza al estar patrullando
         [SerializeField] private float waitTime = 1.0f; // El tiempo que espera hasta en un punto antes de empezar a moverse al siguiente
         private float timer = 0.0f; // Variable que usaremos para llevar el control del tiempo
-        [SerializeField] private float minDistance; // Distancia minima que tiene que haber entre al
-        private GameObject patrolPosition; // Lo usaremos para asignar la posicion actual a la que debemos movernos
+        [SerializeField] private float minDistance = 0; // Distancia minima que tiene que haber entre al
+        private GameObject patrolPosition = null; // Lo usaremos para asignar la posicion actual a la que debemos movernos
 
         [Header("Patrol Area Settings")]
-        [SerializeField] private Transform patrolCenter; // Variable donde almacenaremos el centro del punto a patrullar
-        [SerializeField] private Vector2 areaSize; // Cuantas unidades se puede mover hacia la izquierda de patrolPoint
-        private float minX; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para X
-        private float maxX; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para X
-        private float minY; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para Y
-        private float maxY; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para Y
+        [SerializeField] private Transform patrolCenter = null; // Variable donde almacenaremos el centro del punto a patrullar
+        [SerializeField] private Vector2 areaSize = new Vector2(0, 0); // Cuantas unidades se puede mover hacia la izquierda de patrolPoint
+        private float minX = 0; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para X
+        private float maxX = 0; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para X
+        private float minY = 0; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para Y
+        private float maxY = 0; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para Y
 
         private void OnEnable() // Cada vez que se activa el Objeto o el Componente
         {

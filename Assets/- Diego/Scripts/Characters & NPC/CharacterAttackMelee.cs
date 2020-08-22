@@ -13,11 +13,11 @@ namespace OnceUponAMemory.Diego
     public class CharacterAttackMelee : MonoBehaviour
     {
         [Header("Attack Area")] // Esto es simplemente un Título para el Inspector
-        [SerializeField] private Transform attackPosition; // Determinamos donde se ubicara el Centro del Golpe
+        [SerializeField] private Transform attackPosition = null; // Determinamos donde se ubicara el Centro del Golpe
         [SerializeField] private float attackRange = 1.0f; // Determinamos el Rango del Golpe
 
         [Header("Attack Settings")] // Esto es simplemente un Título para el Inspector
-        [SerializeField] private LayerMask targetsLayerMask; // Determinamos las LayerMask que pueden ser golpeadas por este Ataque
+        [SerializeField] private LayerMask targetsLayerMask = 0; // Determinamos las LayerMask que pueden ser golpeadas por este Ataque
         [SerializeField] private float damage = 10.0f; // Determinamos el Daño que se aplicará a los Objetivos alcanzados
         [SerializeField] private float attackCooldown = 1.0f; // El tiempo que deberá transcurrir para volver a hacer el Ataque
         private float cooldownTimer = 0.0f; // Variable que usaremos para verificar si ya paso el tiempo de Enfriamiento del Ataque

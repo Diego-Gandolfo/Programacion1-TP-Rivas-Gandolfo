@@ -12,8 +12,8 @@ namespace OnceUponAMemory.Diego
         [SerializeField] private float waitTime = 1.0f; // El tiempo que espera hasta en un punto antes de empezar a moverse al siguiente
         private float timer = 0.0f; // Variable que usaremos para llevar el control del tiempo
 
-        [SerializeField] private Transform[] patrolPoints; // Array (vector o "lista") donde almacenaremos los puntos a patrullar
-        private int nextPoint;
+        [SerializeField] private Transform[] patrolPoints = null; // Array (vector o "lista") donde almacenaremos los puntos a patrullar
+        private int nextPoint = 0;
 
         private void Start()
         {

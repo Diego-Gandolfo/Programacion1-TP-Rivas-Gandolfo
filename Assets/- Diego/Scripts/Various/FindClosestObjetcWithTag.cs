@@ -13,8 +13,8 @@ namespace OnceUponAMemory.Diego
 {
     public class FindClosestObjetcWithTag : MonoBehaviour
     {
-        [SerializeField] private string targetTag; // Variable para asignar el Tag que usaremos para encontrar el Objeto más cercano
-        [SerializeField] private GameObject closestObject; // Variable donde guardaremos el Objeto más cercano
+        [SerializeField] private string targetTag = ""; // Variable para asignar el Tag que usaremos para encontrar el Objeto más cercano
+        [SerializeField] private GameObject closestObject = null; // Variable donde guardaremos el Objeto más cercano
 
         private void OnEnable()
         {
