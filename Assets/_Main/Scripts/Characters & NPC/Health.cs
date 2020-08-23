@@ -12,8 +12,8 @@ namespace OnceUponAMemory.Main
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] private float maxHealth = 100; // Asignamos la Vida Máxima, [SerializeField] se usa para mostrar en el Inspector una variable privada
-        [SerializeField] private float currentHealth; // Iremos almacenando la Vida Actual
+        public float maxHealth = 100; // Asignamos la Vida Máxima, [SerializeField] se usa para mostrar en el Inspector una variable privada
+        public float currentHealth; // Iremos almacenando la Vida Actual
 
         private void Start()
         {

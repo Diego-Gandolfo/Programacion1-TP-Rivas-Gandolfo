@@ -32,11 +32,12 @@ namespace OnceUponAMemory.Main
                 // TODO: Animacion
             }
 
+            // TODO: UI?
+
             if (durationTimer > 0) // Verificamos si ya termino de contar
             {
                 transform.position = Vector2.MoveTowards(transform.position, mousePosition, speed * Time.deltaTime); ; // Nos movemos al punto indicado
                 durationTimer -= Time.deltaTime; // Vamos llevando la cuenta regresiva
-
             }
             else if (doOnce) // Al terminar
             {

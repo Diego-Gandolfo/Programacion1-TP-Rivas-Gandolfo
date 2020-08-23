@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 2396394874203704302}
   - component: {fileID: 5578547246784976994}
   - component: {fileID: 692239949014772086}
+  - component: {fileID: 2885070718264219013}
   - component: {fileID: 6962863031779969339}
   m_Layer: 0
   m_Name: Character
@@ -324,6 +325,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+--- !u!114 &2885070718264219013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463375038460266261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d51b30a700baf459bccb88e9002e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountHeal: 10
 --- !u!114 &6962863031779969339
 MonoBehaviour:
   m_ObjectHideFlags: 0
