@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace OnceUponAMemory.Main
 {
-    public class Heal : MonoBehaviour
+    public class CharacterHeal : MonoBehaviour
     {
         [SerializeField] private float amountHeal = 10.0f;
         [SerializeField] private float cooldown = 2.5f;
