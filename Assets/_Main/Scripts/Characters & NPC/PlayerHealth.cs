@@ -24,11 +24,12 @@ namespace OnceUponAMemory.Main
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;
-
+            
+            //SOUND
             SoundManager.PlaySound("PlayerTakeDamage");
-
+            //HEALTH BAR
             healthBar.SetHealth(currentHealth);
-
+            //BLOOD VFX
             Instantiate(blood, transform.position, Quaternion.identity);
 
             if (currentHealth <= 0) Die();

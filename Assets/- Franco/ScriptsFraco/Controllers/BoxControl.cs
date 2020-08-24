@@ -2,25 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxControl : MonoBehaviour
+namespace OnceUponAMemory.Franco
 {
-    public GameObject box, memoryFragment;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class BoxControl : MonoBehaviour
     {
-        BoxScript.CreateDestroyed += DestroyBox;
-    }
+        public GameObject box, memoryFragment;
 
-    private void DestroyBox()
-    {
-        Destroy(box);
-        Instantiate(memoryFragment, this.transform.position, Quaternion.identity);
-    }
 
-    private void OnDestroy()
-    {
-        BoxScript.CreateDestroyed -= DestroyBox;
+        // Start is called before the first frame update
+        void Start()
+        {
+            BoxScript.CreateDestroyed += DestroyBox;
+        }
+
+        private void DestroyBox()
+        {
+            Destroy(box);
+            Instantiate(memoryFragment, this.transform.position, Quaternion.identity);
+        }
+
+        private void OnDestroy()
+        {
+            BoxScript.CreateDestroyed -= DestroyBox;
+        }
     }
 }
+

@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoopMovement : MonoBehaviour
+namespace OnceUponAMemory.Franco
 {
-    public float amplitude = 0.02f;
-
-    void Update()
+    public class LoopMovement : MonoBehaviour
     {
-        transform.position += new Vector3(amplitude * Mathf.Sin(1f * Time.time), 0);
+        public float amplitude = 0.02f;
+
+        void Update()
+        {
+            transform.position += new Vector3(amplitude * Mathf.Sin(1f * Time.time), 0);
+        }
     }
 }
+
