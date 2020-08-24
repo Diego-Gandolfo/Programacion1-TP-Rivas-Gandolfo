@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
 
-        //healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth);
 
         //Instantiate(blood, transform.position, Quaternion.identity);
 
@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Destroy(player);
-        //healthBar.gameObject.SetActive(false);
+        healthBar.gameObject.SetActive(false);
     }
     
     
