@@ -28,7 +28,9 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-
+        
+        SoundManager.PlaySound("PlayerTakeDamage");
+        
         healthBar.SetHealth(currentHealth);
 
         Instantiate(blood, transform.position, Quaternion.identity);

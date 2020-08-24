@@ -6,12 +6,13 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public static AudioClip Footsteps4, AttackSound, ItemPickUp, EnemyHitRebuild, Dash, SpiderPatrol;
+    public static AudioClip Footsteps4, AttackSound, ItemPickUp, EnemyHitRebuild, Dash, SpiderPatrol, PlayerTakeDamage;
 
     private static AudioSource _audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        PlayerTakeDamage = Resources.Load<AudioClip>("PlayerTakeDamage");
         SpiderPatrol = Resources.Load<AudioClip>("SpiderPatrol");
         Dash = Resources.Load<AudioClip>("Dash");
         EnemyHitRebuild = Resources.Load<AudioClip>("EnemyHitRebuild");
@@ -43,6 +44,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "SpiderPatrol":
                 _audioSource.PlayOneShot(SpiderPatrol);
+                break;
+            case "PlayerTakeDamage":
+                _audioSource.PlayOneShot(PlayerTakeDamage);
                 break;
         }
     }
