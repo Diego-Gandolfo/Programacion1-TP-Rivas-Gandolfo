@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FragmentosScript : MonoBehaviour
+namespace OnceUponAMemory.Franco
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class FragmentosScript : MonoBehaviour
     {
-        PlayerHealth TopDownCharacter = collision.GetComponent<PlayerHealth>();
-        if (TopDownCharacter != null)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("Im Being Collected");
-            CounterScript.Amount += 1;
-            SoundManager.PlaySound("ItemPickUp");
-            Destroy(gameObject);
+            PlayerHealth TopDownCharacter = collision.GetComponent<PlayerHealth>();
+            if (TopDownCharacter != null)
+            {
+                Debug.Log("Im Being Collected");
+                CounterScript.Amount += 1;
+                SoundManager.PlaySound("ItemPickUp");
+                Destroy(gameObject);
+            }
+
         }
-            
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace OnceUponAMemory.Main
+namespace OnceUponAMemory.Franco
 {
     public class Health_Bar_Script : MonoBehaviour
     {

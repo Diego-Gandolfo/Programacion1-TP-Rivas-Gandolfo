@@ -1,24 +1,27 @@
 ﻿using System;
 using UnityEngine;
 
-public class Health_PowerUp : MonoBehaviour
+namespace OnceUponAMemory.Franco
 {
-    public float healthBonus = 2;
-    PlayerHealth playerHealth;
-
-    private void Start()
+    public class Health_PowerUp : MonoBehaviour
     {
-        playerHealth = FindObjectOfType<PlayerHealth>();
-    }
+        public float healthBonus = 2;
+        PlayerHealth playerHealth;
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        PlayerHealth player = collision.GetComponent<PlayerHealth>();
-        if (player != null && playerHealth.currentHealth < playerHealth.maxHealth)
+        private void Start()
         {
-            Destroy(gameObject);
+            playerHealth = FindObjectOfType<PlayerHealth>();
+        }
 
-            playerHealth.currentHealth += healthBonus;
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            PlayerHealth player = collision.GetComponent<PlayerHealth>();
+            if (player != null && playerHealth.currentHealth < playerHealth.maxHealth)
+            {
+                Destroy(gameObject);
+
+                playerHealth.currentHealth += healthBonus;
+            }
         }
     }
 }

@@ -2,34 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+namespace OnceUponAMemory.Main
 {
-    [SerializeField] private float maxHealth = 10;
-    [SerializeField] private float currentHeatlh;
-
-    public Health_Bar_Script healthBar;
-
-    public Animator animator;
-    void Start()
+    public class EnemyHealth : MonoBehaviour
     {
-        currentHeatlh = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
+        [SerializeField] private float maxHealth = 10;
+        [SerializeField] private float currentHeatlh;
 
-    public void TakePlayerDamage(float damage)
-    {
-        currentHeatlh -= damage;
+        public Health_Bar_Script healthBar;
 
-        animator.SetTrigger("TakeDamage");
-        
-        healthBar.SetHealth(currentHeatlh);
+        public Animator animator;
 
+        void Start()
+        {
+            currentHeatlh = maxHealth;
+            healthBar.SetMaxHealth(maxHealth);
+        }
 
-        if (currentHeatlh <= 0) Die();
-    }
-    void Die()
-    {
-        Destroy(gameObject);
-        healthBar.gameObject.SetActive(false);
+        public void TakePlayerDamage(float damage)
+        {
+            currentHeatlh -= damage;
+
+            animator.SetTrigger("TakeDamage");
+
+            healthBar.SetHealth(currentHeatlh);
+
+            if (currentHeatlh <= 0) Die();
+        }
+
+        void Die()
+        {
+            Destroy(gameObject);
+            healthBar.gameObject.SetActive(false);
+        }
     }
 }

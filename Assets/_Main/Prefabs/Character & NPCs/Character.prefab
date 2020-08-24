@@ -169,7 +169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0455b4877a2245641bd8cc3b34d3295d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 910ae3b55913028479f7da2ceef5482d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6463375037524128570}
-  - component: {fileID: 6463375037524128569}
+  - component: {fileID: 1820107044702854495}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -213,7 +213,7 @@ Transform:
   m_Father: {fileID: 6463375038460266259}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6463375037524128569
+--- !u!114 &1820107044702854495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6463375037524128571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c177f7575afe1474badb0811b50e0478, type: 3}
+  m_Script: {fileID: 11500000, guid: d1501e0b827017042889ca57d5a01d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6463375037525476923
@@ -295,7 +295,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 428f18ea6e8fc854e90550d8438d462c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 910ae3b55913028479f7da2ceef5482d, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

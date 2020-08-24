@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace OnceUponAMemory.Main
+namespace OnceUponAMemory.Franco
 {
     public class SoundManager : MonoBehaviour
     {

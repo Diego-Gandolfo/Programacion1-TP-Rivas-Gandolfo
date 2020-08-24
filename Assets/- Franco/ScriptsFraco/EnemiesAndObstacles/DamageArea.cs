@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageArea : MonoBehaviour
+namespace OnceUponAMemory.Franco
 {
-    private int damage = 2;   
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class DamageArea : MonoBehaviour
     {
-        PlayerHealth TopDownCharacter = collision.transform.GetComponent<PlayerHealth>();
-        if (TopDownCharacter != null)
+        private int damage = 2;
+
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            TopDownCharacter.TakeDamage(damage);
-            Debug.Log("im taking damage");
+            PlayerHealth TopDownCharacter = collision.transform.GetComponent<PlayerHealth>();
+            if (TopDownCharacter != null)
+            {
+                TopDownCharacter.TakeDamage(damage);
+                Debug.Log("im taking damage");
+            }
+
         }
-            
     }
 }

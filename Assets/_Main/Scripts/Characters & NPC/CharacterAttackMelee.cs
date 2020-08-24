@@ -24,13 +24,11 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            /*if ((Input.GetMouseButtonDown(0)) && (Time.time >= cooldownTimer)) // Si hace Click Izquierdo y pasó el tiempo de Enfriamiento
+            if ((Input.GetMouseButtonDown(0)) && (Time.time >= cooldownTimer)) // Si hace Click Izquierdo y pasó el tiempo de Enfriamiento
             {
                 Attack(); // Realizamos el Ataque
                 cooldownTimer = Time.time + attackCooldown; // Sumamos el Tiempo de Enfriamiento y tiempo que lleva la aplicación ejecutandose (Time.time)
             }
-            */
-            
         }
 
         private void Attack()
