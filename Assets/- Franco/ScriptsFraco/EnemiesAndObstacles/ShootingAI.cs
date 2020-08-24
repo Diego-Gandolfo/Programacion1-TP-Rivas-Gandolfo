@@ -10,6 +10,8 @@ public class ShootingAI : MonoBehaviour
     public Transform firePoint;
     public Transform player;
     public GameObject projectile;
+
+    public Animator animator;
     void Start()
     {
         timeBetweenShots = starTimeBetweentShots;
@@ -21,9 +23,10 @@ public class ShootingAI : MonoBehaviour
         //transform.LookAt(player);
         if (timeBetweenShots <= 0)
         {
-            
             Instantiate(projectile, firePoint.position, Quaternion.identity);
             timeBetweenShots = starTimeBetweentShots;
+            
+            animator.SetTrigger("Attack");
         }
         else
         {

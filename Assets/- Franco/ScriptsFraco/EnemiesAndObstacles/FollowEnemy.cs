@@ -9,6 +9,7 @@ public class FollowEnemy : MonoBehaviour
     public float retreatDistance;
     public Transform player;
 
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -28,11 +29,13 @@ public class FollowEnemy : MonoBehaviour
         else if (Vector2.Distance(transform.position, player.position) < stopDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
             transform.position = this.transform.position;
+            
         }
         //SI ES MENOR QUE LA DISTANCIA DE RETREAT, SE MUEVE CON VELOCIDAD NEGATIVA
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            
         }
         else
         {
