@@ -218,10 +218,12 @@ GameObject:
   - component: {fileID: 6463375038460266259}
   - component: {fileID: 6463375038460266271}
   - component: {fileID: 6463375038460266256}
+  - component: {fileID: 8925250742913238376}
   - component: {fileID: 2396394874203704302}
   - component: {fileID: 5578547246784976994}
   - component: {fileID: 692239949014772086}
   - component: {fileID: 2885070718264219013}
+  - component: {fileID: 3502322050444972901}
   - component: {fileID: 6962863031779969339}
   m_Layer: 0
   m_Name: Character
@@ -283,6 +285,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8925250742913238376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463375038460266261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0918978fdce73384692ceb6015683fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  player: {fileID: 0}
+  blood: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &2396394874203704302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +357,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountHeal: 10
+  cooldown: 2.5
+--- !u!114 &3502322050444972901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463375038460266261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223492462c5534d4fb05bc95f668b61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPosition: {fileID: 6463375038894307584}
+  attackRange: 1
+  targetsLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  damage: 1
+  attackCooldown: 1
+  cooldownTimer: 0
 --- !u!114 &6962863031779969339
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
             if (target.GetComponent<EnemyHealth>() != null)
             {
                 target.GetComponent<EnemyHealth>().TakePlayerDamage(damage);
+                Debug.Log("im being damaged");
                 SoundManager.PlaySound("EnemyHitRebuild");
             }
         }

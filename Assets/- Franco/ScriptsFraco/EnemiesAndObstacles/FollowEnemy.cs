@@ -22,6 +22,7 @@ public class FollowEnemy : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > stopDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            
         }
         //SE CHEQUEA LO DE ANTES Y TAMBIÉN QUE SEA MAYOR QUE LA DISTANCIA DE RETREAR
         else if (Vector2.Distance(transform.position, player.position) < stopDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
@@ -33,5 +34,12 @@ public class FollowEnemy : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
+        else
+        {
+            transform.up = new Vector2(0, 0);
+        }
+        
+            
+        
     }
 }

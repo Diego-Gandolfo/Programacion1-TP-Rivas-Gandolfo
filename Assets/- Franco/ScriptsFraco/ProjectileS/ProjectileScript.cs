@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using OnceUponAMemory.Main;
 using UnityEngine;
+using Health = OnceUponAMemory.Diego.Health;
 
 public class ProjectileScript : MonoBehaviour
 {

@@ -24,11 +24,13 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if ((Input.GetMouseButtonDown(0)) && (Time.time >= cooldownTimer)) // Si hace Click Izquierdo y pasó el tiempo de Enfriamiento
+            /*if ((Input.GetMouseButtonDown(0)) && (Time.time >= cooldownTimer)) // Si hace Click Izquierdo y pasó el tiempo de Enfriamiento
             {
                 Attack(); // Realizamos el Ataque
                 cooldownTimer = Time.time + attackCooldown; // Sumamos el Tiempo de Enfriamiento y tiempo que lleva la aplicación ejecutandose (Time.time)
             }
+            */
+            
         }
 
         private void Attack()
@@ -37,9 +39,9 @@ namespace OnceUponAMemory.Main
 
             foreach (Collider2D target in targetsHit) // Esto es un bucle (como un for) que se fija cada Objetivo dentro de los Objetivos Alcanzados
             {
-                if (target.GetComponent<Health>() != null) // Nos fijamos si el Objetivo tiene componente Vida
+                if (target.GetComponent<EnemyHealth>() != null) // Nos fijamos si el Objetivo tiene componente Vida
                 {
-                    target.GetComponent<Health>().TakeDamage(damage); // Aplicamos el daño
+                    target.GetComponent<EnemyHealth>().TakePlayerDamage(damage); // Aplicamos el daño
                 }
             }
         }
