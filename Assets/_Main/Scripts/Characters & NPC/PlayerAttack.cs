@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
         if (!Input.GetButtonDown("Fire1") || !(Time.time >= cooldownTimer)) return;
         PlayerIs();
         cooldownTimer = Time.time + attackCooldown;
+        SoundManager.PlaySound("AttackSound");
     }
     private void PlayerIs()
     {

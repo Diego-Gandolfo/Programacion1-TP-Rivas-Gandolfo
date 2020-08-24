@@ -6,17 +6,15 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public static AudioClip Footsteps4, AttackSound, ItemPickUp, EnemyHitRebuild;
+    public static AudioClip Footsteps4, AttackSound, ItemPickUp, EnemyHitRebuild, Dash;
 
     private static AudioSource _audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        Footsteps4 = Resources.Load<AudioClip>("Footsteps4");
-        ItemPickUp = Resources.Load<AudioClip>("ItemPickUp");
-        AttackSound = Resources.Load<AudioClip>("AttackSound");
+        Dash = Resources.Load<AudioClip>("Dash");
         EnemyHitRebuild = Resources.Load<AudioClip>("EnemyHitRebuild");
-        
+        AttackSound = Resources.Load<AudioClip>("AttackSound");
         _audioSource = GetComponent<AudioSource>();
     }
 
@@ -24,10 +22,10 @@ public class SoundManager : MonoBehaviour
     {
         switch (clip)
         {
-            case "Footsteps4":
+            /*case "Footsteps4":
                 _audioSource.PlayOneShot(Footsteps4);
                 break;
-            
+            */
             case "ItemPickUp":
                 _audioSource.PlayOneShot(ItemPickUp);
                 break;
@@ -39,7 +37,9 @@ public class SoundManager : MonoBehaviour
             case "EnemyHitRebuild":
                 _audioSource.PlayOneShot(EnemyHitRebuild);
                 break;
-            
+            case "Dash":
+                _audioSource.PlayOneShot(Dash);
+                break;
         }
     }
 }

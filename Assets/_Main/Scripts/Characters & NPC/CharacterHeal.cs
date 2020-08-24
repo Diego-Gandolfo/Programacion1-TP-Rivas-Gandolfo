@@ -15,10 +15,12 @@ namespace OnceUponAMemory.Main
         private float cooldownTimer = 0.0f;
         private PlayerHealth vida;
 
-        public Health_Bar_Script healthBar;
+        //public Health_Bar_Script healthBar;
         private void Start()
         {
-            //if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + "no tiene componente Health");
+            //CAMBIE EL COMPONENTE A PLAYERHEALTH PORQUE ES EL QUE ESTABA USANDO. !!
+            
+            if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + "no tiene componente Health");
             if (gameObject.GetComponent<PlayerHealth>() != null) vida = gameObject.GetComponent<PlayerHealth>();
             
         }
@@ -31,7 +33,7 @@ namespace OnceUponAMemory.Main
                 {
                     DoHeal(amountHeal);
                     cooldownTimer = Time.time + cooldown;
-                    healthBar.SetHealth(vida.currentHealth);
+                    //healthBar.SetHealth(vida.currentHealth);
                     Debug.Log("im healing");
                 }
             }

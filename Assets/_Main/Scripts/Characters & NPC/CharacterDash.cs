@@ -30,6 +30,7 @@ namespace OnceUponAMemory.Main
                 cooldownTimer = Time.time + cooldown; // Reseteamos el contador del Cooldown
                 // TODO: Efecto de Particulas
                 // TODO: Animacion
+                SoundManager.PlaySound("Dash");
             }
 
             // TODO: UI?
