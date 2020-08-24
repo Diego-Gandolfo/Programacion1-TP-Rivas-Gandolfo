@@ -238,6 +238,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHeatlh: 0
   healthBar: {fileID: 8324330871823499006}
+  animator: {fileID: 3067806697278334615}
 --- !u!114 &3067806697278334612
 MonoBehaviour:
   m_ObjectHideFlags: 0

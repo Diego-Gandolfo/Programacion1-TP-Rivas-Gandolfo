@@ -300,6 +300,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &811777840 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3067806697278334615, guid: 8d6ef61020641754f9c7cc72717c41eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 3067806697274287670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1165612551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6463375037524128570, guid: a2020f44452ecdf499740a483623a30e,
@@ -459,10 +465,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 301002126, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 519420031}
     - target: {fileID: 6419598956448846664, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -472,16 +474,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6419598956806825518, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 6419598956806825518, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6463375038460266259, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
@@ -556,6 +548,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3067806697278334610, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 811777840}
     - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: patrolCenter
@@ -571,6 +568,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1406887371}
+    - target: {fileID: 3067806697278334632, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334632, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334632, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3067806697278334633, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_LocalPosition.x

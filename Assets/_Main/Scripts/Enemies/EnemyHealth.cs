@@ -8,7 +8,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float currentHeatlh;
 
     public Health_Bar_Script healthBar;
-    
+
+    public Animator animator;
     void Start()
     {
         currentHeatlh = maxHealth;
@@ -19,6 +20,8 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHeatlh -= damage;
 
+        animator.SetTrigger("TakeDamage");
+        
         healthBar.SetHealth(currentHeatlh);
 
 

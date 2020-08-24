@@ -426,7 +426,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   player: {fileID: 6463375038460266261}
-  blood: {fileID: 0}
+  blood: {fileID: 6556957853752805708, guid: 4e1c3f614571d944db5271ecabc11a10, type: 3}
   healthBar: {fileID: 6419598956806825516}
 --- !u!114 &2885070718264219013
 MonoBehaviour:
@@ -612,12 +612,12 @@ PrefabInstance:
     - target: {fileID: 6419598957591157502, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.010243652
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6419598957591157502, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.010209539
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6419598957591157503, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}

@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        //Instantiate(blood, transform.position, Quaternion.identity);
+        Instantiate(blood, transform.position, Quaternion.identity);
 
         if (currentHealth <= 0) Die();
     }
