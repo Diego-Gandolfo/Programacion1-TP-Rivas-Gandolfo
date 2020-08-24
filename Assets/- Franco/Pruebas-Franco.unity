@@ -238,6 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHeatlh: 0
+  healthBar: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &538661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &130165266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -716,6 +718,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHeatlh: 0
+  healthBar: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!61 &244425535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2000,6 +2004,7 @@ MonoBehaviour:
   player: {fileID: 719982292}
   projectile: {fileID: 5456937896099269561, guid: 6a00dbea5101cf74186f7b4a384d7386,
     type: 3}
+  animator: {fileID: 0}
 --- !u!61 &955533837
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2212,6 +2217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHeatlh: 0
+  healthBar: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1065439499
 GameObject:
   m_ObjectHideFlags: 0
