@@ -13,7 +13,7 @@ namespace OnceUponAMemory.Main
         public GameObject player;
         public GameObject blood;
 
-        public Health_Bar_Script healthBar;
+        public HealthBar healthBar;
 
         void Start()
         {

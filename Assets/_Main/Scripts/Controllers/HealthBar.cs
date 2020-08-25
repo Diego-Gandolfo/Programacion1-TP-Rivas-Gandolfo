@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace OnceUponAMemory.Main
 {
-    public class Health_Bar_Script : MonoBehaviour
+    public class HealthBar : MonoBehaviour
     {
         public Slider slider;
 

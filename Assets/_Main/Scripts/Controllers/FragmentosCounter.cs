@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace OnceUponAMemory.Main
 {
-    public class CounterScript : MonoBehaviour
+    public class FragmentosCounter : MonoBehaviour
     {
         Text CounterText;
         public static int Amount;

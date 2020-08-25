@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace OnceUponAMemory.Franco
 {
-    public class Health_PowerUp : MonoBehaviour
+    public class HealthPowerUp : MonoBehaviour
     {
         public float healthBonus = 2;
         PlayerHealth playerHealth;

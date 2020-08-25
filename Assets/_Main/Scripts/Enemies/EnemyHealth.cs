@@ -9,7 +9,7 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float maxHealth = 10;
         [SerializeField] private float currentHeatlh;
 
-        public Health_Bar_Script healthBar;
+        public HealthBar healthBar;
 
         [SerializeField] private string audioDamage; // En el Inspector escribimos el nombre del Archivo, que sería lo que pones entre comillas... Ejemplo, en el SpiderMonster el audio de daño era "SpiderDamage", en el inspector lo escribimos sin comillas
 
