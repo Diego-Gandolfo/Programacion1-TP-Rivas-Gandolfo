@@ -27,10 +27,12 @@ namespace OnceUponAMemory.Main
             animator.SetTrigger("TakeDamage");
 
             healthBar.SetHealth(currentHeatlh);
-
+            
             if (currentHeatlh <= 0) Die();
         }
-
+        
+        
+        
         void Die()
         {
             Destroy(gameObject);

@@ -4766,6 +4766,7 @@ GameObject:
   - component: {fileID: 6096331242879597167}
   - component: {fileID: 6096331242879597160}
   - component: {fileID: 6096331242879597165}
+  - component: {fileID: 553376107}
   m_Layer: 0
   m_Name: FragmentosDeMemoria
   m_TagString: Untagged
@@ -4866,3 +4867,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a447fa3c4ce06924c95547946d06a31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &553376107
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6096331242879597161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69adea86da60e0f41bf3e885cd5d8c5e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
