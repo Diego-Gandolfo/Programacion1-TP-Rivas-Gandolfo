@@ -22,7 +22,8 @@ namespace OnceUponAMemory.Main
         public void TakePlayerDamage(float damage)
         {
             currentHeatlh -= damage;
-
+            SoundManager.PlaySound("SpiderDamage");
+            
             animator.SetTrigger("TakeDamage");
 
             healthBar.SetHealth(currentHeatlh);
@@ -34,6 +35,7 @@ namespace OnceUponAMemory.Main
         {
             Destroy(gameObject);
             healthBar.gameObject.SetActive(false);
+            //SoundManager.PlaySound("SpiderDie");
         }
     }
 }
