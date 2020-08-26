@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 8925250742913238376}
   - component: {fileID: 2885070718264219013}
   - component: {fileID: 3502322050444972901}
+  - component: {fileID: 1358682853716740288}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -482,6 +483,18 @@ MonoBehaviour:
   damage: 1
   attackCooldown: 1
   cooldownTimer: 0
+--- !u!114 &1358682853716740288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463375038460266261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ade01ea6de86449a3a2c5bfe741a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6463375038894307587
 GameObject:
   m_ObjectHideFlags: 0
