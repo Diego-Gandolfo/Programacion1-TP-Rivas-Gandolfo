@@ -15,6 +15,7 @@ namespace OnceUponAMemory.Main
 
         public HealthBar healthBar;
 
+        
         void Start()
         {
             currentHealth = maxHealth;
@@ -31,6 +32,7 @@ namespace OnceUponAMemory.Main
             healthBar.SetHealth(currentHealth);
             //BLOOD VFX
             Instantiate(blood, transform.position, Quaternion.identity);
+
 
             if (currentHealth <= 0) Die();
         }
