@@ -15,11 +15,7 @@ namespace OnceUponAMemory.Main
         public Animator animator;
 
         public Transform player;
-        private void Update()
-        {
-            transform.LookAt(player.up);
-        }
-
+        
         private void OnTriggerStay2D(Collider2D other)
         {
             PlayerHealth player = other.GetComponent<PlayerHealth>();
