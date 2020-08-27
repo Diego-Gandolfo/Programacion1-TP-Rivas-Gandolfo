@@ -15,13 +15,14 @@ namespace OnceUponAMemory.Main
         private float cooldownTimer = 0.0f;
         private PlayerHealth vida;
 
-        //public Health_Bar_Script healthBar;
+        [SerializeField] private HealthBar healthBar;
+
         private void Start()
         {
-            //CAMBIE EL COMPONENTE A PLAYERHEALTH PORQUE ES EL QUE ESTABA USANDO. !!
-            
-            if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + "no tiene componente Health");
+            if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + "no tiene componente PlayerHealth");
             if (gameObject.GetComponent<PlayerHealth>() != null) vida = gameObject.GetComponent<PlayerHealth>();
+            if (gameObject.GetComponent<HealthBar>() == null) Debug.LogError(gameObject.name + "no tiene componente HealthBar");
+            if (gameObject.GetComponent<HealthBar>() != null) healthBar = gameObject.GetComponent<HealthBar>();
             
         }
 
@@ -29,12 +30,9 @@ namespace OnceUponAMemory.Main
         {
             if (vida != null)
             {
-                if (Input.GetKeyDown(KeyCode.C) && Time.time > cooldownTimer)
+                if (Input.GetKeyDown(KeyCode.C) && (Time.time > cooldownTimer) && (vida.currentHealth < vida.maxHealth))
                 {
                     DoHeal(amountHeal);
-                    cooldownTimer = Time.time + cooldown;
-                    //healthBar.SetHealth(vida.currentHealth);
-                    Debug.Log("im healing");
                 }
             }
             
@@ -42,14 +40,20 @@ namespace OnceUponAMemory.Main
 
         private void DoHeal(float amount)
         {
-            if (vida.currentHealth + amount <= vida.maxHealth)
+            vida.currentHealth += amount;
+
+            if (vida.currentHealth > vida.maxHealth)
             {
-                vida.currentHealth += amount;
-                // TODO: Efecto Particulas
-                // TODO: UI
-                // TODO: Actualizar Barra Vida
-                
+                vida.currentHealth = vida.maxHealth;
             }
+
+            // TODO: Efecto Particulas
+            // TODO: UI
+            // TODO: Actualizar Barra Vida
+
+            cooldownTimer = Time.time + cooldown;
+            if (healthBar != null) healthBar.SetHealth(vida.currentHealth);
+            Debug.Log("im healing");
         }
     }
 }

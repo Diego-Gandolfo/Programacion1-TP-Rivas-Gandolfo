@@ -461,8 +461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d51b30a700baf459bccb88e9002e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountHeal: 10
+  amountHeal: 2.5
   cooldown: 2.5
+  healthBar: {fileID: 6419598956806825516}
 --- !u!114 &3502322050444972901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 6419598957591157502, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.09
+      value: 2.71
       objectReference: {fileID: 0}
     - target: {fileID: 6419598957591157502, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
