@@ -13,16 +13,16 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float amountHeal = 10.0f;
         [SerializeField] private float cooldown = 2.5f;
         private float cooldownTimer = 0.0f;
-        private PlayerHealth vida;
 
-        [SerializeField] private HealthBar healthBar;
+        private PlayerHealth vida;
+        private HealthBar healthBar;
 
         private void Start()
         {
-            if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + "no tiene componente PlayerHealth");
+            if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerHealth");
             if (gameObject.GetComponent<PlayerHealth>() != null) vida = gameObject.GetComponent<PlayerHealth>();
-            if (gameObject.GetComponent<HealthBar>() == null) Debug.LogError(gameObject.name + "no tiene componente HealthBar");
-            if (gameObject.GetComponent<HealthBar>() != null) healthBar = gameObject.GetComponent<HealthBar>();
+            if (gameObject.GetComponentInChildren<HealthBar>() == null) Debug.LogError(gameObject.name + " no tiene componente HealthBar");
+            if (gameObject.GetComponentInChildren<HealthBar>() != null) healthBar = gameObject.GetComponentInChildren<HealthBar>();
             
         }
 
