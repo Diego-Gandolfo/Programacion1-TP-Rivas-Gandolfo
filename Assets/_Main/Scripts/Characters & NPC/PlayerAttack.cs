@@ -14,17 +14,17 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float attackCooldown = 1.0f;
         [SerializeField] private float cooldownTimer = 0.0f;
 
+        [SerializeField] private Animator weaponAnimator = null;
+
         private void Update()
         {
             if (!Input.GetButtonDown("Fire1") || !(Time.time >= cooldownTimer)) return;
             PlayerIs();
-            cooldownTimer = Time.time + attackCooldown;
-            SoundManager.PlaySound("AttackSound");
         }
         private void PlayerIs()
         {
             Collider2D[] targetshit = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, targetsLayerMask);
-            Debug.Log(targetshit);
+
             foreach (Collider2D target in targetshit)
             {
                 if (target.GetComponent<EnemyHealth>() != null)
@@ -34,6 +34,11 @@ namespace OnceUponAMemory.Main
                     SoundManager.PlaySound("EnemyHitRebuild");
                 }
             }
+
+            SoundManager.PlaySound("AttackSound");
+            weaponAnimator.SetTrigger("doAttack");
+
+            cooldownTimer = Time.time + attackCooldown;
         }
     }
 }

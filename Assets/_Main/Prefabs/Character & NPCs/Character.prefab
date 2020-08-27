@@ -57,7 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1104220363
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &301002125
@@ -167,8 +167,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -952132635
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 32d36b1c773a12f478f73eed26928862, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -313,9 +313,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -952132635
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3f971e6fa93ba214badae9e1d6de8bb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -483,7 +483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountHeal: 2.5
   cooldown: 2.5
-  healthBar: {fileID: 6419598956806825516}
 --- !u!114 &3502322050444972901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +503,7 @@ MonoBehaviour:
   damage: 1
   attackCooldown: 1
   cooldownTimer: 0
+  weaponAnimator: {fileID: 2930194904329668053}
 --- !u!114 &1358682853716740288
 MonoBehaviour:
   m_ObjectHideFlags: 0
