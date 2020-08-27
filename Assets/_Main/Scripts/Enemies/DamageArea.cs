@@ -9,28 +9,23 @@ namespace OnceUponAMemory.Main
     {
         private int damage = 2;
         public float damageRate = 2f;
-        private float nextDamage = 0f;
+        private float nextDamage;
 
-        /*private void OnCollisionEnter2D(Collision2D collision)
+        private void Update()
         {
-            PlayerHealth TopDownCharacter = collision.transform.GetComponent<PlayerHealth>();
-            if (TopDownCharacter != null)
-            {
-                TopDownCharacter.TakeDamage(damage);
-                Debug.Log("im taking damage");
-            }
+            //ACÁ INTENTÉ APLICAR UN POCO LO QUE VIMOS EN CLASE, PERO AÚN ASÍ NO FUNCIONA COMO YO QUISIERA.
+
+            //nextDamage += Time.deltaTime;
         }
-        */
-        
-        //QUERÍA HACER QUE EL DAÑO FUERA CON ON TRIGGER STAY, PERO POR AHORA NO FUNCIONA!
-        private void OnTriggerStay(Collider other)
+
+        private void OnTriggerStay2D(Collider2D other)
         {
-            PlayerHealth Player = other.transform.GetComponent<PlayerHealth>();
-            if (Player != null && Time.time >= nextDamage)
+            PlayerHealth player = other.transform.GetComponent<PlayerHealth>();
+            if (player != null && Time.time >= nextDamage)
             {
-                Player.TakeDamage(damage);
+                player.TakeDamage(damage);
+                
                 nextDamage = Time.time + 1f / damageRate;
-                Debug.Log("im damage");
             }
         }
     }
