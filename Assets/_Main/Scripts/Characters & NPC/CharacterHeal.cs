@@ -21,7 +21,7 @@ namespace OnceUponAMemory.Main
         private PlayerHealth vida;
         private HealthBar healthBar;
 
-        [SerializeField] private Image imageUI;
+        [SerializeField] private Image imageUI = null;
 
         private void Start()
         {

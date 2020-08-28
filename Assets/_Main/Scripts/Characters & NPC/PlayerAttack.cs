@@ -19,7 +19,7 @@ namespace OnceUponAMemory.Main
 
         [SerializeField] private Animator animatorSword = null;
 
-        [SerializeField] private Image imageUI;
+        [SerializeField] private Image imageUI = null;
 
         private void Start()
         {

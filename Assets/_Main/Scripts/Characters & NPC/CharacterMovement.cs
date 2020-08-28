@@ -11,7 +11,7 @@ namespace OnceUponAMemory.Main
     public class CharacterMovement : MonoBehaviour
     {
         [SerializeField] private float movementSpeed = 7; // Configuramos la Velocidad de Movimiento
-        [SerializeField] private Animator animatorMovement;
+        [SerializeField] private Animator animatorMovement = null;
 
         private void Update()
         {

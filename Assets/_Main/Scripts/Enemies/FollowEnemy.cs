@@ -7,9 +7,9 @@ namespace OnceUponAMemory.Main
 {
     public class FollowEnemy : MonoBehaviour
     {
-        [SerializeField] private float speed;
-        [SerializeField] private float stopDistance;
-        [SerializeField] private float retreatDistance;
+        [SerializeField] private float speed = 2;
+        [SerializeField] private float stopDistance = 3;
+        [SerializeField] private float retreatDistance = 2;
         
         public Transform player;
 

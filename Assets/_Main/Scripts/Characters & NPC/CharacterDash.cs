@@ -20,7 +20,7 @@ namespace OnceUponAMemory.Main
         private bool canDash = true; // Indicaremos si puede hacer el Dash
         private bool canCount = false;
 
-        [SerializeField] private Image imageUI;
+        [SerializeField] private Image imageUI = null;
 
         private void Start()
         {
