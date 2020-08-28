@@ -733,7 +733,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1013,7 +1013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &674397621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,12 +1656,12 @@ PrefabInstance:
     - target: {fileID: 6419598957677784984, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6419598957677784984, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edba416bdc7b46b4ab6ab82426ea2ddb, type: 3}
@@ -1689,7 +1689,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473440668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3303}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7267327, y: 0.7267327, z: 0.7267327}
   m_Children:
   - {fileID: 2088426293}
@@ -2386,36 +2386,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4481038597817806568, guid: c2fb9524d5f36dd4781d36c9a9844164,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4481038597817806568, guid: c2fb9524d5f36dd4781d36c9a9844164,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.40020454
-      objectReference: {fileID: 0}
-    - target: {fileID: 4481038597817806568, guid: c2fb9524d5f36dd4781d36c9a9844164,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1.4995911
-      objectReference: {fileID: 0}
-    - target: {fileID: 4481038597817806568, guid: c2fb9524d5f36dd4781d36c9a9844164,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.114533424
-      objectReference: {fileID: 0}
-    - target: {fileID: 4481038597817806568, guid: c2fb9524d5f36dd4781d36c9a9844164,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 5.029067
-      objectReference: {fileID: 0}
-    - target: {fileID: 4481038597817806571, guid: c2fb9524d5f36dd4781d36c9a9844164,
-        type: 3}
-      propertyPath: damageRate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4481038597817806572, guid: c2fb9524d5f36dd4781d36c9a9844164,
         type: 3}
       propertyPath: m_Name

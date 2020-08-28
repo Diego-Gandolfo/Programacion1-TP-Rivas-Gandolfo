@@ -35,7 +35,7 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.C) && (canHeal))
+            if (Input.GetKeyDown(KeyCode.C) && (canHeal) && (vida.currentHealth < vida.maxHealth))
             {
                 canHeal = false;
                 canCount = true;

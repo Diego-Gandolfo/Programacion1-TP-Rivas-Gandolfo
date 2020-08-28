@@ -322,6 +322,7 @@ MonoBehaviour:
   stopDistance: 3
   retreatDistance: 2
   player: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1001 &3067806695761323010
 PrefabInstance:
   m_ObjectHideFlags: 0
