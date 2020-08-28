@@ -22,8 +22,11 @@ namespace OnceUponAMemory.Main
 
         [SerializeField] private Image imageUI = null;
 
+        public GameObject trail;
+        
         private void Start()
         {
+            trail.gameObject.SetActive(false);
             durationTimer = duration; // Inicializamos el contador de Duracion
             cooldownTimer = cooldown;
         }
@@ -40,14 +43,28 @@ namespace OnceUponAMemory.Main
                 // TODO: Animacion
 
                 SoundManager.PlaySound("Dash");
+                
+                
             }
 
-            // TODO: UI?
+           // TODO: UI?
 
+            if (canDash != true)
+            {
+                trail.gameObject.SetActive(true);
+            }
+            else
+            {
+                trail.gameObject.SetActive(false);
+            }
+
+          
             if (durationTimer > 0) // Verificamos si ya termino de contar
             {
                 transform.position = Vector2.MoveTowards(transform.position, mousePosition, speed * Time.deltaTime); ; // Nos movemos al punto indicado
                 durationTimer -= Time.deltaTime; // Vamos llevando la cuenta regresiva
+                
+                
             }
 
             if ((cooldownTimer <= 0) && (canCount))
@@ -56,11 +73,14 @@ namespace OnceUponAMemory.Main
                 canDash = true;
                 canCount = false;
                 imageUI.fillAmount = 1;
+                
+                
             }
             else if ((cooldownTimer > 0) && (canCount))
             {
                 cooldownTimer -= Time.deltaTime;
                 imageUI.fillAmount = 1 - (cooldownTimer / cooldown);
+                
             }
         }
     }
