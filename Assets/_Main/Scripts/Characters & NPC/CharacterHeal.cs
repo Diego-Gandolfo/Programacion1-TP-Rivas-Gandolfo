@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OnceUponAMemory.Main
 {
@@ -13,10 +14,14 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float amountHeal = 10.0f;
         [SerializeField] private float cooldown = 2.5f;
         private float cooldownTimer = 0.0f;
+        private bool canCount = false;
+        private bool canHeal = true;
 
         [SerializeField] private Animator animatorEffects = null;
         private PlayerHealth vida;
         private HealthBar healthBar;
+
+        [SerializeField] private Image imageUI;
 
         private void Start()
         {
@@ -24,19 +29,30 @@ namespace OnceUponAMemory.Main
             if (gameObject.GetComponent<PlayerHealth>() != null) vida = gameObject.GetComponent<PlayerHealth>();
             if (gameObject.GetComponentInChildren<HealthBar>() == null) Debug.LogError(gameObject.name + " no tiene componente HealthBar");
             if (gameObject.GetComponentInChildren<HealthBar>() != null) healthBar = gameObject.GetComponentInChildren<HealthBar>();
-            
+
+            cooldownTimer = cooldown;
         }
 
         private void Update()
         {
-            if (vida != null)
+            if (Input.GetKeyDown(KeyCode.C) && (canHeal))
             {
-                if (Input.GetKeyDown(KeyCode.C) && (Time.time > cooldownTimer) && (vida.currentHealth < vida.maxHealth))
-                {
-                    DoHeal(amountHeal);
-                }
+                canHeal = false;
+                canCount = true;
+                DoHeal(amountHeal);
             }
-            
+
+            if ((cooldownTimer <= 0) && (canCount))
+            {
+                cooldownTimer = cooldown;
+                canHeal = true;
+                canCount = false;
+            }
+            else if ((cooldownTimer > 0) && (canCount))
+            {
+                cooldownTimer -= Time.deltaTime;
+                imageUI.fillAmount = 1 - (cooldownTimer / cooldown);
+            }
         }
 
         private void DoHeal(float amount)
@@ -50,9 +66,10 @@ namespace OnceUponAMemory.Main
 
             // TODO: Efecto Particulas
             animatorEffects.SetTrigger("doHeal"); // Efecto provisorio
-            // TODO: UI
+            imageUI.fillAmount = 1;
+            SoundManager.PlaySound("PickUpItemHeal");
 
-            cooldownTimer = Time.time + cooldown;
+
             if (healthBar != null) healthBar.SetHealth(vida.currentHealth);
             //Debug.Log("im healing");
         }

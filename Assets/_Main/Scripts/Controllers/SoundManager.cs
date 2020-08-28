@@ -8,7 +8,7 @@ namespace OnceUponAMemory.Main
     public class SoundManager : MonoBehaviour
     {
 
-        public static AudioClip SpiderDie, AttackSound, PickUpItem, EnemyHitRebuild, Dash, SpiderPatrol, PlayerTakeDamage, SpiderDamage;
+        public static AudioClip SpiderDie, AttackSound, PickUpItem, EnemyHitRebuild, Dash, SpiderPatrol, PlayerTakeDamage, SpiderDamage, PickUpItemHeal;
 
         private static AudioSource _audioSource;
 
@@ -22,7 +22,8 @@ namespace OnceUponAMemory.Main
             EnemyHitRebuild = Resources.Load<AudioClip>("EnemyHitRebuild");
             AttackSound = Resources.Load<AudioClip>("AttackSound");
             PickUpItem = Resources.Load<AudioClip>("PickUpItem");
-            
+            PickUpItemHeal = Resources.Load<AudioClip>("PickUpItemHeal");
+
             _audioSource = GetComponent<AudioSource>();
         }
 
@@ -60,6 +61,9 @@ namespace OnceUponAMemory.Main
                     break;
                 case "SpiderDie":
                     _audioSource.PlayOneShot(SpiderDie);
+                    break;
+                case "PickUpItemHeal":
+                    _audioSource.PlayOneShot(PickUpItemHeal);
                     break;
             }
         }

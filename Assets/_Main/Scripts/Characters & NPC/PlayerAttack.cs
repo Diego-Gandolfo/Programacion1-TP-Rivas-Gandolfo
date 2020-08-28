@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OnceUponAMemory.Main
 {
@@ -13,15 +14,41 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float damage = 1.0f;
         [SerializeField] private float attackCooldown = 1.0f;
         [SerializeField] private float cooldownTimer = 0.0f;
+        private bool canAttack = true;
+        private bool canCount = false;
 
         [SerializeField] private Animator animatorSword = null;
 
+        [SerializeField] private Image imageUI;
+
+        private void Start()
+        {
+            cooldownTimer = attackCooldown;
+        }
+
         private void Update()
         {
-            if (!Input.GetButtonDown("Fire1") || !(Time.time >= cooldownTimer)) return;
-            PlayerIs();
+            if (Input.GetButtonDown("Fire1") && (canAttack))
+            {
+                canAttack = false;
+                canCount = true;
+                Attack();
+            }
+
+            if ((cooldownTimer <= 0) && (canCount))
+            {
+                cooldownTimer = attackCooldown;
+                canAttack = true;
+                canCount = false;
+                imageUI.fillAmount = 1;
+            }
+            else if ((cooldownTimer > 0) && (canCount))
+            {
+                cooldownTimer -= Time.deltaTime;
+                imageUI.fillAmount = 1 - (cooldownTimer / attackCooldown);
+            }
         }
-        private void PlayerIs()
+        private void Attack()
         {
             Collider2D[] targetshit = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, targetsLayerMask);
 
@@ -37,8 +64,11 @@ namespace OnceUponAMemory.Main
 
             SoundManager.PlaySound("AttackSound");
             animatorSword.SetTrigger("doAttack");
+        }
 
-            cooldownTimer = Time.time + attackCooldown;
+        private void OnDrawGizmosSelected()
+        {
+            if (attackPosition != null) Gizmos.DrawWireSphere(attackPosition.position, attackRange); // Esto es para dibujar donde está el Overlap
         }
     }
 }
