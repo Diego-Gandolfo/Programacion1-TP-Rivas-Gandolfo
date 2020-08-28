@@ -972,7 +972,6 @@ GameObject:
   - component: {fileID: 2885070718264219013}
   - component: {fileID: 3502322050444972901}
   - component: {fileID: 1358682853716740288}
-  - component: {fileID: 8706116507539095809}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -1048,6 +1047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 7
+  animatorMovement: {fileID: 4156048612776746944}
 --- !u!114 &5578547246784976994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,25 +1131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorMovement: {fileID: 4156048612776746944}
---- !u!95 &8706116507539095809
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6463375038460266261}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 88b89fd3a1f6f814b8638f86d0d6c8b9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6463375038894307587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,12 +1391,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edba416bdc7b46b4ab6ab82426ea2ddb, type: 3}
---- !u!224 &6419598956806825518 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6419598957591157502, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1463827664}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6419598956806825516 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6419598957591157500, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
@@ -1428,3 +1403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b10d435135a7549a3f0b9549782daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6419598956806825518 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6419598957591157502, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1463827664}
+  m_PrefabAsset: {fileID: 0}
