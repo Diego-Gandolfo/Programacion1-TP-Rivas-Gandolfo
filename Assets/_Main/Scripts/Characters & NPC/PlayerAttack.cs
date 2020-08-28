@@ -14,7 +14,7 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float attackCooldown = 1.0f;
         [SerializeField] private float cooldownTimer = 0.0f;
 
-        [SerializeField] private Animator weaponAnimator = null;
+        [SerializeField] private Animator animatorSword = null;
 
         private void Update()
         {
@@ -30,13 +30,13 @@ namespace OnceUponAMemory.Main
                 if (target.GetComponent<EnemyHealth>() != null)
                 {
                     target.GetComponent<EnemyHealth>().TakePlayerDamage(damage);
-                    Debug.Log("im being damaged");
+                    //Debug.Log("im being damaged");
                     SoundManager.PlaySound("EnemyHitRebuild");
                 }
             }
 
             SoundManager.PlaySound("AttackSound");
-            weaponAnimator.SetTrigger("doAttack");
+            animatorSword.SetTrigger("doAttack");
 
             cooldownTimer = Time.time + attackCooldown;
         }

@@ -14,6 +14,7 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float cooldown = 2.5f;
         private float cooldownTimer = 0.0f;
 
+        [SerializeField] private Animator animatorEffects = null;
         private PlayerHealth vida;
         private HealthBar healthBar;
 
@@ -48,12 +49,12 @@ namespace OnceUponAMemory.Main
             }
 
             // TODO: Efecto Particulas
+            animatorEffects.SetTrigger("doHeal"); // Efecto provisorio
             // TODO: UI
-            // TODO: Actualizar Barra Vida
 
             cooldownTimer = Time.time + cooldown;
             if (healthBar != null) healthBar.SetHealth(vida.currentHealth);
-            Debug.Log("im healing");
+            //Debug.Log("im healing");
         }
     }
 }

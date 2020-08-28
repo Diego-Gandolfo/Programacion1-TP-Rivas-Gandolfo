@@ -33,7 +33,7 @@ namespace OnceUponAMemory.Main
             if (Other.CompareTag("Player"))
             {
                 DestroyProjectile();
-                Debug.Log("destroyed");
+                //Debug.Log("destroyed");
             }
 
             PlayerHealth TopDownCharacter = Other.transform.GetComponent<PlayerHealth>();
