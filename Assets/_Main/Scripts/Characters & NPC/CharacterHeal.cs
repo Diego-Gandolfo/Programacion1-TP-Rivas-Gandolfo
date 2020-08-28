@@ -59,7 +59,7 @@ namespace OnceUponAMemory.Main
         {
             vida.currentHealth += amount;
 
-            if (vida.currentHealth > vida.maxHealth)
+            if (vida.currentHealth >= vida.maxHealth)
             {
                 vida.currentHealth = vida.maxHealth;
             }
@@ -68,7 +68,7 @@ namespace OnceUponAMemory.Main
             animatorEffects.SetTrigger("doHeal"); // Efecto provisorio
             imageUI.fillAmount = 1;
             SoundManager.PlaySound("PickUpItemHeal");
-
+            
 
             if (healthBar != null) healthBar.SetHealth(vida.currentHealth);
             //Debug.Log("im healing");
