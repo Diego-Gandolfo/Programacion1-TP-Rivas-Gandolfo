@@ -21,9 +21,12 @@ namespace OnceUponAMemory.Main
 
         [SerializeField] private Image imageUI = null;
 
+        public GameObject swordTrail;
+        
         private void Start()
         {
             cooldownTimer = attackCooldown;
+            swordTrail.gameObject.SetActive(false);
         }
 
         private void Update()
@@ -35,12 +38,22 @@ namespace OnceUponAMemory.Main
                 Attack();
             }
 
+            if (canAttack != true)
+            {
+                swordTrail.gameObject.SetActive(true);
+            }
+            else
+            {
+                swordTrail.gameObject.SetActive(false);
+            }
+            
             if ((cooldownTimer <= 0) && (canCount))
             {
                 cooldownTimer = attackCooldown;
                 canAttack = true;
                 canCount = false;
                 imageUI.fillAmount = 1;
+                
             }
             else if ((cooldownTimer > 0) && (canCount))
             {

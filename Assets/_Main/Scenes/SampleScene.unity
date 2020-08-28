@@ -803,8 +803,8 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521033686}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
@@ -843,7 +843,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.69375
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -851,8 +851,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.59324235
-        value: 0.36175776
+        time: 0.609909
+        value: 0.54925776
         inSlope: -1.447835
         outSlope: -1.447835
         tangentMode: 0
@@ -900,10 +900,10 @@ TrailRenderer:
       m_Mode: 0
       m_NumColorKeys: 3
       m_NumAlphaKeys: 3
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 2
+    numCapVertices: 2
     alignment: 1
-    textureMode: 0
+    textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
   m_MinVertexDistance: 0.1
@@ -2516,17 +2516,17 @@ PrefabInstance:
     - target: {fileID: 3067806697278334635, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8324330871367732122, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8324330871367732122, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6ef61020641754f9c7cc72717c41eb, type: 3}
