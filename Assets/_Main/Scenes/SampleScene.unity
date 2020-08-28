@@ -624,13 +624,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311949384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.42, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.008552002, w: 0.99996346}
+  m_LocalPosition: {x: -0.11, y: 0.66, z: 0}
   m_LocalScale: {x: 0.125, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 674397624}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.98}
 --- !u!212 &311949386
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -694,8 +694,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRate: 2.5
+  speed: 5
   animator: {fileID: 311949390}
-  player: {fileID: 1406887371}
+  player: {fileID: 1877107832}
 --- !u!61 &311949389
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1151,13 +1152,15 @@ GameObject:
   - component: {fileID: 674397622}
   - component: {fileID: 674397625}
   - component: {fileID: 674397621}
+  - component: {fileID: 674397626}
+  - component: {fileID: 674397627}
   m_Layer: 9
   m_Name: EnemyMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &674397621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,14 +1260,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674397620}
-  m_LocalRotation: {x: -0, y: -0, z: -0.003258361, w: 0.9999947}
-  m_LocalPosition: {x: -6.54, y: 0.8753011, z: -1.1259766}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0032423548, w: 0.99999475}
+  m_LocalPosition: {x: -6.54, y: 0.8753011, z: -1.125977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 311949385}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.37300003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.372}
 --- !u!114 &674397625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1285,38 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   audioDamage: EnemyHitRebuild
   animator: {fileID: 0}
+--- !u!114 &674397626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674397620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7a94f3c56881c4abc85dfaea73e823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagObject: Player
+--- !u!95 &674397627
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674397620}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 857010c8a50702543979ed34c5b71d5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1034913391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,6 +1777,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1877107832 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6463375036883388366, guid: a2020f44452ecdf499740a483623a30e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089180874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1891628784
 GameObject:
   m_ObjectHideFlags: 0

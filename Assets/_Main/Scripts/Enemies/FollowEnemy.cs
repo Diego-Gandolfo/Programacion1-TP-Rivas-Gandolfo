@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace OnceUponAMemory.Main
 {
     public class FollowEnemy : MonoBehaviour
     {
-        public float speed;
-        public float stopDistance;
-        public float retreatDistance;
+        [SerializeField] private float speed;
+        [SerializeField] private float stopDistance;
+        [SerializeField] private float retreatDistance;
+        
         public Transform player;
 
+        public Animator animator;
         void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -18,6 +21,7 @@ namespace OnceUponAMemory.Main
 
         void Update()
         {
+            
             //SE CHEQUEA SI LA DISTANCIA EN LA QUE ESTÁ EL JUGADOR ES MAYOR A LA "STOP DISTANCE"
             if (Vector2.Distance(transform.position, player.position) > stopDistance)
             {
@@ -28,7 +32,7 @@ namespace OnceUponAMemory.Main
             else if (Vector2.Distance(transform.position, player.position) < stopDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
             {
                 transform.position = this.transform.position;
-
+                
             }
             //SI ES MENOR QUE LA DISTANCIA DE RETREAT, SE MUEVE CON VELOCIDAD NEGATIVA
             else if (Vector2.Distance(transform.position, player.position) < retreatDistance)

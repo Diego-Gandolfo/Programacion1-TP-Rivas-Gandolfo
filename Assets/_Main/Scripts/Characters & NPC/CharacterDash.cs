@@ -20,8 +20,6 @@ namespace OnceUponAMemory.Main
         private bool canDash = true; // Indicaremos si puede hacer el Dash
         private bool canCount = false;
 
-        public Animator animator;
-        
         [SerializeField] private Image imageUI;
 
         private void Start()
@@ -40,9 +38,7 @@ namespace OnceUponAMemory.Main
                 durationTimer = duration; // Inicializamos el contador de Duracion
                 // TODO: Efecto de Particulas
                 // TODO: Animacion
-                
-                animator.SetTrigger("camShake");
-                
+
                 SoundManager.PlaySound("Dash");
             }
 
