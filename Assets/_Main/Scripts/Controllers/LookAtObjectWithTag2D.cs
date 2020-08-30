@@ -31,7 +31,7 @@ namespace OnceUponAMemory.Main
 
                 transform.up = direction; // Actualizamos el Transform para que mire al Objeto con el Tag elegido
 
-                //transform.rotation = quaternion.identity;
+                transform.rotation = quaternion.identity;
             }
         }
     }

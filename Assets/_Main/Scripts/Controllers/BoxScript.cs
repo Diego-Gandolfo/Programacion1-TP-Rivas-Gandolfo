@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-namespace OnceUponAMemory.Franco
+namespace OnceUponAMemory.Main
 {
     public class BoxScript : MonoBehaviour
     {
