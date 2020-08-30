@@ -24,6 +24,7 @@ namespace OnceUponAMemory.Main
 
         public GameObject trail;
         
+        public ParticleSystem Dust_Dash;
         private void Start()
         {
             trail.gameObject.SetActive(false);
@@ -45,6 +46,8 @@ namespace OnceUponAMemory.Main
                 SoundManager.PlaySound("Dash");
                 
                 CinemachineShake.Instance.ShakeCam(8f, .3f);
+                
+                Dust_Dash.Play();
             }
 
            // TODO: UI?
