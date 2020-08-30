@@ -1885,7 +1885,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagObject: Player
-  target: {fileID: 1406887371}
 --- !u!95 &674397627
 Animator:
   serializedVersion: 3
