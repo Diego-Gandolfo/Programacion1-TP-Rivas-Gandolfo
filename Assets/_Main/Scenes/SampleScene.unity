@@ -549,7 +549,7 @@ PrefabInstance:
     - target: {fileID: 6096331242879597161, guid: bdfbf02ec0aa7a94da9218b42f627d1e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6096331242879597166, guid: bdfbf02ec0aa7a94da9218b42f627d1e,
         type: 3}
@@ -4195,7 +4195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840861211}
   - component: {fileID: 1840861212}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MinimapIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4545,6 +4545,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: 349.98364
+      objectReference: {fileID: 0}
+    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: ShapeModule.m_Rotation.y
+      value: 273.41028
+      objectReference: {fileID: 0}
+    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: ShapeModule.m_Rotation.z
+      value: 166.68285
+      objectReference: {fileID: 0}
     - target: {fileID: 2885070718264219013, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
