@@ -7,7 +7,7 @@ namespace OnceUponAMemory.Main
     public class BoxControl : MonoBehaviour
     {
         public GameObject box, memoryFragment;
-
+        public GameObject instanciador;
 
         // Start is called before the first frame update
         void Start()
@@ -18,7 +18,7 @@ namespace OnceUponAMemory.Main
         private void DestroyBox()
         {
             Destroy(box);
-            Instantiate(memoryFragment, this.transform.position, Quaternion.identity);
+            Instantiate(memoryFragment, instanciador.transform.position, Quaternion.identity);
         }
 
         private void OnDestroy()
