@@ -44,7 +44,7 @@ namespace OnceUponAMemory.Main
 
                 SoundManager.PlaySound("Dash");
                 
-                
+                CinemachineShake.Instance.ShakeCam(8f, .3f);
             }
 
            // TODO: UI?

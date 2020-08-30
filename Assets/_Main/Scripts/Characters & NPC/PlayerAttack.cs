@@ -72,6 +72,8 @@ namespace OnceUponAMemory.Main
                     target.GetComponent<EnemyHealth>().TakePlayerDamage(damage);
                     //Debug.Log("im being damaged");
                     SoundManager.PlaySound("EnemyHitRebuild");
+                    
+                    CinemachineShake.Instance.ShakeCam(5f, .1f);
                 }
             }
 
