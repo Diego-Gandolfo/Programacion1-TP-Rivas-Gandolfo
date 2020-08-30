@@ -518,7 +518,7 @@ PrefabInstance:
     - target: {fileID: 6096331242879597166, guid: bdfbf02ec0aa7a94da9218b42f627d1e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6096331242879597166, guid: bdfbf02ec0aa7a94da9218b42f627d1e,
         type: 3}
@@ -1151,7 +1151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1319,7 +1319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560368844
 GameObject:
@@ -1794,7 +1794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &674397621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1885,6 +1885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagObject: Player
+  target: {fileID: 1406887371}
 --- !u!95 &674397627
 Animator:
   serializedVersion: 3
@@ -2081,7 +2082,7 @@ Transform:
   m_Children:
   - {fileID: 255246112}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &781610737
 MonoBehaviour:
@@ -2939,12 +2940,12 @@ PrefabInstance:
     - target: {fileID: 6419598957677784984, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6419598957677784984, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edba416bdc7b46b4ab6ab82426ea2ddb, type: 3}
@@ -3721,7 +3722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1818113730
 AudioSource:
@@ -4433,7 +4434,7 @@ PrefabInstance:
     - target: {fileID: 4481038597817806573, guid: c2fb9524d5f36dd4781d36c9a9844164,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4481038597817806573, guid: c2fb9524d5f36dd4781d36c9a9844164,
         type: 3}

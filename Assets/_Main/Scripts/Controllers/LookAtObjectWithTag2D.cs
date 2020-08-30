@@ -30,8 +30,6 @@ namespace OnceUponAMemory.Main
                 Vector2 direction = new Vector2(objectWithTag.transform.position.x - transform.position.x, objectWithTag.transform.position.y - transform.position.y); // Calculamos la dirección a la que hay que mirar
 
                 transform.up = direction; // Actualizamos el Transform para que mire al Objeto con el Tag elegido
-
-                transform.rotation = quaternion.identity;
             }
         }
     }
