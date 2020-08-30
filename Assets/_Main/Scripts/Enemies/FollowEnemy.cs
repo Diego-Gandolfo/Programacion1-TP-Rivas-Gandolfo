@@ -22,11 +22,13 @@ namespace OnceUponAMemory.Main
         void Update()
         {
             
+            transform.rotation = Quaternion.identity;
+            
             //SE CHEQUEA SI LA DISTANCIA EN LA QUE ESTÁ EL JUGADOR ES MAYOR A LA "STOP DISTANCE"
             if (Vector2.Distance(transform.position, player.position) > stopDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-
+                
             }
             //SE CHEQUEA LO DE ANTES Y TAMBIÉN QUE SEA MAYOR QUE LA DISTANCIA DE RETREAR
             else if (Vector2.Distance(transform.position, player.position) < stopDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
@@ -38,12 +40,15 @@ namespace OnceUponAMemory.Main
             else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
-
+                
             }
             else
             {
                 transform.up = new Vector2(0, 0);
+                
             }
+
+            
         }
     }
 }
