@@ -222,10 +222,11 @@ GameObject:
   - component: {fileID: 3067806697278334632}
   - component: {fileID: 3067806697278334615}
   - component: {fileID: 3067806697278334611}
+  - component: {fileID: 395482063}
   - component: {fileID: 3067806697278334610}
   - component: {fileID: 3067806697278334612}
-  - component: {fileID: 3067806697278334613}
   - component: {fileID: 3067806697278334614}
+  - component: {fileID: 3067806697278334613}
   m_Layer: 9
   m_Name: SpiderMonster
   m_TagString: Untagged
@@ -335,6 +336,27 @@ CircleCollider2D:
   m_Offset: {x: 0.06, y: -0.22}
   serializedVersion: 2
   m_Radius: 0.61
+--- !u!50 &395482063
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067806697278334635}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!114 &3067806697278334610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +392,26 @@ MonoBehaviour:
   minDistance: 0
   patrolCenter: {fileID: 0}
   areaSize: {x: 10, y: 10}
+--- !u!114 &3067806697278334614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067806697278334635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1c6007d2168b148b0e61736cb75774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  stopDistance: 3
+  retreatDistance: 2
+  spriteRenderer: {fileID: 3067806697278334632}
+  mustFlipX: 1
+  mustFlipY: 1
+  player: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &3067806697278334613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,23 +430,6 @@ MonoBehaviour:
   projectile: {fileID: 5456937896099269561, guid: 6a00dbea5101cf74186f7b4a384d7386,
     type: 3}
   animator: {fileID: 3067806697278334615}
---- !u!114 &3067806697278334614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3067806697278334635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d1c6007d2168b148b0e61736cb75774, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  stopDistance: 3
-  retreatDistance: 2
-  player: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!1001 &3067806695761323010
 PrefabInstance:
   m_ObjectHideFlags: 0
