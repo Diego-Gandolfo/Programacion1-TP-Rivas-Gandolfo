@@ -8,7 +8,7 @@ namespace OnceUponAMemory.Main
     {
         private void Update()
         {
-            transform.rotation = Quaternion.identity;
+            transform.rotation = Quaternion.identity; // Forzamos a que siempre la rotación sea 0 (cero) con respecto al Mundo para evitar que un Objeto Hijo rote
         }
     }
 }
