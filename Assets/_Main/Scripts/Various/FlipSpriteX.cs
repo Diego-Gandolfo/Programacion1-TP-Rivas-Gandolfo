@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OnceUponAMemory.Diego
+namespace OnceUponAMemory.Main
 {
-    public class FlipSpriteY : MonoBehaviour
+    public class FlipSpriteX : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer spriteRenderer = null;
         [SerializeField] private GameObject target = null;
 
         private void Update()
         {
-            if (transform.position.y < target.transform.position.y) // Chequeamos si nuestra posicion en Eje X es MENOR que la del Player
+            if (transform.position.x > target.transform.position.x) // Chequeamos si nuestra posicion en Eje X es MAYOR que la del Player
                 spriteRenderer.flipX = true; // Volteamos
-            else // Si no es MENOR
+            else // Si no es MAYOR
                 spriteRenderer.flipX = false; // No volteamos
         }
     }

@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 2598814167966426661}
   - component: {fileID: 2598814167966426665}
   - component: {fileID: 2598814167966426663}
-  - component: {fileID: 8037184727280756259}
+  - component: {fileID: 3553471148360467781}
   m_Layer: 9
   m_Name: EnemyMelee
   m_TagString: Untagged
@@ -382,7 +382,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8037184727280756259
+--- !u!114 &3553471148360467781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2598814167966426664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f304fb6fca021e940b40f62e6a318e6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 81b0e253f500ea444872abd2777f3dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2598814167345802216}
