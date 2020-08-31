@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using OnceUponAMemory.Main;
 using UnityEngine;
 using TMPro;
+
+//SCRIPT PARA HACER UN HIT COUNTER EN PROCESO
+
+//FALTA EL NAMESPACE
 
 /*public class HitCounter : MonoBehaviour
 {
     private TextMeshPro textMeshPro;
-
+    
+    [SerializeField] 
     private void Awake()
     {
         textMeshPro = GetComponent<TextMeshPro>();
@@ -18,5 +24,3 @@ using TMPro;
         textMeshPro.SetText(hitCount.ToString());
     }
 }*/
-
-//SCRIPT PARA HACER UN HIT COUNTER EN EL PLAYER EN PROCESO
