@@ -11,10 +11,6 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float stopDistance = 3;
         [SerializeField] private float retreatDistance = 2;
 
-        [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private bool mustFlipX = true; // Determinaremos si este Enemigo tiene que voltear la Animacion en el Eje X
-        [SerializeField] private bool mustFlipY = false; // Determinaremos si este Enemigo tiene que voltear la Animacion en el Eje Y
-
         public Transform player;
 
         public Animator animator; // Está variable acá no sé usa, la accedes desde otro lado?
@@ -25,41 +21,25 @@ namespace OnceUponAMemory.Main
         }
 
         void Update()
-        {            
+        {
             //SE CHEQUEA SI LA DISTANCIA EN LA QUE ESTÁ EL JUGADOR ES MAYOR A LA "STOP DISTANCE"
             if (Vector2.Distance(transform.position, player.position) > stopDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);                
+                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             }
             //SE CHEQUEA LO DE ANTES Y TAMBIÉN QUE SEA MAYOR QUE LA DISTANCIA DE RETREAR
             else if (Vector2.Distance(transform.position, player.position) < stopDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
             {
-                transform.position = this.transform.position;                
+                transform.position = this.transform.position;
             }
             //SI ES MENOR QUE LA DISTANCIA DE RETREAT, SE MUEVE CON VELOCIDAD NEGATIVA
             else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);                
+                transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
             }
             else
             {
-                transform.up = new Vector2(0, 0);                
-            }
-
-            if (mustFlipX) // Si tiene que voltear el Sprite en el Eje X
-            {
-                if (transform.position.x > player.transform.position.x) // Chequeamos si nuestra posicion en Eje X es MAYOR que la del Player
-                    spriteRenderer.flipX = true; // Volteamos
-                else // Si no es MENOR
-                    spriteRenderer.flipX = false; // No volteamos
-            }
-
-            if (mustFlipY) // Si tiene que voltear el Sprite en el Eje Y
-            {
-                if (transform.position.y < player.transform.position.y) // Chequeamos si nuestra posicion en Eje Y es MENOR que la del Player
-                    spriteRenderer.flipY = true; // Volteamos
-                else // Si no es MENOR
-                    spriteRenderer.flipY = false; // No volteamos
+                transform.up = new Vector2(0, 0);
             }
         }
     }

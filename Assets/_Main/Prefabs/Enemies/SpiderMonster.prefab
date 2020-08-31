@@ -407,9 +407,6 @@ MonoBehaviour:
   speed: 2
   stopDistance: 3
   retreatDistance: 2
-  spriteRenderer: {fileID: 3067806697278334632}
-  mustFlipX: 1
-  mustFlipY: 1
   player: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &3067806697278334613

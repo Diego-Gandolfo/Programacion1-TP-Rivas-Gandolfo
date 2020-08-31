@@ -2064,6 +2064,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &317872341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6463375038460266261, guid: a2020f44452ecdf499740a483623a30e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089180874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &343889386
 GameObject:
   m_ObjectHideFlags: 0
@@ -9090,11 +9096,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1226655951991072052, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2598814167251133392, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
         type: 3}
       propertyPath: player
@@ -9170,6 +9171,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 8037184727280756259, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 317872341}
     - target: {fileID: 9008932679315221565, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
         type: 3}
       propertyPath: m_AnchorMax.x
