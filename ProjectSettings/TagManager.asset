@@ -39,8 +39,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: MAPS
+  - name: MAPS-Floor
     uniqueID: 3652100359
+    locked: 0
+  - name: MAPS-Deco
+    uniqueID: 749281481
     locked: 0
   - name: Items
     uniqueID: 526874911
