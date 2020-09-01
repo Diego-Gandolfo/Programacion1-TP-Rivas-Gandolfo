@@ -3175,6 +3175,16 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1946759475}
+    - target: {fileID: 2598814167966426661, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
+        type: 3}
+      propertyPath: GhostDamage
+      value: GhostDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598814167966426661, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
+        type: 3}
+      propertyPath: audioDamage
+      value: GhostDamage
+      objectReference: {fileID: 0}
     - target: {fileID: 2598814167966426664, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
         type: 3}
       propertyPath: m_Name
