@@ -12,11 +12,7 @@ namespace OnceUponAMemory.Main
         public float attackRate = 2f;
         private float nextAttack = 0f;
 
-        public float speed = 5f;
-        
         public Animator animator;
-
-        public Transform player;
         
         private void OnTriggerStay2D(Collider2D other)
         {

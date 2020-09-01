@@ -296,7 +296,8 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 6419598957677784967}
-  brokenHeartIcon: {fileID: 0}
+  brokenHeartIcon: {fileID: 5122600143371194650}
+  animator: {fileID: 0}
 --- !u!1 &6419598957677784985
 GameObject:
   m_ObjectHideFlags: 0
