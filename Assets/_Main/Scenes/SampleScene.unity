@@ -3775,6 +3775,11 @@ PrefabInstance:
       propertyPath: takeDamageAnim
       value: TakeDamage
       objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334610, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: TakingDamage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: patrolCenter
