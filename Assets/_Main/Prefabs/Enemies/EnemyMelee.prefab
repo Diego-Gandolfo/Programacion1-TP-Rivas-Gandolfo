@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 2598814167345802222}
   - component: {fileID: 2598814167345802216}
   - component: {fileID: 2598814167345802223}
+  - component: {fileID: 5265056458141183601}
   m_Layer: 9
   m_Name: EnemyMelee_Sprite
   m_TagString: Untagged
@@ -243,6 +244,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!95 &5265056458141183601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598814167345802221}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 857010c8a50702543979ed34c5b71d5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2598814167966426664
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +276,6 @@ GameObject:
   - component: {fileID: 1226655951991072052}
   - component: {fileID: 2598814167966426661}
   - component: {fileID: 2598814167966426665}
-  - component: {fileID: 2598814167966426663}
   - component: {fileID: 3553471148360467781}
   m_Layer: 9
   m_Name: EnemyMelee
@@ -345,7 +364,8 @@ MonoBehaviour:
   currentHeatlh: 0
   healthBar: {fileID: 9008932678855530841}
   audioDamage: EnemyHitRebuild
-  animator: {fileID: 2598814167966426663}
+  TakingDamage: 
+  animator: {fileID: 0}
 --- !u!114 &2598814167966426665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,26 +382,7 @@ MonoBehaviour:
   stopDistance: 1.7
   retreatDistance: 0
   player: {fileID: 0}
-  animator: {fileID: 2598814167966426663}
---- !u!95 &2598814167966426663
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2598814167966426664}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 857010c8a50702543979ed34c5b71d5a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  animator: {fileID: 0}
 --- !u!114 &3553471148360467781
 MonoBehaviour:
   m_ObjectHideFlags: 0
