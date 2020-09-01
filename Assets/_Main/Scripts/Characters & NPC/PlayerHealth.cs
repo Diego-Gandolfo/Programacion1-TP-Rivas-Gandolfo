@@ -22,6 +22,15 @@ namespace OnceUponAMemory.Main
             healthBar.SetMaxHealth(maxHealth);
         }
 
+        private void Update()
+        {
+            if (currentHealth <= 5)
+            {
+                healthBar.brokenHeartIcon.gameObject.SetActive(true);
+                
+            }
+        }
+
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;

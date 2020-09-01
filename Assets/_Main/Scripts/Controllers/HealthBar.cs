@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +13,16 @@ namespace OnceUponAMemory.Main
         public Gradient gradient;
         public Image fill;
 
+        public RawImage brokenHeartIcon;
+
+        private void Start()
+        {
+            brokenHeartIcon.gameObject.SetActive(false);
+        }
+
         public void SetMaxHealth(float health)
         {
+
             slider.maxValue = health;
             slider.value = health;
 
