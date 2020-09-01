@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ namespace OnceUponAMemory.Main
         [SerializeField] private Image imageUI = null;
 
         public GameObject swordTrail;
-        
+
         private void Start()
         {
             cooldownTimer = attackCooldown;
@@ -72,7 +73,9 @@ namespace OnceUponAMemory.Main
                     target.GetComponent<EnemyHealth>().TakePlayerDamage(damage);
                     //Debug.Log("im being damaged");
                     SoundManager.PlaySound("EnemyHitRebuild");
-                    
+
+                    //HitCounter.hitCount += 1;
+
                     CinemachineShake.Instance.ShakeCam(5f, .1f);
                 }
             }

@@ -12,15 +12,16 @@ using TMPro;
 /*public class HitCounter : MonoBehaviour
 {
     private TextMeshPro textMeshPro;
+    public static int hitCount;
     
-    [SerializeField] 
     private void Awake()
     {
         textMeshPro = GetComponent<TextMeshPro>();
+        hitCount = 0;
     }
 
-    private void SetHitCounter(int hitCount)
+    public void Update()
     {
-        textMeshPro.SetText(hitCount.ToString());
+        textMeshPro.text = hitCount.ToString();
     }
 }*/
