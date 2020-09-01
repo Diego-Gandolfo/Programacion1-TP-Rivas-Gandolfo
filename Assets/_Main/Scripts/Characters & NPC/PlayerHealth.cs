@@ -27,7 +27,11 @@ namespace OnceUponAMemory.Main
             if (currentHealth <= 5)
             {
                 healthBar.brokenHeartIcon.gameObject.SetActive(true);
-                
+                healthBar.animator.SetTrigger("BrokenHeart");
+            }
+            else if (currentHealth >= 5)
+            {
+                healthBar.brokenHeartIcon.gameObject.SetActive(false);
             }
         }
 

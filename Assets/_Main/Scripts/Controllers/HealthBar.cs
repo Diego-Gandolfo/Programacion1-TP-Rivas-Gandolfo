@@ -15,6 +15,8 @@ namespace OnceUponAMemory.Main
 
         public RawImage brokenHeartIcon;
 
+        public Animator animator;
+        
         private void Start()
         {
             brokenHeartIcon.gameObject.SetActive(false);
