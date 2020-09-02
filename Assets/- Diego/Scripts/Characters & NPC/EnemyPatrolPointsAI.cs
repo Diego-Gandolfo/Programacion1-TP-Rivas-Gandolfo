@@ -6,31 +6,36 @@ namespace OnceUponAMemory.Diego
 {
     public class EnemyPatrolPointsAI : MonoBehaviour
     {
-        [SerializeField] private PatrolPoints patrolPoints = null;
-        [SerializeField] private FollowEnemy followEnemy = null;
-        private DetectTargetArea detectTargetArea = null;
-        [SerializeField] bool keepFollowing = false;
+        private PatrolPoints patrolPoints = null; // Componente de Patrullaje
+        private FollowEnemy followEnemy = null; // Componente de Persecusión
+        private DetectTargetArea detectTargetArea = null; // Componente de Detección
+        [SerializeField] private bool keepFollowing = false; // Si debe seguir persiguiendo al Objetivo una vez que se va del Area de Detección o si debe de volver al Patrullaje
 
         private void Start()
         {
-            detectTargetArea = GetComponent<DetectTargetArea>();
-            patrolPoints.enabled = true;
-            followEnemy.enabled = false;
+            patrolPoints = GetComponent<PatrolPoints>(); // Detección del Componente PatrolPoints
+            if (patrolPoints == null) Debug.LogError("A " + gameObject.name + " le falta el Componente PatrolPoints y el EnemyPatrolPointsAI no funcionara correctamente");
+            followEnemy = GetComponent<FollowEnemy>(); // Detección del Componente FollowEnemy
+            if (patrolPoints == null) Debug.LogError("A " + gameObject.name + " le falta el Componente FollowEnemy y el EnemyPatrolPointsAI no funcionara correctamente");
+            detectTargetArea = GetComponent<DetectTargetArea>(); // Detección del Componente DetectTargetArea
+            if (patrolPoints == null) Debug.LogError("A " + gameObject.name + " le falta el Componente DetectTargetArea y el EnemyPatrolPointsAI no funcionara correctamente");
+            patrolPoints.enabled = true; // Inicializamos patrolPoints en TRUE para que arranque Patrullando
+            followEnemy.enabled = false; // Inicializamos followEnemy en FALSE porque empieza Patrullando
         }
 
         private void Update()
         {
             bool check = detectTargetArea.DetectTargets();
 
-            if (check)
+            if (check) // Si detecto un Objetivo
             {
-                patrolPoints.enabled = false;
-                followEnemy.enabled = true;
+                patrolPoints.enabled = false; // Deja de Patrullar
+                followEnemy.enabled = true; // Empieza a Perseguir
             }
-            else if (!check && !keepFollowing)
+            else if (!check && !keepFollowing) // Si ya no detecta enemigos en su campo y no debe seguir persiguiendo
             {
-                followEnemy.enabled = false;
-                patrolPoints.enabled = true;
+                followEnemy.enabled = false; // Deja de Perseguir
+                patrolPoints.enabled = true; // Vuelve a Patrullar
             }
         }
     }
