@@ -373,6 +373,7 @@ MonoBehaviour:
   currentHeatlh: 0
   healthBar: {fileID: 8324330871823499006}
   audioDamage: SpiderDamage
+  TakingDamage: 
   animator: {fileID: 3067806697278334615}
 --- !u!114 &3067806697278334612
 MonoBehaviour:
@@ -434,6 +435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1678146461}
     m_Modifications:
+    - target: {fileID: 4675660261472147217, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6419598957591157502, guid: edba416bdc7b46b4ab6ab82426ea2ddb,
         type: 3}
       propertyPath: m_LocalPosition.x
