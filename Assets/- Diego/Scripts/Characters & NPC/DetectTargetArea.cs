@@ -6,30 +6,16 @@ namespace OnceUponAMemory.Diego
 {
     public class DetectTargetArea : MonoBehaviour
     {
-        [SerializeField] private Transform detectionCenterPoint = null;
-        [SerializeField] private float detectionRange = 1.0f;
-        [SerializeField] private LayerMask targetsLayerMask = 0;
-
-        private void Update()
-        {
-            bool check = DetectTargets();
-
-            if (check)
-            {
-                Debug.Log("Encontre algo! check >> " + check);
-            }
-            else
-            {
-                Debug.Log("check >> " + check);
-            }
-        }
+        [SerializeField] private Transform detectionCenterPoint = null; // Marcamos el Centro en torno al que va a Detectar
+        [SerializeField] private float detectionRange = 1.0f; // El Rango del Area de Detección
+        [SerializeField] private LayerMask targetsLayerMask = 0; // Que LayerMasks tiene que Detectar
 
         public bool DetectTargets()
         {
-            Collider2D[] targetsDetected = Physics2D.OverlapCircleAll(detectionCenterPoint.position, detectionRange, targetsLayerMask); 
+            Collider2D[] targetsDetected = Physics2D.OverlapCircleAll(detectionCenterPoint.position, detectionRange, targetsLayerMask); // Guardamos en un Array todos los Objetos que tienen el LayerMask asignado
 
-            if (targetsDetected.Length > 0) return (true);
-            else return (false);
+            if (targetsDetected.Length > 0) return (true); // Si el tamaño del Array es MAYOR a 0, es que encontro algo y devuelve TRUE
+            else return (false); // Sino es que no encontro nada y devuelve FALSE
         }
 
         private void OnDrawGizmosSelected()
