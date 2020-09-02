@@ -24,7 +24,7 @@ namespace OnceUponAMemory.Diego
             }
         }
 
-        private bool DetectTargets()
+        public bool DetectTargets()
         {
             Collider2D[] targetsDetected = Physics2D.OverlapCircleAll(detectionCenterPoint.position, detectionRange, targetsLayerMask); 
 
