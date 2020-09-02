@@ -4462,43 +4462,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741660376}
   m_CullTransparentMesh: 0
---- !u!1 &1769104913 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4675660262692694977, guid: a2020f44452ecdf499740a483623a30e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2089180874}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1769104916 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5122600144298143178, guid: a2020f44452ecdf499740a483623a30e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2089180874}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769104913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &1769104918
+--- !u!95 &1769104918 stripped
 Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1769104918, guid: a2020f44452ecdf499740a483623a30e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089180874}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769104913}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db9e9252ed3d3c544a88ddeb67cad775, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1796319564
 GameObject:
   m_ObjectHideFlags: 0
@@ -5299,14 +5268,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 301002123, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396704863, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2885070718264219013, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
@@ -5317,11 +5278,6 @@ PrefabInstance:
       propertyPath: imageUI
       value: 
       objectReference: {fileID: 801073295}
-    - target: {fileID: 4675660262692694977, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5578547246784976994, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
@@ -5337,16 +5293,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6419598956806825516, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: brokenHeartIcon
-      value: 
-      objectReference: {fileID: 1769104916}
-    - target: {fileID: 6419598956806825516, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1769104918}
     - target: {fileID: 6463375038460266259, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5407,28 +5353,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 8649334474784247073, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -148.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8649334474784247073, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 78.735504
-      objectReference: {fileID: 0}
-    - target: {fileID: 8649334474784247073, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 8649334474784247073, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 82.41586
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3674375865338281905, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2020f44452ecdf499740a483623a30e, type: 3}
 --- !u!1 &2091583969
 GameObject:
