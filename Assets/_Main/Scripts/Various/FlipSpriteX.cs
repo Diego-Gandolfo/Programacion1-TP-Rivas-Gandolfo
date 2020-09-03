@@ -8,7 +8,12 @@ namespace OnceUponAMemory.Main
     {
         [SerializeField] private SpriteRenderer spriteRenderer = null;
         [SerializeField] private GameObject target = null;
-        
+
+        private void Start()
+        {
+            if (spriteRenderer == null || target == null) Debug.LogError("A " + gameObject.name + " le faltan agregar asignar cosas en el Componente FlipSpriteX");
+        }
+
         private void Update()
         {
             if (transform.position.x > target.transform.position.x)

@@ -8,23 +8,26 @@ namespace OnceUponAMemory.Main
 {
     public class EnemyMeleeAttack : MonoBehaviour
     {
-        private int damage = 2;
-        public float attackRate = 2f;
+        [Header("Attack Settings")]
+        [SerializeField] private int damage = 2;
+        [SerializeField] private float attackRate = 2f;
         private float nextAttack = 0f;
 
+        [Header("Animator")]
         public Animator animator;
         
         private void OnTriggerStay2D(Collider2D other)
         {
             PlayerHealth player = other.GetComponent<PlayerHealth>();
-            if (player != null && Time.time >= nextAttack)
-            {
-                animator.SetTrigger("Attack");
-            
-                player.TakeDamage(damage);
-                nextAttack = Time.time + 1f / attackRate;
-            }
+
+            if (player != null && Time.time >= nextAttack) Attack(player);
+        }
+
+        private void Attack(PlayerHealth player)
+        {
+            animator.SetTrigger("Attack");
+            player.TakeDamage(damage);
+            nextAttack = Time.time + 1f / attackRate;
         }
     }
 }
-
