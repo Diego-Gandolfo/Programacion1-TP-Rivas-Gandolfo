@@ -5629,6 +5629,16 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 317872341}
+    - target: {fileID: 4035650681465604203, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 317872341}
+    - target: {fileID: 4035650681465604203, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9008932678855530841, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
         type: 3}
       propertyPath: animator
