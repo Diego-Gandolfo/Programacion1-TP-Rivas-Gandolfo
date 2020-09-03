@@ -9,12 +9,12 @@ namespace OnceUponAMemory.Main
     public class EnemyMeleeAttack : MonoBehaviour
     {
         [Header("Attack Settings")]
-        [SerializeField] private int damage = 2;
+        [SerializeField] private float damage = 2f;
         [SerializeField] private float attackRate = 2f;
         private float nextAttack = 0f;
 
         [Header("Animator")]
-        public Animator animator;
+        [SerializeField] private Animator animator;
         
         private void OnTriggerStay2D(Collider2D other)
         {
