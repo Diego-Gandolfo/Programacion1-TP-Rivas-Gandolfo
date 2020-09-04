@@ -2511,7 +2511,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -642866937
   m_SortingLayer: -3
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e85297acf96701e41abf161cc643fb43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2909,7 +2909,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -642866937
   m_SortingLayer: -3
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b68bbe8e005543f43a60f3feb84d909d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2996,7 +2996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1111621929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4572,7 +4572,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -642866937
   m_SortingLayer: -3
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 93476c31944292643bc910792c2445d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5192,7 +5192,7 @@ PrefabInstance:
     - target: {fileID: 2598814167966426660, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2598814167966426660, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
@@ -5212,7 +5212,17 @@ PrefabInstance:
     - target: {fileID: 2598814167966426664, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
       propertyPath: m_Name
-      value: EnemyMelee_v2
+      value: EnemyMelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598814168040854918, guid: f7a7db5165098854aa1e8466325aac41,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598814168040854918, guid: f7a7db5165098854aa1e8466325aac41,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3553471148360467781, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
@@ -5357,6 +5367,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 301002123, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 301002123, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2885070718264219013, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
@@ -5681,7 +5699,7 @@ PrefabInstance:
     - target: {fileID: 2598814167966426660, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2598814167966426660, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
         type: 3}
@@ -5701,7 +5719,7 @@ PrefabInstance:
     - target: {fileID: 2598814167966426664, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
         type: 3}
       propertyPath: m_Name
-      value: EnemyMelee
+      value: EnemyMelee_Old
       objectReference: {fileID: 0}
     - target: {fileID: 2598814167966426664, guid: da4e8fb052b5e9c48854bb92cc9bd0e2,
         type: 3}
@@ -5757,6 +5775,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1678146461, guid: 8d6ef61020641754f9c7cc72717c41eb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678146461, guid: 8d6ef61020641754f9c7cc72717c41eb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1678146464, guid: 8d6ef61020641754f9c7cc72717c41eb, type: 3}
       propertyPath: m_Camera
       value: 
@@ -5839,17 +5865,17 @@ PrefabInstance:
     - target: {fileID: 3067806697278334635, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8324330871367732122, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8324330871367732122, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8324330871823499006, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
