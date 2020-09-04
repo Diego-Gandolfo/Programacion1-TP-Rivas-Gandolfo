@@ -8,16 +8,21 @@ namespace OnceUponAMemory.Main
 {
     public class PlayerAttack : MonoBehaviour
     {
+        [Header("Range and position")]
         public Transform attackPosition;
         [SerializeField] private float attackRange = 1.0f;
-
+        
+        [Header("Attack Parameters")]
         public LayerMask targetsLayerMask;
         [SerializeField] private float damage = 1.0f;
         [SerializeField] private float attackCooldown = 1.0f;
         [SerializeField] private float cooldownTimer = 0.0f;
+        
+        //BOOLS
         private bool canAttack = true;
         private bool canCount = false;
-
+        
+        [Header("Visual Feedback")]
         [SerializeField] private Animator animatorSword = null;
 
         [SerializeField] private Image imageUI = null;

@@ -10528,9 +10528,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463375038460266261}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -10555,7 +10555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 7
   animatorMovement: {fileID: 4156048612776746944}
-  Dust_PS: {fileID: 2027469351}
+  dustPS: {fileID: 0}
 --- !u!114 &1358682853716740288
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -625,6 +625,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfbf02ec0aa7a94da9218b42f627d1e, type: 3}
+--- !u!198 &150300031 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2027469351, guid: a2020f44452ecdf499740a483623a30e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089180874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &180383011
 GameObject:
   m_ObjectHideFlags: 0
@@ -5375,6 +5381,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2396394874203704302, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: dust_PS
+      value: 
+      objectReference: {fileID: 150300031}
+    - target: {fileID: 2396394874203704302, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: dustPS
+      value: 
+      objectReference: {fileID: 150300031}
     - target: {fileID: 2885070718264219013, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI

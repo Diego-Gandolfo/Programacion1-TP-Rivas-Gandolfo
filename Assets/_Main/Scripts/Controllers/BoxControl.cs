@@ -6,8 +6,8 @@ namespace OnceUponAMemory.Main
 {
     public class BoxControl : MonoBehaviour
     {
-        public GameObject box, memoryFragment;
-        public GameObject instanciador;
+        [SerializeField] private GameObject box, memoryFragment;
+        [SerializeField] private GameObject instanciador;
 
         // Start is called before the first frame update
         void Start()
