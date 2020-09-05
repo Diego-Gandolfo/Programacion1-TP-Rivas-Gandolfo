@@ -21,6 +21,7 @@ namespace OnceUponAMemory.Main
         private void OnTriggerStay2D(Collider2D other)
         {
             PlayerHealth player = other.transform.GetComponent<PlayerHealth>();
+
             if (player != null && Time.time >= nextDamage)
             {
                 player.TakeDamage(damage);

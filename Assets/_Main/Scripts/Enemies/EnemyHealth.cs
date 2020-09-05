@@ -12,7 +12,7 @@ namespace OnceUponAMemory.Main
         public HealthBar healthBar;
 
         [SerializeField] private string audioDamage = ""; // En el Inspector escribimos el nombre del Archivo, que sería lo que pones entre comillas... Ejemplo, en el SpiderMonster el audio de daño era "SpiderDamage", en el inspector lo escribimos sin comillas
-        [SerializeField] private string TakingDamage = "";
+        [SerializeField] private string takingDamage = "";
         
         public Animator animator;
 
@@ -27,14 +27,12 @@ namespace OnceUponAMemory.Main
             currentHeatlh -= damage;
             SoundManager.PlaySound(audioDamage); // Acá reproducimos el sonido que pusimos en el Inspector
             
-            animator.SetTrigger(TakingDamage);
+            animator.SetTrigger(takingDamage);
 
             healthBar.SetHealth(currentHeatlh);
             
             if (currentHeatlh <= 0) Die();
         }
-        
-        
         
         void Die()
         {

@@ -46,13 +46,12 @@ namespace OnceUponAMemory.Main
             //BLOOD VFX
             Instantiate(blood, transform.position, Quaternion.identity);
 
-
             if (currentHealth <= 0) Die();
         }
 
         void Die()
         {
-//            Destroy(player);
+//          Destroy(player);
             Destroy(gameObject); // En lugar de usar la una variable que referencie al Player, directamente lo destruimos
             healthBar.gameObject.SetActive(false);
         }

@@ -373,7 +373,7 @@ MonoBehaviour:
   currentHeatlh: 0
   healthBar: {fileID: 8324330871823499006}
   audioDamage: SpiderDamage
-  TakingDamage: 
+  takingDamage: TakeDamage
   animator: {fileID: 3067806697278334615}
 --- !u!114 &3067806697278334612
 MonoBehaviour:

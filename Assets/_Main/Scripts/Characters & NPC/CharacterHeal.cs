@@ -68,7 +68,6 @@ namespace OnceUponAMemory.Main
             animatorEffects.SetTrigger("doHeal"); // Efecto provisorio
             imageUI.fillAmount = 1;
             SoundManager.PlaySound("PickUpItemHeal");
-            
 
             if (healthBar != null) healthBar.SetHealth(vida.currentHealth);
             //Debug.Log("im healing");

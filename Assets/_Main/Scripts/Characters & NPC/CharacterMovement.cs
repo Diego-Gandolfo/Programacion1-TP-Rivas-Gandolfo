@@ -13,7 +13,7 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float movementSpeed = 7; // Configuramos la Velocidad de Movimiento
         [SerializeField] private Animator animatorMovement = null; // Almacenaremos el Animator que contiene las Animaciones de Movimiento
 
-        [SerializeField] private ParticleSystem dustPS;
+        [SerializeField] private ParticleSystem dustPS = null;
         
         private void Update()
         {

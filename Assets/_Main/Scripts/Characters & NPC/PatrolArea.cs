@@ -19,10 +19,10 @@ namespace OnceUponAMemory.Main
         [Header("Patrol Area Settings")]
         [SerializeField] private Transform patrolCenter = null; // Variable donde almacenaremos el centro del punto a patrullar
         [SerializeField] private Vector2 areaSize = new Vector2(0, 0); // Cuantas unidades se puede mover hacia la izquierda de patrolPoint
-        private float minX = 0; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para X
-        private float maxX = 0; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para X
-        private float minY = 0; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo para Y
-        private float maxY = 0; // Al Activar el Componente o el Objeto se almacenará el valor Máximo para Y
+        private float minX = 0; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo del Area para X
+        private float maxX = 0; // Al Activar el Componente o el Objeto se almacenará el valor Máximo del Area para X
+        private float minY = 0; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo del Area para Y
+        private float maxY = 0; // Al Activar el Componente o el Objeto se almacenará el valor Máximo del Area para Y
 
         private void OnEnable() // Cada vez que se activa el Objeto o el Componente
         {

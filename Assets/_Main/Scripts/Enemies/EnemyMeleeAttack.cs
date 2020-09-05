@@ -14,7 +14,7 @@ namespace OnceUponAMemory.Main
         private float nextAttack = 0f;
 
         [Header("Animator")]
-        [SerializeField] private Animator animator;
+        [SerializeField] private Animator animator = null;
         
         private void OnTriggerStay2D(Collider2D other)
         {

@@ -17,7 +17,6 @@ namespace OnceUponAMemory.Main
                 SoundManager.PlaySound("PickUpItem");
                 Destroy(gameObject);
             }
-
         }
     }
 }

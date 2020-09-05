@@ -24,7 +24,6 @@ namespace OnceUponAMemory.Main
 
         public void SetMaxHealth(float health)
         {
-
             slider.maxValue = health;
             slider.value = health;
 
