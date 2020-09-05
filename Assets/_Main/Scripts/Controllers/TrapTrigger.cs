@@ -28,7 +28,6 @@ namespace OnceUponAMemory.Main
                 activateTrap = false;
                 trap.gameObject.SetActive(false);
             }
-        
         }
 
         private void OnTriggerExit2D(Collider2D other)
@@ -40,5 +39,4 @@ namespace OnceUponAMemory.Main
             }
         }
     }
-  
 }
