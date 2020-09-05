@@ -24,6 +24,8 @@ namespace OnceUponAMemory.Main
             animatorMovement.SetFloat("Speed", speedMov.sqrMagnitude); // Definimos si se está Moviendo o no
             
             CreateDust();
+            //TODO: Checkear el Dust
+            // Hacerlo con un Instantiate solo cuando se esté moviendo
         }
 
         private void CreateDust()

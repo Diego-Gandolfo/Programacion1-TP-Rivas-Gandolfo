@@ -40,8 +40,7 @@ namespace OnceUponAMemory.Main
                 canCount = true;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // Almacenamos las coordenadas de donde se encuentra el puntero del Mouse
                 durationTimer = duration; // Inicializamos el contador de Duracion
-                // TODO: Efecto de Particulas
-                // TODO: Animacion
+                // TODO: Terminar Trail
 
                 SoundManager.PlaySound("Dash");
                 
@@ -49,8 +48,6 @@ namespace OnceUponAMemory.Main
                 
                 Dust_Dash.Play();
             }
-
-           // TODO: UI?
 
             if (canDash != true)
             {
