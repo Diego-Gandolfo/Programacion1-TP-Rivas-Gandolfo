@@ -11,12 +11,6 @@ namespace OnceUponAMemory.Main
         public float damageRate = 2f;
         private float nextDamage;
 
-        private TrapTrigger trapTrigger;
-        private void Update()
-        {
-            
-        }
-
         private void OnTriggerStay2D(Collider2D other)
         {
             PlayerHealth player = other.transform.GetComponent<PlayerHealth>();
