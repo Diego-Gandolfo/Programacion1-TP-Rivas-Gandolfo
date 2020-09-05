@@ -10,12 +10,11 @@ namespace OnceUponAMemory.Main
         public float maxHealth = 10f;
         public float currentHealth;
 
-//        public GameObject player; // Esta variable no es necesaria
+//      public GameObject player; // Esta variable no es necesaria
         public GameObject blood;
 
         public HealthBar healthBar;
 
-        
         void Start()
         {
             currentHealth = maxHealth;

@@ -16,16 +16,10 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if (transform.position.x > target.transform.position.x)
-            {
-                // Chequeamos si nuestra posicion en Eje X es MAYOR que la del Player
+            if (transform.position.x > target.transform.position.x) // Chequeamos si nuestra posicion en Eje X es MAYOR que la del Player
                 spriteRenderer.flipX = true; // Volteamos
-            }
-            else 
-            {
+            else // Si no es MENOR
                 spriteRenderer.flipX = false; // No volteamos
-            }
-            
         }
     }
 }

@@ -41,9 +41,10 @@ namespace OnceUponAMemory.Main
             {
                 canAttack = false;
                 canCount = true;
+                swordTrail.gameObject.SetActive(true); // Movi la activación del Trail acá, para aprovechar este IF
                 Attack();
             }
-
+/*
             if (canAttack != true)
             {
                 swordTrail.gameObject.SetActive(true);
@@ -52,14 +53,14 @@ namespace OnceUponAMemory.Main
             {
                 swordTrail.gameObject.SetActive(false);
             }
-            
+*/            
             if ((cooldownTimer <= 0) && (canCount))
             {
                 cooldownTimer = attackCooldown;
                 canAttack = true;
                 canCount = false;
                 imageUI.fillAmount = 1;
-                
+                swordTrail.gameObject.SetActive(false); // Movi la desactivación del Trail acá, para aprovechar este IF
             }
             else if ((cooldownTimer > 0) && (canCount))
             {
