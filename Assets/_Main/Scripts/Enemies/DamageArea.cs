@@ -11,11 +11,10 @@ namespace OnceUponAMemory.Main
         public float damageRate = 2f;
         private float nextDamage;
 
+        private TrapTrigger trapTrigger;
         private void Update()
         {
-            //ACÁ INTENTÉ APLICAR UN POCO LO QUE VIMOS EN CLASE, PERO AÚN ASÍ NO FUNCIONA COMO YO QUISIERA.
-
-            //nextDamage += Time.deltaTime;
+            
         }
 
         private void OnTriggerStay2D(Collider2D other)
