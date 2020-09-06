@@ -15,7 +15,7 @@ namespace OnceUponAMemory.Main
         private int damage = 1;
         void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = GameObject.FindGameObjectWithTag("Player").transform; // Esto quizás habría que cambiarlo porque dijeron que no es recomendable de usar
 
             target = new Vector2(player.position.x, player.position.y);
         }
@@ -29,18 +29,21 @@ namespace OnceUponAMemory.Main
         }
 
         private void OnTriggerEnter2D(Collider2D Other)
-        {
+        {/*
             if (Other.CompareTag("Player"))
             {
                 DestroyProjectile();
                 //Debug.Log("destroyed");
-            }
+            }*/
 
             PlayerHealth TopDownCharacter = Other.transform.GetComponent<PlayerHealth>();
+
             if (TopDownCharacter != null)
             {
                 TopDownCharacter.TakeDamage(damage);
             }
+
+            DestroyProjectile();
         }
 
         void DestroyProjectile()

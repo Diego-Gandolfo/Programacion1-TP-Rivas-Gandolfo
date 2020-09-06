@@ -10,6 +10,12 @@ namespace OnceUponAMemory.Main
         private int damage = 2;
         public float damageRate = 2f;
         private float nextDamage;
+        private Animator animator;
+
+        private void Start()
+        {
+            animator = GetComponent<Animator>();
+        }
 
         private void OnTriggerStay2D(Collider2D other)
         {
@@ -18,7 +24,7 @@ namespace OnceUponAMemory.Main
             if (player != null && Time.time >= nextDamage)
             {
                 player.TakeDamage(damage);
-                
+                //animator.SetTrigger("doActivate");
                 nextDamage = Time.time + 1f / damageRate;
             }
         }
