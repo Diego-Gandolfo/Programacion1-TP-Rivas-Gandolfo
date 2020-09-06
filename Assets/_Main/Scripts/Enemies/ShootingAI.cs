@@ -6,6 +6,8 @@ namespace OnceUponAMemory.Main
 {
     public class ShootingAI : MonoBehaviour
     {
+        [SerializeField] private float maxDistanceRange = 0;
+
         private float timeBetweenShots;
         public float starTimeBetweentShots;
 
@@ -23,7 +25,7 @@ namespace OnceUponAMemory.Main
         void Update()
         {
             //transform.LookAt(player);
-            if (timeBetweenShots <= 0)
+            if ((timeBetweenShots <= 0) && (Vector2.Distance(transform.position, player.position) <= maxDistanceRange))
             {
                 Instantiate(projectile, firePoint.position, Quaternion.identity);
                 timeBetweenShots = starTimeBetweentShots;

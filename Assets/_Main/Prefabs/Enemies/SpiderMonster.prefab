@@ -224,9 +224,11 @@ GameObject:
   - component: {fileID: 3067806697278334611}
   - component: {fileID: 395482063}
   - component: {fileID: 3067806697278334610}
+  - component: {fileID: 3067806697278334613}
   - component: {fileID: 3067806697278334612}
   - component: {fileID: 3067806697278334614}
-  - component: {fileID: 3067806697278334613}
+  - component: {fileID: 9092090628683407179}
+  - component: {fileID: 8367005880169549959}
   m_Layer: 9
   m_Name: SpiderMonster
   m_TagString: Untagged
@@ -242,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3067806697278334635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.15, y: 3.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1678146461}
@@ -375,6 +377,25 @@ MonoBehaviour:
   audioDamage: SpiderDamage
   takingDamage: TakeDamage
   animator: {fileID: 3067806697278334615}
+--- !u!114 &3067806697278334613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067806697278334635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e54211e70bfba4c8387521e67067ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistanceRange: 10
+  starTimeBetweentShots: 2
+  firePoint: {fileID: 1640049954787747430}
+  player: {fileID: 0}
+  projectile: {fileID: 5456937896099269561, guid: 6a00dbea5101cf74186f7b4a384d7386,
+    type: 3}
+  animator: {fileID: 3067806697278334615}
 --- !u!114 &3067806697278334612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,17 +403,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3067806697278334635}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b05281dcccead0c488bd836affc77aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySize: {x: 0, y: 0}
+  enemySize: {x: 1, y: 2}
   movemetSpeed: 3
   waitTime: 1
-  minDistance: 0
+  minDistance: 2
   patrolCenter: {fileID: 0}
-  areaSize: {x: 10, y: 10}
+  areaSize: {x: 30, y: 10}
 --- !u!114 &3067806697278334614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,8 +430,8 @@ MonoBehaviour:
   stopDistance: 3
   retreatDistance: 2
   player: {fileID: 0}
-  animator: {fileID: 0}
---- !u!114 &3067806697278334613
+  animator: {fileID: 3067806697278334615}
+--- !u!114 &9092090628683407179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -419,15 +440,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 3067806697278334635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e54211e70bfba4c8387521e67067ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 29278e4a168fe464980c8c82604637c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starTimeBetweentShots: 2
-  firePoint: {fileID: 1640049954787747430}
-  player: {fileID: 0}
-  projectile: {fileID: 5456937896099269561, guid: 6a00dbea5101cf74186f7b4a384d7386,
-    type: 3}
-  animator: {fileID: 3067806697278334615}
+  detectionCenterPoint: {fileID: 3067806697278334633}
+  detectionRange: 10
+  targetsLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!114 &8367005880169549959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067806697278334635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7443d90b442764aa0a76b367993d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepFollowing: 0
 --- !u!1001 &3067806695761323010
 PrefabInstance:
   m_ObjectHideFlags: 0

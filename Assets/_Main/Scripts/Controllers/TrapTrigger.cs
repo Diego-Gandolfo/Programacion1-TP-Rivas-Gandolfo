@@ -7,12 +7,12 @@ namespace OnceUponAMemory.Main
 {
     public class TrapTrigger : MonoBehaviour
     {
-        [SerializeField] private bool activateTrap;
+ //       [SerializeField] private bool activateTrap = false;
+        [SerializeField] private GameObject trap = null;
 
-        [SerializeField] private GameObject trap;
         private void Start()
         {
-            activateTrap = false;
+ //           activateTrap = false;
             trap.gameObject.SetActive(false);
         }
 
@@ -20,13 +20,8 @@ namespace OnceUponAMemory.Main
         {
             if (other.CompareTag("Player"))
             {
-                activateTrap = true;
+ //               activateTrap = true;
                 trap.gameObject.SetActive(true);
-            }
-            else
-            {
-                activateTrap = false;
-                trap.gameObject.SetActive(false);
             }
         }
 
@@ -34,7 +29,7 @@ namespace OnceUponAMemory.Main
         {
             if (other.CompareTag("Player"))
             {
-                activateTrap = false;
+ //               activateTrap = false;
                 trap.gameObject.SetActive(false);
             }
         }
