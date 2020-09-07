@@ -10601,7 +10601,7 @@ MonoBehaviour:
   attackRange: 1.5
   targetsLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8704
   damage: 1
   attackCooldown: 1
   cooldownTimer: 0
