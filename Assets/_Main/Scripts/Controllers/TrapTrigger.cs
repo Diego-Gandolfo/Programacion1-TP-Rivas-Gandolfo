@@ -22,6 +22,7 @@ namespace OnceUponAMemory.Main
             {
 //               activateTrap = true;
                trap.gameObject.SetActive(true);
+               CinemachineShake.Instance.ShakeCam(7f, .1f);
             }
         }
         
