@@ -4,16 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialTextController : MonoBehaviour
+namespace OnceUponAMemory.Main
 {
-    public Text text;
-    public Animator animator;
-    private void Update()
+    public class TutorialTextController : MonoBehaviour
     {
-        if (Input.anyKey)
+        [SerializeField] private Text tutorialText;
+        [SerializeField] private Animator animator;
+        private void Update()
         {
-            text.gameObject.SetActive(false);
-            animator.SetTrigger("KeyPressed");
+            if (Input.anyKey)
+            {
+                tutorialText.gameObject.SetActive(false);
+                animator.SetTrigger("KeyPressed");
+            }
         }
     }
+
 }

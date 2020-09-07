@@ -2563,7 +2563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0e7d7a2b83d3346a102b581f0b00be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 650296172}
+  tutorialText: {fileID: 650296172}
   animator: {fileID: 2127622723}
 --- !u!114 &650296172
 MonoBehaviour:
