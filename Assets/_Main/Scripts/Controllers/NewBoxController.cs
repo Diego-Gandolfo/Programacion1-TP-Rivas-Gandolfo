@@ -4,23 +4,27 @@ using System.Collections.Generic;
 using OnceUponAMemory.Main;
 using UnityEngine;
 
-public class NewBoxController : MonoBehaviour
+namespace OnceUponAMemory.Main
 {
-    [SerializeField] private float maxHealth = 3;
-    [SerializeField] private float currentHealth;
-
-    private void Start()
+    public class NewBoxController : MonoBehaviour
     {
-        currentHealth = maxHealth;
-    }
+        [SerializeField] private float maxHealth = 3;
+        [SerializeField] private float currentHealth;
 
-    public void TakePlayerDamage(float damage)
-    {
-        currentHealth -= damage;
-        
-        if (currentHealth <= 0)
+        [SerializeField] private Animator animator;
+    
+        private void Start()
         {
-            Destroy(this.gameObject);
+            currentHealth = maxHealth;
+        }
+
+        public void TakePlayerDamage(float damage)
+        {
+            currentHealth -= damage;
+        
+            animator.SetTrigger("Damaged");
+        
+            if (currentHealth <= 0) Destroy(gameObject);
         }
     }
 }

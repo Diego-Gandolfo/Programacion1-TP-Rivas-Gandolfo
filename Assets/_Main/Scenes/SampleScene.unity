@@ -864,7 +864,8 @@ GameObject:
   - component: {fileID: 219306365}
   - component: {fileID: 219306364}
   - component: {fileID: 219306367}
-  m_Layer: 9
+  - component: {fileID: 219306368}
+  m_Layer: 13
   m_Name: NewBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,8 +934,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -952132635
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 69964d3118bb33b40a8ed67e147d9dc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -975,6 +976,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealth: 0
+  animator: {fileID: 219306368}
+--- !u!95 &219306368
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219306363}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddadd06c5acdd6741b631115e0232e0e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &234554040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,7 +2257,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1847
+    m_Bits: 10039
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6502,6 +6523,11 @@ PrefabInstance:
       propertyPath: imageUI
       value: 
       objectReference: {fileID: 801073295}
+    - target: {fileID: 3502322050444972901, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: targetsLayerMask.m_Bits
+      value: 8704
+      objectReference: {fileID: 0}
     - target: {fileID: 5578547246784976994, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
