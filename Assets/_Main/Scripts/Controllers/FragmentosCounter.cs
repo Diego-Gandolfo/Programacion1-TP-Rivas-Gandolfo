@@ -12,7 +12,9 @@ namespace OnceUponAMemory.Main
 
         void Start()
         {
+            
             CounterText = GetComponent<Text>();
+            
         }
 
         void Update()
