@@ -6379,11 +6379,6 @@ PrefabInstance:
       propertyPath: imageUI
       value: 
       objectReference: {fileID: 801073295}
-    - target: {fileID: 3502322050444972901, guid: a2020f44452ecdf499740a483623a30e,
-        type: 3}
-      propertyPath: targetsLayerMask.m_Bits
-      value: 8704
-      objectReference: {fileID: 0}
     - target: {fileID: 5578547246784976994, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
