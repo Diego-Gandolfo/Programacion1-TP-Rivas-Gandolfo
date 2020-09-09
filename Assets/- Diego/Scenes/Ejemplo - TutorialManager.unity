@@ -476,10 +476,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1045821e1a52eee4188db3d2cdf511ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToStart: 0.5
   movementObject: {fileID: 875405621}
+  movementTimeToHide: 0
   dashObject: {fileID: 1548371264}
+  dashTimeToHide: 0
   healObject: {fileID: 1761488233}
+  healTimeToHide: 0
   attackObject: {fileID: 1834728634}
+  attackTimeToHide: 0
 --- !u!1 &774034516
 GameObject:
   m_ObjectHideFlags: 0
