@@ -38,6 +38,14 @@ namespace OnceUponAMemory.Diego
         private float attackTimeToHideTimer = Mathf.Infinity;
         private bool attackDone = false; // Indicaremos cuando completo el Tutorial de Attack
 
+        private void Start()
+        {
+            movementTimeToHideTimer = Mathf.Infinity;
+            dashTimeToHideTimer = Mathf.Infinity;
+            healTimeToHideTimer = Mathf.Infinity;
+            attackTimeToHideTimer = Mathf.Infinity;
+        }
+
         private void Update()
         {
             if (!canStart && Time.time > timeToStart) // Si todavía no arranco y pasó el tiempo
@@ -50,10 +58,10 @@ namespace OnceUponAMemory.Diego
             {
                 if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) // Si toca alguna tecla de Movimiento
                 {
-                    movementTimeToHide += Time.time;
+                    movementTimeToHideTimer = movementTimeToHide + Time.time; // Empezamos el Contador para Ocultar
                 }
 
-                if (Time.time > movementTimeToHide)
+                if (Time.time > movementTimeToHideTimer) // Si paso el tiempo del Contador
                 {
                     movementObject.SetActive(false); // Ocultamos el Objeto Movimiento
                     movementDone = true; // Que termino el Tutorial de Movimiento
@@ -63,6 +71,11 @@ namespace OnceUponAMemory.Diego
             else if (!dashDone && movementDone) // Si no termino el Tutorial de Dash y termino el Tutorial de Movimiento
             {
                 if (Input.GetButtonDown("Fire2")) // Si hace Click con el Boton Derecho del Mouse
+                {
+                    dashTimeToHideTimer = dashTimeToHide + Time.time; // Empezamos el Contador para Ocultar
+                }
+
+                if (Time.time > dashTimeToHideTimer) // Si paso el tiempo del Contador
                 {
                     dashObject.SetActive(false); // Ocultamos el Objeto Dash
                     dashDone = true; // Que termino el Tutorial de Dash
@@ -74,6 +87,11 @@ namespace OnceUponAMemory.Diego
                 //TODO: Hacer daño al Personaje para el Tutorial
                 if (Input.GetKeyDown(KeyCode.C)) // Si presiona la tecla C
                 {
+                    healTimeToHideTimer = healTimeToHide + Time.time; // Empezamos el Contador para Ocultar
+                }
+
+                if (Time.time > healTimeToHideTimer) // Si paso el tiempo del Contador
+                {
                     healObject.SetActive(false); // Ocultamos el Objeto Heal
                     healDone = true; // Que termino el Tutorial de Heal
                     attackObject.SetActive(true); // Mostramos el 2do paso del Tutorial (Attack)
@@ -82,6 +100,11 @@ namespace OnceUponAMemory.Diego
             else if (!attackDone && healDone) // Si no termino el Tutorial de Attack y termino el Tutorial de Heal
             {
                 if (Input.GetButtonDown("Fire1")) // Si hace Click con el Boton Izquierdo del Mouse
+                {
+                    attackTimeToHideTimer = attackTimeToHide + Time.time; // Empezamos el Contador para Ocultar
+                }
+
+                if (Time.time > attackTimeToHideTimer) // Si paso el tiempo del Contador
                 {
                     attackObject.SetActive(false); // Ocultamos el Objeto Attack
                     attackDone = true; // Que termino el Tutorial de Attack

@@ -478,13 +478,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToStart: 0.5
   movementObject: {fileID: 875405621}
-  movementTimeToHide: 0
+  movementTimeToHide: 1
   dashObject: {fileID: 1548371264}
-  dashTimeToHide: 0
+  dashTimeToHide: 1
   healObject: {fileID: 1761488233}
-  healTimeToHide: 0
+  healTimeToHide: 1
   attackObject: {fileID: 1834728634}
-  attackTimeToHide: 0
+  attackTimeToHide: 1
 --- !u!1 &774034516
 GameObject:
   m_ObjectHideFlags: 0
