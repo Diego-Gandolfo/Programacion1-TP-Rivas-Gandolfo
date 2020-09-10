@@ -44,6 +44,11 @@ namespace OnceUponAMemory.Diego
             dashTimeToHideTimer = Mathf.Infinity;
             healTimeToHideTimer = Mathf.Infinity;
             attackTimeToHideTimer = Mathf.Infinity;
+
+            movementObject.SetActive(false);
+            dashObject.SetActive(false);
+            healObject.SetActive(false);
+            attackObject.SetActive(false);
         }
 
         private void Update()
