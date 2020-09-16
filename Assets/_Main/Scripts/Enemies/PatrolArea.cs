@@ -27,7 +27,8 @@ namespace OnceUponAMemory.Main
         [Header("Raycast Settings")]
         [SerializeField] private float rayDistance = 0f; // La distancia que vamos a comprobar si se choca con algo
         [SerializeField] private LayerMask rayLayerMask = 0; // Que Layers tiene que detectar
-        [SerializeField] private bool objectNear = false; // Si tiene un objeto cerca y debe cambiar de rumbo
+        [SerializeField] private Vector2 rayOffset = Vector2.zero; // Que Layers tiene que detectar
+        private bool objectNear = false; // Si tiene un objeto cerca y debe cambiar de rumbo
 
         private void OnEnable() // Cada vez que se activa el Objeto o el Componente
         {
@@ -71,6 +72,24 @@ namespace OnceUponAMemory.Main
         {
             // TODO: Raycast PatrolArea
             // Que compruebe que no tiene nada adelante y agregarlo como condicion para cambiar de punto
+            // Quizás es mejor hacer un Evento OnCollisionEnter que cuando toca un Objeto de las Layers especificadas tome como que llego al punto
+            /*
+            RaycastHit hit;
+            Vector3 rayPosition = new Vector3(transform.position.x + rayOffset.x, transform.position.y + rayOffset.y, transform.position.z);
+
+            if (Physics.Raycast(rayPosition, transform.TransformDirection(Vector3.right), out hit, rayDistance, rayLayerMask))
+            {
+                Debug.DrawRay(rayPosition, transform.TransformDirection(Vector3.right) * hit.distance, Color.red);
+                Debug.Log("Did Hit");
+                objectNear = true;
+            }
+            else
+            {
+                Debug.DrawRay(rayPosition, transform.TransformDirection(Vector3.right) * rayDistance, Color.green);
+                Debug.Log("Did not Hit");
+                objectNear = false;
+            }
+            */
         }
 
         private void OnDrawGizmosSelected()

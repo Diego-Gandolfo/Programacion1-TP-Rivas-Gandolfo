@@ -1090,6 +1090,16 @@ PrefabInstance:
       propertyPath: areaSize.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: rayLayerMask.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: rayDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3067806697278334613, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: player
@@ -1622,6 +1632,16 @@ PrefabInstance:
         type: 3}
       propertyPath: areaSize.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: rayDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: rayLayerMask.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 3067806697278334613, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
@@ -2584,6 +2604,16 @@ PrefabInstance:
       propertyPath: patrolCenter
       value: 
       objectReference: {fileID: 270667721}
+    - target: {fileID: 6224888773575857381, guid: f7a7db5165098854aa1e8466325aac41,
+        type: 3}
+      propertyPath: rayDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224888773575857381, guid: f7a7db5165098854aa1e8466325aac41,
+        type: 3}
+      propertyPath: rayLayerMask.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 9008932679315221565, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -7488,6 +7518,16 @@ PrefabInstance:
       propertyPath: areaSize.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: rayDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: rayLayerMask.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 3067806697278334613, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: player
@@ -7845,6 +7885,16 @@ PrefabInstance:
         type: 3}
       propertyPath: areaSize.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224888773575857381, guid: f7a7db5165098854aa1e8466325aac41,
+        type: 3}
+      propertyPath: rayDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224888773575857381, guid: f7a7db5165098854aa1e8466325aac41,
+        type: 3}
+      propertyPath: rayLayerMask.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 9008932679315221565, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
