@@ -11,6 +11,7 @@ namespace OnceUponAMemory.Diego
     public class TutorialManager : MonoBehaviour
     {
         [Header("Manager")]
+        [SerializeField] private GameObject player = null;
         [SerializeField] private float timeToStart = 0f; // Almacenaremos el Objeto que contiene el Cartel de Movimiento
         private bool canStart = false; // Indicaremos cuando completo el Tutorial de Movimiento
 
@@ -27,6 +28,7 @@ namespace OnceUponAMemory.Diego
         private bool dashDone = false; // Indicaremos cuando completo el Tutorial de Dash
 
         [Header("Heal")]
+        [SerializeField] private float damage = 0f;
         [SerializeField] private GameObject healObject = null; // Almacenaremos el Objeto que contiene el Cartel de Heal
         [SerializeField] private float healTimeToHide = 0f; // Tiempo para ocultar el Objeto Heal
         private float healTimeToHideTimer = Mathf.Infinity;
@@ -89,7 +91,13 @@ namespace OnceUponAMemory.Diego
             }
             else if (!healDone && dashDone) // Si no termino el Tutorial de Heal y termino el Tutorial de Dash
             {
-                //TODO: Hacer daño al Personaje para el Tutorial
+                Health health = player.GetComponent<Health>(); // Al pasarlo a Main hay que cambiarlo por el Componente de Health correcto
+                if (health != null)
+                {
+                    health.TakeDamage(damage);
+                    damage = 0;
+                }
+
                 if (Input.GetKeyDown(KeyCode.C)) // Si presiona la tecla C
                 {
                     healTimeToHideTimer = healTimeToHide + Time.time; // Empezamos el Contador para Ocultar
