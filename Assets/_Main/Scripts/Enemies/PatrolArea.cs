@@ -24,6 +24,11 @@ namespace OnceUponAMemory.Main
         private float minY = 0; // Al Activar el Componente o el Objeto se almacenará el valor Mínimo del Area para Y
         private float maxY = 0; // Al Activar el Componente o el Objeto se almacenará el valor Máximo del Area para Y
 
+        [Header("Raycast Settings")]
+        [SerializeField] private float rayDistance = 0f; // La distancia que vamos a comprobar si se choca con algo
+        [SerializeField] private LayerMask rayLayerMask = 0; // Que Layers tiene que detectar
+        [SerializeField] private bool objectNear = false; // Si tiene un objeto cerca y debe cambiar de rumbo
+
         private void OnEnable() // Cada vez que se activa el Objeto o el Componente
         {
             patrolPosition = new GameObject("Patrol Position"); // Creamos un nuevo GameObject que usaremos para determinar los puntos a los que debemos movernos
@@ -60,6 +65,12 @@ namespace OnceUponAMemory.Main
                     timer -= Time.deltaTime; // Si el tiempo no paso, vamos restando Time.deltaTime
                 }
             }
+        }
+
+        private void FixedUpdate()
+        {
+            // TODO: Raycast PatrolArea
+            // Que compruebe que no tiene nada adelante y agregarlo como condicion para cambiar de punto
         }
 
         private void OnDrawGizmosSelected()

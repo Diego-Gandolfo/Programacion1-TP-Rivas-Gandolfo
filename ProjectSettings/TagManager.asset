@@ -14,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - Character
-  - Enemy
   - Player
+  - Enemy
+  - EnemyBullet
   - MiniMap
   - Colliders
   - Box

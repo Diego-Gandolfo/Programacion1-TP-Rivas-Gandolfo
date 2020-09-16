@@ -8,10 +8,12 @@ namespace OnceUponAMemory.Diego
     {
         [SerializeField] private bool random = false; // Variable para determinar si se mueve de forma aleatoria o secuencial
 
+        [Header("Patrol Settings")]
         [SerializeField] private float movemetSpeed = 3.0f; // La velocidad que se desplaza al estar patrullando
         [SerializeField] private float waitTime = 1.0f; // El tiempo que espera hasta en un punto antes de empezar a moverse al siguiente
         private float timer = 0.0f; // Variable que usaremos para llevar el control del tiempo
 
+        [Header("Patrol Points")]
         [SerializeField] private Transform[] patrolPoints = null; // Array (vector o "lista") donde almacenaremos los puntos a patrullar
         private int nextPoint = 0;
 
@@ -33,7 +35,7 @@ namespace OnceUponAMemory.Diego
                     if (timer <= 0) // Comprobamos si ya paso el tiempo de espera deseado
                     {
                         nextPoint = Random.Range(0, patrolPoints.Length); // Asignamos un nuevo punto aleatorio
-                        timer = waitTime;
+                        timer = waitTime; // Reinicializamos el Timer
                     }
                     else
                     {

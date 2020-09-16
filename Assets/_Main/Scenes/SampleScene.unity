@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 48927455}
   - component: {fileID: 48927457}
   - component: {fileID: 48927458}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: CounterFragmentosMemoria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,6 +1185,11 @@ PrefabInstance:
       propertyPath: detectionRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9092090628683407179, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: targetsLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6ef61020641754f9c7cc72717c41eb, type: 3}
 --- !u!4 &257278960 stripped
@@ -1432,7 +1437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 304669551}
   - component: {fileID: 304669552}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1485,7 +1490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 341796581}
   - component: {fileID: 341796582}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,6 +1718,11 @@ PrefabInstance:
       propertyPath: detectionRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9092090628683407179, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: targetsLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6ef61020641754f9c7cc72717c41eb, type: 3}
 --- !u!4 &363944170 stripped
@@ -1763,7 +1773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410492831}
   - component: {fileID: 410492832}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2246,7 +2256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 601071547}
   - component: {fileID: 601071548}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SkeletonCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2455,7 +2465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 631490839}
   - component: {fileID: 631490840}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2503,6 +2513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: detectionRange
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 519349737245435450, guid: f7a7db5165098854aa1e8466325aac41,
+        type: 3}
+      propertyPath: targetsLayerMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 2598814167966426660, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
@@ -2863,7 +2878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 727636719}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Skills Cooldowns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2904,7 +2919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 734148728}
   - component: {fileID: 734148729}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4244,7 +4259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1159719970}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Dash Skill (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4618,7 +4633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382456490}
   - component: {fileID: 1382456491}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4664,7 +4679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1385160742}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Attack Skill (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4708,7 +4723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441183635}
   - component: {fileID: 1441183636}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4755,7 +4770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1446868820}
   - component: {fileID: 1446868821}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4994,7 +5009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526969004}
   - component: {fileID: 1526969005}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5041,7 +5056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529901434}
   - component: {fileID: 1529901435}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5302,7 +5317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572397511}
   - component: {fileID: 1572397512}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5418,7 +5433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599247395}
   - component: {fileID: 1599247396}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5545,7 +5560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1624117051}
   - component: {fileID: 1624117052}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6299,7 +6314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825471596}
   - component: {fileID: 1825471597}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6485,7 +6500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1887551382}
   - component: {fileID: 1887551383}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6762,6 +6777,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 301002122, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 521033686, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 706296719, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187674667, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384599795, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027469348, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485514326035137255, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858648102488300620, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105869382629778010, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2885070718264219013, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
@@ -6772,11 +6826,26 @@ PrefabInstance:
       propertyPath: imageUI
       value: 
       objectReference: {fileID: 801073295}
+    - target: {fileID: 4570445977353588310, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675660262692694977, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5578547246784976994, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
       value: 
       objectReference: {fileID: 969207274}
+    - target: {fileID: 6419598956339099762, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6419598956448846664, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -6785,6 +6854,31 @@ PrefabInstance:
     - target: {fileID: 6419598956448846664, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419598956448846665, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419598956806825519, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463375036883388367, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463375037524128571, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463375037525476923, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6463375038460266259, guid: a2020f44452ecdf499740a483623a30e,
@@ -6846,6 +6940,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463375038460266261, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463375038894307587, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717467912240582434, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564465148140708964, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2020f44452ecdf499740a483623a30e, type: 3}
@@ -7126,7 +7240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126550569}
   - component: {fileID: 2126550570}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneCollider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7479,6 +7593,11 @@ PrefabInstance:
       propertyPath: detectionRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9092090628683407179, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: targetsLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6ef61020641754f9c7cc72717c41eb, type: 3}
 --- !u!4 &1845244001430111488 stripped
@@ -7636,6 +7755,11 @@ PrefabInstance:
         type: 3}
       propertyPath: detectionRange
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 519349737245435450, guid: f7a7db5165098854aa1e8466325aac41,
+        type: 3}
+      propertyPath: targetsLayerMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 2598814167966426660, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}

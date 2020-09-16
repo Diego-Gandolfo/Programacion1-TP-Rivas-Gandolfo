@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3545157949308726451}
   - component: {fileID: 2790731428037862953}
   - component: {fileID: 94967665371662203}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: -2293984593390578655}
   - component: {fileID: 5108597555567940087}
   - component: {fileID: 4250699677195197277}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
