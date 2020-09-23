@@ -129,11 +129,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamageArea
       objectReference: {fileID: 0}
-    - target: {fileID: 4481038597817806572, guid: c2fb9524d5f36dd4781d36c9a9844164,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 4481038597817806573, guid: c2fb9524d5f36dd4781d36c9a9844164,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -188,11 +183,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4481038597817806573, guid: c2fb9524d5f36dd4781d36c9a9844164,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.0182886
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2fb9524d5f36dd4781d36c9a9844164, type: 3}
