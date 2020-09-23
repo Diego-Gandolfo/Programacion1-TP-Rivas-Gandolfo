@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4875995338856649343}
   - component: {fileID: 4875995338856649280}
   - component: {fileID: 341215844035737694}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: UndestroyableBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

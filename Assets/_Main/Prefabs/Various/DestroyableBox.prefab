@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211626847}
   - component: {fileID: 211626846}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BoxControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4347766546746953188}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: iNSTANTIATE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4347766546861447500}
   - component: {fileID: 4347766546861447497}
   - component: {fileID: 4347766546861447511}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DestroyableBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
