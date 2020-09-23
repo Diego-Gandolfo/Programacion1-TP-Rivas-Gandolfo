@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840861211}
   - component: {fileID: 1840861212}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: MinimapIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6240805308677601582}
   - component: {fileID: 4983754162251630271}
   - component: {fileID: 6965909553020331046}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: 6096331242879597160}
   - component: {fileID: 6096331242879597165}
   - component: {fileID: 553376107}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FragmentosDeMemoria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
