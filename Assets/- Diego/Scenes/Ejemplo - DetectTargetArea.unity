@@ -448,7 +448,7 @@ MonoBehaviour:
   detectionRange: 7.5
   targetsLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
 --- !u!212 &1571058477
 SpriteRenderer:
   m_ObjectHideFlags: 0

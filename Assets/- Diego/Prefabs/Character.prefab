@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7466849452140673628}
   - component: {fileID: 7466849452140673629}
   - component: {fileID: 7466849452140673630}
-  m_Layer: 10
+  - component: {fileID: 2465138256403373549}
+  m_Layer: 8
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -82,6 +83,32 @@ MonoBehaviour:
     m_Bits: 512
   damage: 10
   attackCooldown: 1
+--- !u!61 &2465138256403373549
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466849452140673631}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &7466849452231205664
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7466849452231205671}
   - component: {fileID: 7466849452231205670}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Character_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7466849453397268648}
   - component: {fileID: 7466849453397268655}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7466849453964681656}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: AreaAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,9 +275,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7466849453982735303}
   - component: {fileID: 7466849453982735302}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Weapon_Sprite
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
