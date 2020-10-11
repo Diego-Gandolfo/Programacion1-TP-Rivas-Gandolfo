@@ -237,7 +237,7 @@ Transform:
   - {fileID: 1572397511}
   - {fileID: 476839978}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &48927453
 GameObject:
@@ -528,7 +528,7 @@ Transform:
   - {fileID: 910716388}
   - {fileID: 2099615217}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &116455165
 PrefabInstance:
@@ -2258,7 +2258,7 @@ Transform:
   - {fileID: 910712612}
   - {fileID: 290813548}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &456869936
 GameObject:
@@ -2404,7 +2404,7 @@ Transform:
   - {fileID: 829905257}
   - {fileID: 507155239}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &507155238
 GameObject:
@@ -2583,7 +2583,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 26423
+    m_Bits: 63287
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6351,7 +6351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &746881606
 GameObject:
@@ -7567,7 +7567,7 @@ Transform:
   - {fileID: 382426721}
   - {fileID: 1272268766}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1111621928
 GameObject:
@@ -7836,7 +7836,7 @@ Transform:
   - {fileID: 880906777}
   - {fileID: 1280179859}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1159719969
 GameObject:
@@ -7903,7 +7903,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1199907288 stripped
 Transform:
@@ -8152,7 +8152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377008502
 GameObject:
@@ -8523,6 +8523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1506669460}
   - component: {fileID: 1506669461}
+  - component: {fileID: 1506669462}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: MainCamera
@@ -8575,7 +8576,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 34816
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 3378d4b1f89d60d4aa89404c60017f28, type: 2}
   m_TargetDisplay: 0
@@ -8587,6 +8588,37 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1506669462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506669459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1526969003
 GameObject:
   m_ObjectHideFlags: 0
@@ -9151,7 +9183,7 @@ GameObject:
   - component: {fileID: 1622913799}
   - component: {fileID: 1622913798}
   - component: {fileID: 1622913797}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tilemap-Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9248,46 +9280,30 @@ CompositeCollider2D:
         Y: -812649984
       - X: 675150016
         Y: -812649984
-    - - X: 637650084
-        Y: -200150041
-      - X: 637650084
-        Y: -187349959
-      - X: 637650025
-        Y: -187349900
-      - X: 625150116
-        Y: -187349900
-      - X: 625150116
-        Y: -174849959
-      - X: 625150057
-        Y: -174849900
-      - X: 612650084
-        Y: -174849900
-      - X: 612650084
-        Y: -162349959
-      - X: 612650025
-        Y: -162349900
-      - X: 499849975
-        Y: -162349900
-      - X: 499849916
-        Y: -162349959
-      - X: 499849916
-        Y: -175150041
-      - X: 499849975
-        Y: -175150100
-      - X: 512349916
-        Y: -175150100
-      - X: 512349916
-        Y: -187650041
-      - X: 512349975
-        Y: -187650100
-      - X: 524849916
-        Y: -187650100
-      - X: 524849916
-        Y: -200150041
-      - X: 524849975
-        Y: -200150100
-      - X: 637650025
-        Y: -200150100
+    - - X: 637649984
+        Y: -187350000
+      - X: 625150016
+        Y: -187350000
+      - X: 625150016
+        Y: -174850000
+      - X: 612649984
+        Y: -174850000
+      - X: 612649984
+        Y: -162350000
+      - X: 499850016
+        Y: -162350000
+      - X: 499850016
+        Y: -175150000
+      - X: 512350016
+        Y: -175150000
+      - X: 512350016
+        Y: -187650000
+      - X: 524850016
+        Y: -187650000
+      - X: 524850016
+        Y: -200150000
+      - X: 637649984
+        Y: -200150000
   m_CompositePaths:
     m_Paths:
     - - {x: 67.51497, y: -81.265}
@@ -9310,18 +9326,18 @@ CompositeCollider2D:
       - {x: 22.484972, y: -46.235}
       - {x: -22.515, y: -46.23503}
       - {x: -22.51497, y: -81.265}
-    - - {x: 63.764973, y: -20.015009}
-      - {x: 63.764973, y: -18.734991}
-      - {x: 62.515015, y: -18.73496}
-      - {x: 62.514977, y: -17.484991}
-      - {x: 61.26501, y: -17.48496}
-      - {x: 61.264973, y: -16.234991}
-      - {x: 49.984993, y: -16.235025}
-      - {x: 49.985027, y: -17.515009}
-      - {x: 51.234993, y: -17.51504}
-      - {x: 51.235027, y: -18.765009}
-      - {x: 52.484993, y: -18.76504}
-      - {x: 52.485027, y: -20.015009}
+    - - {x: 63.76497, y: -20.015}
+      - {x: 63.76497, y: -18.735}
+      - {x: 62.515003, y: -18.734972}
+      - {x: 62.51497, y: -17.485}
+      - {x: 61.265, y: -17.484972}
+      - {x: 61.26497, y: -16.235}
+      - {x: 49.985, y: -16.23503}
+      - {x: 49.98503, y: -17.515}
+      - {x: 51.235, y: -17.51503}
+      - {x: 51.23503, y: -18.765}
+      - {x: 52.485, y: -18.76503}
+      - {x: 52.48503, y: -20.015}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1622913799
@@ -18084,7 +18100,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1687404402
 GameObject:
@@ -18114,7 +18130,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1691319013
 GameObject:
@@ -18472,7 +18488,7 @@ GameObject:
   - component: {fileID: 1807881256}
   - component: {fileID: 1807881255}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Grid-Escenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18506,7 +18522,7 @@ Transform:
   - {fileID: 554513242}
   - {fileID: 124937886}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1818113727
 GameObject:
@@ -44865,7 +44881,7 @@ PrefabInstance:
     - target: {fileID: 1204661939103376738, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1204661939103376738, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
