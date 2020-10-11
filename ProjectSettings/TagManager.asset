@@ -42,6 +42,9 @@ TagManager:
   - name: MAPS-Floor
     uniqueID: 3652100359
     locked: 0
+  - name: MAPS-WALLS
+    uniqueID: 3681323715
+    locked: 0
   - name: MAPS-Deco
     uniqueID: 749281481
     locked: 0
