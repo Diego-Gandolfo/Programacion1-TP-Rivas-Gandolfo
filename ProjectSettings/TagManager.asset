@@ -51,6 +51,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ProjectilesAndTraps
+    uniqueID: 3378265013
+    locked: 0
   - name: Characters
     uniqueID: 3342834661
     locked: 0
