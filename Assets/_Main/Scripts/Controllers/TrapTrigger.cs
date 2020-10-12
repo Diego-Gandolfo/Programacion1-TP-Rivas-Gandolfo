@@ -7,12 +7,16 @@ namespace OnceUponAMemory.Main
 {
     public class TrapTrigger : MonoBehaviour
     {
- //       [SerializeField] private bool activateTrap = false; // Esta variable nunca se usa
         [SerializeField] private GameObject trap = null;
+        private Animator animator;
 
+        private void Awake()
+        {
+            animator = GetComponent<Animator>();
+        }
         private void Start()
         {
- //           activateTrap = false;
+            animator.SetBool("Enter", false);
             trap.gameObject.SetActive(false);
         }
 
@@ -20,9 +24,14 @@ namespace OnceUponAMemory.Main
         {
             if (other.CompareTag("Player"))
             {
-//               activateTrap = true;
+               animator.SetBool("Enter", true);
+
                trap.gameObject.SetActive(true);
                CinemachineShake.Instance.ShakeCam(7f, .1f);
+            }
+            else
+            {
+                animator.SetBool("Enter", false);
             }
         }
         
@@ -30,8 +39,8 @@ namespace OnceUponAMemory.Main
         {
             if (other.CompareTag("Player"))
             {
- //               activateTrap = false;
-               trap.gameObject.SetActive(false);
+                animator.SetBool("Enter", false);
+                trap.gameObject.SetActive(false);
             }
         }
     }

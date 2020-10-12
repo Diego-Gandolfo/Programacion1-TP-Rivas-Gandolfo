@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8275080275530188859}
   - component: {fileID: 8275080275530188860}
-  - component: {fileID: 8275080275530188857}
   - component: {fileID: 8275080275530188858}
   m_Layer: 9
   m_Name: TrapActivator
@@ -83,22 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8275080275530188857
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8275080275530188861}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &8275080275530188858
 MonoBehaviour:
   m_ObjectHideFlags: 0
