@@ -10694,7 +10694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  duration: 0.1
+  impulse: 50
+  duration: 0.25
   cooldown: 2
   imageUI: {fileID: 0}
   trail: {fileID: 521033686}
