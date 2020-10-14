@@ -10,15 +10,16 @@ namespace OnceUponAMemory.Main
         public float maxHealth = 10f;
         public float currentHealth;
 
-//      public GameObject player; // Esta variable no es necesaria
         public GameObject blood;
 
         public HealthBar healthBar;
 
+        public Action OnDie;
+
         void Start()
         {
             currentHealth = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);
+            healthBar.SetMaxHealth(maxHealth);            
         }
 
         private void Update()
@@ -50,9 +51,9 @@ namespace OnceUponAMemory.Main
 
         void Die()
         {
-//          Destroy(player);
-            Destroy(gameObject); // En lugar de usar la una variable que referencie al Player, directamente lo destruimos
-            healthBar.gameObject.SetActive(false);
+            OnDie.Invoke();
+            //Destroy(gameObject);
+            //healthBar.gameObject.SetActive(false);
         }
     }
 }
