@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public DoorScript door;
+    [SerializeField] private DoorScript door;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
