@@ -92,6 +92,8 @@ namespace OnceUponAMemory.Main
                 //rb2D.MovePosition(newPosition); // Nos movemos al punto indicado
                 Vector2 direction = mousePosition - transform.position;
                 rb2D.AddForce(direction.normalized * impulse, ForceMode2D.Impulse);
+                print(impulse);
+                print(durationTimer);
             }
         }
     }
