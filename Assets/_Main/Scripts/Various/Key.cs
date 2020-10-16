@@ -2,18 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+namespace OnceUponAMemory.Main
 {
-    [SerializeField] private DoorScript door;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class Key : MonoBehaviour
     {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            door.hasKey = true;
+        [SerializeField] private DoorScript door;
 
-            Debug.Log("now you have a key");
-            gameObject.SetActive(false);
+        private Vector3 rotation;
+
+        private void Start()
+        {
+            rotation = new Vector3(0, 2, 0);
+        }
+        private void Update()
+        {
+            transform.Rotate(rotation);
+        }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                door.hasKey = true;
+
+                Debug.Log("now you have a key");
+                gameObject.SetActive(false);
+            }
         }
     }
 }

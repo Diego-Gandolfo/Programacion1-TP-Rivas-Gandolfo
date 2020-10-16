@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
+namespace OnceUponAMemory.Main
 {
-    public bool hasKey;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public class DoorScript : MonoBehaviour
     {
-        if(other.CompareTag("Player") && !hasKey)
-            Debug.Log("you need a key");
-        
-        else if(other.CompareTag("Player") && hasKey)
-            Debug.Log("you can pass now");
-             
+        public bool hasKey;
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player") && !hasKey)
+                Debug.Log("you need a key");
+
+            else if (other.CompareTag("Player") && hasKey)
+                Debug.Log("you can pass now");
+
+        }
     }
 }
