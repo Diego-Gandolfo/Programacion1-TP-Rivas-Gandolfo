@@ -12,6 +12,8 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float explosionRadius;
         [SerializeField] private float explosionIntensity;
         [SerializeField] private LayerMask layerMasks;
+
+        [SerializeField] private GameObject stone;
         
         public bool hasGrenade;
 
@@ -41,7 +43,11 @@ namespace OnceUponAMemory.Main
 
                     rb.AddForce((direction * explosionIntensity), ForceMode2D.Impulse);
                     Destroy(gameObject);
+
+                    stone.gameObject.SetActive(false);
                 }
+
+
             }
         }
 
