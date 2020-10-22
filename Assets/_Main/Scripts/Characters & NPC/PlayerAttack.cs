@@ -111,9 +111,12 @@ namespace OnceUponAMemory.Main
 
         void ShootGrenade()
         {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = mousePosition - transform.position;
+
             GameObject grenade = Instantiate(grenadePrefab, grenadePoint.transform.position, grenadePoint.transform.rotation);
             Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
-            rb.AddForce(transform.right * grenadeSpeedForce, ForceMode2D.Impulse);
+            rb.AddForce(direction * grenadeSpeedForce, ForceMode2D.Impulse);
         }
     }
 }
