@@ -30,6 +30,9 @@ namespace OnceUponAMemory.Main
         private Rigidbody2D rb2D = null; // Para almacenar nuestro Rigidbody2D
         private Camera mainCamera = null;
 
+        // Para testeo
+        private bool doOnce = false;
+
         private void Awake()
         {
             rb2D = GetComponent<Rigidbody2D>();
@@ -38,13 +41,14 @@ namespace OnceUponAMemory.Main
         private void Start()
         {
             trail.gameObject.SetActive(false);
-            durationTimer = duration; // Inicializamos el contador de Duracion
+            durationTimer = 0; // Inicializamos el contador de Duracion
             cooldownTimer = cooldown; // Inicializamos el cooldownTimer con la duracion del Cooldown
             mainCamera = Camera.main;
         }
 
         private void Update()
         {
+            // Input
             if (Input.GetButtonDown("Fire2") && canDash)
             {
                 canDash = false; // Indicamos que no puede hacer Dash
@@ -59,8 +63,14 @@ namespace OnceUponAMemory.Main
                 Dust_Dash.Play();
 
                 trail.gameObject.SetActive(true); // Activamos el Trail
+
+                /*
+                // Para testeo
+                doOnce = true;
+                */
             }
 
+            // Trail
             if (durationTimer > 0) // Verificamos si ya termino de contar la duración del Dahs
             {
                 durationTimer -= Time.deltaTime; // Vamos llevando la cuenta regresiva
@@ -68,8 +78,10 @@ namespace OnceUponAMemory.Main
             else
             {
                 trail.gameObject.SetActive(false); // Desactivamos el Trail
+
             }
 
+            // UI Icono Cooldown
             if ((cooldownTimer <= 0) && startCooldown) // Verificamos si termino el Cooldown y debe estar haciendo el Cooldown
             {
                 startCooldown = false; // Que termino con el Cooldown
@@ -86,14 +98,37 @@ namespace OnceUponAMemory.Main
 
         private void FixedUpdate()
         {
+            // Dash
             if (durationTimer > 0) // Verificamos si ya termino de contar la duración del Dahs
             {
-                //Vector2 newPosition = Vector2.MoveTowards(transform.position, mousePosition, speed * Time.fixedDeltaTime); // Calculamos el siguiente punto
-                //rb2D.MovePosition(newPosition); // Nos movemos al punto indicado
+                Vector2 newPosition = Vector2.MoveTowards(transform.position, mousePosition, speed * Time.fixedDeltaTime); // Calculamos el siguiente punto
+                rb2D.MovePosition(newPosition); // Nos movemos al punto indicado
+                
+                /*
                 Vector2 direction = mousePosition - transform.position;
-                rb2D.AddForce(direction.normalized * impulse, ForceMode2D.Impulse);
-                //print(impulse);
-                //print(durationTimer);
+                direction.Normalize();
+                rb2D.AddForce(direction * impulse, ForceMode2D.Impulse);
+                */
+
+                /*
+                // Para testeo
+                if (doOnce)
+                {
+                    doOnce = false;
+                    print("-------------------------------------");
+                    //print("rb2D Object: " + rb2D.gameObject.name);
+                }
+                //print("Duration Timer: " + durationTimer);
+                //print("Mouse Position: " + mousePosition);
+                //print("Transform Position: " + transform.position);
+                //print("Direction: " + direction);
+                //print("Impulso: " + impulse);
+                //print("Direction * impulse: " + direction * impulse);
+                //print("rb2D Velocity: " + rb2D.velocity);
+                //print("Time.fixedDeltaTime: " + Time.fixedDeltaTime);
+                //print("Time.timeScale: " + Time.timeScale);
+                //print("Physics2D.gravity: " + Physics2D.gravity);
+                */
             }
         }
     }
