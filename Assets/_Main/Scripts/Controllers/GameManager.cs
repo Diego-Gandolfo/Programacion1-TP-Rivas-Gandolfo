@@ -8,27 +8,24 @@ namespace OnceUponAMemory.Main
 {
     public class GameManager : MonoBehaviour
     {
-        // Condicion Victoria: Llegar al final del mapa y activar el WinTrigger
-        // Condicion Derrota: Morir
-
-        [SerializeField] private VictoryTrigger victoryTrigger;
-        [SerializeField] private PlayerHealth playerHealth;
+        [SerializeField] private VictoryTrigger victoryTrigger = null; // Objeto que tiene la Condicion de Victoria
+        [SerializeField] private PlayerHealth playerHealth = null; // Objeto que tiene la condicion de Derrota
 
         private void Awake()
         {
-            victoryTrigger.OnVictory += Victory;
-            playerHealth.OnDie += GameOver;
+            victoryTrigger.OnVictory += Victory; // Escuchamos el Evento de OnVictory invocado en VictoryTrigger y llamamos a la funcion Victory
+            playerHealth.OnDie += GameOver; // Escuchamos el Evento de OnDie invocado en PlayerHealth y llamamos a la funcion GameOver
         }
 
         private void GameOver()
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver"); // Cargamos escena de GameOver
 
         }
 
         private void Victory()
         {
-            SceneManager.LoadScene("Victory");
+            SceneManager.LoadScene("Victory"); // Cargamos escena de Victoria
         }
     }
 }
