@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using OnceUponAMemory.Franco;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -28,6 +29,10 @@ namespace OnceUponAMemory.Main
         [SerializeField] private Image imageUI = null;
 
         public GameObject swordTrail;
+
+        [SerializeField] private GameObject grenadePrefab;
+        [SerializeField] private GameObject grenadePoint;
+        private float grenadeSpeedForce = 10.0f;
         
         private void Start()
         {
@@ -44,7 +49,7 @@ namespace OnceUponAMemory.Main
                 swordTrail.gameObject.SetActive(true); // Movi la activación del Trail acá, para aprovechar este IF
                 Attack();
             }
-/*
+/*  
             if (canAttack != true)
             {
                 swordTrail.gameObject.SetActive(true);
@@ -54,6 +59,11 @@ namespace OnceUponAMemory.Main
                 swordTrail.gameObject.SetActive(false);
             }
 */            
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                ShootGrenade();
+            }
+
             if ((cooldownTimer <= 0) && (canCount))
             {
                 cooldownTimer = attackCooldown;
@@ -97,6 +107,13 @@ namespace OnceUponAMemory.Main
         private void OnDrawGizmosSelected()
         {
             if (attackPosition != null) Gizmos.DrawWireSphere(attackPosition.position, attackRange); // Esto es para dibujar donde está el Overlap
+        }
+
+        void ShootGrenade()
+        {
+            GameObject grenade = Instantiate(grenadePrefab, grenadePoint.transform.position, grenadePoint.transform.rotation);
+            Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
+            rb.AddForce(transform.right * grenadeSpeedForce, ForceMode2D.Impulse);
         }
     }
 }

@@ -6,7 +6,46 @@ namespace OnceUponAMemory.Main
 {
     public class Grenade : MonoBehaviour
     {
+        [SerializeField] private float explosionTime = 2.0f;
+        private float currentExplosionTime;
+
+        [SerializeField] private float explosionRadius;
+        [SerializeField] private float explosionIntensity;
+        [SerializeField] private LayerMask layerMasks;
+        
         public bool hasGrenade;
+
+        private void Update()
+        {
+            currentExplosionTime += Time.deltaTime;
+
+            if(currentExplosionTime >= explosionTime)
+            {
+                Explode();
+            }
+        }
+
+        void Explode()
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll((Vector2)transform.position, explosionRadius, layerMasks);
+
+            foreach(var collider in colliders)
+            {
+                Rigidbody2D rb = collider.gameObject.GetComponent<Rigidbody2D>();
+
+                if(rb != null)
+                {
+                    Vector3 direction = collider.transform.position - transform.position;
+                    //float distance = direction.magnitude;
+                    direction.Normalize();
+
+                    rb.AddForce((direction * explosionIntensity), ForceMode2D.Impulse);
+                    Destroy(gameObject);
+                }
+            }
+        }
+
+
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
