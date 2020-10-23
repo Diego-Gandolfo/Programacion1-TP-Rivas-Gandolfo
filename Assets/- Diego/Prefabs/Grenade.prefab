@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3139672828592272549}
   - component: {fileID: 1715421249013828146}
   - component: {fileID: 3662874247720254299}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!50 &1715421249013828146
 Rigidbody2D:
   serializedVersion: 4
@@ -64,7 +64,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -84,7 +84,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bd5761b6decc74b9e10bb3f69fc096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frictionValue: 0.1
+  stopVelocity: 0.5
+  explotionTimer: 2
+  explotionRadius: 5
+  explotionIntensity: 10
+  explotionDamage: 1
+  explotionLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  explotionParticleEffect: {fileID: 5750056041432814302, guid: 9121c43d86ff3f54aa39b0f5825e3685,
+    type: 3}
 --- !u!1 &2236379819851982523
 GameObject:
   m_ObjectHideFlags: 0

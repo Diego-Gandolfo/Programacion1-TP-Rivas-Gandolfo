@@ -30,5 +30,15 @@ namespace OnceUponAMemory.Diego
         {
             Destroy(gameObject); // Destruimos el Objeto
         }
+
+        public float GetMaxHealth()
+        {
+            return maxHealth;
+        }
+
+        public float GetCurrentHealth()
+        {
+            return currentHealth;
+        }
     }
 }

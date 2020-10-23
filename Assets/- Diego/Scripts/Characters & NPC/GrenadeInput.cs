@@ -44,6 +44,8 @@ namespace OnceUponAMemory.Diego
                 Vector2 direction = mousePosition - transform.position;
 
                 grenadeClone.ThrowGrenade(direction, impulseCurrent);
+
+                impulseCurrent = 0;
             }
         }
     }
