@@ -37,6 +37,8 @@ namespace OnceUponAMemory.Main
         [SerializeField] private GameObject grenadePrefab;
         [SerializeField] private GameObject grenadePoint;
         private float grenadeSpeedForce = 10.0f;
+
+        [SerializeField] private Text grenadeAmount;
         
         private void Start()
         {
@@ -77,6 +79,8 @@ namespace OnceUponAMemory.Main
                     Debug.Log("No more grenades!");
                 }
             }
+
+            grenadeAmount.text = currentGrenades + "/" + maxGrenades;
 
             if ((cooldownTimer <= 0) && (canCount))
             {
