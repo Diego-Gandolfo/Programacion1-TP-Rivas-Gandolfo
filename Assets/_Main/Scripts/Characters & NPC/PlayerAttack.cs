@@ -24,19 +24,19 @@ namespace OnceUponAMemory.Main
         private bool canCount = false;
         private bool canUseGrenade = true;
 
+        //GRENADE
         private int maxGrenades = 5;
-        [SerializeField] private int currentGrenades = 0;
-        
+        private int currentGrenades = 0;
+        private float grenadeSpeedForce = 10.0f;
+
         [Header("Visual Feedback")]
         [SerializeField] private Animator animatorSword = null;
 
         [SerializeField] private Image imageUI = null;
 
         public GameObject swordTrail;
-
         [SerializeField] private GameObject grenadePrefab;
         [SerializeField] private GameObject grenadePoint;
-        private float grenadeSpeedForce = 10.0f;
 
         [SerializeField] private Text grenadeAmount;
         
