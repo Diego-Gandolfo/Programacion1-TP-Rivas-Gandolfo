@@ -22,9 +22,10 @@ namespace OnceUponAMemory.Main
         {
             myRigidbody2D = GetComponent<Rigidbody2D>();
         }
-        /*
+ 
         private void Update()
         {
+            /*
             // Movimiento por Transltate
             Vector2 speedMov = new Vector2(Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime, Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime); // Almacenamos el Eje Vertical y el Eje Horizontal multiplicando por la Velocidad de Movimiento y lo normalizamos con Time.deltaTime
             transform.Translate(speedMov); // Nos movemos en el Eje Vertical y Horizontal
@@ -32,8 +33,9 @@ namespace OnceUponAMemory.Main
             animatorMovement.SetFloat("Speed", speedMov.sqrMagnitude); // Definimos si se está Moviendo o no
 
             if (speedMov.magnitude != 0) CreateDust();
+            */
         }
-        */
+
         private void FixedUpdate()
         {
 
@@ -46,6 +48,7 @@ namespace OnceUponAMemory.Main
             myRigidbody2D.velocity = movement;
             animatorMovement.SetFloat("Speed", movement.sqrMagnitude);
             if (xMovement != 0 || yMovement != 0) CreateDust();
+
         }
 
         private void CreateDust()
