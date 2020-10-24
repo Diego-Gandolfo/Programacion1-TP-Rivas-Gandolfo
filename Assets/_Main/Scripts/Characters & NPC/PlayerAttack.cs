@@ -22,6 +22,10 @@ namespace OnceUponAMemory.Main
         //BOOLS
         private bool canAttack = true;
         private bool canCount = false;
+        private bool canUseGrenade = true;
+
+        private int maxGrenades = 5;
+        [SerializeField] private int currentGrenades = 0;
         
         [Header("Visual Feedback")]
         [SerializeField] private Animator animatorSword = null;
@@ -38,6 +42,8 @@ namespace OnceUponAMemory.Main
         {
             cooldownTimer = attackCooldown;
             swordTrail.gameObject.SetActive(false);
+
+            currentGrenades = maxGrenades;
         }
 
         private void Update()
@@ -59,9 +65,17 @@ namespace OnceUponAMemory.Main
                 swordTrail.gameObject.SetActive(false);
             }
 */            
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space) && canUseGrenade)
             {
                 ShootGrenade();
+
+                currentGrenades -= 1;
+
+                if(currentGrenades <= 0)
+                {
+                    canUseGrenade = false;
+                    Debug.Log("No more grenades!");
+                }
             }
 
             if ((cooldownTimer <= 0) && (canCount))
