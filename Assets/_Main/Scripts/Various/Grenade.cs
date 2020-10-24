@@ -11,6 +11,7 @@ namespace OnceUponAMemory.Main
 
         [SerializeField] private float explosionRadius;
         [SerializeField] private float explosionIntensity;
+
         [SerializeField] private LayerMask layerMasks;
 
         [SerializeField] private GameObject stone;
