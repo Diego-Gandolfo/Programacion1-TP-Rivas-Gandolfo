@@ -24,7 +24,10 @@ namespace OnceUponAMemory.Main
             
             animator.SetTrigger("Damaged");
             
-            if (currentHealth <= 0) Destroy(gameObject);
+            if (currentHealth <= 0)
+            {
+                animator.SetTrigger("Destroyed");  
+            }
         }
     }
 }
