@@ -21,11 +21,16 @@ namespace OnceUponAMemory.Main
         public void TakePlayerDamage(float damage)
         {
             currentHealth -= damage;
-       
+            SoundManager.PlaySound("CrateDamage");
+
             animator.SetTrigger("Damaged");
             
             if (currentHealth <= 0)
+            {
                 animator.SetTrigger("Destroyed");
+                SoundManager.PlaySound("BreakCrate");
+            }
+                
         }
     }
 }

@@ -659,8 +659,8 @@ Transform:
   - {fileID: 2109200700}
   - {fileID: 1245266177}
   - {fileID: 746881607}
-  - {fileID: 2099615217}
   - {fileID: 1260549295}
+  - {fileID: 2099615217}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51322,6 +51322,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 507155239}
     m_Modifications:
+    - target: {fileID: 3067806697278334610, guid: 8d6ef61020641754f9c7cc72717c41eb,
+        type: 3}
+      propertyPath: maxHealth
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: patrolCenter

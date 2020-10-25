@@ -1,42 +1,50 @@
-﻿using System.Collections;
+﻿using OnceUponAMemory.Franco;
+using OnceUponAMemory.Main;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FullBox : MonoBehaviour
+namespace OnceUponAMemory.Main
 {
-    [SerializeField] private float maxHealth = 3.0f;
-    [SerializeField] private float currentHealth;
-
-    private Animator animator;
-
-    [SerializeField] private GameObject fragmentoDeMemoria;
-
-    [SerializeField] private GameObject instanciador;
-
-    private void Awake()
+    public class FullBox : MonoBehaviour
     {
-        animator = GetComponent<Animator>();
-    }
-    void Start()
-    {
-        currentHealth = maxHealth;
-    }
+        [SerializeField] private float maxHealth = 3.0f;
+        [SerializeField] private float currentHealth;
 
+        private Animator animator;
 
-    public void TakePlayerDamage(float damage)
-    {
-        currentHealth -= damage;
+        [SerializeField] private GameObject fragmentoDeMemoria;
 
-        animator.SetTrigger("Damaged");
+        [SerializeField] private GameObject instanciador;
 
-        if(currentHealth <= 0)
+        private void Awake()
         {
-            animator.SetTrigger("Destroyed");
+            animator = GetComponent<Animator>();
+        }
+        void Start()
+        {
+            currentHealth = maxHealth;
+        }
 
-            Instantiate(fragmentoDeMemoria, instanciador.transform.position, Quaternion.identity);
 
-            //el problema acá es que no podemos destruir ni desactivar el objeto, porque la animación no se completa
-            //no tengo idea de como hacer eso!
+        public void TakePlayerDamage(float damage)
+        {
+            currentHealth -= damage;
+            SoundManager.PlaySound("CrateDamage");
+
+            animator.SetTrigger("Damaged");
+
+            if (currentHealth <= 0)
+            {
+                animator.SetTrigger("Destroyed");
+
+                Instantiate(fragmentoDeMemoria, instanciador.transform.position, Quaternion.identity);
+
+                SoundManager.PlaySound("BreakCrate");
+                //el problema acá es que no podemos destruir ni desactivar el objeto, porque la animación no se completa
+                //no tengo idea de como hacer eso!
+            }
         }
     }
+
 }

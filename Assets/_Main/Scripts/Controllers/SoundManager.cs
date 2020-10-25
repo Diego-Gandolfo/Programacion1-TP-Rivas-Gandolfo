@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
 namespace OnceUponAMemory.Main
@@ -8,12 +7,14 @@ namespace OnceUponAMemory.Main
     public class SoundManager : MonoBehaviour
     {
 
-        public static AudioClip GhostDamage, SpiderDie, AttackSound, PickUpItem, EnemyHitRebuild, Dash, SpiderPatrol, PlayerTakeDamage, SpiderDamage, PickUpItemHeal;
+        public static AudioClip CrateDamage, BreakCrate, GhostDamage, SpiderDie, AttackSound, PickUpItem, EnemyHitRebuild, Dash, SpiderPatrol, PlayerTakeDamage, SpiderDamage, PickUpItemHeal;
 
         private static AudioSource _audioSource;
 
         void Start()
         {
+            CrateDamage = Resources.Load<AudioClip>("CrateDamage");
+            BreakCrate = Resources.Load<AudioClip>("BreakCrate");
             GhostDamage = Resources.Load<AudioClip>("GhostDamage");
             SpiderDie = Resources.Load<AudioClip>("SpiderDie");
             SpiderDamage = Resources.Load<AudioClip>("SpiderDamage");
@@ -70,6 +71,13 @@ namespace OnceUponAMemory.Main
                 case "PickUpItemHeal":
                     _audioSource.PlayOneShot(PickUpItemHeal);
                     break;
+                case "BreakCrate":
+                    _audioSource.PlayOneShot(BreakCrate);
+                    break;
+                case "CrateDamage":
+                    _audioSource.PlayOneShot(CrateDamage);
+                    break;
+
             }
         }
     }
