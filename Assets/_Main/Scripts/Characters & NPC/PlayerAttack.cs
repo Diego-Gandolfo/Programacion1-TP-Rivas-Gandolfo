@@ -113,9 +113,11 @@ namespace OnceUponAMemory.Main
                     CinemachineShake.Instance.ShakeCam(5f, .1f);
                 }
                 else if (target.GetComponent<NewBoxController>() != null)
-                {
                     target.GetComponent<NewBoxController>().TakePlayerDamage(damage);
-                }
+
+                else if (target.GetComponent<FullBox>())
+                    target.GetComponent<FullBox>().TakePlayerDamage(damage);
+
             }
 
             SoundManager.PlaySound("AttackSound");

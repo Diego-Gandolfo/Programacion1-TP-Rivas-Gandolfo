@@ -11,6 +11,8 @@ public class FullBox : MonoBehaviour
 
     [SerializeField] private GameObject fragmentoDeMemoria;
 
+    [SerializeField] private GameObject instanciador;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -31,8 +33,10 @@ public class FullBox : MonoBehaviour
         {
             animator.SetTrigger("Destroyed");
 
-            Instantiate(fragmentoDeMemoria, transform.position, Quaternion.identity);
+            Instantiate(fragmentoDeMemoria, instanciador.transform.position, Quaternion.identity);
 
+            //el problema acá es que no podemos destruir ni desactivar el objeto, porque la animación no se completa
+            //no tengo idea de como hacer eso!
         }
     }
 }
