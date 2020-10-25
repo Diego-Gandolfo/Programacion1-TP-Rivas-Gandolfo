@@ -21,12 +21,11 @@ namespace OnceUponAMemory.Main
         public void TakePlayerDamage(float damage)
         {
             currentHealth -= damage;
-            
+       
             animator.SetTrigger("Damaged");
             
             if (currentHealth <= 0)
                 animator.SetTrigger("Destroyed");
-
         }
     }
 }
