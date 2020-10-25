@@ -8,7 +8,7 @@ namespace OnceUponAMemory.Main
 {
     public class NewBoxController : MonoBehaviour
     {
-        [SerializeField] private float maxHealth = 3;
+        private float maxHealth = 3;
         [SerializeField] private float currentHealth;
 
         [SerializeField] private Animator animator;
@@ -25,9 +25,8 @@ namespace OnceUponAMemory.Main
             animator.SetTrigger("Damaged");
             
             if (currentHealth <= 0)
-            {
-                animator.SetTrigger("Destroyed");  
-            }
+                animator.SetTrigger("Destroyed");
+
         }
     }
 }
