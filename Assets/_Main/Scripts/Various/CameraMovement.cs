@@ -6,7 +6,7 @@ namespace OnceUponAMemory.Main
 {
     public class CameraMovement : MonoBehaviour
     {
-        private float speed = 1f;
+        private float speed = 3f;
 
         void Update()
         {

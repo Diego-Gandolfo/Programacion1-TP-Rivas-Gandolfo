@@ -15,14 +15,14 @@ namespace OnceUponAMemory.Main
 
         private float width;
 
-        private TilemapRenderer tilemapRenderer;
+        private SpriteRenderer spriteRenderer;
 
         void Start()
         {
             cameraTransform = Camera.main.transform;
             lastCameraPosition = cameraTransform.position;
-            tilemapRenderer = GetComponent<TilemapRenderer>();
-            width = tilemapRenderer.bounds.size.x;
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            width = spriteRenderer.bounds.size.x;
         }
 
         private void FixedUpdate()
