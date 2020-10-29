@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4874116106065168905}
   - component: {fileID: 4874116106065168907}
   - component: {fileID: 4874116106065168906}
+  - component: {fileID: 6482074354999613705}
   m_Layer: 0
   m_Name: BulletVFX
   m_TagString: Untagged
@@ -101,3 +102,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6482074354999613705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874116106065168904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d176c6dcd240163448133614f177c96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
