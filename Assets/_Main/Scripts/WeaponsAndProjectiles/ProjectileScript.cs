@@ -10,12 +10,16 @@ namespace OnceUponAMemory.Main
     {
         [SerializeField] private float impulse = 10f;
         public float speed;
+
         private Transform player;
+
         private Vector2 target;
 
         private int damage = 1;
 
         private Rigidbody2D rb2D = null;
+
+        [SerializeField] private GameObject bulletImpact;
 
         private void Awake()
         {
@@ -56,6 +60,7 @@ namespace OnceUponAMemory.Main
 
             if (TopDownCharacter != null)
             {
+                Instantiate(bulletImpact, transform.position, Quaternion.identity);
                 TopDownCharacter.TakeDamage(damage);
             }
 
