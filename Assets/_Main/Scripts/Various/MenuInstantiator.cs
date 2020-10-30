@@ -8,8 +8,10 @@ namespace OnceUponAMemory.Main
     {
         [SerializeField] private GameObject rat;
 
-        private float timeToInstantiate = 5.0f;
+        [SerializeField] private float timeToInstantiate = 5.0f;
         [SerializeField] private float currentTimeToInstantiate = 0.0f;
+
+        [SerializeField] private float instantiatorSpeed = 0.0f;
 
         private void Start()
         {
@@ -18,6 +20,8 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
+            transform.position += new Vector3(instantiatorSpeed, 0, 0) * Time.deltaTime;
+
             currentTimeToInstantiate += Time.deltaTime;
 
             if (currentTimeToInstantiate >= timeToInstantiate)

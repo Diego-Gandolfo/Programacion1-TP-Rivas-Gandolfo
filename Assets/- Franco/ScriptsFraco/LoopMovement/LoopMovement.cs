@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OnceUponAMemory.Franco
+namespace OnceUponAMemory.Main
 {
     public class LoopMovement : MonoBehaviour
     {
