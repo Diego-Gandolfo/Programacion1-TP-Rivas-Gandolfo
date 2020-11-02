@@ -36,7 +36,8 @@ namespace OnceUponAMemory.Main
         
         void Die()
         {
-            Destroy(gameObject);
+            animator.SetTrigger("IsDead");
+            //Destroy(gameObject);
             healthBar.gameObject.SetActive(false);
             //SoundManager.PlaySound("SpiderDie");
         }
