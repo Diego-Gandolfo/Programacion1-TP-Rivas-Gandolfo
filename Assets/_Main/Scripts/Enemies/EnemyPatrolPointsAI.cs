@@ -24,7 +24,7 @@ namespace OnceUponAMemory.Main
             followEnemy.enabled = false; // Inicializamos followEnemy en FALSE porque empieza Patrullando
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             bool check = detectTargetArea.DetectTargets();
 

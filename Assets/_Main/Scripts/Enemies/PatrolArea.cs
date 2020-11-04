@@ -47,7 +47,7 @@ namespace OnceUponAMemory.Main
         private void Update()
         {
             transform.position = Vector2.MoveTowards(transform.position, patrolPosition.transform.position, movemetSpeed * Time.deltaTime); // Nos movemos al punto indicado
-
+            
             if (Vector2.Distance(transform.position, patrolPosition.transform.position) < 0.2f) // Nos fijamos si ya estamos cerca del punto indicado (randomPoint)
             {
                 if (timer <= 0) // Comprobamos si ya paso el tiempo de espera deseado

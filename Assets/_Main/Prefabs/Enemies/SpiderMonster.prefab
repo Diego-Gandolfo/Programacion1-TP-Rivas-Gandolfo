@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e54211e70bfba4c8387521e67067ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistanceRange: 10
+  maxDistanceRange: 15
   starTimeBetweentShots: 2
   firePoint: {fileID: 1640049954787747430}
   player: {fileID: 0}
@@ -458,11 +458,11 @@ MonoBehaviour:
   waitTime: 1
   minDistance: 2
   patrolCenter: {fileID: 0}
-  areaSize: {x: 30, y: 10}
-  rayDistance: 0
+  areaSize: {x: 30, y: 20}
+  rayDistance: 1
   rayLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   rayOffset: {x: 0, y: 0}
 --- !u!114 &3067806697278334614
 MonoBehaviour:
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1c6007d2168b148b0e61736cb75774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   stopDistance: 3
   retreatDistance: 2
   player: {fileID: 0}
@@ -497,7 +497,7 @@ MonoBehaviour:
   detectionRange: 10
   targetsLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
 --- !u!114 &8367005880169549959
 MonoBehaviour:
   m_ObjectHideFlags: 0
