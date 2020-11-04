@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &26720682
 Transform:
   m_ObjectHideFlags: 0
@@ -3144,12 +3144,12 @@ PrefabInstance:
     - target: {fileID: 8324330871367732122, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8324330871367732122, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9092090628683407179, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
@@ -3945,12 +3945,12 @@ PrefabInstance:
     - target: {fileID: 8324330871367732122, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8324330871367732122, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9092090628683407179, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
@@ -8828,12 +8828,12 @@ PrefabInstance:
     - target: {fileID: 9008932679315221565, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9008932679315221565, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7a7db5165098854aa1e8466325aac41, type: 3}
@@ -11005,7 +11005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1055305888
 Transform:
   m_ObjectHideFlags: 0
@@ -55251,56 +55251,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 507155239}
     m_Modifications:
-    - target: {fileID: 3067806697278334610, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: maxHealth
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: patrolCenter
       value: 
       objectReference: {fileID: 2084568547}
-    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: areaSize.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: rayDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067806697278334612, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: rayLayerMask.m_Bits
-      value: 4096
-      objectReference: {fileID: 0}
     - target: {fileID: 3067806697278334613, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1406887371}
-    - target: {fileID: 3067806697278334613, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: maxDistanceRange
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067806697278334614, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1406887371}
     - target: {fileID: 3067806697278334614, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067806697278334632, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: player
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 3067806697278334633, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -55361,11 +55326,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpiderMonster
       objectReference: {fileID: 0}
-    - target: {fileID: 5121853638946493830, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 7361494016798662613, guid: 8d6ef61020641754f9c7cc72717c41eb,
         type: 3}
       propertyPath: target
@@ -55385,16 +55345,6 @@ PrefabInstance:
         type: 3}
       propertyPath: keepFollowing
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9092090628683407179, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: detectionRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9092090628683407179, guid: 8d6ef61020641754f9c7cc72717c41eb,
-        type: 3}
-      propertyPath: targetsLayerMask.m_Bits
-      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6ef61020641754f9c7cc72717c41eb, type: 3}
@@ -55533,12 +55483,12 @@ PrefabInstance:
     - target: {fileID: 9008932679315221565, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9008932679315221565, guid: f7a7db5165098854aa1e8466325aac41,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7a7db5165098854aa1e8466325aac41, type: 3}
