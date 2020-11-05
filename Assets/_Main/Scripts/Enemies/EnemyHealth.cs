@@ -11,17 +11,36 @@ namespace OnceUponAMemory.Main
 
         [SerializeField] private string audioDamage = ""; // En el Inspector escribimos el nombre del Archivo, que sería lo que pones entre comillas... Ejemplo, en el SpiderMonster el audio de daño era "SpiderDamage", en el inspector lo escribimos sin comillas
         [SerializeField] private string takingDamage = "";
-        
+
+        private ShootingAI shootingAI = null;
+        private EnemyMeleeAttack enemyMeleeAttack = null;
+        private EnemyPatrolAreaAI enemyPatrolAreaAI = null;
+        private EnemyPatrolPointsAI enemyPatrolPointsAI = null;
+        private PatrolArea patrolArea = null;
+        private PatrolPoints patrolPoints = null;
+        private FollowEnemy followEnemy = null;
+
         public Animator animator;
 
         public HealthBar healthBar;
 
-        /*
+        
         private bool canCount = false;
 
-        private float timeToDie = 1.0f;
+        [SerializeField] private float timeToDie = 2.0f;
         private float currentTimeToDie = 0.0f;
-        */
+
+        private void Awake()
+        {
+            shootingAI = GetComponent<ShootingAI>();
+            enemyMeleeAttack = GetComponentInChildren<EnemyMeleeAttack>();
+            enemyPatrolAreaAI = GetComponent<EnemyPatrolAreaAI>();
+            enemyPatrolPointsAI = GetComponent<EnemyPatrolPointsAI>();
+            patrolArea = GetComponent<PatrolArea>();
+            patrolPoints = GetComponent<PatrolPoints>();
+            followEnemy = GetComponent<FollowEnemy>();
+        }
+
         void Start()
         {
             currentHeatlh = maxHealth;
@@ -30,12 +49,10 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            /*
             if (canCount)
                 currentTimeToDie += Time.deltaTime;
             if (currentTimeToDie >= timeToDie)
                 Destroy(gameObject);
-                */
         }
 
         public void TakePlayerDamage(float damage)
@@ -43,8 +60,7 @@ namespace OnceUponAMemory.Main
             currentHeatlh -= damage;
             SoundManager.PlaySound(audioDamage); // Acá reproducimos el sonido que pusimos en el Inspector
             
-            //animator.SetTrigger(takingDamage);
-            animator.SetTrigger("TakeDamage");
+            animator.SetTrigger(takingDamage);
 
             healthBar.SetHealth(currentHeatlh);
             
@@ -52,17 +68,25 @@ namespace OnceUponAMemory.Main
             {
                 Die();
 
-                //canCount = true;
+                canCount = true;
             }
                 
         }
         
         void Die()
         {
-            //animator.SetTrigger("IsDead");
+            animator.SetTrigger("IsDead");
             
             healthBar.gameObject.SetActive(false);
             //SoundManager.PlaySound("SpiderDie");
+
+            if (shootingAI != null) shootingAI.enabled = false;
+            if (enemyMeleeAttack != null) enemyMeleeAttack.enabled = false;
+            if (enemyPatrolAreaAI != null) enemyPatrolAreaAI.enabled = false;
+            if (enemyPatrolPointsAI != null) enemyPatrolPointsAI.enabled = false;
+            if (patrolArea != null) patrolArea.enabled = false;
+            if (patrolPoints != null) patrolPoints.enabled = false;
+            if (followEnemy != null) followEnemy.enabled = false;
         }
     }
 }

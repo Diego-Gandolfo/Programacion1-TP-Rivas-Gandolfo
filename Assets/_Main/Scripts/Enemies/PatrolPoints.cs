@@ -6,14 +6,20 @@ namespace OnceUponAMemory.Main
 {
     public class PatrolPoints : MonoBehaviour
     {
+        [Header("Movement")]
         [SerializeField] private bool random = false; // Variable para determinar si se mueve de forma aleatoria o secuencial
-
         [SerializeField] private float movemetSpeed = 3.0f; // La velocidad que se desplaza al estar patrullando
         [SerializeField] private float waitTime = 1.0f; // El tiempo que espera hasta en un punto antes de empezar a moverse al siguiente
         private float timer = 0.0f; // Variable que usaremos para llevar el control del tiempo
 
+        [Header("Patrol Points")]
         [SerializeField] private Transform[] patrolPoints = null; // Array (vector o "lista") donde almacenaremos los puntos a patrullar
         private int nextPoint = 0;
+
+        [Header("Raycast Settings")]
+        [SerializeField] private float rayDistance = 0f; // La distancia que vamos a comprobar si se choca con algo
+        [SerializeField] private LayerMask rayLayerMask = 0; // Que Layers tiene que detectar
+        [SerializeField] private float rayOffset = 0f; // Que Layers tiene que detectar
 
         private void Start()
         {
@@ -52,9 +58,7 @@ namespace OnceUponAMemory.Main
                         nextPoint++; // Vamos al siguiente punto
 
                         if (nextPoint >= patrolPoints.Length) // Nos fijamos si el siguiente punto se sale del rango del Array
-                        {
                             nextPoint = 0; // Volvemos el currentPoint al punto de inicio
-                        }
 
                         timer = waitTime; // Reseteamos el contador
                     }
@@ -63,6 +67,23 @@ namespace OnceUponAMemory.Main
                         timer -= Time.deltaTime; // Si el tiempo no paso, vamos restando Time.deltaTime
                     }
                 }
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            Vector2 rayPosition = transform.position + (patrolPoints[nextPoint].transform.position - transform.position).normalized * rayOffset;
+            Vector2 rayDirection = (patrolPoints[nextPoint].transform.position - transform.position).normalized;
+
+            RaycastHit2D raycast = Physics2D.Raycast(rayPosition, rayDirection, rayDistance, rayLayerMask);
+            Debug.DrawRay(rayPosition, rayDirection * rayDistance, Color.blue);
+
+            if (raycast)
+            {
+                if (random)
+                    nextPoint = Random.Range(0, patrolPoints.Length);
+                else
+                    nextPoint = nextPoint >= patrolPoints.Length ? 0 : nextPoint + 1;
             }
         }
     }

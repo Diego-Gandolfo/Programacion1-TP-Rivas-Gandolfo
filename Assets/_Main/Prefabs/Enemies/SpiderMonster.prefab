@@ -459,11 +459,11 @@ MonoBehaviour:
   minDistance: 2
   patrolCenter: {fileID: 0}
   areaSize: {x: 20, y: 20}
-  rayDistance: 1
+  rayDistance: 2
   rayLayerMask:
     serializedVersion: 2
-    m_Bits: 4096
-  rayOffset: {x: 0, y: 0}
+    m_Bits: 45568
+  rayOffset: 1
 --- !u!114 &3067806697278334614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7443d90b442764aa0a76b367993d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keepFollowing: 0
+  keepFollowing: 1
 --- !u!1001 &3067806695761323010
 PrefabInstance:
   m_ObjectHideFlags: 0
