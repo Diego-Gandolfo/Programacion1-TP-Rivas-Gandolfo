@@ -15,6 +15,11 @@ namespace OnceUponAMemory.Main
 
         private BoxCollider2D boxCollider = null;
 
+        [SerializeField] private bool canInstantiate = false;
+
+        [SerializeField] private GameObject fragmentoDeMemoria;
+        [SerializeField] private GameObject instantiator; 
+
         private void Awake()
         {
             boxCollider = GetComponent<BoxCollider2D>();
@@ -37,6 +42,8 @@ namespace OnceUponAMemory.Main
                 SoundManager.PlaySound("BreakCrate");
 
                 if (boxCollider != null) boxCollider.enabled = false;
+
+                if (canInstantiate) Instantiate(fragmentoDeMemoria, instantiator.transform.position, Quaternion.identity);
             }
         }
     }

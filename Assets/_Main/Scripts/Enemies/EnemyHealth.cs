@@ -20,11 +20,10 @@ namespace OnceUponAMemory.Main
         private PatrolPoints patrolPoints = null;
         private FollowEnemy followEnemy = null;
 
-        public Animator animator;
+        [SerializeField] private Animator animator;
 
         public HealthBar healthBar;
 
-        
         private bool canCount = false;
 
         [SerializeField] private float timeToDie = 2.0f;
@@ -49,15 +48,18 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
+            
             if (canCount)
                 currentTimeToDie += Time.deltaTime;
             if (currentTimeToDie >= timeToDie)
                 Destroy(gameObject);
+                
         }
 
         public void TakePlayerDamage(float damage)
         {
             currentHeatlh -= damage;
+
             SoundManager.PlaySound(audioDamage); // Acá reproducimos el sonido que pusimos en el Inspector
             
             animator.SetTrigger(takingDamage);
@@ -75,8 +77,11 @@ namespace OnceUponAMemory.Main
         
         void Die()
         {
-            animator.SetTrigger("IsDead");
-            
+            Debug.Log("from here...");
+            //animator.SetTrigger("IsDead");
+            animator.SetTrigger("Die");
+            Debug.Log("...to eternity");
+
             healthBar.gameObject.SetActive(false);
             //SoundManager.PlaySound("SpiderDie");
 
