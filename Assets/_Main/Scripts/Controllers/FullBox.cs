@@ -17,10 +17,14 @@ namespace OnceUponAMemory.Main
 
         [SerializeField] private GameObject instanciador;
 
+        private BoxCollider2D boxCollider = null;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
+            boxCollider = GetComponent<BoxCollider2D>();
         }
+
         void Start()
         {
             currentHealth = maxHealth;
@@ -43,8 +47,8 @@ namespace OnceUponAMemory.Main
                 SoundManager.PlaySound("BreakCrate");
                 //el problema acá es que no podemos destruir ni desactivar el objeto, porque la animación no se completa
                 //no tengo idea de como hacer eso!
+                if (boxCollider != null) boxCollider.enabled = false;
             }
         }
     }
-
 }

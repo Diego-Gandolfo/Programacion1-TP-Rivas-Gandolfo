@@ -12,7 +12,13 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float currentHealth;
 
         [SerializeField] private Animator animator;
-    
+
+        private BoxCollider2D boxCollider = null;
+
+        private void Awake()
+        {
+            boxCollider = GetComponent<BoxCollider2D>();
+        }
         private void Start()
         {
             currentHealth = maxHealth;
@@ -29,8 +35,9 @@ namespace OnceUponAMemory.Main
             {
                 animator.SetTrigger("Destroyed");
                 SoundManager.PlaySound("BreakCrate");
+
+                if (boxCollider != null) boxCollider.enabled = false;
             }
-                
         }
     }
 }
