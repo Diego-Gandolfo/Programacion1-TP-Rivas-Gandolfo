@@ -78,7 +78,7 @@ namespace OnceUponAMemory.Main
         void Die()
         {
             Debug.Log("from here...");
-            //animator.SetTrigger("IsDead");
+            animator.SetTrigger("IsDead");
             animator.SetTrigger("Die");
             Debug.Log("...to eternity");
 
