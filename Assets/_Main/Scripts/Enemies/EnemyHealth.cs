@@ -16,10 +16,12 @@ namespace OnceUponAMemory.Main
 
         public HealthBar healthBar;
 
+        /*
         private bool canCount = false;
 
         private float timeToDie = 1.0f;
         private float currentTimeToDie = 0.0f;
+        */
         void Start()
         {
             currentHeatlh = maxHealth;
@@ -28,11 +30,12 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
+            /*
             if (canCount)
                 currentTimeToDie += Time.deltaTime;
             if (currentTimeToDie >= timeToDie)
                 Destroy(gameObject);
-
+                */
         }
 
         public void TakePlayerDamage(float damage)
@@ -48,14 +51,14 @@ namespace OnceUponAMemory.Main
             {
                 Die();
 
-                canCount = true;
+                //canCount = true;
             }
                 
         }
         
         void Die()
         {
-            animator.SetTrigger("IsDead");
+            //animator.SetTrigger("IsDead");
             
             healthBar.gameObject.SetActive(false);
             //SoundManager.PlaySound("SpiderDie");
