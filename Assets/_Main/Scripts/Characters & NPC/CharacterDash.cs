@@ -58,7 +58,7 @@ namespace OnceUponAMemory.Main
 
                 SoundManager.PlaySound("Dash");
                 
-                CinemachineShake.Instance.ShakeCam(8f, .3f);
+                //CinemachineShake.Instance.ShakeCam(8f, .3f);
                 
                 Dust_Dash.Play();
 
