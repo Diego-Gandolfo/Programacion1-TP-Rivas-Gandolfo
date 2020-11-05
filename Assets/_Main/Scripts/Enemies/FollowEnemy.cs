@@ -13,7 +13,7 @@ namespace OnceUponAMemory.Main
 
         public Transform player;
 
-        //public Animator animator; // Está variable acá no sé usa, la accedes desde otro lado?
+        public Animator animator; // Está variable acá no sé usa, la accedes desde otro lado?
 
         void Start()
         {

@@ -43,7 +43,8 @@ namespace OnceUponAMemory.Main
             currentHeatlh -= damage;
             SoundManager.PlaySound(audioDamage); // Acá reproducimos el sonido que pusimos en el Inspector
             
-            animator.SetTrigger(takingDamage);
+            //animator.SetTrigger(takingDamage);
+            animator.SetTrigger("TakeDamage");
 
             healthBar.SetHealth(currentHeatlh);
             
