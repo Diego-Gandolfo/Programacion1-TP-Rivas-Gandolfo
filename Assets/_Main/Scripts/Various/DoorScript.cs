@@ -18,24 +18,6 @@ namespace OnceUponAMemory.Main
             doorCol = GetComponent<Collider2D>();
         }
 
-        /*private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Player") && !hasKey)
-            {
-                animator.SetBool("CanOpen", false);
-
-                Debug.Log("you need a key");
-            }
-                
-
-            else if (other.CompareTag("Player") && hasKey)
-            {
-                animator.SetBool("CanOpen", true);
-
-                Debug.Log("you can pass now");
-            }
-        }
-        */
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Player") && !hasKey)
