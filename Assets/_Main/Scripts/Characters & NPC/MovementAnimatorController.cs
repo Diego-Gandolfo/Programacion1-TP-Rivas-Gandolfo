@@ -19,6 +19,13 @@ namespace OnceUponAMemory.Main
 
             animatorMovement.SetFloat("Horizontal", positionDifference.x); // Le indicamos al Animator el valor de Horizontal segun la diferencia en el Eje X, para saber si tiene que mirar a Derecha o Izquierda
             animatorMovement.SetFloat("Vertical", positionDifference.y); // Le indicamos al Animator el valor de Vertical segun la diferencia en el Eje Y, para saber si tiene que mirar a Arriba o Abajo
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                animatorMovement.SetTrigger("Dance");
+                SoundManager.PlaySound("Upbeat");
+            }
+                
         }
     }
 }
