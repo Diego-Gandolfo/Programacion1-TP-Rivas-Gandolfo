@@ -74,7 +74,7 @@ namespace OnceUponAMemory.Main
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Grenade"))
+            if (collision.gameObject.CompareTag("Grenade") && currentGrenades < maxGrenades)
             {
                 currentGrenades++;
                 if (textGranadeAmount != null) textGranadeAmount.text = $"{currentGrenades} <b>/</b> {maxGrenades}";
