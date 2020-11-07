@@ -10,7 +10,7 @@ namespace OnceUponAMemory.Main
     public class PlayerAttack : MonoBehaviour
     {
         [Header("Range and position")]
-        public Transform attackPosition;
+        public Transform attackPosition = null;
         [SerializeField] private float attackRange = 1.0f;
         
         [Header("Attack Parameters")]
@@ -34,11 +34,11 @@ namespace OnceUponAMemory.Main
 
         [SerializeField] private Image imageUI = null;
 
-        public GameObject swordTrail;
-        [SerializeField] private GameObject grenadePrefab;
-        [SerializeField] private GameObject grenadePoint;
+        public GameObject swordTrail = null;
+        [SerializeField] private GameObject grenadePrefab = null;
+        [SerializeField] private GameObject grenadePoint = null;
 
-        [SerializeField] private Text grenadeAmount;
+        [SerializeField] private Text grenadeAmount = null;
         
         private void Start()
         {

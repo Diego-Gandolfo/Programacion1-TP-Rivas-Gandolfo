@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class SecondTutorialText : MonoBehaviour
 {
-    [SerializeField] private GameObject image;
-    [SerializeField] private bool canAppear; // Esta variable no sé si la tenes pensada para algo, pero de momento no hace nada. La inicializas en FALSE en el Start y la pasas a TRUE en el OnTriggerEnter, pero no haces nada con ese valor.
+    [SerializeField] private GameObject image = null;
+    //[SerializeField] private bool canAppear = false; // Esta variable no sé si la tenes pensada para algo, pero de momento no hace nada. La inicializas en FALSE en el Start y la pasas a TRUE en el OnTriggerEnter, pero no haces nada con ese valor.
     
     public void Start()
     {
-        canAppear = false;
+        //canAppear = false;
         image.SetActive(false);
     }
 
@@ -20,7 +20,7 @@ public class SecondTutorialText : MonoBehaviour
         if (other.GetComponent<PlayerHealth>())
         {
             Debug.Log("this works");
-            canAppear = true;
+            //canAppear = true;
             image.SetActive(true);
         }
     }

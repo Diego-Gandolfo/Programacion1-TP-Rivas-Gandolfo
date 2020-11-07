@@ -9,13 +9,13 @@ namespace OnceUponAMemory.Main
     public class FullBox : MonoBehaviour
     {
         [SerializeField] private float maxHealth = 3.0f;
-        [SerializeField] private float currentHealth;
+        [SerializeField] private float currentHealth = 0f;
 
-        private Animator animator;
+        private Animator animator = null;
 
-        [SerializeField] private GameObject fragmentoDeMemoria;
+        [SerializeField] private GameObject fragmentoDeMemoria = null;
 
-        [SerializeField] private GameObject instanciador;
+        [SerializeField] private GameObject instanciador = null;
 
         private BoxCollider2D boxCollider = null;
 

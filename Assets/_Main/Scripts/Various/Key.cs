@@ -6,9 +6,9 @@ namespace OnceUponAMemory.Main
 {
     public class Key : MonoBehaviour
     {
-        [SerializeField] private DoorScript door;
+        [SerializeField] private DoorScript door = null;
 
-        private Vector3 rotation;
+        private Vector3 rotation = Vector3.zero;
 
         private void Start()
         {

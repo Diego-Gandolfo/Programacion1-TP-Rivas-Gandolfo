@@ -20,7 +20,7 @@ namespace OnceUponAMemory.Diego
         [SerializeField] private float explotionRadius = 0f;
         [SerializeField] private float explotionIntensity = 0f;
         [SerializeField] private float explotionDamage = 0f;
-        [SerializeField] private LayerMask explotionLayerMask;
+        [SerializeField] private LayerMask explotionLayerMask = 0;
         [SerializeField] private GameObject explotionParticleEffect = null;
 
         private void Awake()

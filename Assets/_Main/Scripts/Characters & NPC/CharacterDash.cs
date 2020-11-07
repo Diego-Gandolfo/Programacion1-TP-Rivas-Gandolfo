@@ -12,7 +12,7 @@ namespace OnceUponAMemory.Main
     public class CharacterDash : MonoBehaviour
     {
         [SerializeField] private float speed = 50f; // Configuramos cuanto se mueve al usar el Dash (con MovePosition)
-        [SerializeField] private float impulse = 50f; // Configuramos cuanto se mueve al usar el Dash (con AddForce)
+        //[SerializeField] private float impulse = 50f; // Configuramos cuanto se mueve al usar el Dash (con AddForce)
         [SerializeField] private float duration = 0.25f; // Configuramos cuanto se mueve al usar el Dash
         [SerializeField] private float cooldown = 2; // Configuramos el Cooldown del Dash
         private Vector3 mousePosition = Vector3.zero; // Almacenaremos la posicion del Mouse al hacer click derecho
@@ -31,7 +31,7 @@ namespace OnceUponAMemory.Main
         private Camera mainCamera = null;
 
         // Para testeo
-        private bool doOnce = false;
+        //private bool doOnce = false;
 
         private void Awake()
         {

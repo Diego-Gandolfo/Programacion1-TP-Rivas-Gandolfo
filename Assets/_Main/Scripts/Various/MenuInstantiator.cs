@@ -6,7 +6,7 @@ namespace OnceUponAMemory.Main
 {
     public class MenuInstantiator : MonoBehaviour
     {
-        [SerializeField] private GameObject rat;
+        [SerializeField] private GameObject rat = null;
 
         [SerializeField] private float timeToInstantiate = 5.0f;
         [SerializeField] private float currentTimeToInstantiate = 0.0f;

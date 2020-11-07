@@ -9,17 +9,17 @@ namespace OnceUponAMemory.Main
     public class ProjectileScript : MonoBehaviour
     {
         [SerializeField] private float impulse = 10f;
-        public float speed;
+        public float speed = 0f;
 
-        private Transform player;
+        private Transform player = null;
 
-        private Vector2 target;
+        private Vector2 target = Vector2.zero;
 
         private int damage = 1;
 
         private Rigidbody2D rb2D = null;
 
-        [SerializeField] private GameObject bulletImpact;
+        [SerializeField] private GameObject bulletImpact = null;
 
         private void Awake()
         {

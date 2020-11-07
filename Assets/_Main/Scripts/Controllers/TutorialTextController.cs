@@ -8,8 +8,8 @@ namespace OnceUponAMemory.Main
 {
     public class TutorialTextController : MonoBehaviour
     {
-        [SerializeField] private Text tutorialText;
-        [SerializeField] private Animator animator;
+        //[SerializeField] private Text tutorialText = null;
+        [SerializeField] private Animator animator = null;
         /*
         private void Update()
         {

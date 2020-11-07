@@ -7,15 +7,15 @@ namespace OnceUponAMemory.Main
 {
     public class Parallax : MonoBehaviour
     {
-        [SerializeField, Range(0f, 1f)] private float parallaxEffectMultiplier;
+        [SerializeField, Range(0f, 1f)] private float parallaxEffectMultiplier = 0f;
 
-        private Transform cameraTransform;
+        private Transform cameraTransform = null;
 
-        private Vector3 lastCameraPosition;
+        private Vector3 lastCameraPosition = Vector3.zero;
 
-        private float width;
+        private float width = 0f;
 
-        private SpriteRenderer spriteRenderer;
+        private SpriteRenderer spriteRenderer = null;
 
         void Start()
         {

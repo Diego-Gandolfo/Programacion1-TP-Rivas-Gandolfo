@@ -7,7 +7,7 @@ namespace OnceUponAMemory.Main
     public class EnemyHealth : MonoBehaviour
     {
         [SerializeField] private float maxHealth = 10;
-        [SerializeField] private float currentHeatlh;
+        [SerializeField] private float currentHeatlh = 0f;
 
         [SerializeField] private string audioDamage = ""; // En el Inspector escribimos el nombre del Archivo, que sería lo que pones entre comillas... Ejemplo, en el SpiderMonster el audio de daño era "SpiderDamage", en el inspector lo escribimos sin comillas
         [SerializeField] private string takingDamage = "";
@@ -20,9 +20,9 @@ namespace OnceUponAMemory.Main
         private PatrolPoints patrolPoints = null;
         private FollowEnemy followEnemy = null;
 
-        [SerializeField] private Animator animator;
+        [SerializeField] private Animator animator = null;
 
-        public HealthBar healthBar;
+        public HealthBar healthBar = null;
 
         private bool canCount = false;
 

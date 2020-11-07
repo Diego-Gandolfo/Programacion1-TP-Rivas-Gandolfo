@@ -7,14 +7,14 @@ namespace OnceUponAMemory.Main
     public class Grenade : MonoBehaviour
     {
         [SerializeField] private float explosionTime = 2.0f;
-        private float currentExplosionTime;
+        private float currentExplosionTime = 0f;
 
-        [SerializeField] private float explosionRadius;
-        [SerializeField] private float explosionIntensity;
+        [SerializeField] private float explosionRadius = 0f;
+        [SerializeField] private float explosionIntensity = 0f;
 
-        [SerializeField] private LayerMask layerMasks;
+        [SerializeField] private LayerMask layerMasks = 0;
 
-        [SerializeField] private GameObject stone;
+        [SerializeField] private GameObject stone = null;
         
         public bool hasGrenade;
 
