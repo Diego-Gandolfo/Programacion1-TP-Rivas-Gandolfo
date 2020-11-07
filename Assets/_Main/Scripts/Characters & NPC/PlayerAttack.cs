@@ -22,30 +22,30 @@ namespace OnceUponAMemory.Main
         //BOOLS
         private bool canAttack = true;
         private bool canCount = false;
-        private bool canUseGrenade = true;
-
+        /*
         //GRENADE
+        [SerializeField] private GameObject grenadePrefab = null;
+        [SerializeField] private GameObject grenadePoint = null;
+        [SerializeField] private Text grenadeAmount = null;
         private int maxGrenades = 5;
         private int currentGrenades = 0;
         private float grenadeSpeedForce = 10.0f;
-
+        private bool canUseGrenade = true;
+        */
         [Header("Visual Feedback")]
         [SerializeField] private Animator animatorSword = null;
 
         [SerializeField] private Image imageUI = null;
 
         public GameObject swordTrail = null;
-        [SerializeField] private GameObject grenadePrefab = null;
-        [SerializeField] private GameObject grenadePoint = null;
 
-        [SerializeField] private Text grenadeAmount = null;
         
         private void Start()
         {
             cooldownTimer = attackCooldown;
             swordTrail.gameObject.SetActive(false);
 
-            currentGrenades = maxGrenades;
+            //currentGrenades = maxGrenades;
         }
 
         private void Update()
@@ -57,7 +57,8 @@ namespace OnceUponAMemory.Main
                 swordTrail.gameObject.SetActive(true); // Movi la activación del Trail acá, para aprovechar este IF
                 Attack();
             }
-/*  
+
+            /*  
             if (canAttack != true)
             {
                 swordTrail.gameObject.SetActive(true);
@@ -66,7 +67,10 @@ namespace OnceUponAMemory.Main
             {
                 swordTrail.gameObject.SetActive(false);
             }
-*/            
+            */
+            
+            /*
+            // GRENADE
             if(Input.GetKeyDown(KeyCode.Space) && canUseGrenade)
             {
                 ShootGrenade();
@@ -79,8 +83,9 @@ namespace OnceUponAMemory.Main
                     Debug.Log("No more grenades!");
                 }
             }
-
+            
             grenadeAmount.text = currentGrenades + "/" + maxGrenades;
+            */
 
             if ((cooldownTimer <= 0) && (canCount))
             {
@@ -129,6 +134,7 @@ namespace OnceUponAMemory.Main
             if (attackPosition != null) Gizmos.DrawWireSphere(attackPosition.position, attackRange); // Esto es para dibujar donde está el Overlap
         }
 
+        /*
         void ShootGrenade()
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -138,5 +144,6 @@ namespace OnceUponAMemory.Main
             Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
             rb.AddForce(direction * grenadeSpeedForce, ForceMode2D.Impulse);
         }
+        */
     }
 }

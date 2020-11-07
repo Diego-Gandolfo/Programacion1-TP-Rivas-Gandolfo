@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OnceUponAMemory.Diego
+namespace OnceUponAMemory.Main
 {
     public class GrenadeBehavior : MonoBehaviour
     {
@@ -97,7 +97,7 @@ namespace OnceUponAMemory.Diego
                 ResizeByHealth resizeByHealth = collider.gameObject.GetComponent<ResizeByHealth>();
 
                 if (resizeByHealth != null)
-                    resizeByHealth.Resize();       
+                    resizeByHealth.Resize();
             }
 
             Instantiate(explotionParticleEffect, transform.position, Quaternion.identity);

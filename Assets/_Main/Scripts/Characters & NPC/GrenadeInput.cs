@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace OnceUponAMemory.Diego
+namespace OnceUponAMemory.Main
 {
     public class GrenadeInput : MonoBehaviour
     {
