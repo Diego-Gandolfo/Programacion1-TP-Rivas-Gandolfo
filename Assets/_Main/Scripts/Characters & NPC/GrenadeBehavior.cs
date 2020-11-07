@@ -93,6 +93,19 @@ namespace OnceUponAMemory.Main
                         lifeController.TakeDamage((explotionRadius - distance) * (explotionDamage / explotionRadius));
                     //lifeController.TakeDamage((distance * explotionDamage) / explotionRadius); // Formula vieja que funcionaba mal
                 }
+                else
+                {
+                    EnemyHealth lifeController2 = collider.gameObject.GetComponent<EnemyHealth>();
+
+                    if (lifeController2 != null)
+                    {
+                        float distance = Vector2.Distance(collider.transform.position, transform.position);
+
+                        if ((explotionRadius - distance) > 0)
+                            lifeController2.TakePlayerDamage((explotionRadius - distance) * (explotionDamage / explotionRadius));
+                        //lifeController.TakeDamage((distance * explotionDamage) / explotionRadius); // Formula vieja que funcionaba mal
+                    }
+                }
 
                 ResizeByHealth resizeByHealth = collider.gameObject.GetComponent<ResizeByHealth>();
 

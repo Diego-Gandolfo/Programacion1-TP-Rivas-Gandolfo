@@ -10423,7 +10423,7 @@ GameObject:
   - component: {fileID: 6463375037524128570}
   - component: {fileID: 1820107044702854495}
   m_Layer: 0
-  m_Name: Sword
+  m_Name: AttackDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10442,6 +10442,7 @@ Transform:
   m_Children:
   - {fileID: 6463375037525476921}
   - {fileID: 6463375038894307584}
+  - {fileID: 6885907133031070407}
   m_Father: {fileID: 6463375038460266259}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10577,6 +10578,7 @@ GameObject:
   - component: {fileID: 3502322050444972901}
   - component: {fileID: 5578547246784976994}
   - component: {fileID: 2885070718264219013}
+  - component: {fileID: 1079060119638211968}
   m_Layer: 8
   m_Name: Character
   m_TagString: Player
@@ -10712,9 +10714,6 @@ MonoBehaviour:
   animatorSword: {fileID: 2930194904329668053}
   imageUI: {fileID: 0}
   swordTrail: {fileID: 1187674667}
-  grenadePrefab: {fileID: 8980720717115586150, guid: 93437240701bbb441a239d91414ed232,
-    type: 3}
-  grenadePoint: {fileID: 186420716491278814}
 --- !u!114 &5578547246784976994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10728,7 +10727,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  impulse: 50
   duration: 0.25
   cooldown: 2
   imageUI: {fileID: 0}
@@ -10750,6 +10748,28 @@ MonoBehaviour:
   cooldown: 2.5
   animatorEffects: {fileID: 200050569927733531}
   imageUI: {fileID: 0}
+--- !u!114 &1079060119638211968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463375038460266261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1a753cf6631cf45b3b2e6a594bab59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputCode: g
+  initialGrenades: 5
+  maxGrenades: 5
+  grenadePrefab: {fileID: -5566333490297368429, guid: cecc34350f375b444931ad160d86f273,
+    type: 3}
+  spawnpointPosition: {fileID: 6885907133031070407}
+  impulseInitial: 1
+  impulseIncrement: 0.1
+  impulseMax: 6
+  textGranadeAmount: {fileID: 0}
 --- !u!1 &6463375038894307587
 GameObject:
   m_ObjectHideFlags: 0
@@ -10861,6 +10881,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7842323556158883679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6885907133031070407}
+  m_Layer: 0
+  m_Name: Granade Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6885907133031070407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7842323556158883679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6463375037524128570}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463827664
 PrefabInstance:
   m_ObjectHideFlags: 0
