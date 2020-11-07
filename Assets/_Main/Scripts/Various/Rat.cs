@@ -7,7 +7,7 @@ namespace OnceUponAMemory.Main
     public class Rat : MonoBehaviour
     {
         private float speed = 5.0f;
-        private float timeToLive = 5.0f;
+        private float timeToLive = 15.0f;
         private float currentTimeToLive = 0.0f;
 
         private void Update()

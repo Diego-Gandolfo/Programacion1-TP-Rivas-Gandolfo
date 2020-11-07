@@ -5181,7 +5181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rat: {fileID: 3399409477358159779, guid: 0ffd71691eb598c4f9f46ee055841663, type: 3}
-  timeToInstantiate: 5
+  timeToInstantiate: 8
   currentTimeToInstantiate: 0
   instantiatorSpeed: 0
 --- !u!4 &2052405553
