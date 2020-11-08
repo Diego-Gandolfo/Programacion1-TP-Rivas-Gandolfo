@@ -115,6 +115,9 @@ namespace OnceUponAMemory.Main
 
             Instantiate(explotionParticleEffect, transform.position, Quaternion.identity);
 
+            //
+            SoundManager.PlaySound("ShortExplosion");
+
             Destroy(gameObject);
         }
 

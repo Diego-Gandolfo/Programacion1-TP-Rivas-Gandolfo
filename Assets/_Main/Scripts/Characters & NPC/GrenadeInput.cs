@@ -68,6 +68,8 @@ namespace OnceUponAMemory.Main
 
                     currentGrenades--;
                     if (textGranadeAmount != null) textGranadeAmount.text = $"{currentGrenades} <b>/</b> {maxGrenades}";
+
+                    SoundManager.PlaySound("Whoosh");
                 }
             }
         }
@@ -78,6 +80,9 @@ namespace OnceUponAMemory.Main
             {
                 currentGrenades++;
                 if (textGranadeAmount != null) textGranadeAmount.text = $"{currentGrenades} <b>/</b> {maxGrenades}";
+
+                SoundManager.PlaySound("PickUp");
+
                 Destroy(collision.gameObject);
             }
         }
