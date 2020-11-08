@@ -24,6 +24,8 @@ namespace OnceUponAMemory.Main
             {
                 animator.SetBool("CanOpen", false);
 
+                SoundManager.PlaySound("IronGateClosed");
+
                 Debug.Log("you need a key");
             }
             else if (collision.gameObject.CompareTag("Player") && hasKey)
@@ -31,6 +33,8 @@ namespace OnceUponAMemory.Main
                 animator.SetBool("CanOpen", true);
 
                 Debug.Log("you can pass now");
+
+                SoundManager.PlaySound("IronGate");
 
                 doorCol.enabled = false;
             }

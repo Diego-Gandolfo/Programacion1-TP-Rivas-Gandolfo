@@ -25,7 +25,10 @@ namespace OnceUponAMemory.Main
                 door.hasKey = true;
 
                 Debug.Log("now you have a key");
+
                 gameObject.SetActive(false);
+
+                SoundManager.PlaySound("KeyPickUp");
             }
         }
     }
