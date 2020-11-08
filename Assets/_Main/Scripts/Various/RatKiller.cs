@@ -3,15 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RatKiller : MonoBehaviour
+/*namespace OnceUponAMemory.Main
 {
-    [SerializeField] private GameObject rat;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class RatKiller : MonoBehaviour
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            //como destruir una instancia de un prefab?
-        }    
+            Rat rat = GetComponent<Rat>();
+
+            if (rat != null)
+            {
+                Destroy(rat);
+                Debug.Log("Aca hay una rata");
+            }
+           
+        }
     }
 }
+*/
+//comento todo esto porque por alguna razón no lo logro hacer funcionar. Lo veré más tarde
