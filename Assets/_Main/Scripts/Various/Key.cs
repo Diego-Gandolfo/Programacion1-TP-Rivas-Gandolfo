@@ -10,6 +10,8 @@ namespace OnceUponAMemory.Main
 
         private Vector3 rotation = Vector3.zero;
 
+        [SerializeField] private GameObject keyIcon; 
+
         private void Start()
         {
             rotation = new Vector3(0, 2, 0);
@@ -23,12 +25,17 @@ namespace OnceUponAMemory.Main
             if (collision.gameObject.CompareTag("Player"))
             {
                 door.hasKey = true;
+                keyIcon.gameObject.SetActive(true);
 
                 Debug.Log("now you have a key");
 
                 gameObject.SetActive(false);
 
                 SoundManager.PlaySound("KeyPickUp");
+            }
+            else
+            {
+                keyIcon.gameObject.SetActive(false);
             }
         }
     }
