@@ -76,7 +76,12 @@ namespace OnceUponAMemory.Main
             }
 
             else if (Input.GetKeyDown(KeyCode.G) && currentGrenades <= 0)
+            {
                 animator.SetTrigger("Empty");
+
+                SoundManager.PlaySound("Empty");
+            }
+                
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
