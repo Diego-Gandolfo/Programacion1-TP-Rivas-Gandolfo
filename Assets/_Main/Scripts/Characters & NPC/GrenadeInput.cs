@@ -26,6 +26,8 @@ namespace OnceUponAMemory.Main
         [Header("Canvas")]
         [SerializeField] private Text textGranadeAmount = null;
 
+        [SerializeField] private Animator animator;
+
         private void Awake()
         {
             if (impulseMax < impulseInitial)
@@ -72,6 +74,9 @@ namespace OnceUponAMemory.Main
                     SoundManager.PlaySound("Whoosh");
                 }
             }
+
+            else if (Input.GetKeyDown(KeyCode.G) && currentGrenades <= 0)
+                animator.SetTrigger("Empty");
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

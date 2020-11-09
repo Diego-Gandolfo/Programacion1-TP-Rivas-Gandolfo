@@ -27553,13 +27553,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852973716}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1111621932}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -29, y: -103}
@@ -28320,6 +28320,7 @@ GameObject:
   - component: {fileID: 1981784864}
   - component: {fileID: 1981784866}
   - component: {fileID: 1981784865}
+  - component: {fileID: 1981784867}
   m_Layer: 5
   m_Name: GrenadeIcon
   m_TagString: Untagged
@@ -28380,6 +28381,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981784863}
   m_CullTransparentMesh: 0
+--- !u!95 &1981784867
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981784863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f79ef785f22a0f4ca1dec070f8be453, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1989683982
 GameObject:
   m_ObjectHideFlags: 0
@@ -57212,6 +57232,11 @@ PrefabInstance:
       propertyPath: textGranadeAmount
       value: 
       objectReference: {fileID: 791027245}
+    - target: {fileID: 1079060119638211968, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1981784867}
     - target: {fileID: 2885070718264219013, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
