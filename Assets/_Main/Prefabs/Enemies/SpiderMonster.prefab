@@ -395,7 +395,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -422,6 +422,7 @@ MonoBehaviour:
   takingDamage: TakeDamage
   animator: {fileID: 3067806697278334615}
   healthBar: {fileID: 8324330871823499006}
+  timeToDie: 2
 --- !u!114 &3067806697278334613
 MonoBehaviour:
   m_ObjectHideFlags: 0

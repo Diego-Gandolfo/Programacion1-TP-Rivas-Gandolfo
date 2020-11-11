@@ -12,7 +12,7 @@ namespace OnceUponAMemory.Main
 
         private Collider2D doorCol;
 
-        [SerializeField] private GameObject keyIcon;
+        [SerializeField] private GameObject keyIcon = null;
 
         private void Awake()
         {
