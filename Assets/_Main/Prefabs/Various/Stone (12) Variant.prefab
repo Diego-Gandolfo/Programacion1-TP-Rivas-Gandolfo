@@ -13,6 +13,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 469ce4f938b4d0c44adfd9cd9364d5a3,
         type: 3}
+    - target: {fileID: 938735868935055676, guid: 6979d999c8a7fd4448c937e34c3a0b45,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 938735868935055677, guid: 6979d999c8a7fd4448c937e34c3a0b45,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76,17 +81,17 @@ PrefabInstance:
     - target: {fileID: 938735868935055679, guid: 6979d999c8a7fd4448c937e34c3a0b45,
         type: 3}
       propertyPath: m_Radius
-      value: 1.1296195
+      value: 0.88942266
       objectReference: {fileID: 0}
     - target: {fileID: 938735868935055679, guid: 6979d999c8a7fd4448c937e34c3a0b45,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.20528865
+      value: -0.24131799
       objectReference: {fileID: 0}
     - target: {fileID: 938735868935055681, guid: 6979d999c8a7fd4448c937e34c3a0b45,
         type: 3}
       propertyPath: m_Name
-      value: Stone (12)
+      value: Stone (12) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 938735868935055681, guid: 6979d999c8a7fd4448c937e34c3a0b45,
         type: 3}
