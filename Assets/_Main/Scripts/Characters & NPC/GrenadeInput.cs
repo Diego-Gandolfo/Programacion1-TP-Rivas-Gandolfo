@@ -74,12 +74,17 @@ namespace OnceUponAMemory.Main
                     SoundManager.PlaySound("Whoosh");
                 }
             }
-
             else if (Input.GetKeyDown(KeyCode.G) && currentGrenades <= 0)
             {
                 animator.SetTrigger("Empty");
 
                 SoundManager.PlaySound("Empty");
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R)) // CHEAT DE GRANADAS
+            {
+                currentGrenades += 5;
+                if (textGranadeAmount != null) textGranadeAmount.text = $"{currentGrenades} <b>/</b> {maxGrenades}";
             }
                 
         }
