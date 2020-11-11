@@ -26,7 +26,7 @@ namespace OnceUponAMemory.Main
         [Header("Canvas")]
         [SerializeField] private Text textGranadeAmount = null;
 
-        [SerializeField] private Animator animator;
+        [SerializeField] private Animator animator = null;
 
         private void Awake()
         {

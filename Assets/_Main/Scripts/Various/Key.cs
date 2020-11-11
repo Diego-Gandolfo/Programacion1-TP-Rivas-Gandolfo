@@ -10,7 +10,7 @@ namespace OnceUponAMemory.Main
 
         private Vector3 rotation = Vector3.zero;
 
-        [SerializeField] private GameObject keyIcon; 
+        [SerializeField] private GameObject keyIcon = null; 
 
         private void Start()
         {
