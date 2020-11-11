@@ -107,6 +107,16 @@ namespace OnceUponAMemory.Main
                     }
                 }
 
+                NewBoxController box = collider.gameObject.GetComponent<NewBoxController>();
+
+                if(box != null)
+                {
+                    float distance = Vector2.Distance(collider.transform.position, transform.position);
+
+                    if ((explotionRadius - distance) > 0)
+                        box.TakePlayerDamage((explotionRadius - distance) * (explotionDamage / explotionRadius));
+                }
+
                 ResizeByHealth resizeByHealth = collider.gameObject.GetComponent<ResizeByHealth>();
 
                 if (resizeByHealth != null)
@@ -115,7 +125,6 @@ namespace OnceUponAMemory.Main
 
             Instantiate(explotionParticleEffect, transform.position, Quaternion.identity);
 
-            //
             SoundManager.PlaySound("ShortExplosion");
 
             Destroy(gameObject);

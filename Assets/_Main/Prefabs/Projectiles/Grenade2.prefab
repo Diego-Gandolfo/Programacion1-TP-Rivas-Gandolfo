@@ -93,7 +93,7 @@ MonoBehaviour:
   explotionDamage: 1
   explotionLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8704
   explotionParticleEffect: {fileID: 5750056041432814302, guid: 6e457c9711e46964d96fa775d1089298,
     type: 3}
 --- !u!1 &2236379819851982523
