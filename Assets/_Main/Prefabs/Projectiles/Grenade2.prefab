@@ -90,7 +90,7 @@ MonoBehaviour:
   explotionTimer: 2
   explotionRadius: 5
   explotionIntensity: 10
-  explotionDamage: 1
+  explotionDamage: 2
   explotionLayerMask:
     serializedVersion: 2
     m_Bits: 8704

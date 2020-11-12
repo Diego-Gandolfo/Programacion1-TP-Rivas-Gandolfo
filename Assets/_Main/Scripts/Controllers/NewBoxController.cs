@@ -8,7 +8,7 @@ namespace OnceUponAMemory.Main
 {
     public class NewBoxController : MonoBehaviour
     {
-        private float maxHealth = 0.5f;
+        [SerializeField] private float maxHealth = 0.5f;
         [SerializeField] private float currentHealth = 0f;
 
         [SerializeField] private Animator animator = null;

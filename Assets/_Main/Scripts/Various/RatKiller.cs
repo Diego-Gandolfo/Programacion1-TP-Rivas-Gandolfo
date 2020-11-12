@@ -3,24 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*namespace OnceUponAMemory.Main
+namespace OnceUponAMemory.Main
 {
     public class RatKiller : MonoBehaviour
     {
-        
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Rat rat = GetComponent<Rat>();
-
-            if (rat != null)
+            if(collision.gameObject.CompareTag("Enemy"))
             {
-                Destroy(rat);
-                Debug.Log("Aca hay una rata");
+                Debug.Log("acá hay un enemy");
+                Destroy(collision.gameObject);
+                Debug.Log("destruir");
             }
-           
         }
     }
 }
-*/
-//comento todo esto porque por alguna razón no lo logro hacer funcionar. Lo veré más tarde
+
+
