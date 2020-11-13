@@ -29,6 +29,11 @@ namespace OnceUponAMemory.Main
         [SerializeField] private LayerMask rayLayerMask = 0; // Que Layers tiene que detectar
         [SerializeField] private float rayOffset = 0f; // Que Layers tiene que detectar
 
+        private void Awake()
+        {
+            if (patrolCenter == null) patrolCenter = transform;
+        }
+
         private void OnEnable() // Cada vez que se activa el Objeto o el Componente
         {
             patrolPosition = new GameObject("Patrol Position"); // Creamos un nuevo GameObject que usaremos para determinar los puntos a los que debemos movernos

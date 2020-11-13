@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7443d90b442764aa0a76b367993d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keepFollowing: 1
+  keepFollowing: 0
 --- !u!1001 &3067806695761323010
 PrefabInstance:
   m_ObjectHideFlags: 0
