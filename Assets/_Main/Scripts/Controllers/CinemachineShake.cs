@@ -1,4 +1,4 @@
-﻿/*
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,9 +42,7 @@ namespace OnceUponAMemory.Main
                     cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
                 } 
             }
-        //hay un tutorial del codemonkey, lo paso
         }
     }
-
 }
-*/
+
