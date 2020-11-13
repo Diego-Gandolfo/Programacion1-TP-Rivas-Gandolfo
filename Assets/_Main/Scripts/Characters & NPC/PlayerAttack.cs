@@ -115,7 +115,7 @@ namespace OnceUponAMemory.Main
 
                     //HitCounter.hitCount += 1;
 
-                    CinemachineShake.Instance.ShakeCam(5f, .1f);
+                    //CinemachineShake.Instance.ShakeCam(5f, .1f);
                 }
                 else if (target.GetComponent<NewBoxController>() != null)
                     target.GetComponent<NewBoxController>().TakePlayerDamage(damage);

@@ -58,11 +58,8 @@ namespace OnceUponAMemory.Main
 
                 SoundManager.PlaySound("Dash");
                 
-                CinemachineShake.Instance.ShakeCam(8f, .3f);
+                //CinemachineShake.Instance.ShakeCam(8f, .3f);
                 
-                //pero eso también pasaba con objetos que solo tenían un sprite, el shake exagerado
-
-                //sisi, esa era la idea de hecho, pero justo vi el tutorial y bueno, gracias!!
                 
                 Dust_Dash.Play();
 
