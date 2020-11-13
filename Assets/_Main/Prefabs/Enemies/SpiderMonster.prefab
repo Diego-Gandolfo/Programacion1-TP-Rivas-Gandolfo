@@ -438,7 +438,7 @@ MonoBehaviour:
   maxDistanceRange: 15
   starTimeBetweentShots: 2
   firePoint: {fileID: 1640049954787747430}
-  player: {fileID: 0}
+  player: {fileID: 6463375038460266259, guid: a2020f44452ecdf499740a483623a30e, type: 3}
   projectile: {fileID: 5456937896099269561, guid: 6a00dbea5101cf74186f7b4a384d7386,
     type: 3}
   animator: {fileID: 3067806697278334615}
