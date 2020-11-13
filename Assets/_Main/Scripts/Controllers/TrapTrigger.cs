@@ -27,7 +27,8 @@ namespace OnceUponAMemory.Main
                animator.SetBool("Enter", true);
 
                trap.gameObject.SetActive(true);
-               //CinemachineShake.Instance.ShakeCam(7f, .1f);
+                //CinemachineShake.Instance.ShakeCam(7f, .1f);
+                SoundManager.PlaySound("MetalTrap");
             }
             else
             {
