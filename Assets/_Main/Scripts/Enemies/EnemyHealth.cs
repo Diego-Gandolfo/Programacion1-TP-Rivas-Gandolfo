@@ -79,7 +79,7 @@ namespace OnceUponAMemory.Main
         {
             Debug.Log("from here...");
             animator.SetTrigger("IsDead");
-            animator.SetTrigger("Die");
+            //animator.SetTrigger("Die");
             Debug.Log("...to eternity");
 
             healthBar.gameObject.SetActive(false);
