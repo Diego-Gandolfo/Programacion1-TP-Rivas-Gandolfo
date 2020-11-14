@@ -10,6 +10,8 @@ namespace OnceUponAMemory.Main
         [SerializeField] private GameObject trap = null;
         private Animator animator;
 
+        public CameraShake camShake;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
@@ -27,8 +29,9 @@ namespace OnceUponAMemory.Main
                animator.SetBool("Enter", true);
 
                trap.gameObject.SetActive(true);
-                //CinemachineShake.Instance.ShakeCam(7f, .1f);
-                SoundManager.PlaySound("MetalTrap");
+               CinemachineShake.Instance.ShakeCam(7f, .1f);
+
+               SoundManager.PlaySound("MetalTrap");
             }
             else
             {
