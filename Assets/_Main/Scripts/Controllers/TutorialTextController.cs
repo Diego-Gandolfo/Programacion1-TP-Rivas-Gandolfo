@@ -11,7 +11,7 @@ namespace OnceUponAMemory.Main
         //[SerializeField] private Text tutorialText = null;
         private Animator animator;
 
-        [SerializeField] private GameObject pointLight;
+        [SerializeField] private GameObject pointLight = null;
 
         /*
         private void Update()
@@ -33,6 +33,8 @@ namespace OnceUponAMemory.Main
             {
                 animator.SetTrigger("KeyPressed");
                 pointLight.gameObject.SetActive(true);
+
+                
                 //Destroy(this.gameObject, 5f);
             }
         }

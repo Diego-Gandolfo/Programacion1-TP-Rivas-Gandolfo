@@ -7,12 +7,13 @@ namespace OnceUponAMemory.Main
     public class SoundManager : MonoBehaviour
     {
 
-        public static AudioClip MetalTrap, Empty, IronGateClosed, IronGate, KeyPickUp, Whoosh, PickUp, ShortExplosion, Upbeat, CrateDamage, BreakCrate, GhostDamage, SpiderDie, AttackSound, PickUpItem, EnemyHitRebuild, Dash, SpiderPatrol, PlayerTakeDamage, SpiderDamage, PickUpItemHeal;
+        public static AudioClip NotificationSound, MetalTrap, Empty, IronGateClosed, IronGate, KeyPickUp, Whoosh, PickUp, ShortExplosion, Upbeat, CrateDamage, BreakCrate, GhostDamage, SpiderDie, AttackSound, PickUpItem, EnemyHitRebuild, Dash, SpiderPatrol, PlayerTakeDamage, SpiderDamage, PickUpItemHeal;
 
         private static AudioSource _audioSource;
 
         void Start()
         {
+            NotificationSound = Resources.Load<AudioClip>("NotificationSound");
             MetalTrap = Resources.Load<AudioClip>("MetalTrap");
             Empty = Resources.Load<AudioClip>("Empty");
             IronGateClosed = Resources.Load<AudioClip>("IronGateClosed");
@@ -47,6 +48,11 @@ namespace OnceUponAMemory.Main
                     _audioSource.PlayOneShot(Footsteps4);
                     break;
                 */
+                /*
+                case "NotificationSound":
+                    _audioSource.PlayOneShot(NotificationSound);
+                    break;
+                    */
                 case "GhostDamage":
                     _audioSource.PlayOneShot(GhostDamage);
                     break;

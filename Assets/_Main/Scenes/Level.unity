@@ -55739,6 +55739,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1981784867}
+    - target: {fileID: 2105869382629778010, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2885070718264219013, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
@@ -55754,11 +55759,21 @@ PrefabInstance:
       propertyPath: grenadeAmount
       value: 
       objectReference: {fileID: 791027245}
+    - target: {fileID: 4675660262692694977, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5578547246784976994, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: imageUI
       value: 
       objectReference: {fileID: 969207274}
+    - target: {fileID: 6419598956339099762, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6419598956448846664, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -55768,6 +55783,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419598956448846665, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419598956806825519, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6463375038460266259, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
@@ -55828,6 +55853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717467912240582434, guid: a2020f44452ecdf499740a483623a30e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2020f44452ecdf499740a483623a30e, type: 3}
