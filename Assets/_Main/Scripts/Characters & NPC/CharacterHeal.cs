@@ -18,6 +18,7 @@ namespace OnceUponAMemory.Main
         private bool canHeal = true;
 
         [SerializeField] private Animator animatorEffects = null;
+        [SerializeField] private ParticleSystem healEffect = null;
         private PlayerHealth vida;
         private HealthBar healthBar;
 
@@ -64,8 +65,8 @@ namespace OnceUponAMemory.Main
                 vida.currentHealth = vida.maxHealth;
             }
 
-            // TODO: Efecto Particulas
-            animatorEffects.SetTrigger("doHeal"); // Efecto provisorio
+            healEffect.Play();
+            //animatorEffects.SetTrigger("doHeal"); // Efecto provisorio
             imageUI.fillAmount = 1;
             SoundManager.PlaySound("PickUpItemHeal");
 
