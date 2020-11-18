@@ -15,7 +15,9 @@ namespace OnceUponAMemory.Main
         private GameObject pointLight = null;
 
         [SerializeField]
-        private GameObject lifeBar;
+        private GameObject lifeBarCharacter;
+        [SerializeField]
+        private GameObject lifeBarSpider;
 
         /*
         private void Update()
@@ -33,7 +35,8 @@ namespace OnceUponAMemory.Main
 
         private void Start()
         {
-            lifeBar.gameObject.SetActive(false);
+            lifeBarCharacter.gameObject.SetActive(false);
+            lifeBarSpider.gameObject.SetActive(false);
         }
 
         private void Update()
@@ -43,7 +46,8 @@ namespace OnceUponAMemory.Main
                 animator.SetTrigger("KeyPressed");
 
                 pointLight.gameObject.SetActive(true);
-                lifeBar.gameObject.SetActive(true);
+                lifeBarCharacter.gameObject.SetActive(true);
+                lifeBarSpider.gameObject.SetActive(true);
             }
         }
     }

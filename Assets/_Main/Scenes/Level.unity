@@ -4465,6 +4465,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -9967,7 +9972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 0}
-  lifeBar: {fileID: 0}
+  lifeBarCharacter: {fileID: 0}
+  lifeBarSpider: {fileID: 0}
 --- !u!114 &650296172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10184,6 +10190,11 @@ PrefabInstance:
       propertyPath: canInstantiate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -10497,7 +10508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &727636719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10759,6 +10770,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -11266,6 +11282,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -14503,6 +14524,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -14723,6 +14749,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -15411,7 +15442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointLight: {fileID: 743419352}
-  lifeBar: {fileID: 339807261}
+  lifeBarCharacter: {fileID: 339807261}
+  lifeBarSpider: {fileID: 1372073695}
 --- !u!222 &1113713471
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15997,6 +16029,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -16239,6 +16276,11 @@ PrefabInstance:
       propertyPath: canInstantiate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -16666,6 +16708,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -16678,6 +16725,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1204661939103376738, guid: b37ad574ecbc0ad4fb90845459d888e3,
     type: 3}
   m_PrefabInstance: {fileID: 1365352234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1372073695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8324330871823499005, guid: 8d6ef61020641754f9c7cc72717c41eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845244001430111487}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1373669352
 GameObject:
@@ -27299,6 +27352,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name
@@ -29226,6 +29284,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376739, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
     - target: {fileID: 1204661939103376743, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_Name

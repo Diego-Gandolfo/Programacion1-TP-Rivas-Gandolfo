@@ -6,6 +6,8 @@ namespace OnceUponAMemory.Main
 {
     public class BoxControl : MonoBehaviour
     {
+        [SerializeField] private Transform player = null;
+
         [SerializeField] 
         private GameObject box = null, memoryFragment = null;
 
@@ -21,7 +23,9 @@ namespace OnceUponAMemory.Main
         private void DestroyBox()
         {
             Destroy(box);
-            Instantiate(memoryFragment, instanciador.transform.position, Quaternion.identity);
+            GameObject instance = Instantiate(memoryFragment, instanciador.transform.position, Quaternion.identity);
+            ShootingAI shootingAI = instance.GetComponent<ShootingAI>();
+            if (shootingAI != null) shootingAI.player = player;
         }
 
         private void OnDestroy()

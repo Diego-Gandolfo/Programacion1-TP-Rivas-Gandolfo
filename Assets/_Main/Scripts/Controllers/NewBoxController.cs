@@ -8,6 +8,8 @@ namespace OnceUponAMemory.Main
 {
     public class NewBoxController : MonoBehaviour
     {
+        [SerializeField] private Transform player = null;
+
         [SerializeField] private float maxHealth = 0.5f;
         [SerializeField] private float currentHealth = 0f;
 
@@ -43,7 +45,12 @@ namespace OnceUponAMemory.Main
 
                 if (boxCollider != null) boxCollider.enabled = false;
 
-                if (canInstantiate) Instantiate(fragmentoDeMemoria, instantiator.transform.position, Quaternion.identity);
+                if (canInstantiate)
+                {
+                    GameObject instance = Instantiate(fragmentoDeMemoria, instantiator.transform.position, Quaternion.identity);
+                    ShootingAI shootingAI = instance.GetComponent<ShootingAI>();
+                    if (shootingAI != null) shootingAI.player = player;
+                }
             }
         }
     }
