@@ -48,6 +48,8 @@ namespace OnceUponAMemory.Main
                 pointLight.gameObject.SetActive(true);
                 lifeBarCharacter.gameObject.SetActive(true);
                 lifeBarSpider.gameObject.SetActive(true);
+
+                this.gameObject.SetActive(false);
             }
         }
     }
