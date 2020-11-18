@@ -86,7 +86,7 @@ namespace OnceUponAMemory.Main
             //SoundManager.PlaySound("SpiderDie");
 
             if (shootingAI != null) shootingAI.enabled = false;
-            if (enemyMeleeAttack != null) enemyMeleeAttack.enabled = false;
+            if (enemyMeleeAttack != null) enemyMeleeAttack.gameObject.SetActive(false);
             if (enemyPatrolAreaAI != null) enemyPatrolAreaAI.enabled = false;
             if (enemyPatrolPointsAI != null) enemyPatrolPointsAI.enabled = false;
             if (patrolArea != null) patrolArea.enabled = false;
