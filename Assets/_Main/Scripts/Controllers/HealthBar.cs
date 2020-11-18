@@ -33,7 +33,7 @@ namespace OnceUponAMemory.Main
         public void SetHealth(float health)
         {
             slider.value = health;
-
+            if (transform.parent.transform.parent.name == "Character") print($"Slider value = {slider.value}");
             fill.color = gradient.Evaluate(slider.normalizedValue);
         }
     }

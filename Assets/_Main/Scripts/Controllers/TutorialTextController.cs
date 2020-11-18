@@ -19,6 +19,9 @@ namespace OnceUponAMemory.Main
         [SerializeField]
         private GameObject lifeBarSpider;
 
+        private bool canCount = false;
+        private float timer = 0f;
+
         /*
         private void Update()
         {
@@ -41,7 +44,7 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            if (!canCount && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
             {
                 animator.SetTrigger("KeyPressed");
 
@@ -49,8 +52,17 @@ namespace OnceUponAMemory.Main
                 lifeBarCharacter.gameObject.SetActive(true);
                 lifeBarSpider.gameObject.SetActive(true);
 
+                timer += Time.time + 1f;
+                canCount = true;
+            }
+
+            if (canCount && timer <= Time.time)
+            {
+                Animator animator = lifeBarCharacter.GetComponent<Animator>();
+                animator.enabled = false;
                 this.gameObject.SetActive(false);
             }
+
         }
     }
 
