@@ -11,7 +11,11 @@ namespace OnceUponAMemory.Main
         //[SerializeField] private Text tutorialText = null;
         private Animator animator;
 
-        [SerializeField] private GameObject pointLight = null;
+        [SerializeField] 
+        private GameObject pointLight = null;
+
+        [SerializeField]
+        private GameObject lifeBar;
 
         /*
         private void Update()
@@ -27,15 +31,19 @@ namespace OnceUponAMemory.Main
             animator = GetComponent<Animator>();
         }
 
+        private void Start()
+        {
+            lifeBar.gameObject.SetActive(false);
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
             {
                 animator.SetTrigger("KeyPressed");
-                pointLight.gameObject.SetActive(true);
 
-                
-                //Destroy(this.gameObject, 5f);
+                pointLight.gameObject.SetActive(true);
+                lifeBar.gameObject.SetActive(true);
             }
         }
     }

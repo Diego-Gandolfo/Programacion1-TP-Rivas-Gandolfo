@@ -20,6 +20,7 @@ namespace OnceUponAMemory.Main
         private void Start()
         {
             brokenHeartIcon.gameObject.SetActive(false);
+            
         }
 
         public void SetMaxHealth(float health)
