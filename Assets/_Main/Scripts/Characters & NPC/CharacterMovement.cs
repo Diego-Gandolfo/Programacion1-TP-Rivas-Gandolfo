@@ -38,17 +38,18 @@ namespace OnceUponAMemory.Main
 
         private void FixedUpdate()
         {
+            if (!CutsceneTrigger.isCutsceneOn)
+            {
+                // Movement por Rigidbody.velocity
+                float xMovement = Input.GetAxis("Horizontal") * (movementSpeed);
+                float yMovement = Input.GetAxis("Vertical") * (movementSpeed);
 
-            // Movement por Rigidbody.velocity
-            float xMovement = Input.GetAxis("Horizontal") * (movementSpeed);
-            float yMovement = Input.GetAxis("Vertical") * (movementSpeed);
+                Vector2 movement = new Vector2(xMovement, yMovement);
 
-            Vector2 movement = new Vector2(xMovement, yMovement);
-
-            myRigidbody2D.velocity = movement;
-            animatorMovement.SetFloat("Speed", movement.sqrMagnitude);
-            if (xMovement != 0 || yMovement != 0) CreateDust();
-
+                myRigidbody2D.velocity = movement;
+                animatorMovement.SetFloat("Speed", movement.sqrMagnitude);
+                if (xMovement != 0 || yMovement != 0) CreateDust();
+            }
         }
 
         private void CreateDust()
