@@ -50,6 +50,10 @@ namespace OnceUponAMemory.Main
                 animatorMovement.SetFloat("Speed", movement.sqrMagnitude);
                 if (xMovement != 0 || yMovement != 0) CreateDust();
             }
+            else
+            {
+                myRigidbody2D.velocity = Vector2.zero;
+            }
         }
 
         private void CreateDust()
