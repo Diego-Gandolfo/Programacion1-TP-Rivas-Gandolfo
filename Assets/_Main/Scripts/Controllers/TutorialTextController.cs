@@ -22,6 +22,9 @@ namespace OnceUponAMemory.Main
         private bool canCount = false;
         private float timer = 0f;
 
+        private float timeToGo = 2f;
+        private float currentTimeToGo = 0.0f;
+
         /*
         private void Update()
         {
@@ -44,26 +47,35 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if (!canCount && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
+            currentTimeToGo += Time.deltaTime;
+
+            if (currentTimeToGo >= timeToGo)
             {
-                animator.SetTrigger("KeyPressed");
+                CutsceneTrigger.isCutsceneOn = false;
 
-                pointLight.gameObject.SetActive(true);
-                lifeBarCharacter.gameObject.SetActive(true);
-                lifeBarSpider.gameObject.SetActive(true);
+                if (!canCount && (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
+                {
+                    animator.SetTrigger("KeyPressed");
 
-                timer += Time.time + 1f;
-                canCount = true;
+                    pointLight.gameObject.SetActive(true);
+                    lifeBarCharacter.gameObject.SetActive(true);
+                    lifeBarSpider.gameObject.SetActive(true);
+
+                    timer += Time.time + 1f;
+                    canCount = true;
+                }
+
+                if (canCount && timer <= Time.time)
+                {
+                    Animator animator = lifeBarCharacter.GetComponent<Animator>();
+                    animator.enabled = false;
+                    this.gameObject.SetActive(false);
+                }  
             }
-
-            if (canCount && timer <= Time.time)
+            else if(currentTimeToGo < timeToGo)
             {
-                Animator animator = lifeBarCharacter.GetComponent<Animator>();
-                animator.enabled = false;
-                this.gameObject.SetActive(false);
+                    CutsceneTrigger.isCutsceneOn = true;
             }
-
         }
     }
-
 }
