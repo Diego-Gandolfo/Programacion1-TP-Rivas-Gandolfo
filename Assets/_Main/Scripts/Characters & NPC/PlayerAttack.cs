@@ -50,13 +50,17 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if (Input.GetButtonDown("Fire1") && (canAttack))
+            if (!CutsceneTrigger.isCutsceneOn)
             {
-                canAttack = false;
-                canCount = true;
-                swordTrail.gameObject.SetActive(true); // Movi la activación del Trail acá, para aprovechar este IF
-                Attack();
+                if (Input.GetButtonDown("Fire1") && (canAttack))
+                {
+                    canAttack = false;
+                    canCount = true;
+                    swordTrail.gameObject.SetActive(true); // Movi la activación del Trail acá, para aprovechar este IF
+                    Attack();
+                }
             }
+            
 
             /*  
             if (canAttack != true)

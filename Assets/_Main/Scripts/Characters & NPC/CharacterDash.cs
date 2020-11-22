@@ -51,24 +51,28 @@ namespace OnceUponAMemory.Main
             // Input
             if (Input.GetButtonDown("Fire2") && canDash)
             {
-                canDash = false; // Indicamos que no puede hacer Dash
-                startCooldown = true; // Indicamos que puede empezar el Cooldown
-                mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition); // Almacenamos las coordenadas de donde se encuentra el puntero del Mouse
-                durationTimer = duration; // Inicializamos el contador de Duracion
+                if (!CutsceneTrigger.isCutsceneOn)
+                {
+                    canDash = false; // Indicamos que no puede hacer Dash
+                    startCooldown = true; // Indicamos que puede empezar el Cooldown
+                    mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition); // Almacenamos las coordenadas de donde se encuentra el puntero del Mouse
+                    durationTimer = duration; // Inicializamos el contador de Duracion
 
-                SoundManager.PlaySound("Dash");
-                
-                //CinemachineShake.Instance.ShakeCam(8f, .3f);
-                
-                
-                Dust_Dash.Play();
+                    SoundManager.PlaySound("Dash");
 
-                trail.gameObject.SetActive(true); // Activamos el Trail
+                    //CinemachineShake.Instance.ShakeCam(8f, .3f);
 
-                /*
-                // Para testeo
-                doOnce = true;
-                */
+
+                    Dust_Dash.Play();
+
+                    trail.gameObject.SetActive(true); // Activamos el Trail
+
+                    /*
+                    // Para testeo
+                    doOnce = true;
+                    */
+                }
+
             }
 
             // Trail

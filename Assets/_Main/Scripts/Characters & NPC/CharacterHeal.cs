@@ -36,23 +36,26 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.C) && (canHeal) && (vida.currentHealth < vida.maxHealth))
+            if (!CutsceneTrigger.isCutsceneOn)
             {
-                canHeal = false;
-                canCount = true;
-                DoHeal(amountHeal);
-            }
+                if (Input.GetKeyDown(KeyCode.C) && (canHeal) && (vida.currentHealth < vida.maxHealth))
+                {
+                    canHeal = false;
+                    canCount = true;
+                    DoHeal(amountHeal);
+                }
 
-            if ((cooldownTimer <= 0) && (canCount))
-            {
-                cooldownTimer = cooldown;
-                canHeal = true;
-                canCount = false;
-            }
-            else if ((cooldownTimer > 0) && (canCount))
-            {
-                cooldownTimer -= Time.deltaTime;
-                imageUI.fillAmount = 1 - (cooldownTimer / cooldown);
+                if ((cooldownTimer <= 0) && (canCount))
+                {
+                    cooldownTimer = cooldown;
+                    canHeal = true;
+                    canCount = false;
+                }
+                else if ((cooldownTimer > 0) && (canCount))
+                {
+                    cooldownTimer -= Time.deltaTime;
+                    imageUI.fillAmount = 1 - (cooldownTimer / cooldown);
+                }
             }
         }
 
