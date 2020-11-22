@@ -20,9 +20,9 @@ namespace OnceUponAMemory.Main
         private GameObject lifeBarSpider;
 
         private bool canCount = false;
-        private float timer = 0f;
+        private float timer = 0.0f;
 
-        private float timeToGo = 2f;
+        private float timeToGo = 3.0f;
         private float currentTimeToGo = 0.0f;
 
         /*

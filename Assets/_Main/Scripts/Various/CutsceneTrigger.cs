@@ -1,4 +1,5 @@
 ﻿using OnceUponAMemory.Diego;
+using OnceUponAMemory.Franco;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,20 @@ public class CutsceneTrigger : MonoBehaviour
     private Animator animator;
 
     [SerializeField]
+    private Animator doorLightAnimator;
+
+    [SerializeField]
     private GameObject music;
+
+    [SerializeField]
+    private GameObject doorLight;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            doorLight.SetActive(true);
+
             music.gameObject.SetActive(true);
 
             isCutsceneOn = true;
@@ -29,6 +38,8 @@ public class CutsceneTrigger : MonoBehaviour
 
     void StopCutscene()
     {
+        doorLight.SetActive(false);
+
         isCutsceneOn = false;
 
         animator.SetBool("Cutscene", false);
