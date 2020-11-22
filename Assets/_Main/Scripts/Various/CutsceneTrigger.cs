@@ -10,13 +10,19 @@ public class CutsceneTrigger : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private GameObject music;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            music.gameObject.SetActive(true);
+
             isCutsceneOn = true;
 
             animator.SetBool("Cutscene", true);
+
             Invoke(nameof(StopCutscene), 3f);
         }
     }
