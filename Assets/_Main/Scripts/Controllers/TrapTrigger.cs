@@ -16,6 +16,7 @@ namespace OnceUponAMemory.Main
         {
             animator = GetComponent<Animator>();
         }
+
         private void Start()
         {
             animator.SetBool("Enter", false);
