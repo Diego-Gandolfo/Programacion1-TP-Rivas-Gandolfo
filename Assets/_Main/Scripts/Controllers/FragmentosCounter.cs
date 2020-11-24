@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace OnceUponAMemory.Main
 {
     public class FragmentosCounter : MonoBehaviour
     {
-        Text CounterText;
+        TextMeshProUGUI CounterText;
         public static int Amount;
 
         void Start()
         {
-            
-            CounterText = GetComponent<Text>();
-            
+            CounterText = GetComponent<TextMeshProUGUI>();
         }
 
         void Update()
         {
-            CounterText.text = Amount.ToString();
+            if (CounterText != null)  CounterText.text = Amount.ToString();
         }
     }
 }

@@ -24,14 +24,17 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if (currentHealth <= 5)
+            if (healthBar.brokenHeartIcon != null)
             {
-                healthBar.brokenHeartIcon.gameObject.SetActive(true);
-                healthBar.animator.SetTrigger("BrokenHeart");
-            }
-            else if (currentHealth >= 5)
-            {
-                healthBar.brokenHeartIcon.gameObject.SetActive(false);
+                if (currentHealth <= 5)
+                {
+                    healthBar.brokenHeartIcon.gameObject.SetActive(true);
+                    healthBar.animator.SetTrigger("BrokenHeart");
+                }
+                else if (currentHealth >= 5)
+                {
+                    healthBar.brokenHeartIcon.gameObject.SetActive(false);
+                }
             }
         }
 
@@ -42,11 +45,17 @@ namespace OnceUponAMemory.Main
             //SOUND
             SoundManager.PlaySound("PlayerTakeDamage");
             //HEALTH BAR
-            healthBar.SetHealth(currentHealth);
+            //healthBar.SetHealth(currentHealth);
+            healthBar.SetHealth(currentHealth / maxHealth);
             //BLOOD VFX
             Instantiate(blood, transform.position, Quaternion.identity);
 
             if (currentHealth <= 0) Die();
+        }
+
+        public float GetPorcentualHealth()
+        {
+            return (currentHealth / maxHealth);
         }
 
         void Die()

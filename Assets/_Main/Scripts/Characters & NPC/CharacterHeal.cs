@@ -20,7 +20,7 @@ namespace OnceUponAMemory.Main
         [SerializeField] private Animator animatorEffects = null;
         [SerializeField] private ParticleSystem healEffect = null;
         private PlayerHealth vida;
-        private HealthBar healthBar;
+        [SerializeField] private HealthBar healthBar;
 
         [SerializeField] private Image imageUI = null;
 
@@ -28,8 +28,8 @@ namespace OnceUponAMemory.Main
         {
             if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerHealth");
             if (gameObject.GetComponent<PlayerHealth>() != null) vida = gameObject.GetComponent<PlayerHealth>();
-            if (gameObject.GetComponentInChildren<HealthBar>() == null) Debug.LogError(gameObject.name + " no tiene componente HealthBar");
-            if (gameObject.GetComponentInChildren<HealthBar>() != null) healthBar = gameObject.GetComponentInChildren<HealthBar>();
+            //if (gameObject.GetComponentInChildren<HealthBar>() == null) Debug.LogError(gameObject.name + " no tiene componente HealthBar");
+            //if (gameObject.GetComponentInChildren<HealthBar>() != null) healthBar = gameObject.GetComponentInChildren<HealthBar>();
 
             cooldownTimer = cooldown;
         }
@@ -73,7 +73,7 @@ namespace OnceUponAMemory.Main
             imageUI.fillAmount = 1;
             SoundManager.PlaySound("PickUpItemHeal");
 
-            if (healthBar != null) healthBar.SetHealth(vida.currentHealth);
+            if (healthBar != null) healthBar.SetHealth(vida.currentHealth / vida.maxHealth);
             //Debug.Log("im healing");
         }
     }

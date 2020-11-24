@@ -19,22 +19,36 @@ namespace OnceUponAMemory.Main
         
         private void Start()
         {
-            brokenHeartIcon.gameObject.SetActive(false);
-            
+            if (brokenHeartIcon != null) brokenHeartIcon.gameObject.SetActive(false);            
         }
 
         public void SetMaxHealth(float health)
         {
-            slider.maxValue = health;
-            slider.value = health;
+            if (slider != null)
+            {
+                slider.maxValue = health;
+                slider.value = health;
 
-            fill.color = gradient.Evaluate(1f);
+                fill.color = gradient.Evaluate(1f);
+            }
+            else
+            {
+                fill.fillAmount = health;
+            }
         }
+
         public void SetHealth(float health)
         {
-            slider.value = health;
-            if (transform.parent.transform.parent.name == "Character") print($"Slider value = {slider.value}");
-            fill.color = gradient.Evaluate(slider.normalizedValue);
+            if (slider != null)
+            {
+                slider.value = health;
+                //if (transform.parent.transform.parent.name == "Character") print($"Slider value = {slider.value}");
+                fill.color = gradient.Evaluate(slider.normalizedValue);
+            }
+            else
+            {
+                fill.fillAmount = health;
+            }
         }
     }
 }
