@@ -15,18 +15,13 @@ namespace OnceUponAMemory.Main
             if (collision.gameObject.CompareTag("Player"))
             {
                 door.hasKey = true;
-                //keyIcon.gameObject.SetActive(true);
-                keyIcon.color = new Color(0, 0, 0, 255);
+                keyIcon.color = new Color(0, 0, 0, 255); // Ahora en lugar de Activarse, cambia el color
 
                 Debug.Log("now you have a key");
 
                 gameObject.SetActive(false);
 
                 SoundManager.PlaySound("KeyPickUp");
-            }
-            else
-            {
-                keyIcon.color = new Color(255, 255, 255, 50);
             }
         }
     }

@@ -12,10 +12,10 @@ namespace OnceUponAMemory.Main
         {
             rotation = new Vector3(0, 2, 0);
         }
+
         private void Update()
         {
             transform.Rotate(rotation);
         }
-        
     }
 }

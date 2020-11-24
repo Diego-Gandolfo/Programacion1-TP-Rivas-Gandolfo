@@ -13,12 +13,12 @@ namespace OnceUponAMemory.Main
 
         void Start()
         {
-            CounterText = GetComponent<TextMeshProUGUI>();
+            CounterText = GetComponent<TextMeshProUGUI>(); // Lo cambie por un MeshPro
         }
 
         void Update()
         {
-            if (CounterText != null)  CounterText.text = Amount.ToString();
+            if (CounterText != null)  CounterText.text = Amount.ToString(); // Solo le puse un chequeo por las dudas
         }
     }
 }

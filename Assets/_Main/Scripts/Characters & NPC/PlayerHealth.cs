@@ -46,16 +46,11 @@ namespace OnceUponAMemory.Main
             SoundManager.PlaySound("PlayerTakeDamage");
             //HEALTH BAR
             //healthBar.SetHealth(currentHealth);
-            healthBar.SetHealth(currentHealth / maxHealth);
+            healthBar.SetHealth(currentHealth / maxHealth); // Ahora le pasa un porcentaje
             //BLOOD VFX
             Instantiate(blood, transform.position, Quaternion.identity);
 
             if (currentHealth <= 0) Die();
-        }
-
-        public float GetPorcentualHealth()
-        {
-            return (currentHealth / maxHealth);
         }
 
         void Die()
