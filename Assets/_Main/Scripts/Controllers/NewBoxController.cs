@@ -8,19 +8,28 @@ namespace OnceUponAMemory.Main
 {
     public class NewBoxController : MonoBehaviour
     {
-        [SerializeField] private Transform player = null;
+        [SerializeField] 
+        private Transform player = null;
 
-        [SerializeField] private float maxHealth = 0.5f;
-        [SerializeField] private float currentHealth = 0f;
+        [SerializeField] 
+        private float maxHealth = 0.5f;
 
-        [SerializeField] private Animator animator = null;
+        [SerializeField] 
+        private float currentHealth = 0f;
+
+        [SerializeField] 
+        private Animator animator = null;
 
         private BoxCollider2D boxCollider = null;
 
-        [SerializeField] private bool canInstantiate = false;
+        [SerializeField] 
+        private bool canInstantiate = false;
 
-        [SerializeField] private GameObject fragmentoDeMemoria = null;
-        [SerializeField] private GameObject instantiator = null; 
+        [SerializeField] 
+        private GameObject fragmentoDeMemoria = null;
+
+        [SerializeField] 
+        private GameObject instantiator = null; 
 
         private void Awake()
         {
