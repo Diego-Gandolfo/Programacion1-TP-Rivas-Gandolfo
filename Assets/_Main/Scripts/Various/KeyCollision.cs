@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OnceUponAMemory.Main
 {
     public class KeyCollision : MonoBehaviour
     {
-        [SerializeField] private GameObject keyIcon = null;
+        [SerializeField] private RawImage keyIcon = null;
         [SerializeField] private DoorScript door = null;
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -14,7 +15,8 @@ namespace OnceUponAMemory.Main
             if (collision.gameObject.CompareTag("Player"))
             {
                 door.hasKey = true;
-                keyIcon.gameObject.SetActive(true);
+                //keyIcon.gameObject.SetActive(true);
+                keyIcon.color = new Color(0, 0, 0, 255);
 
                 Debug.Log("now you have a key");
 
@@ -24,7 +26,7 @@ namespace OnceUponAMemory.Main
             }
             else
             {
-                keyIcon.gameObject.SetActive(false);
+                keyIcon.color = new Color(255, 255, 255, 50);
             }
         }
     }
