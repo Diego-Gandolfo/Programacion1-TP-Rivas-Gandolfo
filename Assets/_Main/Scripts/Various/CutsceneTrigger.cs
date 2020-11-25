@@ -15,10 +15,10 @@ public class CutsceneTrigger : MonoBehaviour
     private Animator doorLightAnimator;
 
     [SerializeField]
-    private GameObject music;
+    private GameObject doorLight;
 
     [SerializeField]
-    private GameObject doorLight;
+    private Animator deactivatedTrapAnimator;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,13 +26,14 @@ public class CutsceneTrigger : MonoBehaviour
         {
             doorLight.SetActive(true);
 
-            music.gameObject.SetActive(true);
-
             isCutsceneOn = true;
 
             animator.SetBool("Cutscene", true);
 
+            deactivatedTrapAnimator.SetBool("Open", true);
+
             Invoke(nameof(StopCutscene), 3f);
+
         }
     }
 
@@ -43,6 +44,8 @@ public class CutsceneTrigger : MonoBehaviour
         isCutsceneOn = false;
 
         animator.SetBool("Cutscene", false);
+
+        deactivatedTrapAnimator.SetBool("Open", false);
 
         Destroy(gameObject);
     }
