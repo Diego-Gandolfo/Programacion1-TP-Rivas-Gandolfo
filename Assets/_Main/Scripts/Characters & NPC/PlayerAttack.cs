@@ -126,8 +126,8 @@ namespace OnceUponAMemory.Main
                 else if (target.GetComponent<Deactivator>() != null)
                     target.GetComponent<Deactivator>().TakePlayerDamage(damage);
 
-                else if (target.GetComponent<FullBox>())
-                    target.GetComponent<FullBox>().TakePlayerDamage(damage);
+                else if (target.GetComponent<NewBoxController>())
+                    target.GetComponent<NewBoxController>().TakePlayerDamage(damage);
 
             }
 

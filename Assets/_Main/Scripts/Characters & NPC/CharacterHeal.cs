@@ -11,18 +11,30 @@ namespace OnceUponAMemory.Main
 {
     public class CharacterHeal : MonoBehaviour
     {
-        [SerializeField] private float amountHeal = 10.0f;
-        [SerializeField] private float cooldown = 2.5f;
+        [SerializeField] 
+        private float amountHeal = 10.0f;
+
+        [SerializeField] 
+        private float cooldown = 2.5f;
+
         private float cooldownTimer = 0.0f;
+
         private bool canCount = false;
         private bool canHeal = true;
 
-        [SerializeField] private Animator animatorEffects = null;
-        [SerializeField] private ParticleSystem healEffect = null;
-        private PlayerHealth vida;
-        [SerializeField] private HealthBar healthBar; // Ahora la HealthBar hay que asignarla
+        [SerializeField] 
+        private Animator animatorEffects = null;
 
-        [SerializeField] private Image imageUI = null;
+        [SerializeField] 
+        private ParticleSystem healEffect = null;
+
+        private PlayerHealth vida;
+
+        [SerializeField] 
+        private HealthBar healthBar; // Ahora la HealthBar hay que asignarla
+
+        [SerializeField] 
+        private Image imageUI = null;
 
         private void Start()
         {
