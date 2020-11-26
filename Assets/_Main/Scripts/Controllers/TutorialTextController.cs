@@ -64,11 +64,11 @@ namespace OnceUponAMemory.Main
             {
                 CutsceneTrigger.isCutsceneOn = false;
 
-                if (!canCount && (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
+                if (!canCount && (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)))
                 {
                     secondAnimator.SetBool("KeyPressed", true);   
 
-                    animator.SetTrigger("KeyPressed");
+                    animator.SetTrigger("KeyPressed1");
 
                     pointLight.gameObject.SetActive(true);
                     lifeBarCharacter.gameObject.SetActive(true);
@@ -87,9 +87,12 @@ namespace OnceUponAMemory.Main
                     this.gameObject.SetActive(false);
                 }  
             }
-            else if(currentTimeToGo < timeToGo)
+            else
             {
-                    CutsceneTrigger.isCutsceneOn = true;
+                animator.SetBool("KeyPressed1", false);
+                secondAnimator.SetBool("KeyPressed", false);
+
+                CutsceneTrigger.isCutsceneOn = true;
             }
         }
     }
