@@ -13,6 +13,8 @@ namespace OnceUponAMemory.Main
     {
         [SerializeField] 
         private float amountHeal = 10.0f;
+        [SerializeField]
+        private float staminaCost = 1.0f;
 
         [SerializeField] 
         private float cooldown = 2.5f;
@@ -29,9 +31,10 @@ namespace OnceUponAMemory.Main
         private ParticleSystem healEffect = null;
 
         private PlayerHealth vida;
+        private PlayerStamina stamina;
 
         [SerializeField] 
-        private HealthBar healthBar; // Ahora la HealthBar hay que asignarla
+        private HealthBar healthBar, staminaBar; // Ahora la HealthBar hay que asignarla
 
         [SerializeField] 
         private Image imageUI = null;
@@ -40,6 +43,8 @@ namespace OnceUponAMemory.Main
         {
             if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerHealth");
             if (gameObject.GetComponent<PlayerHealth>() != null) vida = gameObject.GetComponent<PlayerHealth>();
+            if (gameObject.GetComponent<PlayerStamina>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerStamina");
+            if (gameObject.GetComponent<PlayerStamina>() != null) stamina = gameObject.GetComponent<PlayerStamina>();
 
             cooldownTimer = cooldown;
         }
@@ -48,7 +53,7 @@ namespace OnceUponAMemory.Main
         {
             if (!CutsceneTrigger.isCutsceneOn)
             {
-                if (Input.GetKeyDown(KeyCode.C) && (canHeal) && (vida.currentHealth < vida.maxHealth))
+                if (Input.GetKeyDown(KeyCode.C) && (canHeal) && (vida.currentHealth < vida.maxHealth) && stamina.ReduceStamina(staminaCost))
                 {
                     canHeal = false;
                     canCount = true;
