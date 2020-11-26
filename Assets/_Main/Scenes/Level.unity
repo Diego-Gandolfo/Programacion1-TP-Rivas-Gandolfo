@@ -68396,7 +68396,7 @@ GameObject:
   - component: {fileID: 2081631374}
   - component: {fileID: 2081631373}
   m_Layer: 0
-  m_Name: CM StateDrivenCamera1
+  m_Name: Cameras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
