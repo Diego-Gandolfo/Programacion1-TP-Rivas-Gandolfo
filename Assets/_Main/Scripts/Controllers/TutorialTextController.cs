@@ -16,6 +16,7 @@ namespace OnceUponAMemory.Main
 
         [SerializeField]
         private GameObject lifeBarCharacter;
+
         [SerializeField]
         private GameObject lifeBarSpider;
 
@@ -24,6 +25,15 @@ namespace OnceUponAMemory.Main
 
         private float timeToGo = 3.0f;
         private float currentTimeToGo = 0.0f;
+
+        [SerializeField]
+        private GameObject secondTutorial;
+
+        [SerializeField]
+        private Animator secondAnimator;
+
+        [SerializeField]
+        private GameObject HUD;
 
         /*
         private void Update()
@@ -43,6 +53,7 @@ namespace OnceUponAMemory.Main
         {
             lifeBarCharacter.gameObject.SetActive(false);
             lifeBarSpider.gameObject.SetActive(false);
+            HUD.gameObject.SetActive(false);
         }
 
         private void Update()
@@ -55,11 +66,15 @@ namespace OnceUponAMemory.Main
 
                 if (!canCount && (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)))
                 {
+                    secondAnimator.SetBool("KeyPressed", true);   
+
                     animator.SetTrigger("KeyPressed");
 
                     pointLight.gameObject.SetActive(true);
                     lifeBarCharacter.gameObject.SetActive(true);
                     lifeBarSpider.gameObject.SetActive(true);
+
+                    HUD.gameObject.SetActive(true);
 
                     timer += Time.time + 1f;
                     canCount = true;
