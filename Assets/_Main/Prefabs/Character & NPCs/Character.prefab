@@ -15509,6 +15509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStamina: 10
   currentStamina: 0
+  recoverPoints: 0.005
+  recoverTime: 0.01
   healthBar: {fileID: 0}
 --- !u!114 &3502322050444972901
 MonoBehaviour:
@@ -15551,6 +15553,8 @@ MonoBehaviour:
   imageUI: {fileID: 0}
   trail: {fileID: 521033686}
   Dust_Dash: {fileID: 706296722}
+  staminaCost: 1
+  staminaBar: {fileID: 0}
 --- !u!114 &2885070718264219013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15564,10 +15568,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountHeal: 2.5
+  staminaCost: 2
   cooldown: 2.5
   animatorEffects: {fileID: 200050569927733531}
   healEffect: {fileID: 3056010078669364102}
   healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
   imageUI: {fileID: 0}
 --- !u!114 &1079060119638211968
 MonoBehaviour:

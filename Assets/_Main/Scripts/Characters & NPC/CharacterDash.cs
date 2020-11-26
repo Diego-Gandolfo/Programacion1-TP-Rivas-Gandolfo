@@ -30,6 +30,9 @@ namespace OnceUponAMemory.Main
         private Rigidbody2D rb2D = null; // Para almacenar nuestro Rigidbody2D
         private Camera mainCamera = null;
 
+        [SerializeField] private float staminaCost = 1.0f;
+        private PlayerStamina stamina;
+
         // Para testeo
         //private bool doOnce = false;
 
@@ -44,12 +47,14 @@ namespace OnceUponAMemory.Main
             durationTimer = 0; // Inicializamos el contador de Duracion
             cooldownTimer = cooldown; // Inicializamos el cooldownTimer con la duracion del Cooldown
             mainCamera = Camera.main;
+            if (gameObject.GetComponent<PlayerStamina>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerStamina");
+            if (gameObject.GetComponent<PlayerStamina>() != null) stamina = gameObject.GetComponent<PlayerStamina>();
         }
 
         private void Update()
         {
             // Input
-            if (Input.GetButtonDown("Fire2") && canDash)
+            if (Input.GetButtonDown("Fire2") && canDash && stamina.ReduceStamina(staminaCost))
             {
                 if (!CutsceneTrigger.isCutsceneOn)
                 {

@@ -6,10 +6,14 @@ namespace OnceUponAMemory.Main
 {
     public class PlayerStamina : MonoBehaviour
     {
-        public float maxStamina = 10f;
-        public float currentStamina;
+        [SerializeField] private float maxStamina = 10f;
+        [SerializeField] private float currentStamina;
 
-        public HealthBar healthBar; // La Esfera de Stamina
+        [SerializeField] private float recoverPoints = 0f;
+        [SerializeField] private float recoverTime = 0f;
+        private float timer = 0f;
+
+        [SerializeField] private HealthBar healthBar; // La Esfera de Stamina
 
         void Start()
         {
@@ -19,6 +23,21 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
+            if (timer >= recoverTime)
+            {
+                if (currentStamina < maxStamina)
+                {
+                    currentStamina += recoverPoints;
+                    ActualizeStaminaBar();
+                }
+
+                timer = 0;
+            }
+            else
+            {
+                timer += Time.deltaTime;
+            }
+
             if (healthBar.brokenHeartIcon != null) // Esto lo dejo por si lo usamos para la animacion de cuando le queda poca Stamina
             {
                 if (currentStamina <= 5)
@@ -38,10 +57,8 @@ namespace OnceUponAMemory.Main
             if ((currentStamina - amount) >= 0)
             {
                 currentStamina -= amount;
-                
-                //HEALTH BAR
-                //healthBar.SetHealth(currentHealth);
-                healthBar.SetHealth(currentStamina / maxStamina); // Ahora le pasa un porcentaje
+
+                ActualizeStaminaBar();
 
                 return true;
             }
@@ -49,6 +66,13 @@ namespace OnceUponAMemory.Main
             {
                 return false;
             }
+        }
+
+        private void ActualizeStaminaBar()
+        {
+            //HEALTH BAR
+            //healthBar.SetHealth(currentHealth);
+            healthBar.SetHealth(currentStamina / maxStamina); // Ahora le pasa un porcentaje
         }
     }
 }

@@ -13,8 +13,7 @@ namespace OnceUponAMemory.Main
     {
         [SerializeField] 
         private float amountHeal = 10.0f;
-        [SerializeField]
-        private float staminaCost = 1.0f;
+        [SerializeField] private float staminaCost = 1.0f;
 
         [SerializeField] 
         private float cooldown = 2.5f;
@@ -34,7 +33,7 @@ namespace OnceUponAMemory.Main
         private PlayerStamina stamina;
 
         [SerializeField] 
-        private HealthBar healthBar, staminaBar; // Ahora la HealthBar hay que asignarla
+        private HealthBar healthBar; // Ahora la HealthBar hay que asignarla
 
         [SerializeField] 
         private Image imageUI = null;
