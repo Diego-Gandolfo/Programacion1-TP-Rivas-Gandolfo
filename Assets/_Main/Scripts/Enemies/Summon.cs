@@ -49,11 +49,16 @@ public class Summon : MonoBehaviour
     {
         currentTimeToSummon += Time.deltaTime;
 
+        Debug.Log(player.transform.position);
+
         if (Vector2.Distance(transform.position, player.transform.position) <= maxDistance)
         {
+            
+
             if (currentTimeToSummon >= timeToSummon && canInstantiate)
             {
                 Instantiate(enemy, summonPoint.position, Quaternion.identity);
+
                 animator.SetTrigger("IsInvoking");
 
                 currentTimeToSummon = 0.0f;
