@@ -11,27 +11,30 @@ namespace OnceUponAMemory.Main
 {
     public class CharacterDash : MonoBehaviour
     {
+        [Header("Settings")]
         [SerializeField] private float speed = 50f; // Configuramos cuanto se mueve al usar el Dash (con MovePosition)
         //[SerializeField] private float impulse = 50f; // Configuramos cuanto se mueve al usar el Dash (con AddForce)
         [SerializeField] private float duration = 0.25f; // Configuramos cuanto se mueve al usar el Dash
+
+        [Header("Cooldown")]
         [SerializeField] private float cooldown = 2; // Configuramos el Cooldown del Dash
-        private Vector3 mousePosition = Vector3.zero; // Almacenaremos la posicion del Mouse al hacer click derecho
+        [SerializeField] private Image imageUI = null;
         private float durationTimer = 0.0f; // Contador de tiempo para la Duracion
         private float cooldownTimer = 0.0f; // Contador de tiempo para el Enfriamiento
         private bool canDash = true; // Indicaremos si puede hacer el Dash
         private bool startCooldown = false; // Indicamos si debe estar haciendo el Cooldown
 
-        [SerializeField] private Image imageUI = null;
-
+        [Header("Effects")]
         public GameObject trail;
-        
         public ParticleSystem Dust_Dash;
 
-        private Rigidbody2D rb2D = null; // Para almacenar nuestro Rigidbody2D
-        private Camera mainCamera = null;
-
+        [Header("Stamina")]
         [SerializeField] private float staminaCost = 1.0f;
         private PlayerStamina stamina;
+
+        private Vector3 mousePosition = Vector3.zero; // Almacenaremos la posicion del Mouse al hacer click derecho
+        private Rigidbody2D rb2D = null; // Para almacenar nuestro Rigidbody2D
+        private Camera mainCamera = null;
 
         // Para testeo
         //private bool doOnce = false;
@@ -39,6 +42,8 @@ namespace OnceUponAMemory.Main
         private void Awake()
         {
             rb2D = GetComponent<Rigidbody2D>();
+            if (gameObject.GetComponent<PlayerStamina>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerStamina");
+            if (gameObject.GetComponent<PlayerStamina>() != null) stamina = gameObject.GetComponent<PlayerStamina>();
         }
 
         private void Start()
@@ -47,8 +52,6 @@ namespace OnceUponAMemory.Main
             durationTimer = 0; // Inicializamos el contador de Duracion
             cooldownTimer = cooldown; // Inicializamos el cooldownTimer con la duracion del Cooldown
             mainCamera = Camera.main;
-            if (gameObject.GetComponent<PlayerStamina>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerStamina");
-            if (gameObject.GetComponent<PlayerStamina>() != null) stamina = gameObject.GetComponent<PlayerStamina>();
         }
 
         private void Update()

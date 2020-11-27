@@ -15382,7 +15382,7 @@ GameObject:
   - component: {fileID: 3502322050444972901}
   - component: {fileID: 5578547246784976994}
   - component: {fileID: 2885070718264219013}
-  - component: {fileID: 1079060119638211968}
+  - component: {fileID: 6151744718970651050}
   m_Layer: 8
   m_Name: Character
   m_TagString: Player
@@ -15530,7 +15530,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8704
   damage: 1
-  attackCooldown: 1
+  attackCooldown: 0.25
   cooldownTimer: 0
   animatorSword: {fileID: 2930194904329668053}
   imageUI: {fileID: 0}
@@ -15549,12 +15549,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   duration: 0.25
-  cooldown: 2
+  cooldown: 0.5
   imageUI: {fileID: 0}
   trail: {fileID: 521033686}
   Dust_Dash: {fileID: 706296722}
-  staminaCost: 1
-  staminaBar: {fileID: 0}
+  staminaCost: 0.5
 --- !u!114 &2885070718264219013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15568,14 +15567,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountHeal: 2.5
-  staminaCost: 2
-  cooldown: 2.5
-  animatorEffects: {fileID: 200050569927733531}
-  healEffect: {fileID: 3056010078669364102}
+  staminaCost: 1
   healthBar: {fileID: 0}
-  staminaBar: {fileID: 0}
+  cooldown: 1
   imageUI: {fileID: 0}
---- !u!114 &1079060119638211968
+  healEffect: {fileID: 3056010078669364102}
+--- !u!114 &6151744718970651050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15584,20 +15581,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6463375038460266261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb1a753cf6631cf45b3b2e6a594bab59, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bac77d54101bf24fbde394de1b4e745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputCode: g
-  initialGrenades: 5
-  maxGrenades: 5
   grenadePrefab: {fileID: -5566333490297368429, guid: cecc34350f375b444931ad160d86f273,
     type: 3}
   spawnpointPosition: {fileID: 6885907133031070407}
-  impulseInitial: 1
-  impulseIncrement: 0.1
-  impulseMax: 6
-  textGranadeAmount: {fileID: 0}
-  animator: {fileID: 0}
+  impulseInitial: 0.25
+  impulseIncrement: 0.05
+  impulseMax: 10
+  cooldown: 2
+  imageUI: {fileID: 0}
+  staminaCost: 1.5
 --- !u!1 &6463375038894307587
 GameObject:
   m_ObjectHideFlags: 0

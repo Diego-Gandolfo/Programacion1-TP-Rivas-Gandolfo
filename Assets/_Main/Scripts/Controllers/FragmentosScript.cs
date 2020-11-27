@@ -12,7 +12,7 @@ namespace OnceUponAMemory.Main
 
             if (TopDownCharacter != null)
             {
-                Debug.Log("Im Being Collected");
+                //Debug.Log("Im Being Collected");
                 FragmentosCounter.Amount += 1;
                 
                 SoundManager.PlaySound("PickUpItem");

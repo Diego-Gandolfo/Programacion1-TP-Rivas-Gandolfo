@@ -11,40 +11,33 @@ namespace OnceUponAMemory.Main
 {
     public class CharacterHeal : MonoBehaviour
     {
-        [SerializeField] 
-        private float amountHeal = 10.0f;
+        [Header("Settings")]
+        [SerializeField] private float amountHeal = 10.0f;
         [SerializeField] private float staminaCost = 1.0f;
+        private PlayerStamina stamina;
+        [SerializeField] private HealthBar healthBar; // Ahora la HealthBar hay que asignarla
+        private PlayerHealth vida;
 
-        [SerializeField] 
-        private float cooldown = 2.5f;
-
+        [Header("Cooldown")]
+        [SerializeField] private float cooldown = 2.5f;
+        [SerializeField] private Image imageUI = null;
         private float cooldownTimer = 0.0f;
-
         private bool canCount = false;
         private bool canHeal = true;
 
-        [SerializeField] 
-        private Animator animatorEffects = null;
+        [Header("Effect")]
+        [SerializeField] private ParticleSystem healEffect = null;
 
-        [SerializeField] 
-        private ParticleSystem healEffect = null;
-
-        private PlayerHealth vida;
-        private PlayerStamina stamina;
-
-        [SerializeField] 
-        private HealthBar healthBar; // Ahora la HealthBar hay que asignarla
-
-        [SerializeField] 
-        private Image imageUI = null;
-
-        private void Start()
+        private void Awake()
         {
             if (gameObject.GetComponent<PlayerHealth>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerHealth");
             if (gameObject.GetComponent<PlayerHealth>() != null) vida = gameObject.GetComponent<PlayerHealth>();
             if (gameObject.GetComponent<PlayerStamina>() == null) Debug.LogError(gameObject.name + " no tiene componente PlayerStamina");
             if (gameObject.GetComponent<PlayerStamina>() != null) stamina = gameObject.GetComponent<PlayerStamina>();
+        }
 
+        private void Start()
+        {
             cooldownTimer = cooldown;
         }
 
