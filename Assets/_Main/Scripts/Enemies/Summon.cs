@@ -29,6 +29,10 @@ public class Summon : MonoBehaviour
 
     private Animator animator;
 
+    [SerializeField] private Transform player;
+
+    [SerializeField] private float maxDistance = 0;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -45,27 +49,30 @@ public class Summon : MonoBehaviour
     {
         currentTimeToSummon += Time.deltaTime;
 
-        if (currentTimeToSummon >= timeToSummon && canInstantiate)
+        if (Vector2.Distance(transform.position, player.transform.position) <= maxDistance)
         {
-            Instantiate(enemy, summonPoint.position, Quaternion.identity);
-            animator.SetTrigger("IsInvoking");
-
-            currentTimeToSummon = 0.0f;
-
-            enemiesAmount++;
-
-            if (enemiesAmount >= 3)
-                canInstantiate = false;
-        }
-
-        else if (!canInstantiate)
-        {
-            currentTimeToResume += Time.deltaTime;
-
-            if (currentTimeToSummon >= timeToResume)
+            if (currentTimeToSummon >= timeToSummon && canInstantiate)
             {
-                canInstantiate = true;
-                enemiesAmount = 0;
+                Instantiate(enemy, summonPoint.position, Quaternion.identity);
+                animator.SetTrigger("IsInvoking");
+
+                currentTimeToSummon = 0.0f;
+
+                enemiesAmount++;
+
+                if (enemiesAmount >= 3)
+                    canInstantiate = false;
+            }
+
+            else if (!canInstantiate)
+            {
+                currentTimeToResume += Time.deltaTime;
+
+                if (currentTimeToSummon >= timeToResume)
+                {
+                    canInstantiate = true;
+                    enemiesAmount = 0;
+                }
             }
         }
     }

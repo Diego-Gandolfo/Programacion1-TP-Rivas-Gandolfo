@@ -2300,6 +2300,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummonEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6491320102600603574, guid: 57698468391f4414cbd836db1f6c3edd,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1406887371}
+    - target: {fileID: 6491320102600603574, guid: 57698468391f4414cbd836db1f6c3edd,
+        type: 3}
+      propertyPath: timeToResume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491320102600603574, guid: 57698468391f4414cbd836db1f6c3edd,
+        type: 3}
+      propertyPath: maxDistance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57698468391f4414cbd836db1f6c3edd, type: 3}
 --- !u!1 &157341259
@@ -13942,7 +13957,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 47.15
+  m_fontSize: 41.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17597,7 +17612,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 94.3
+  m_fontSize: 83.75
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -20311,7 +20326,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341786192}
-  m_LocalRotation: {x: -0.018987298, y: -0.0074980925, z: -0.00014239819, w: 0.9997916}
+  m_LocalRotation: {x: -0.018987296, y: -0.00749809, z: -0.00014239813, w: 0.9997916}
   m_LocalPosition: {x: 49.3, y: -81.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

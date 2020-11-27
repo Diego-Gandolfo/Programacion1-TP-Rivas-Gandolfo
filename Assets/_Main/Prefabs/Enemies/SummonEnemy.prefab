@@ -152,3 +152,5 @@ MonoBehaviour:
   timeToResume: 3
   canInstantiate: 1
   summonPoint: {fileID: 5103701241242276758}
+  player: {fileID: 0}
+  maxDistance: 3
