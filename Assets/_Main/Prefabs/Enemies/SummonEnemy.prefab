@@ -39,9 +39,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3991762584192816101}
+  - component: {fileID: 6313404487497349871}
   - component: {fileID: 6177130484894918314}
-  - component: {fileID: 2318489471612079928}
   - component: {fileID: 6491320102600603574}
+  - component: {fileID: 2318489471612079928}
   m_Layer: 0
   m_Name: SummonEnemy
   m_TagString: Untagged
@@ -64,6 +65,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6313404487497349871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4669087097584049442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b0e253f500ea444872abd2777f3dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  target: {fileID: 0}
 --- !u!212 &6177130484894918314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,6 +129,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6491320102600603574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4669087097584049442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c41f23c8a8d9be4caaa8d39179d9d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 3618522784764163129, guid: 9ed9fd9c34ac7a543bd72db68ff9bbd4, type: 3}
+  enemiesAmount: 0
+  timeToResume: 3
+  timeToSummon: 1
+  currentTimeToSummon: 0
+  summonPoint: {fileID: 5103701241242276758}
+  player: {fileID: 0}
+  maxDistance: 3
 --- !u!95 &2318489471612079928
 Animator:
   serializedVersion: 3
@@ -133,24 +168,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6491320102600603574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4669087097584049442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c41f23c8a8d9be4caaa8d39179d9d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToSummon: 1
-  currentTimeToSummon: 0
-  enemy: {fileID: 3618522784764163129, guid: 9ed9fd9c34ac7a543bd72db68ff9bbd4, type: 3}
-  enemiesAmount: 0
-  timeToResume: 3
-  canInstantiate: 1
-  summonPoint: {fileID: 5103701241242276758}
-  player: {fileID: 0}
-  maxDistance: 3

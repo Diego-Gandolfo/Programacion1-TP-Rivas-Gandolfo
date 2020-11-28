@@ -6,8 +6,13 @@ namespace OnceUponAMemory.Main
 {
     public class FlipSpriteX : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer spriteRenderer = null;
+        private SpriteRenderer spriteRenderer = null;
         [SerializeField] private GameObject target = null;
+
+        private void Awake()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         private void Start()
         {
