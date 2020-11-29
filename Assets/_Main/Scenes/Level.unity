@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2472,7 +2472,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 170593941}
-  - component: {fileID: 170593940}
   - component: {fileID: 170593939}
   m_Layer: 9
   m_Name: TutorialTextTriggers
@@ -2507,23 +2506,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 37.808815, y: 2.6120644}
   m_EdgeRadius: 0
---- !u!114 &170593940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170593938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 286ddc0de86b18e45aa539662715e1ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutorialText_Attack: {fileID: 843977334}
-  animator: {fileID: 843977338}
-  timeToGo: 3
-  currentTimeToGo: 0
-  canCount: 0
 --- !u!4 &170593941
 Transform:
   m_ObjectHideFlags: 0
@@ -2812,7 +2794,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014432907, y: 0.44740295}
+  m_Offset: {x: -0.060315013, y: 0.45258164}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2823,7 +2805,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.0513573, y: 3.5112457}
+  m_Size: {x: 6.272669, y: 3.6873655}
   m_EdgeRadius: 0
 --- !u!4 &194730380
 Transform:
@@ -22500,22 +22482,12 @@ CompositeCollider2D:
         Y: -550150016
     - - X: -187350000
         Y: -574849984
-      - X: -362349916
+      - X: -362350016
         Y: -574849984
-      - X: -362349916
-        Y: -571749975
-      - X: -362349975
-        Y: -571749916
-      - X: -375150025
-        Y: -571749916
-      - X: -375150084
-        Y: -571749975
-      - X: -375150084
-        Y: -575150057
-      - X: -375150025
-        Y: -575150116
+      - X: -362350016
+        Y: -571750016
       - X: -375149984
-        Y: -575150116
+        Y: -571750016
       - X: -375149984
         Y: -600150016
       - X: -187350000
@@ -22764,9 +22736,9 @@ CompositeCollider2D:
       - {x: -37.51497, y: -55.015003}
     - - {x: -18.73503, y: -60.015003}
       - {x: -18.73503, y: -57.485}
-      - {x: -36.234993, y: -57.484966}
-      - {x: -36.235027, y: -57.174988}
-      - {x: -37.515007, y: -57.17503}
+      - {x: -36.235, y: -57.484966}
+      - {x: -36.23503, y: -57.175003}
+      - {x: -37.515, y: -57.175034}
       - {x: -37.51497, y: -60.015003}
     - - {x: -42.48503, y: -60.015003}
       - {x: -42.48503, y: -57.485}

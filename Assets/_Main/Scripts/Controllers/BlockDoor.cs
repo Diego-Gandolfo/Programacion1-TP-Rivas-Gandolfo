@@ -40,7 +40,6 @@ namespace OnceUponAMemory.Main
             else
                 canDamage = false;
         }
-
         private void OnCollisionStay2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Player") && !key.hasBlockKey)
