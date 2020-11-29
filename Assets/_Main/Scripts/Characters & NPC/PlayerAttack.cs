@@ -123,8 +123,8 @@ namespace OnceUponAMemory.Main
                     //CinemachineShake.Instance.ShakeCam(5f, .1f);
                 }
 
-                else if (target.GetComponent<Deactivator>() != null)
-                    target.GetComponent<Deactivator>().TakePlayerDamage(damage);
+                else if (target.GetComponent<ChunkChain>() != null)
+                    target.GetComponent<ChunkChain>().TakePlayerDamage(damage);
 
                 else if (target.GetComponent<NewBoxController>())
                     target.GetComponent<NewBoxController>().TakePlayerDamage(damage);

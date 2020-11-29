@@ -24,6 +24,8 @@ public class CutsceneTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            SoundManager.PlaySound("HeavyChain");
+
             doorLight.SetActive(true);
 
             isCutsceneOn = true;
@@ -34,6 +36,7 @@ public class CutsceneTrigger : MonoBehaviour
 
             Invoke(nameof(StopCutscene), 3f);
 
+            
         }
     }
 
