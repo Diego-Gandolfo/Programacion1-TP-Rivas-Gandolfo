@@ -47,6 +47,6 @@ public class CutsceneTrigger : MonoBehaviour
 
         deactivatedTrapAnimator.SetBool("Open", false);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

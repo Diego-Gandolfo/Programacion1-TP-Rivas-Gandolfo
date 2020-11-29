@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class TutorialTextController1 : MonoBehaviour
 {
     [SerializeField]
@@ -43,3 +44,4 @@ public class TutorialTextController1 : MonoBehaviour
         }
     }
 }
+*/

@@ -17,11 +17,15 @@ namespace OnceUponAMemory.Main
         [SerializeField]
         private Animator animator;
 
+        [SerializeField]
         private bool canCount = false;
 
         private float timeToDestroy = 1f;
+
+        [SerializeField]
         private float currentTimeToDestroy;
 
+        private bool isDestroyed = false;
         private void Awake()
         {
             animator = GetComponent<Animator>();
@@ -29,6 +33,10 @@ namespace OnceUponAMemory.Main
 
         private void Start()
         {
+            isDestroyed = false;
+
+            canCount = false;
+
             hasBlockKey = false;
 
             currentHealth = maxHealth;
@@ -40,17 +48,17 @@ namespace OnceUponAMemory.Main
 
             if (currentHealth <= 0)
             {
-                hasBlockKey = true;
-                gameObject.SetActive(false);
-
                 animator.SetTrigger("Broken");
 
+                hasBlockKey = true;
                 canCount = true;
             }
 
             else
             {
+                canCount = false;
                 hasBlockKey = false;
+
                 cutsceneTrigger.gameObject.SetActive(false);
             }
         }
@@ -63,8 +71,9 @@ namespace OnceUponAMemory.Main
 
                 if (currentTimeToDestroy >= timeToDestroy)
                 {
-                    Debug.Log("averga");
                     cutsceneTrigger.gameObject.SetActive(true);
+
+                    Destroy(gameObject);
                 }
             }
         }
