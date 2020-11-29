@@ -35,8 +35,6 @@ public class CutsceneTrigger : MonoBehaviour
             deactivatedTrapAnimator.SetBool("Open", true);
 
             Invoke(nameof(StopCutscene), 3f);
-
-            
         }
     }
 
