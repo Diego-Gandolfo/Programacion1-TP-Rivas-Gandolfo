@@ -39,6 +39,7 @@ public class CutsceneTrigger : MonoBehaviour
 
     void StopCutscene()
     {
+        gameObject.SetActive(false);
         doorLight.SetActive(false);
 
         isCutsceneOn = false;
@@ -46,7 +47,5 @@ public class CutsceneTrigger : MonoBehaviour
         animator.SetBool("Cutscene", false);
 
         deactivatedTrapAnimator.SetBool("Open", false);
-
-        gameObject.SetActive(false);
     }
 }
