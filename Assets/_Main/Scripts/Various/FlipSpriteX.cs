@@ -7,7 +7,7 @@ namespace OnceUponAMemory.Main
     public class FlipSpriteX : MonoBehaviour
     {
         private SpriteRenderer spriteRenderer = null;
-        [SerializeField] private GameObject target = null;
+        [SerializeField] private GameObject target;
 
         private void Awake()
         {

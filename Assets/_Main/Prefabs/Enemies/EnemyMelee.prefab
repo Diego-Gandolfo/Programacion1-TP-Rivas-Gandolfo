@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2598814167251133396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.38, y: -1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6822892297554009885}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db0c8659288f55449fa1a47617afe7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 6463375038460266261, guid: a2020f44452ecdf499740a483623a30e, type: 3}
 --- !u!1 &2598814167345802221
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2598814167966426660}
   - component: {fileID: 1966011277}
-  - component: {fileID: 3553471148360467781}
   - component: {fileID: 2598814167966426666}
   - component: {fileID: 1226655951991072052}
   - component: {fileID: 2598814167966426661}
@@ -181,6 +180,7 @@ GameObject:
   - component: {fileID: 519349737245435450}
   - component: {fileID: 1203495889}
   - component: {fileID: 1203495891}
+  - component: {fileID: 1673823495762138982}
   m_Layer: 9
   m_Name: EnemyMelee
   m_TagString: Untagged
@@ -256,20 +256,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3553471148360467781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2598814167966426664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b0e253f500ea444872abd2777f3dce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 2598814167345802216}
-  target: {fileID: 0}
 --- !u!61 &2598814167966426666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -410,6 +396,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 45568
   rayOffset: 1
+--- !u!114 &1673823495762138982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598814167966426664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b0e253f500ea444872abd2777f3dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6463375038460266261, guid: a2020f44452ecdf499740a483623a30e, type: 3}
 --- !u!1 &2598814168040854917
 GameObject:
   m_ObjectHideFlags: 0
