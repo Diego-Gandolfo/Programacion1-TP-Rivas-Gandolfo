@@ -11,11 +11,12 @@ public class TutorialTrgger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            text.gameObject.SetActive(true);
+            Debug.Log("LOLARDO PAPA");
+            text.SetActive(true);
         }
         else
         {
-            text.gameObject.SetActive(false);
+            text.SetActive(false);
         }
     }
 }
