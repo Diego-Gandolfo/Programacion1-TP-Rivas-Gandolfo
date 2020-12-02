@@ -42,8 +42,6 @@ public class TutorialTrgger : MonoBehaviour
         }
 
         else
-        {
             text.SetActive(false);
-        }
     }
 }
