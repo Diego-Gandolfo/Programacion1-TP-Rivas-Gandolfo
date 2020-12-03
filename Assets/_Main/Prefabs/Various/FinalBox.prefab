@@ -123,10 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35a0006dba7df54288589c4c2d2f62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  maxHealth: 0.5
   currentHealth: 0
   animator: {fileID: 1204661939103376796}
-  canInstantiate: 0
-  fragmentoDeMemoria: {fileID: 6096331242879597161, guid: bdfbf02ec0aa7a94da9218b42f627d1e,
+  canInstantiate: 1
+  fragmentoDeMemoria: {fileID: 3067806697278334635, guid: 8d6ef61020641754f9c7cc72717c41eb,
     type: 3}
   instantiator: {fileID: 5078619434977530732}
 --- !u!95 &1204661939103376796
