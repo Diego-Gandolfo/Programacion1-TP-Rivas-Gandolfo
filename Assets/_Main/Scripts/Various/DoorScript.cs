@@ -42,8 +42,5 @@ namespace OnceUponAMemory.Main
                 doorCol.enabled = false;
             }
         }
-
     }
-
-
 }
