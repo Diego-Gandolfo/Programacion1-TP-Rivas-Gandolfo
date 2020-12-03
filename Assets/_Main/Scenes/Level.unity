@@ -13015,7 +13015,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341786192}
-  m_LocalRotation: {x: -0.018987298, y: -0.0074980925, z: -0.00014239819, w: 0.9997916}
+  m_LocalRotation: {x: -0.018987296, y: -0.00749809, z: -0.00014239813, w: 0.9997916}
   m_LocalPosition: {x: 49.355, y: -78.684006, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -32753,6 +32753,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990730613}
     m_Modifications:
+    - target: {fileID: 1204661939103376737, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -642866937
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376737, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204661939103376737, guid: b37ad574ecbc0ad4fb90845459d888e3,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1204661939103376738, guid: b37ad574ecbc0ad4fb90845459d888e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64543,6 +64558,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 706296719, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027469351, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027469351, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027469351, guid: a2020f44452ecdf499740a483623a30e, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 32768
+      objectReference: {fileID: 0}
     - target: {fileID: 534623019997699237, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: healthBar
@@ -65239,7 +65282,7 @@ PrefabInstance:
     - target: {fileID: 1583546573059772318, guid: 24d05ea4aa8208c469f879fa041ca1e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -48.59
+      value: -48.238
       objectReference: {fileID: 0}
     - target: {fileID: 1583546573059772318, guid: 24d05ea4aa8208c469f879fa041ca1e9,
         type: 3}
@@ -65285,6 +65328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583546573059772318, guid: 24d05ea4aa8208c469f879fa041ca1e9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.440144
       objectReference: {fileID: 0}
     - target: {fileID: 1583546573059772319, guid: 24d05ea4aa8208c469f879fa041ca1e9,
         type: 3}
