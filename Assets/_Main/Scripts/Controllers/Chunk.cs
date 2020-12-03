@@ -19,6 +19,8 @@ namespace OnceUponAMemory.Main
         private float timeToDamage = 2.0f;
         private float currentTimeToDamage = 0.0f;
 
+        
+
         private void Start()
         {
             canDamage = true;

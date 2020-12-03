@@ -17,8 +17,10 @@ namespace OnceUponAMemory.Main
         [SerializeField]
         private GameObject lifeBarCharacter;
 
+        /*
         [SerializeField]
         private GameObject lifeBarSpider;
+        */
 
         private bool canCount = false;
         private float timer = 0.0f;
@@ -52,7 +54,7 @@ namespace OnceUponAMemory.Main
         private void Start()
         {
             lifeBarCharacter.gameObject.SetActive(false);
-            lifeBarSpider.gameObject.SetActive(false);
+            //lifeBarSpider.gameObject.SetActive(false);
             HUD.gameObject.SetActive(false);
         }
 
@@ -72,7 +74,7 @@ namespace OnceUponAMemory.Main
 
                     pointLight.gameObject.SetActive(true);
                     lifeBarCharacter.gameObject.SetActive(true);
-                    lifeBarSpider.gameObject.SetActive(true);
+                    //lifeBarSpider.gameObject.SetActive(true);
 
                     HUD.gameObject.SetActive(true);
 

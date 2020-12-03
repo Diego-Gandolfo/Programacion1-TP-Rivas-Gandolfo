@@ -26,6 +26,10 @@ namespace OnceUponAMemory.Main
         private float currentTimeToDestroy;
 
         private bool isDestroyed = false;
+
+        [SerializeField]
+        private GameObject heavyChainSound = null;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
@@ -50,6 +54,8 @@ namespace OnceUponAMemory.Main
 
             if (currentHealth <= 0)
             {
+                heavyChainSound.gameObject.SetActive(true);
+
                 animator.SetTrigger("Broken");
 
                 hasBlockKey = true;

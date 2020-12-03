@@ -12,7 +12,7 @@ namespace OnceUponAMemory.Main
 
         private Collider2D doorCol;
 
-        [SerializeField] private GameObject keyIcon = null;
+        //[SerializeField] private GameObject keyIcon = null;
 
         private void Awake()
         {
@@ -33,7 +33,7 @@ namespace OnceUponAMemory.Main
             else if (collision.gameObject.CompareTag("Player") && hasKey)
             {
                 animator.SetBool("CanOpen", true);
-                keyIcon.gameObject.SetActive(false);
+                //keyIcon.gameObject.SetActive(false);
 
                 Debug.Log("you can pass now");
 
