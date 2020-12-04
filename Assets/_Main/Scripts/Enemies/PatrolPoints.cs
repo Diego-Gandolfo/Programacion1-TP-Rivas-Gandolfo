@@ -83,7 +83,7 @@ namespace OnceUponAMemory.Main
                 if (random)
                     nextPoint = Random.Range(0, patrolPoints.Length);
                 else
-                    nextPoint = nextPoint >= patrolPoints.Length ? 0 : nextPoint + 1;
+                    nextPoint = (nextPoint + 1) >= patrolPoints.Length ? 0 : nextPoint + 1;
             }
         }
 

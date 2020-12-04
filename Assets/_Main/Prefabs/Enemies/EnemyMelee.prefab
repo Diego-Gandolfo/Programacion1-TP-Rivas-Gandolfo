@@ -395,7 +395,7 @@ MonoBehaviour:
   rayLayerMask:
     serializedVersion: 2
     m_Bits: 45568
-  rayOffset: 1
+  rayOffset: 2
 --- !u!114 &1673823495762138982
 MonoBehaviour:
   m_ObjectHideFlags: 0
