@@ -7224,7 +7224,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.65
+  m_fontSize: 49.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10832,7 +10832,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 81.35
+  m_fontSize: 99.95
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13015,7 +13015,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341786192}
-  m_LocalRotation: {x: -0.018987296, y: -0.00749809, z: -0.00014239813, w: 0.9997916}
+  m_LocalRotation: {x: -0.018987298, y: -0.0074980925, z: -0.00014239819, w: 0.9997916}
   m_LocalPosition: {x: 49.355, y: -78.684006, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -64558,34 +64558,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 706296719, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 706296722, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 32768
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027469351, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027469351, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027469351, guid: a2020f44452ecdf499740a483623a30e, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 32768
-      objectReference: {fileID: 0}
     - target: {fileID: 534623019997699237, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: healthBar
