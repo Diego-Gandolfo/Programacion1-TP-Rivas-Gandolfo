@@ -6,27 +6,24 @@ namespace OnceUponAMemory.Main
 {
     public class BossTornadoController : MonoBehaviour
     {
-        // Mientras no está el Player, está en Idle
-
-        // Cuando detecta al Player, comienza la fase 1
-
-        // Cuando tiene menos del 50% de la vida, comienza la fase 2
-
-        [Header ("Settings")]
+        [Header ("Fase 1")]
         [SerializeField] private float minAttackTime1 = 0f;
         [SerializeField] private float maxAttackTime1 = 0f;
+
+        [Header ("Fase 2")]
         [SerializeField] private float minAttackTime2 = 0f;
         [SerializeField] private float maxAttackTime2 = 0f;
 
         private EnemyHealth enemyHealth = null;
         private DetectTargetArea detectTargetArea = null;
         private Animator animator = null;
+
         private int stage = 0;
         private int attackType = 0;
-        private float attackTime = 0f;
-        private float timer = 0f;
         private bool canAttack = false;
         private bool canCount = false;
+        private float attackTime = 0f;
+        private float timer = 0f;
         private float currentHealth = 0f;
         private float maxHealth = 0f;
 
@@ -51,7 +48,6 @@ namespace OnceUponAMemory.Main
             timer = 0f;
             canAttack = false;
             canCount = false;
-            attackType = Random.Range(1, 3); // Para que sea 1 o 2 como resultado
             maxHealth = enemyHealth.GetMaxHealth();
             // TODO: Boss Animator Idle
         }
@@ -60,45 +56,68 @@ namespace OnceUponAMemory.Main
         {
             if (stage == 0)
             {
-                if (detectTargetArea.DetectTargets())
-                {
-                    attackTime = Random.Range(minAttackTime1, maxAttackTime1);
-                    stage = 1;
-                    print("Boss Stage 1");
-                    canCount = true;
-                }
-            }
-            else if (stage == 1)
-            {
-                if (canAttack)
-                {
-                    canAttack = false;
-                    attackTime = Random.Range(minAttackTime1, maxAttackTime1);
-                    if (attackType == 1) InstantiateAttack();
-                    else MoveAttack();
-                }
-
-                currentHealth = enemyHealth.GetCurrentHealth();
-
-                if (currentHealth < (maxHealth / 2))
-                {
-                    attackTime = Random.Range(minAttackTime2, maxAttackTime2);
-                    stage = 2;
-                    print("Boss Stage 2");
-                }
+                if (detectTargetArea.DetectTargets()) StartStage(1);
             }
             else
             {
-                if (canAttack)
-                {
-                    canAttack = false;
-                    attackTime = Random.Range(minAttackTime2, maxAttackTime2);
-                    if (attackType == 1) InstantiateAttack();
-                    else MoveAttack();
-                }
-            }
+                if (canAttack) DoAttack();
 
-            if (canCount &&  timer >= attackTime)
+                if (stage == 1)
+                {
+                    currentHealth = enemyHealth.GetCurrentHealth();
+
+                    if (currentHealth <= (maxHealth / 2)) StartStage(2);
+                }
+
+                Timer();
+            }
+        }
+
+        private void StartStage(int value)
+        {
+            stage = value;
+            print($"Boss Stage {value}");
+            StartAttack();
+        }
+
+        private void StartAttack()
+        {
+            // TODO: Boss Animator Idle
+
+            attackType = Random.Range(1, 3);
+
+            attackTime = stage == 1 ? Random.Range(minAttackTime1, maxAttackTime1) : Random.Range(minAttackTime2, maxAttackTime2);
+
+            canCount = true;
+        }
+
+        private void DoAttack()
+        {
+            canAttack = false;
+            
+            if (attackType == 1) InstantiateAttack();
+            else MoveAttack();
+        }
+
+        private void InstantiateAttack()
+        {
+            print("InstantiateAttack");
+            // TODO: InstantiateAttack
+            // TODO: Boss Animator InstantiateAttack
+            StartAttack();
+        }
+
+        private void MoveAttack()
+        {
+            print("MoveAttack");
+            // TODO: MoveAttack
+            // TODO: Boss Animator MoveAttack
+            StartAttack();
+        }
+
+        private void Timer()
+        {
+            if (canCount && timer >= attackTime)
             {
                 canCount = false;
                 timer = 0f;
@@ -108,24 +127,6 @@ namespace OnceUponAMemory.Main
             {
                 timer += Time.deltaTime;
             }
-        }
-
-        private void InstantiateAttack()
-        {
-            print("InstantiateAttack");
-            // Ataque que Instancia Mini Tornaditos
-            // TODO: Boss Animator InstantiateAttack
-            attackType = Random.Range(1, 3);
-            canCount = true;
-        }
-
-        private void MoveAttack()
-        {
-            print("MoveAttack");
-            // Ataque que se desplaza
-            // TODO: Boss Animator MoveAttack
-            attackType = Random.Range(1, 3);
-            canCount = true;
         }
     }
 }
