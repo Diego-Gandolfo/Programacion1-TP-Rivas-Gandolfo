@@ -23,6 +23,5 @@ namespace OnceUponAMemory.Main
         {
             if (detectionCenterPoint != null) Gizmos.DrawWireSphere(detectionCenterPoint.position, detectionRange); // Esto es para dibujar donde está el Overlap
         }
-
     }
 }
