@@ -84,6 +84,15 @@ namespace OnceUponAMemory.Main
                 patrolPosition.transform.position = transform.position;
         }
 
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+                rb.velocity = Vector2.zero;
+            }
+        }
+
         private void OnDrawGizmosSelected()
         {
             if (patrolCenter != null) Gizmos.DrawWireCube(patrolCenter.position, new Vector3(areaSize.x + enemySize.x, areaSize.y + enemySize.y, 0)); // Dibujamos un Gizmo para representar el Area donde va a patrullar

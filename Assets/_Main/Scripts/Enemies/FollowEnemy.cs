@@ -42,5 +42,14 @@ namespace OnceUponAMemory.Main
                 transform.up = new Vector2(0, 0);
             }
         }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+                rb.velocity = Vector2.zero;
+            }
+        }
     }
 }

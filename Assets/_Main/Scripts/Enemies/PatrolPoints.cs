@@ -86,5 +86,14 @@ namespace OnceUponAMemory.Main
                     nextPoint = nextPoint >= patrolPoints.Length ? 0 : nextPoint + 1;
             }
         }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+                rb.velocity = Vector2.zero;
+            }
+        }
     }
 }
