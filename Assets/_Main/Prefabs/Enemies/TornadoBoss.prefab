@@ -127,8 +127,6 @@ GameObject:
   - component: {fileID: 2075942718934160076}
   - component: {fileID: 8530840667111626448}
   - component: {fileID: 6592835806054537779}
-  - component: {fileID: 3945844632507191804}
-  - component: {fileID: 7425825335214714048}
   m_Layer: 9
   m_Name: TornadoBoss
   m_TagString: Enemy
@@ -243,7 +241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7724956009307470508}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60e652f0e23a77943ac1c00428b462b9, type: 3}
   m_Name: 
@@ -262,12 +260,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7724956009307470508}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcf28299afd93e45839bad87852193a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 0}
+  minAttackTime1: 5
+  maxAttackTime1: 10
+  minAttackTime2: 2.5
+  maxAttackTime2: 5
 --- !u!114 &6592835806054537779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,30 +287,6 @@ MonoBehaviour:
   targetsLayerMask:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &3945844632507191804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7724956009307470508}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050a13d5ae2b0bc4bb0a174650d30292, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7425825335214714048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7724956009307470508}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51becba1324977245a1867c141255c48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2994087103540931243
 PrefabInstance:
   m_ObjectHideFlags: 0

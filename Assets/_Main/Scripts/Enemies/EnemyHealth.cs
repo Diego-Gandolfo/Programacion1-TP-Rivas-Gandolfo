@@ -60,9 +60,9 @@ namespace OnceUponAMemory.Main
         {
             currentHeatlh -= damage;
 
-            SoundManager.PlaySound(audioDamage); // Acá reproducimos el sonido que pusimos en el Inspector
-            
-            animator.SetTrigger(takingDamage);
+            if (audioDamage != "") SoundManager.PlaySound(audioDamage); // Acá reproducimos el sonido que pusimos en el Inspector
+
+            if (animator != null && takingDamage != "") animator.SetTrigger(takingDamage);
 
             healthBar.SetHealth(currentHeatlh);
             
@@ -78,7 +78,7 @@ namespace OnceUponAMemory.Main
         void Die()
         {
             Debug.Log("from here...");
-            animator.SetTrigger("IsDead");
+            if (animator != null) animator.SetTrigger("IsDead");
             //animator.SetTrigger("Die");
             Debug.Log("...to eternity");
 
@@ -92,6 +92,16 @@ namespace OnceUponAMemory.Main
             if (patrolArea != null) patrolArea.enabled = false;
             if (patrolPoints != null) patrolPoints.enabled = false;
             if (followEnemy != null) followEnemy.enabled = false;
+        }
+
+        public float GetCurrentHealth()
+        {
+            return currentHeatlh;
+        }
+
+        public float GetMaxHealth()
+        {
+            return maxHealth;
         }
     }
 }
