@@ -11979,7 +11979,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341786192}
-  m_LocalRotation: {x: -0.018987298, y: -0.0074980925, z: -0.00014239819, w: 0.9997916}
+  m_LocalRotation: {x: -0.018987296, y: -0.00749809, z: -0.00014239813, w: 0.9997916}
   m_LocalPosition: {x: 49.355, y: -78.684006, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12726,7 +12726,7 @@ GameObject:
   - component: {fileID: 1465808159}
   - component: {fileID: 1465808158}
   m_Layer: 12
-  m_Name: VictoryTrigger
+  m_Name: SecondLevelTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
