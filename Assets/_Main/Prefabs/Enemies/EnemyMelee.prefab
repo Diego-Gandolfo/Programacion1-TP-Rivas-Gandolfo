@@ -384,13 +384,7 @@ MonoBehaviour:
   random: 1
   movemetSpeed: 3
   waitTime: 1
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  patrolPoints: []
   rayDistance: 2
   rayLayerMask:
     serializedVersion: 2

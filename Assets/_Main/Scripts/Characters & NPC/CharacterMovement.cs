@@ -12,6 +12,7 @@ namespace OnceUponAMemory.Main
     public class CharacterMovement : MonoBehaviour
     {
         [SerializeField] private float movementSpeed = 7; // Configuramos la Velocidad de Movimiento
+        private float originalMovementSpeed = 0f;
         [SerializeField] private Animator animatorMovement = null; // Almacenaremos el Animator que contiene las Animaciones de Movimiento
 
         [SerializeField] private ParticleSystem dustPS = null;
@@ -22,7 +23,12 @@ namespace OnceUponAMemory.Main
         {
             myRigidbody2D = GetComponent<Rigidbody2D>();
         }
- 
+
+        private void Start()
+        {
+            originalMovementSpeed = movementSpeed;
+        }
+
         private void Update()
         {
             /*
@@ -61,14 +67,19 @@ namespace OnceUponAMemory.Main
             dustPS.Play();
         }
 
-        public float GetMovementSpeed()
+        public float GetOriginalSpeed()
         {
-            return movementSpeed;
+            return originalMovementSpeed;
         }
 
         public void SetMovementSpeed(float speed)
         {
             movementSpeed = speed;
+        }
+
+        public float GetCurrentSpeed()
+        {
+            return movementSpeed;
         }
     }
 }

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3618522784764163129, guid: 9ed9fd9c34ac7a543bd72db68ff9bbd4, type: 3}
-  enemiesAmount: 0
+  enemiesAmount: 1
   timeToResume: 3
   timeToSummon: 1
   currentTimeToSummon: 0
