@@ -12,20 +12,14 @@ namespace OnceUponAMemory.Main
         private PlayerHealth playerHealth = null; // Objeto que tiene la condicion de Derrota
         private string sceneToLoad = "";
 
-        private void Start()
-        {
-            victoryTrigger.OnVictory += Victory; // Escuchamos el Evento de OnVictory invocado en VictoryTrigger y llamamos a la funcion Victory
-            playerHealth.OnDie += GameOver; // Escuchamos el Evento de OnDie invocado en PlayerHealth y llamamos a la funcion GameOver
-        }
-
         private void GameOver()
         {
             SceneManager.LoadScene("GameOver"); // Cargamos escena de GameOver
-
         }
 
         private void Victory()
         {
+            print("EventVictory");
             sceneToLoad = victoryTrigger.GetSceneName();
             SceneManager.LoadScene(sceneToLoad); // Cargamos el segundo nivel
         }
@@ -33,11 +27,13 @@ namespace OnceUponAMemory.Main
         public void SetVictoryTrigger(VictoryTrigger trigger)
         {
             victoryTrigger = trigger;
+            victoryTrigger.OnVictory += Victory; // Escuchamos el Evento de OnVictory invocado en VictoryTrigger y llamamos a la funcion Victory
         }
 
         public void SetPlayerHealth(PlayerHealth player)
         {
             playerHealth = player;
+            playerHealth.OnDie += GameOver; // Escuchamos el Evento de OnDie invocado en PlayerHealth y llamamos a la funcion GameOver
         }
     }
 }

@@ -22,6 +22,7 @@ namespace OnceUponAMemory.Main
         {
             if (collision.CompareTag("Player"))
             {
+                print("Trigger");
                 OnVictory.Invoke();
             }
         }
