@@ -250,7 +250,7 @@ MonoBehaviour:
   currentHeatlh: 0
   audioDamage: 
   takingDamage: 
-  animator: {fileID: 0}
+  animator: {fileID: 7724956009307470509}
   healthBar: {fileID: 8114322584642973783}
   timeToDie: 2
 --- !u!114 &8530840667111626448
@@ -265,11 +265,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcf28299afd93e45839bad87852193a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  bossSize: {x: 8, y: 12}
+  movemetSpeed1: 10
   minAttackTime1: 5
   maxAttackTime1: 10
+  movePoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  movemetSpeed2: 20
   minAttackTime2: 2.5
   maxAttackTime2: 5
+  moveCenter: {fileID: 0}
+  areaSize: {x: 61, y: 33}
+  minDistance: 10
 --- !u!114 &6592835806054537779
 MonoBehaviour:
   m_ObjectHideFlags: 0
