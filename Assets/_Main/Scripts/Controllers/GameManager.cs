@@ -8,10 +8,11 @@ namespace OnceUponAMemory.Main
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private VictoryTrigger victoryTrigger = null; // Objeto que tiene la Condicion de Victoria
-        [SerializeField] private PlayerHealth playerHealth = null; // Objeto que tiene la condicion de Derrota
+        private VictoryTrigger victoryTrigger = null; // Objeto que tiene la Condicion de Victoria
+        private PlayerHealth playerHealth = null; // Objeto que tiene la condicion de Derrota
+        private string sceneToLoad = "";
 
-        private void Awake()
+        private void Start()
         {
             victoryTrigger.OnVictory += Victory; // Escuchamos el Evento de OnVictory invocado en VictoryTrigger y llamamos a la funcion Victory
             playerHealth.OnDie += GameOver; // Escuchamos el Evento de OnDie invocado en PlayerHealth y llamamos a la funcion GameOver
@@ -25,7 +26,18 @@ namespace OnceUponAMemory.Main
 
         private void Victory()
         {
-            SceneManager.LoadScene("SecondLevel"); // Cargamos el segundo nivel
+            sceneToLoad = victoryTrigger.GetSceneName();
+            SceneManager.LoadScene(sceneToLoad); // Cargamos el segundo nivel
+        }
+
+        public void SetVictoryTrigger(VictoryTrigger trigger)
+        {
+            victoryTrigger = trigger;
+        }
+
+        public void SetPlayerHealth(PlayerHealth player)
+        {
+            playerHealth = player;
         }
     }
 }

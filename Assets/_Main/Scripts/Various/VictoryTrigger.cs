@@ -7,7 +7,16 @@ namespace OnceUponAMemory.Main
 {
     public class VictoryTrigger : MonoBehaviour
     {
+        [SerializeField] private string sceneName = "";
+        private GameManager gameManager = null;
+
         public Action OnVictory;
+
+        private void Awake()
+        {
+            gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            gameManager.SetVictoryTrigger(this);
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -15,6 +24,11 @@ namespace OnceUponAMemory.Main
             {
                 OnVictory.Invoke();
             }
+        }
+
+        public string GetSceneName()
+        {
+            return sceneName;
         }
     }
 }

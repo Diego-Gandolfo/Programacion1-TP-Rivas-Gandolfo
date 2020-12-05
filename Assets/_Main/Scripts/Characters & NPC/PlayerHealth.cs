@@ -14,10 +14,19 @@ namespace OnceUponAMemory.Main
 
         public HealthBar healthBar;
 
+        private GameManager gameManager = null;
+
         public Action OnDie;
+
+        private void Awake()
+        {
+            gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        }
 
         void Start()
         {
+            gameManager.SetPlayerHealth(this);
+
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);            
         }
