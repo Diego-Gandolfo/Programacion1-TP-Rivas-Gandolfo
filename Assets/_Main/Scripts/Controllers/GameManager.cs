@@ -25,7 +25,7 @@ namespace OnceUponAMemory.Main
 
         private void Victory()
         {
-            SceneManager.LoadScene("Victory"); // Cargamos escena de Victoria
+            SceneManager.LoadScene("SecondLevel"); // Cargamos el segundo nivel
         }
     }
 }
