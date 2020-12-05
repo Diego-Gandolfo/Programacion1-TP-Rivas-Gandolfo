@@ -60,5 +60,15 @@ namespace OnceUponAMemory.Main
         {
             dustPS.Play();
         }
+
+        public float GetMovementSpeed()
+        {
+            return movementSpeed;
+        }
+
+        public void SetMovementSpeed(float speed)
+        {
+            movementSpeed = speed;
+        }
     }
 }
