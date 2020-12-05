@@ -21,14 +21,13 @@ namespace OnceUponAMemory.Main
         private void Awake()
         {
             gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            gameManager.SetPlayerHealth(this);
         }
 
         void Start()
         {
-            gameManager.SetPlayerHealth(this);
-
             currentHealth = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);            
+            healthBar.SetMaxHealth(maxHealth);
         }
 
         private void Update()
