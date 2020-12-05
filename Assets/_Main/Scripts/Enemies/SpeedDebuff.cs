@@ -19,16 +19,7 @@ namespace OnceUponAMemory.Main
             }
 
         }
-        /*
-        private void OnTriggerStay2D(Collider2D collision)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                CharacterMovement characterMovement = collision.gameObject.GetComponent<CharacterMovement>();
-                characterMovement.SetMovementSpeed(playerOriginalMovementSpeed * speedDebuffPorcentage);
-            }
-        }
-        */
+
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))

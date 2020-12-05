@@ -43,7 +43,7 @@ namespace OnceUponAMemory.Main
         void Start()
         {
             currentHeatlh = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);
+            if (healthBar != null) healthBar.SetMaxHealth(maxHealth);
         }
 
         private void Update()
@@ -51,7 +51,7 @@ namespace OnceUponAMemory.Main
             
             if (canCount)
                 currentTimeToDie += Time.deltaTime;
-            if (currentTimeToDie >= timeToDie)
+            if (canCount && currentTimeToDie >= timeToDie)
                 Destroy(gameObject);
                 
         }
@@ -64,7 +64,7 @@ namespace OnceUponAMemory.Main
 
             if (animator != null && takingDamage != "") animator.SetTrigger(takingDamage);
 
-            healthBar.SetHealth(currentHeatlh);
+           if (healthBar != null) healthBar.SetHealth(currentHeatlh);
             
             if (currentHeatlh <= 0)
             {
@@ -82,7 +82,7 @@ namespace OnceUponAMemory.Main
             //animator.SetTrigger("Die");
             Debug.Log("...to eternity");
 
-            healthBar.gameObject.SetActive(false);
+            if (healthBar != null) healthBar.gameObject.SetActive(false);
             //SoundManager.PlaySound("SpiderDie");
 
             if (shootingAI != null) shootingAI.enabled = false;

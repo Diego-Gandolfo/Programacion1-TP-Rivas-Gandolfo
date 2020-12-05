@@ -48,7 +48,7 @@ namespace OnceUponAMemory.Main
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-                rb.velocity = Vector2.zero;
+                if (rb != null) rb.velocity = Vector2.zero;
             }
         }
     }

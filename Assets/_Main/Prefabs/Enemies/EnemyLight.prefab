@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6437891464198997845}
   - component: {fileID: 2791270338466854458}
   - component: {fileID: 237471780528833039}
+  - component: {fileID: 2091296498}
   m_Layer: 9
   m_Name: EnemyLight
   m_TagString: Enemy
@@ -131,6 +132,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedDebuffPorcentage: 0.5
+--- !u!114 &2091296498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618522784764163129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e652f0e23a77943ac1c00428b462b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  currentHeatlh: 0
+  audioDamage: 
+  takingDamage: 
+  animator: {fileID: 0}
+  healthBar: {fileID: 0}
+  timeToDie: 0
 --- !u!1 &5783067411606419089
 GameObject:
   m_ObjectHideFlags: 0
