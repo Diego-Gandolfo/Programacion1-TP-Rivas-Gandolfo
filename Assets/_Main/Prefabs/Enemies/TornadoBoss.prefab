@@ -837,6 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossSize: {x: 8, y: 12}
+  animationDieDuration: 4
   minAttackTime1: 3.5
   maxAttackTime1: 5
   damageArea1: {fileID: 7051598730395442014}
@@ -847,6 +848,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  animationMoveDuration1: 1.2
   miniTornadoPrefab1: {fileID: 5326163743074196641, guid: 1ab48b470c174554495300c3bbb0ce0e,
     type: 3}
   miniTornadoImpulse1: 10
@@ -859,6 +861,8 @@ MonoBehaviour:
   - {fileID: 7843989406127425165}
   - {fileID: 2482921105323151456}
   - {fileID: 2153085143387101414}
+  animationInstantiateDuration1: 1.4
+  animationConvertionDuration: 3
   minAttackTime2: 2
   maxAttackTime2: 3.5
   damageArea2: {fileID: 3347980753493335572}
@@ -866,6 +870,7 @@ MonoBehaviour:
   moveCenter: {fileID: 0}
   areaSize: {x: 61, y: 33}
   minDistance: 10
+  animationMoveDuration2: 1.2
   miniTornadoPrefab2: {fileID: 5326163743074196641, guid: 9f703c905cd10ab4ab56c5366988e926,
     type: 3}
   miniTornadoImpulse2: 20
@@ -886,6 +891,7 @@ MonoBehaviour:
   - {fileID: 6726161725427731670}
   - {fileID: 2153085143387101414}
   - {fileID: 2837164097570964530}
+  animationInstantiateDuration2: 1.5
 --- !u!114 &6592835806054537779
 MonoBehaviour:
   m_ObjectHideFlags: 0

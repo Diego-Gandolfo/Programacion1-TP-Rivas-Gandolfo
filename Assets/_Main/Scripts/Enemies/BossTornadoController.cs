@@ -12,6 +12,7 @@ namespace OnceUponAMemory.Main
     {
         [Header("General Settings")]
         [SerializeField] private Vector2 bossSize = new Vector2(0, 0);
+        [SerializeField] private float animationDieDuration = 0f;
 
         [Header("Fase 1")]
         [SerializeField] private float minAttackTime1 = 0f;
@@ -22,13 +23,16 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float movemetSpeed1 = 0f;
         [SerializeField] private Transform[] movePoints = null;
         private int nextPoint = 0;
+        [SerializeField] private float animationMoveDuration1 = 0f;
 
         [Header("Fase 1 - InstantiateAttack")]
         [SerializeField] private MiniTornadoController miniTornadoPrefab1 = null;
         [SerializeField] private float miniTornadoImpulse1 = 0f;
         [SerializeField] private Transform[] miniTornadoSpawnpoints1 = null;
+        [SerializeField] private float animationInstantiateDuration1 = 0f;
 
-        [Header ("Fase 2")]
+        [Header("Fase 2")]
+        [SerializeField] private float animationConvertionDuration = 0f;
         [SerializeField] private float minAttackTime2 = 0f;
         [SerializeField] private float maxAttackTime2 = 0f;
 
@@ -43,11 +47,13 @@ namespace OnceUponAMemory.Main
         private float maxX = 0;
         private float minY = 0;
         private float maxY = 0;
+        [SerializeField] private float animationMoveDuration2 = 0f;
 
         [Header ("Fase 2 - InstantiateAttack")]
         [SerializeField] private MiniTornadoController miniTornadoPrefab2 = null;
         [SerializeField] private float miniTornadoImpulse2 = 0f;
         [SerializeField] private Transform[] miniTornadoSpawnpoints2 = null;
+        [SerializeField] private float animationInstantiateDuration2 = 0f;
 
         // Componentes
         private EnemyHealth enemyHealth = null;
@@ -58,11 +64,14 @@ namespace OnceUponAMemory.Main
         private int stage = 0;
         private int attackType = 0;
         private bool canAttack = false;
-        private bool canCount = false;
+        private bool finishAnimation = false;
+        private bool canCountAttack = false;
         private float attackTime = 0f;
-        private float timer = 0f;
+        private float timerAttack = 0f;
+        private float timerAnimation = 0f;
         private float currentHealth = 0f;
         private float maxHealth = 0f;
+        private bool doingMoveAttack = false;
 
         private void Awake()
         {
@@ -82,9 +91,9 @@ namespace OnceUponAMemory.Main
         private void Start()
         {
             stage = 0;
-            timer = 0f;
+            timerAttack = 0f;
             canAttack = false;
-            canCount = false;
+            canCountAttack = false;
 
             maxHealth = enemyHealth.GetMaxHealth();
 
@@ -110,7 +119,8 @@ namespace OnceUponAMemory.Main
             {
                 if (detectTargetArea.DetectTargets()) StartStage(1);
             }
-            else
+            
+            if (stage != 0)
             {
                 if (canAttack)
                 {
@@ -118,65 +128,139 @@ namespace OnceUponAMemory.Main
                     {
                         if (stage == 1)
                         {
-                            //animator.SetTrigger("Instantiate1");
-
-                            InstantiateAttack();
+                            if (timerAnimation == 0)
+                            {
+                                finishAnimation = false;
+                                animator.SetTrigger("Instantiate1");
+                            }
+                            
+                            TimerAnimation(animationInstantiateDuration1);
+                            
+                            if (finishAnimation)
+                            {
+                                timerAnimation = 0f;
+                                InstantiateAttack();
+                            }
                         }
                         else
                         {
-                            //animator.SetTrigger("Instantiate2");
+                            if (timerAnimation == 0)
+                            {
+                                finishAnimation = false;
+                                animator.SetTrigger("Instantiate2");
+                            }
 
-                            InstantiateAttack();
+                            TimerAnimation(animationInstantiateDuration2);
+
+                            if (finishAnimation)
+                            {
+                                timerAnimation = 0f;
+                                InstantiateAttack();
+                            }
                         }
                     }
                     else
                     { 
                         if (stage == 1)
                         {
-                            //animator.SetTrigger("Anticipation1");
-                            //animator.SetBool("IsMoving1", true);
+                            if (timerAnimation == 0 && !doingMoveAttack)
+                            {
+                                finishAnimation = false;
+                                animator.SetTrigger("Anticipation1");
+                                animator.SetBool("IsMoving1", true);
+                            }
 
-                            MoveAttack();
+                            if (finishAnimation)
+                            {
+                                doingMoveAttack = true;
+                                timerAnimation = 0f;
+                                MoveAttack();
+                            }
+                            else
+                            {
+                                TimerAnimation(animationMoveDuration1);
+                            }
                         }
                         else
                         {
-                            //animator.SetTrigger("Anticipation2");
-                            //animator.SetBool("IsMoving2", true);
+                            if (timerAnimation == 0 && !doingMoveAttack)
+                            {
+                                finishAnimation = false;
+                                animator.SetTrigger("Anticipation2");
+                                animator.SetBool("IsMoving2", true);
+                            }
 
-                            MoveAttack();
+                            if (finishAnimation)
+                            {
+                                doingMoveAttack = true;
+                                timerAnimation = 0f;
+                                MoveAttack();
+                            }
+                            else
+                            {
+                                TimerAnimation(animationMoveDuration2);
+                            }
                         }
                     }
                 }
 
-                if (stage == 1)
+                if (stage == 1 && !doingMoveAttack && finishAnimation)
                 {
                     if (currentHealth <= (maxHealth / 2)) StartStage(2);
                 }
 
-                Timer();
+                TimerAttack();
             }
 
-            if (currentHealth <= 0) Die();
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
 
         private void StartStage(int value)
         {
-            damageArea1.gameObject.SetActive(false);
+
             stage = value;
+
             print($"Boss Stage {value}");
-            StartAttack();
+
+            if (stage == 2)
+            {
+                damageArea1.gameObject.SetActive(false);
+                doingMoveAttack = false;
+                canAttack = false;
+
+                if (timerAnimation == 0)
+                {
+                    finishAnimation = false;
+                    animator.SetTrigger("Stage2");
+                }
+
+                TimerAnimation(animationConvertionDuration);
+
+                if (finishAnimation)
+                {
+                    timerAnimation = 0f;
+                    StartAttack();
+                }
+            }
+            else
+            {
+                StartAttack();
+            }
         }
 
         private void StartAttack()
         {
-            attackType = Random.Range(1, 3);
+            //attackType = Random.Range(1, 3);
 
-            //attackType = attackType == 1 ? 2 : 1; // Para testear y que haga una vez cada uno, COMENTAR AL TERMINAR !!!
+            attackType = attackType == 1 ? 2 : 1; // Para testear y que haga una vez cada uno, COMENTAR AL TERMINAR !!!
             //attackType = 2; // Para testear y que siempre el mismo, COMENTAR AL TERMINAR !!!
 
             attackTime = stage == 1 ? Random.Range(minAttackTime1, maxAttackTime1) : Random.Range(minAttackTime2, maxAttackTime2);
 
-            canCount = true;
+            canCountAttack = true;
         }
 
         private void InstantiateAttack()
@@ -230,8 +314,9 @@ namespace OnceUponAMemory.Main
                             nextPoint = Random.Range(0, movePoints.Length);
                         }
                     }
-
-                    //animator.SetBool("IsMoving1", false);
+                    
+                    doingMoveAttack = false;
+                    animator.SetBool("IsMoving1", false);
 
                     StartAttack();
                 }
@@ -255,7 +340,8 @@ namespace OnceUponAMemory.Main
                         movePosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
                     }
 
-                    //animator.SetBool("IsMoving2", false);
+                    doingMoveAttack = false;
+                    animator.SetBool("IsMoving2", false);
 
                     StartAttack();
                 }
@@ -264,22 +350,47 @@ namespace OnceUponAMemory.Main
 
         private void Die()
         {
+            canAttack = false;
             damageArea2.gameObject.SetActive(false);
-            animator.SetTrigger("IsDead");
-            gameObject.SetActive(false);
+
+            if (timerAnimation == 0)
+            {
+                finishAnimation = false;
+                animator.SetTrigger("IsDead");
+            }
+
+            TimerAnimation(animationDieDuration);
+
+            if (finishAnimation)
+            {
+                timerAnimation = 0f;
+                gameObject.SetActive(false);
+            }
         }
 
-        private void Timer()
+        private void TimerAttack()
         {
-            if (canCount && timer >= attackTime)
+            if (canCountAttack && timerAttack >= attackTime)
             {
-                canCount = false;
-                timer = 0f;
+                canCountAttack = false;
+                timerAttack = 0f;
                 canAttack = true;
             }
-            else if (canCount && timer < attackTime)
+            else if (canCountAttack && timerAttack < attackTime)
             {
-                timer += Time.deltaTime;
+                timerAttack += Time.deltaTime;
+            }
+        }
+
+        private void TimerAnimation(float duration)
+        {
+            if (timerAnimation >= duration)
+            {
+                finishAnimation = true;
+            }
+            else if (timerAnimation < duration)
+            {
+                timerAnimation += Time.deltaTime;
             }
         }
 
@@ -287,6 +398,5 @@ namespace OnceUponAMemory.Main
         {
             if (moveCenter != null) Gizmos.DrawWireCube(moveCenter.position, new Vector3(areaSize.x + bossSize.x, areaSize.y + bossSize.y, 0));
         }
-
     }
 }
