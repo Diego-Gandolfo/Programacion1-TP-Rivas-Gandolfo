@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+
 
 namespace OnceUponAMemory.Main
 {
@@ -114,35 +118,15 @@ namespace OnceUponAMemory.Main
                     {
                         if (stage == 1)
                         {
-                            canAttack = false;
+                            //animator.SetTrigger("Instantiate1");
 
-                            animator.SetTrigger("Instantiate1");
-                            /*
-                            for (int i = 0; i < miniTornadoSpawnpoints1.Length; i++)
-                            {
-                                Vector3 position = miniTornadoSpawnpoints1[i].position;
-                                MiniTornadoController miniTornadoClone = Instantiate(miniTornadoPrefab1, position, Quaternion.identity);
-                                Vector2 direction = position - transform.position;
-                                miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse1);
-                            }
-                            
-                            StartAttack();*/
+                            InstantiateAttack();
                         }
                         else
                         {
-                            canAttack = false;
+                            //animator.SetTrigger("Instantiate2");
 
-                            animator.SetTrigger("Instantiate2");
-                            /*
-                            for (int i = 0; i < miniTornadoSpawnpoints2.Length; i++)
-                            {
-                                Vector3 position = miniTornadoSpawnpoints2[i].position;
-                                MiniTornadoController miniTornadoClone = Instantiate(miniTornadoPrefab2, position, Quaternion.identity);
-                                Vector2 direction = position - transform.position;
-                                miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse2);
-                            }
-                            
-                            StartAttack();*/
+                            InstantiateAttack();
                         }
                     }
                     else
@@ -152,57 +136,14 @@ namespace OnceUponAMemory.Main
                             //animator.SetTrigger("Anticipation1");
                             //animator.SetBool("IsMoving1", true);
 
-                            damageArea1.gameObject.SetActive(true);
-
-                            transform.position = Vector2.MoveTowards(transform.position, movePoints[nextPoint].position, movemetSpeed1 * Time.deltaTime);
-
-                            if (Vector2.Distance(transform.position, movePoints[nextPoint].position) < 0.2f)
-                            {
-                                damageArea1.gameObject.SetActive(false);
-
-                                canAttack = false;
-
-                                int currentPoint = nextPoint;
-
-                                if (movePoints.Length != 0)
-                                {
-                                    while (currentPoint == nextPoint)
-                                    {
-                                        nextPoint = Random.Range(0, movePoints.Length);
-                                    }
-                                }
-
-                                //animator.SetBool("IsMoving1", false);
-
-                                StartAttack();
-                            }
+                            MoveAttack();
                         }
                         else
                         {
                             //animator.SetTrigger("Anticipation2");
                             //animator.SetBool("IsMoving2", true);
 
-                            damageArea2.gameObject.SetActive(true);
-
-                            transform.position = Vector2.MoveTowards(transform.position, movePosition.transform.position, movemetSpeed2 * Time.deltaTime); // Nos movemos al punto indicado
-
-                            if (Vector2.Distance(transform.position, movePosition.transform.position) < 0.2f) // Nos fijamos si ya estamos cerca del punto indicado (randomPoint)
-                            {
-                                damageArea2.gameObject.SetActive(false);
-
-                                canAttack = false;
-
-                                movePosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
-
-                                while (Vector2.Distance(transform.position, movePosition.transform.position) < minDistance) // Nos fijamos si la distancia del nuevo punto supera la Distancia Minima
-                                {
-                                    movePosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
-                                }
-
-                                //animator.SetBool("IsMoving2", false);
-
-                                StartAttack();
-                            }
+                            MoveAttack();
                         }
                     }
                 }
@@ -220,6 +161,7 @@ namespace OnceUponAMemory.Main
 
         private void StartStage(int value)
         {
+            damageArea1.gameObject.SetActive(false);
             stage = value;
             print($"Boss Stage {value}");
             StartAttack();
@@ -229,20 +171,18 @@ namespace OnceUponAMemory.Main
         {
             attackType = Random.Range(1, 3);
 
-            attackType = 1; // Solo para testeo, comentar al terminar
+            //attackType = attackType == 1 ? 2 : 1; // Para testear y que haga una vez cada uno, COMENTAR AL TERMINAR !!!
+            //attackType = 2; // Para testear y que siempre el mismo, COMENTAR AL TERMINAR !!!
 
             attackTime = stage == 1 ? Random.Range(minAttackTime1, maxAttackTime1) : Random.Range(minAttackTime2, maxAttackTime2);
 
             canCount = true;
         }
 
-        void StartInstantiateAttack()
-        {
-            print("Esto sucede?");
-        }
-
         private void InstantiateAttack()
         {
+            canAttack = false;
+
             if (stage == 1)
             {
                 for (int i = 0; i < miniTornadoSpawnpoints1.Length; i++)
@@ -267,8 +207,64 @@ namespace OnceUponAMemory.Main
             StartAttack();
         }
 
+        private void MoveAttack()
+        {
+            if (stage == 1)
+            {
+                damageArea1.gameObject.SetActive(true);
+
+                transform.position = Vector2.MoveTowards(transform.position, movePoints[nextPoint].position, movemetSpeed1 * Time.deltaTime);
+
+                if (Vector2.Distance(transform.position, movePoints[nextPoint].position) < 0.2f)
+                {
+                    damageArea1.gameObject.SetActive(false);
+
+                    canAttack = false;
+
+                    int currentPoint = nextPoint;
+
+                    if (movePoints.Length != 0)
+                    {
+                        while (currentPoint == nextPoint)
+                        {
+                            nextPoint = Random.Range(0, movePoints.Length);
+                        }
+                    }
+
+                    //animator.SetBool("IsMoving1", false);
+
+                    StartAttack();
+                }
+            }
+            else
+            {
+                damageArea2.gameObject.SetActive(true);
+
+                transform.position = Vector2.MoveTowards(transform.position, movePosition.transform.position, movemetSpeed2 * Time.deltaTime);
+
+                if (Vector2.Distance(transform.position, movePosition.transform.position) < 0.2f)
+                {
+                    damageArea2.gameObject.SetActive(false);
+
+                    canAttack = false;
+
+                    movePosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+
+                    while (Vector2.Distance(transform.position, movePosition.transform.position) < minDistance)
+                    {
+                        movePosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+                    }
+
+                    //animator.SetBool("IsMoving2", false);
+
+                    StartAttack();
+                }
+            }
+        }
+
         private void Die()
         {
+            damageArea2.gameObject.SetActive(false);
             animator.SetTrigger("IsDead");
             gameObject.SetActive(false);
         }
