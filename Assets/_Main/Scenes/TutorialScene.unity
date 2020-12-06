@@ -6990,6 +6990,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6979d999c8a7fd4448c937e34c3a0b45, type: 3}
+--- !u!114 &807801818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5978416010611374770, guid: 7d2848da380bfec49b502d361e5d485d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1106764041}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &824322752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6463375038460266259, guid: a2020f44452ecdf499740a483623a30e,
@@ -8075,7 +8087,7 @@ PrefabInstance:
         type: 3}
       propertyPath: imageUI
       value: 
-      objectReference: {fileID: 1819830847}
+      objectReference: {fileID: 807801818}
     - target: {fileID: 2885070718264219013, guid: a2020f44452ecdf499740a483623a30e,
         type: 3}
       propertyPath: healthBar
@@ -8307,7 +8319,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 128823
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -9233,18 +9245,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07b10d435135a7549a3f0b9549782daa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1819830847 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5978416010039377545, guid: 7d2848da380bfec49b502d361e5d485d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1106764041}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1833361738
