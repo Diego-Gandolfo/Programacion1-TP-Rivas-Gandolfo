@@ -7,9 +7,9 @@ public class TutorialTrgger : MonoBehaviour
     [SerializeField]
     private GameObject text;
 
+    [SerializeField]
     private float timeToGo = 6.5f;
 
-    [SerializeField]
     private float currentTimeToGo = 0.0f;
 
     private bool canCount = false;
