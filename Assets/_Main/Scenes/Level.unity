@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 39818261}
-  currentTimeToGo: 0
+  timeToGo: 6.5
 --- !u!1001 &88817835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6405,7 +6405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &908178071
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9815,7 +9815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 731441205}
-  currentTimeToGo: 0
+  timeToGo: 6.5
 --- !u!1 &1036659834
 GameObject:
   m_ObjectHideFlags: 0
@@ -11717,7 +11717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1279153754
 Transform:
   m_ObjectHideFlags: 0
@@ -12843,7 +12843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1625038302}
-  currentTimeToGo: 0
+  timeToGo: 6.5
 --- !u!1001 &1495915740
 PrefabInstance:
   m_ObjectHideFlags: 0
