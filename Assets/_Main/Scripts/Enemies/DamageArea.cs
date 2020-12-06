@@ -7,9 +7,9 @@ namespace OnceUponAMemory.Main
 {
     public class DamageArea : MonoBehaviour
     {
-        private int damage = 2;
+        [SerializeField] private int damage = 2;
         public float damageRate = 2f;
-        private float nextDamage;
+        private float nextDamage = 0f;
         private Animator animator;
 
         private void Start()

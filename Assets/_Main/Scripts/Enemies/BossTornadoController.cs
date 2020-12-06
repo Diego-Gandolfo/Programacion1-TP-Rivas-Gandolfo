@@ -6,20 +6,31 @@ namespace OnceUponAMemory.Main
 {
     public class BossTornadoController : MonoBehaviour
     {
-        [Header("Boss Settings")]
+        [Header("General Settings")]
         [SerializeField] private Vector2 bossSize = new Vector2(0, 0);
 
         [Header("Fase 1")]
-        [SerializeField] private float movemetSpeed1 = 0f;
         [SerializeField] private float minAttackTime1 = 0f;
         [SerializeField] private float maxAttackTime1 = 0f;
+
+        [Header("Fase 1 - MoveAttack")]
+        [SerializeField] private DamageArea damageArea1 = null;
+        [SerializeField] private float movemetSpeed1 = 0f;
         [SerializeField] private Transform[] movePoints = null;
         private int nextPoint = 0;
 
+        [Header("Fase 1 - InstantiateAttack")]
+        [SerializeField] private MiniTornadoController miniTornadoPrefab1 = null;
+        [SerializeField] private float miniTornadoImpulse1 = 0f;
+        [SerializeField] private Transform[] miniTornadoSpawnpoints1 = null;
+
         [Header ("Fase 2")]
-        [SerializeField] private float movemetSpeed2 = 0f;
         [SerializeField] private float minAttackTime2 = 0f;
         [SerializeField] private float maxAttackTime2 = 0f;
+
+        [Header ("Fase 2 - MoveAttack")]
+        [SerializeField] private DamageArea damageArea2 = null;
+        [SerializeField] private float movemetSpeed2 = 0f;
         [SerializeField] private Transform moveCenter = null;
         [SerializeField] private Vector2 areaSize = new Vector2(0, 0);
         [SerializeField] private float minDistance = 0;
@@ -28,6 +39,11 @@ namespace OnceUponAMemory.Main
         private float maxX = 0;
         private float minY = 0;
         private float maxY = 0;
+
+        [Header ("Fase 2 - InstantiateAttack")]
+        [SerializeField] private MiniTornadoController miniTornadoPrefab2 = null;
+        [SerializeField] private float miniTornadoImpulse2 = 0f;
+        [SerializeField] private Transform[] miniTornadoSpawnpoints2 = null;
 
         private EnemyHealth enemyHealth = null;
         private DetectTargetArea detectTargetArea = null;
@@ -98,21 +114,33 @@ namespace OnceUponAMemory.Main
                     {
                         if (stage == 1)
                         {
-                            print("InstantiateAttack 1");
-
-                            // Animacion InstatiateAttack en Stage 1
+                            // TODO: Animacion InstatiateAttack en Stage 1
 
                             canAttack = false;
+
+                            for (int i = 0; i < miniTornadoSpawnpoints1.Length; i++)
+                            {
+                                Vector3 position = miniTornadoSpawnpoints1[i].position;
+                                MiniTornadoController miniTornadoClone = Instantiate(miniTornadoPrefab1, position, Quaternion.identity);
+                                Vector2 direction = position - transform.position;
+                                miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse1);
+                            }
 
                             StartAttack();
                         }
                         else
                         {
-                            print("InstantiateAttack 2");
-
-                            // Animacion InstatiateAttack en Stage 2
+                            // TODO: Animacion InstatiateAttack en Stage 2
 
                             canAttack = false;
+
+                            for (int i = 0; i < miniTornadoSpawnpoints2.Length; i++)
+                            {
+                                Vector3 position = miniTornadoSpawnpoints2[i].position;
+                                MiniTornadoController miniTornadoClone = Instantiate(miniTornadoPrefab2, position, Quaternion.identity);
+                                Vector2 direction = position - transform.position;
+                                miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse2);
+                            }
 
                             StartAttack();
                         }
@@ -121,14 +149,16 @@ namespace OnceUponAMemory.Main
                     { 
                         if (stage == 1)
                         {
-                            //print("MoveAttack 1");
+                            // TODO: Animacion MoveAttack en Stage 1
 
-                            // Animacion MoveAttack en Stage 1
+                            damageArea1.gameObject.SetActive(true);
 
                             transform.position = Vector2.MoveTowards(transform.position, movePoints[nextPoint].position, movemetSpeed1 * Time.deltaTime);
 
                             if (Vector2.Distance(transform.position, movePoints[nextPoint].position) < 0.2f)
                             {
+                                damageArea1.gameObject.SetActive(false);
+
                                 canAttack = false;
 
                                 int currentPoint = nextPoint;
@@ -146,14 +176,16 @@ namespace OnceUponAMemory.Main
                         }
                         else
                         {
-                            //print("MoveAttack 2");
+                            // TODO: Animacion MoveAttack en Stage 2
 
-                            // Animacion MoveAttack en Stage 2
+                            damageArea2.gameObject.SetActive(true);
 
                             transform.position = Vector2.MoveTowards(transform.position, movePosition.transform.position, movemetSpeed2 * Time.deltaTime); // Nos movemos al punto indicado
 
                             if (Vector2.Distance(transform.position, movePosition.transform.position) < 0.2f) // Nos fijamos si ya estamos cerca del punto indicado (randomPoint)
                             {
+                                damageArea2.gameObject.SetActive(false);
+
                                 canAttack = false;
 
                                 movePosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
