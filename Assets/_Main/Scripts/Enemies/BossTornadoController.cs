@@ -77,8 +77,6 @@ namespace OnceUponAMemory.Main
 
         private void Start()
         {
-            // TODO: Animacion Stage 1 Idle
-
             stage = 0;
             timer = 0f;
             canAttack = false;
@@ -116,10 +114,10 @@ namespace OnceUponAMemory.Main
                     {
                         if (stage == 1)
                         {
-                            // TODO: Animacion Stage 1 InstatiateAttack
-
                             canAttack = false;
 
+                            animator.SetTrigger("Instantiate1");
+                            /*
                             for (int i = 0; i < miniTornadoSpawnpoints1.Length; i++)
                             {
                                 Vector3 position = miniTornadoSpawnpoints1[i].position;
@@ -127,17 +125,15 @@ namespace OnceUponAMemory.Main
                                 Vector2 direction = position - transform.position;
                                 miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse1);
                             }
-
-                            // TODO: Animacion Stage 1 Idle
-
-                            StartAttack();
+                            
+                            StartAttack();*/
                         }
                         else
                         {
-                            // TODO: Animacion Stage 2 InstatiateAttack
-
                             canAttack = false;
 
+                            animator.SetTrigger("Instantiate2");
+                            /*
                             for (int i = 0; i < miniTornadoSpawnpoints2.Length; i++)
                             {
                                 Vector3 position = miniTornadoSpawnpoints2[i].position;
@@ -145,17 +141,16 @@ namespace OnceUponAMemory.Main
                                 Vector2 direction = position - transform.position;
                                 miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse2);
                             }
-
-                            // TODO: Animacion Stage 2 Idle
-
-                            StartAttack();
+                            
+                            StartAttack();*/
                         }
                     }
                     else
                     { 
                         if (stage == 1)
                         {
-                            // TODO: Animacion Stage 1 MoveAttack
+                            //animator.SetTrigger("Anticipation1");
+                            //animator.SetBool("IsMoving1", true);
 
                             damageArea1.gameObject.SetActive(true);
 
@@ -177,14 +172,15 @@ namespace OnceUponAMemory.Main
                                     }
                                 }
 
-                                // TODO: Animacion Stage 1 Idle
+                                //animator.SetBool("IsMoving1", false);
 
                                 StartAttack();
                             }
                         }
                         else
                         {
-                            // TODO: Animacion Stage 2 MoveAttack
+                            //animator.SetTrigger("Anticipation2");
+                            //animator.SetBool("IsMoving2", true);
 
                             damageArea2.gameObject.SetActive(true);
 
@@ -203,7 +199,7 @@ namespace OnceUponAMemory.Main
                                     movePosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
                                 }
 
-                                // TODO: Animacion Stage 2 Idle
+                                //animator.SetBool("IsMoving2", false);
 
                                 StartAttack();
                             }
@@ -233,13 +229,47 @@ namespace OnceUponAMemory.Main
         {
             attackType = Random.Range(1, 3);
 
+            attackType = 1; // Solo para testeo, comentar al terminar
+
             attackTime = stage == 1 ? Random.Range(minAttackTime1, maxAttackTime1) : Random.Range(minAttackTime2, maxAttackTime2);
 
             canCount = true;
         }
 
+        void StartInstantiateAttack()
+        {
+            print("Esto sucede?");
+        }
+
+        private void InstantiateAttack()
+        {
+            if (stage == 1)
+            {
+                for (int i = 0; i < miniTornadoSpawnpoints1.Length; i++)
+                {
+                    Vector3 position = miniTornadoSpawnpoints1[i].position;
+                    MiniTornadoController miniTornadoClone = Instantiate(miniTornadoPrefab1, position, Quaternion.identity);
+                    Vector2 direction = position - transform.position;
+                    miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse1);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < miniTornadoSpawnpoints2.Length; i++)
+                {
+                    Vector3 position = miniTornadoSpawnpoints2[i].position;
+                    MiniTornadoController miniTornadoClone = Instantiate(miniTornadoPrefab2, position, Quaternion.identity);
+                    Vector2 direction = position - transform.position;
+                    miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse2);
+                }
+            }
+
+            StartAttack();
+        }
+
         private void Die()
         {
+            animator.SetTrigger("IsDead");
             gameObject.SetActive(false);
         }
 
