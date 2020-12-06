@@ -77,7 +77,7 @@ namespace OnceUponAMemory.Main
 
         private void Start()
         {
-            // TODO: Boss Animator Idle
+            // TODO: Animacion Stage 1 Idle
 
             stage = 0;
             timer = 0f;
@@ -116,7 +116,7 @@ namespace OnceUponAMemory.Main
                     {
                         if (stage == 1)
                         {
-                            // TODO: Animacion InstatiateAttack en Stage 1
+                            // TODO: Animacion Stage 1 InstatiateAttack
 
                             canAttack = false;
 
@@ -128,11 +128,13 @@ namespace OnceUponAMemory.Main
                                 miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse1);
                             }
 
+                            // TODO: Animacion Stage 1 Idle
+
                             StartAttack();
                         }
                         else
                         {
-                            // TODO: Animacion InstatiateAttack en Stage 2
+                            // TODO: Animacion Stage 2 InstatiateAttack
 
                             canAttack = false;
 
@@ -144,6 +146,8 @@ namespace OnceUponAMemory.Main
                                 miniTornadoClone.ImpulseMiniTornado(direction.normalized, miniTornadoImpulse2);
                             }
 
+                            // TODO: Animacion Stage 2 Idle
+
                             StartAttack();
                         }
                     }
@@ -151,7 +155,7 @@ namespace OnceUponAMemory.Main
                     { 
                         if (stage == 1)
                         {
-                            // TODO: Animacion MoveAttack en Stage 1
+                            // TODO: Animacion Stage 1 MoveAttack
 
                             damageArea1.gameObject.SetActive(true);
 
@@ -173,12 +177,14 @@ namespace OnceUponAMemory.Main
                                     }
                                 }
 
+                                // TODO: Animacion Stage 1 Idle
+
                                 StartAttack();
                             }
                         }
                         else
                         {
-                            // TODO: Animacion MoveAttack en Stage 2
+                            // TODO: Animacion Stage 2 MoveAttack
 
                             damageArea2.gameObject.SetActive(true);
 
@@ -196,6 +202,8 @@ namespace OnceUponAMemory.Main
                                 {
                                     movePosition.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)); // Asignamos el punto siguiente al que nos vamos a desplazar
                                 }
+
+                                // TODO: Animacion Stage 2 Idle
 
                                 StartAttack();
                             }
@@ -223,8 +231,6 @@ namespace OnceUponAMemory.Main
 
         private void StartAttack()
         {
-            // TODO: Boss Animator Idle
-
             attackType = Random.Range(1, 3);
 
             attackTime = stage == 1 ? Random.Range(minAttackTime1, maxAttackTime1) : Random.Range(minAttackTime2, maxAttackTime2);
