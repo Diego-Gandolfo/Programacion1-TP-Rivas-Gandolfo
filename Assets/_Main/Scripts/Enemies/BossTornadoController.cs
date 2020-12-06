@@ -45,10 +45,12 @@ namespace OnceUponAMemory.Main
         [SerializeField] private float miniTornadoImpulse2 = 0f;
         [SerializeField] private Transform[] miniTornadoSpawnpoints2 = null;
 
+        // Componentes
         private EnemyHealth enemyHealth = null;
         private DetectTargetArea detectTargetArea = null;
         private Animator animator = null;
 
+        // Privadas Varias
         private int stage = 0;
         private int attackType = 0;
         private bool canAttack = false;
