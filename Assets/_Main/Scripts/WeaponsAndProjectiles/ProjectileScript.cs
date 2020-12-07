@@ -26,14 +26,14 @@ namespace OnceUponAMemory.Main
             rb2D = GetComponent<Rigidbody2D>();
         }
 
-        void Start()
-        {
+        void Start() // Todo lo que está en el Start lo voy a mover a una función para poder llamarla desde el que dispara
+        {/*
             player = GameObject.FindGameObjectWithTag("Player").transform; // Esto quizás habría que cambiarlo porque dijeron que no es recomendable de usar
 
             target = new Vector2(player.position.x, player.position.y);
 
-            Vector2 direction = (Vector3)target - transform.position;
-            rb2D.AddForce(direction.normalized * impulse, ForceMode2D.Impulse);
+            Vector2 direction = (Vector3)target - transform.position; 
+            rb2D.AddForce(direction.normalized * impulse, ForceMode2D.Impulse);*/
         }
 
 
@@ -70,6 +70,16 @@ namespace OnceUponAMemory.Main
         void DestroyProjectile()
         {
             Destroy(gameObject);
+        }
+
+        public void ThrowProjectile(Transform playerTransform)
+        {
+            player = playerTransform;
+
+            target = new Vector2(player.position.x, player.position.y);
+
+            Vector2 direction = (Vector3)target - transform.position;
+            rb2D.AddForce(direction.normalized * impulse, ForceMode2D.Impulse);
         }
     }
 

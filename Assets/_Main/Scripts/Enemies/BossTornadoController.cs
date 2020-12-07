@@ -72,6 +72,8 @@ namespace OnceUponAMemory.Main
         private float currentHealth = 0f;
         private float maxHealth = 0f;
         private bool doingMoveAttack = false;
+        private bool isDying = false;
+        private bool isConverting = false;
 
         private void Awake()
         {
@@ -212,8 +214,9 @@ namespace OnceUponAMemory.Main
                 TimerAttack();
             }
 
-            if (currentHealth <= 0)
+            if (currentHealth <= 0 && !isDying)
             {
+                timerAnimation = 0f;
                 Die();
             }
         }
@@ -350,6 +353,7 @@ namespace OnceUponAMemory.Main
 
         private void Die()
         {
+            isDying = true;
             canAttack = false;
             damageArea2.gameObject.SetActive(false);
 

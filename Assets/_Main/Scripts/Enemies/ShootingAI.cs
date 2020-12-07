@@ -27,7 +27,10 @@ namespace OnceUponAMemory.Main
             //transform.LookAt(player);
             if ((timeBetweenShots <= 0) && (Vector2.Distance(transform.position, player.position) <= maxDistanceRange))
             {
-                Instantiate(projectile, firePoint.position, Quaternion.identity);
+                GameObject projectileClone = Instantiate(projectile, firePoint.position, Quaternion.identity);
+                ProjectileScript projectileScript = projectileClone.GetComponent<ProjectileScript>();
+                projectileScript.ThrowProjectile(player);
+
                 timeBetweenShots = starTimeBetweentShots;
 
                 animator.SetTrigger("Attack");

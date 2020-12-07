@@ -17,7 +17,8 @@ namespace OnceUponAMemory.Main
 
         void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            //if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
+            if (player == null) Debug.LogError($"{this} en {this.gameObject} no tiene asignado el Player");
         }
 
         void Update()
