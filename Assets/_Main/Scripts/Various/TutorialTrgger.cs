@@ -13,8 +13,10 @@ public class TutorialTrgger : MonoBehaviour
 
     private bool canCount = false;
 
+    /*
     [SerializeField]
     private GameObject sound;
+    */
 
     [SerializeField]
     private GameObject HUD = null;
@@ -33,7 +35,7 @@ public class TutorialTrgger : MonoBehaviour
                 canCount = false;
 
                 gameObject.SetActive(false);
-                sound.gameObject.SetActive(false);
+                //sound.gameObject.SetActive(false);
                 //Destroy(gameObject);
             }
         }
@@ -45,7 +47,7 @@ public class TutorialTrgger : MonoBehaviour
         {
             HUD.gameObject.SetActive(true);
 
-            sound.SetActive(true);
+            //sound.SetActive(true);
 
             text.SetActive(true);
 
@@ -56,7 +58,7 @@ public class TutorialTrgger : MonoBehaviour
         {
             HUD.gameObject.SetActive(false);
 
-            sound.SetActive(false);
+            //sound.SetActive(false);
 
             text.SetActive(false);
         }
