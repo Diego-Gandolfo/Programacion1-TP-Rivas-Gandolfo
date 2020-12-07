@@ -9,10 +9,12 @@ public class TutorialTrgger : MonoBehaviour
 
     [SerializeField]
     private float timeToGo = 6.5f;
-
     private float currentTimeToGo = 0.0f;
 
     private bool canCount = false;
+
+    [SerializeField]
+    private GameObject sound;
 
     private void Update()
     {
@@ -36,6 +38,8 @@ public class TutorialTrgger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            sound.SetActive(true);
+
             text.SetActive(true);
 
             canCount = true;
