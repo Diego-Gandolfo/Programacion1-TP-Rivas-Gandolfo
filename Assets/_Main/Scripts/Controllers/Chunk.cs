@@ -19,6 +19,8 @@ namespace OnceUponAMemory.Main
         private float timeToDamage = 2.0f;
         private float currentTimeToDamage = 0.0f;
 
+        private Animator animator;
+
         
 
         private void Start()
@@ -58,6 +60,7 @@ namespace OnceUponAMemory.Main
             else if (collision.gameObject.CompareTag("Player") && key.hasBlockKey)
             {
                 Debug.Log("now you can");
+                
             }
         }
     }
