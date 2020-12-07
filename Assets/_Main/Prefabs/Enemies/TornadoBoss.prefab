@@ -823,7 +823,7 @@ MonoBehaviour:
   takingDamage: 
   animator: {fileID: 7724956009307470509}
   healthBar: {fileID: 8114322584642973783}
-  timeToDie: 2
+  timeToDie: 4
 --- !u!114 &8530840667111626448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossSize: {x: 8, y: 12}
-  animationDieDuration: 4
+  animationDieDuration: 8
   minAttackTime1: 3.5
   maxAttackTime1: 5
   damageArea1: {fileID: 7051598730395442014}

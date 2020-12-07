@@ -122,7 +122,7 @@ namespace OnceUponAMemory.Main
                 if (detectTargetArea.DetectTargets()) StartStage(1);
             }
             
-            if (stage != 0)
+            if (stage != 0 && !isDying)
             {
                 if (canAttack)
                 {
@@ -364,12 +364,12 @@ namespace OnceUponAMemory.Main
             }
 
             TimerAnimation(animationDieDuration);
-
+            /*
             if (finishAnimation)
             {
                 timerAnimation = 0f;
-                gameObject.SetActive(false);
-            }
+                //gameObject.SetActive(false);
+            }*/
         }
 
         private void TimerAttack()
