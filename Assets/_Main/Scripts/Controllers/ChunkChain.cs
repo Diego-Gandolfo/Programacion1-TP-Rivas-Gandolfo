@@ -30,6 +30,12 @@ namespace OnceUponAMemory.Main
         [SerializeField]
         private GameObject heavyChainSound = null;
 
+        [SerializeField]
+        private bool hasCutscene;
+
+        [SerializeField]
+        private Animator doorAnimator;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
@@ -60,6 +66,11 @@ namespace OnceUponAMemory.Main
 
                 hasBlockKey = true;
                 canCount = true;
+
+                if (hasCutscene)
+                {
+                    doorAnimator.SetBool("Open", true);
+                }
             }
 
             else
