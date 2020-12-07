@@ -16,6 +16,9 @@ public class TutorialTrgger : MonoBehaviour
     [SerializeField]
     private GameObject sound;
 
+    [SerializeField]
+    private GameObject HUD = null;
+
     private void Update()
     {
         if (canCount)
@@ -29,7 +32,9 @@ public class TutorialTrgger : MonoBehaviour
                 currentTimeToGo = 0.0f;
                 canCount = false;
 
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                sound.gameObject.SetActive(false);
+                //Destroy(gameObject);
             }
         }
     }
@@ -38,6 +43,8 @@ public class TutorialTrgger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            HUD.gameObject.SetActive(true);
+
             sound.SetActive(true);
 
             text.SetActive(true);
@@ -46,6 +53,12 @@ public class TutorialTrgger : MonoBehaviour
         }
 
         else
+        {
+            HUD.gameObject.SetActive(false);
+
+            sound.SetActive(false);
+
             text.SetActive(false);
+        }
     }
 }
