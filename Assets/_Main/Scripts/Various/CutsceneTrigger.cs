@@ -4,49 +4,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutsceneTrigger : MonoBehaviour
+namespace OnceUponAMemory.Main
 {
-    public static bool isCutsceneOn;
-
-    [SerializeField]
-    private Animator animator;
-
-    [SerializeField]
-    private Animator doorLightAnimator;
-
-    [SerializeField]
-    private GameObject doorLight;
-
-    [SerializeField]
-    private Animator deactivatedTrapAnimator;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class CutsceneTrigger : MonoBehaviour
     {
-        if (collision.CompareTag("Player"))
+        public static bool isCutsceneOn;
+
+        [SerializeField]
+        private Animator animator;
+
+        [SerializeField]
+        private Animator doorLightAnimator;
+
+        [SerializeField]
+        private GameObject doorLight;
+
+        [SerializeField]
+        private Animator deactivatedTrapAnimator;
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            SoundManager.PlaySound("HeavyChain");
+            if (collision.CompareTag("Player"))
+            {
+                SoundManager.PlaySound("HeavyChain");
 
-            doorLight.SetActive(true);
+                doorLight.SetActive(true);
 
-            isCutsceneOn = true;
+                isCutsceneOn = true;
 
-            animator.SetBool("Cutscene", true);
+                animator.SetBool("Cutscene", true);
 
-            deactivatedTrapAnimator.SetBool("Open", true);
+                deactivatedTrapAnimator.SetBool("Open", true);
 
-            Invoke(nameof(StopCutscene), 3f);
+                Invoke(nameof(StopCutscene), 3f);
+            }
         }
-    }
 
-    void StopCutscene()
-    {
-        gameObject.SetActive(false);
-        doorLight.SetActive(false);
+        void StopCutscene()
+        {
+            gameObject.SetActive(false);
+            doorLight.SetActive(false);
 
-        isCutsceneOn = false;
+            isCutsceneOn = false;
 
-        animator.SetBool("Cutscene", false);
+            animator.SetBool("Cutscene", false);
 
-        deactivatedTrapAnimator.SetBool("Open", false);
+            deactivatedTrapAnimator.SetBool("Open", false);
+        }
     }
 }

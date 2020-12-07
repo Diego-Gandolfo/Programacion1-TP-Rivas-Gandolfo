@@ -6365,7 +6365,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 49.95
+  m_fontSize: 45.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9795,7 +9795,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 91.4
+  m_fontSize: 85.05
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -63443,6 +63443,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 779156636}
     m_Modifications:
+    - target: {fileID: 5978416009509082182, guid: 7d2848da380bfec49b502d361e5d485d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5978416011317285712, guid: 7d2848da380bfec49b502d361e5d485d,
         type: 3}
       propertyPath: m_LocalPosition.x
