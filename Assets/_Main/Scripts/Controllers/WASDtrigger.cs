@@ -24,7 +24,6 @@ public class WASDtrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             CutsceneTrigger.isCutsceneOn = true;
-            Debug.Log("you cant move ass");
 
             canCount = true;
         }
