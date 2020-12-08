@@ -12,7 +12,6 @@ namespace OnceUponAMemory.Main
     {
         [Header("General Settings")]
         [SerializeField] private Vector2 bossSize = new Vector2(0, 0);
-        [SerializeField] private float animationDieDuration = 0f;
 
         [Header("Fase 1")]
         [SerializeField] private float minAttackTime1 = 0f;
@@ -59,6 +58,8 @@ namespace OnceUponAMemory.Main
         private EnemyHealth enemyHealth = null;
         private DetectTargetArea detectTargetArea = null;
         private Animator animator = null;
+        private CapsuleCollider2D capsuleCollider2D = null;
+        private SpriteRenderer spriteRenderer = null;
 
         // Privadas Varias
         private int stage = 0;
@@ -73,7 +74,6 @@ namespace OnceUponAMemory.Main
         private float maxHealth = 0f;
         private bool doingMoveAttack = false;
         private bool isDying = false;
-        private bool isConverting = false;
 
         private void Awake()
         {
@@ -88,6 +88,14 @@ namespace OnceUponAMemory.Main
             // Chequeamos que tenga EnemyHealth
             if (gameObject.GetComponent<EnemyHealth>() == null) Debug.LogError(gameObject.name + " no tiene componente EnemyHealth");
             if (gameObject.GetComponent<EnemyHealth>() != null) enemyHealth = gameObject.GetComponent<EnemyHealth>();
+
+            // Chequeamos que tenga CapsuleCollider2D
+            if (gameObject.GetComponent<CapsuleCollider2D>() == null) Debug.LogError(gameObject.name + " no tiene componente CapsuleCollider2D");
+            if (gameObject.GetComponent<CapsuleCollider2D>() != null) capsuleCollider2D = gameObject.GetComponent<CapsuleCollider2D>();
+
+            // Chequeamos que tenga CapsuleCollider2D
+            if (gameObject.GetComponent<SpriteRenderer>() == null) Debug.LogError(gameObject.name + " no tiene componente SpriteRenderer");
+            if (gameObject.GetComponent<SpriteRenderer>() != null) spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         }
 
         private void Start()
@@ -170,11 +178,11 @@ namespace OnceUponAMemory.Main
                                 finishAnimation = false;
                                 animator.SetTrigger("Anticipation1");
                                 animator.SetBool("IsMoving1", true);
+                                doingMoveAttack = true;
                             }
 
                             if (finishAnimation)
                             {
-                                doingMoveAttack = true;
                                 timerAnimation = 0f;
                                 MoveAttack();
                             }
@@ -190,11 +198,11 @@ namespace OnceUponAMemory.Main
                                 finishAnimation = false;
                                 animator.SetTrigger("Anticipation2");
                                 animator.SetBool("IsMoving2", true);
+                                doingMoveAttack = true;
                             }
 
                             if (finishAnimation)
                             {
-                                doingMoveAttack = true;
                                 timerAnimation = 0f;
                                 MoveAttack();
                             }
@@ -206,9 +214,12 @@ namespace OnceUponAMemory.Main
                     }
                 }
 
-                if (stage == 1 && !doingMoveAttack && finishAnimation)
+                if (stage == 1 && currentHealth <= (maxHealth / 2))
                 {
-                    if (currentHealth <= (maxHealth / 2)) StartStage(2);
+                    if (!doingMoveAttack && finishAnimation)
+                    {
+                        StartStage(2);
+                    }
                 }
 
                 TimerAttack();
@@ -231,22 +242,10 @@ namespace OnceUponAMemory.Main
             if (stage == 2)
             {
                 damageArea1.gameObject.SetActive(false);
-                doingMoveAttack = false;
                 canAttack = false;
-
-                if (timerAnimation == 0)
-                {
-                    finishAnimation = false;
-                    animator.SetTrigger("Stage2");
-                }
-
-                TimerAnimation(animationConvertionDuration);
-
-                if (finishAnimation)
-                {
-                    timerAnimation = 0f;
-                    StartAttack();
-                }
+                capsuleCollider2D.enabled = false;
+                animator.SetTrigger("Stage2");
+                Invoke("FinishConvertion", animationConvertionDuration);
             }
             else
             {
@@ -254,11 +253,17 @@ namespace OnceUponAMemory.Main
             }
         }
 
+        private void FinishConvertion()
+        {
+            capsuleCollider2D.enabled = true;
+            StartAttack();
+        }
+
         private void StartAttack()
         {
-            //attackType = Random.Range(1, 3);
+            attackType = Random.Range(1, 3);
 
-            attackType = attackType == 1 ? 2 : 1; // Para testear y que haga una vez cada uno, COMENTAR AL TERMINAR !!!
+            //attackType = attackType == 1 ? 2 : 1; // Para testear y que haga una vez cada uno, COMENTAR AL TERMINAR !!!
             //attackType = 2; // Para testear y que siempre el mismo, COMENTAR AL TERMINAR !!!
 
             attackTime = stage == 1 ? Random.Range(minAttackTime1, maxAttackTime1) : Random.Range(minAttackTime2, maxAttackTime2);
@@ -300,6 +305,11 @@ namespace OnceUponAMemory.Main
             {
                 damageArea1.gameObject.SetActive(true);
 
+                if (transform.position.x > movePoints[nextPoint].position.x)
+                    spriteRenderer.flipX = true;
+                else
+                    spriteRenderer.flipX = false;
+
                 transform.position = Vector2.MoveTowards(transform.position, movePoints[nextPoint].position, movemetSpeed1 * Time.deltaTime);
 
                 if (Vector2.Distance(transform.position, movePoints[nextPoint].position) < 0.2f)
@@ -327,6 +337,11 @@ namespace OnceUponAMemory.Main
             else
             {
                 damageArea2.gameObject.SetActive(true);
+
+                if (transform.position.x > movePosition.transform.position.x)
+                    spriteRenderer.flipX = true;
+                else
+                    spriteRenderer.flipX = false;
 
                 transform.position = Vector2.MoveTowards(transform.position, movePosition.transform.position, movemetSpeed2 * Time.deltaTime);
 

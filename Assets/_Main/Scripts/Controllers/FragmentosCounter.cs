@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace OnceUponAMemory.Main
 {
@@ -10,6 +11,12 @@ namespace OnceUponAMemory.Main
     {
         TextMeshProUGUI CounterText;
         public static int Amount;
+
+        private void Awake()
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            if (scene.name == "Level") Amount = 0;
+        }
 
         void Start()
         {
