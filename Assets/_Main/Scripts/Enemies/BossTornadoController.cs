@@ -12,6 +12,7 @@ namespace OnceUponAMemory.Main
     {
         [Header("General Settings")]
         [SerializeField] private Vector2 bossSize = new Vector2(0, 0);
+        [SerializeField] private GameObject evilLaughSound;
 
         [Header("Fase 1")]
         [SerializeField] private float minAttackTime1 = 0f;
@@ -246,6 +247,7 @@ namespace OnceUponAMemory.Main
                 capsuleCollider2D.enabled = false;
                 animator.SetTrigger("Stage2");
                 Invoke("FinishConvertion", animationConvertionDuration);
+                evilLaughSound.gameObject.SetActive(true);
             }
             else
             {
@@ -370,6 +372,8 @@ namespace OnceUponAMemory.Main
         {
             isDying = true;
             damageArea2.gameObject.SetActive(false);
+
+            capsuleCollider2D.enabled = false;
         }
 
         private void TimerAttack()
