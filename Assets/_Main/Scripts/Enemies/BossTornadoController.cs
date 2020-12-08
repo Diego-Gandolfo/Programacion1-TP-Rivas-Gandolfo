@@ -59,6 +59,7 @@ namespace OnceUponAMemory.Main
         private EnemyHealth enemyHealth = null;
         private DetectTargetArea detectTargetArea = null;
         private Animator animator = null;
+        private CapsuleCollider2D capsuleCollider2D = null;
 
         // Privadas Varias
         private int stage = 0;
@@ -88,6 +89,10 @@ namespace OnceUponAMemory.Main
             // Chequeamos que tenga EnemyHealth
             if (gameObject.GetComponent<EnemyHealth>() == null) Debug.LogError(gameObject.name + " no tiene componente EnemyHealth");
             if (gameObject.GetComponent<EnemyHealth>() != null) enemyHealth = gameObject.GetComponent<EnemyHealth>();
+
+            // Chequeamos que tenga CapsuleCollider2D
+            if (gameObject.GetComponent<CapsuleCollider2D>() == null) Debug.LogError(gameObject.name + " no tiene componente CapsuleCollider2D");
+            if (gameObject.GetComponent<CapsuleCollider2D>() != null) capsuleCollider2D = gameObject.GetComponent<CapsuleCollider2D>();
         }
 
         private void Start()
@@ -208,6 +213,7 @@ namespace OnceUponAMemory.Main
 
                 if (stage == 1 && !doingMoveAttack && finishAnimation)
                 {
+                    print("hola?");
                     if (currentHealth <= (maxHealth / 2)) StartStage(2);
                 }
 
@@ -232,9 +238,14 @@ namespace OnceUponAMemory.Main
             {
                 damageArea1.gameObject.SetActive(false);
                 canAttack = false;
+                capsuleCollider2D.enabled = false;
+                animator.SetTrigger("Stage2");
+                Invoke("FinishConvertion", animationConvertionDuration);
 
+                /*
                 if (timerAnimation == 0)
                 {
+                    capsuleCollider2D.enabled = false;
                     finishAnimation = false;
                     animator.SetTrigger("Stage2");
                 }
@@ -243,14 +254,22 @@ namespace OnceUponAMemory.Main
 
                 if (finishAnimation)
                 {
+                    capsuleCollider2D.enabled = true;
                     timerAnimation = 0f;
                     StartAttack();
                 }
+                */
             }
             else
             {
                 StartAttack();
             }
+        }
+
+        private void FinishConvertion()
+        {
+            capsuleCollider2D.enabled = true;
+            StartAttack();
         }
 
         private void StartAttack()
