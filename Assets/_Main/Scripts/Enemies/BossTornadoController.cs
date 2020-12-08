@@ -59,6 +59,7 @@ namespace OnceUponAMemory.Main
         private DetectTargetArea detectTargetArea = null;
         private Animator animator = null;
         private CapsuleCollider2D capsuleCollider2D = null;
+        private SpriteRenderer spriteRenderer = null;
 
         // Privadas Varias
         private int stage = 0;
@@ -91,6 +92,10 @@ namespace OnceUponAMemory.Main
             // Chequeamos que tenga CapsuleCollider2D
             if (gameObject.GetComponent<CapsuleCollider2D>() == null) Debug.LogError(gameObject.name + " no tiene componente CapsuleCollider2D");
             if (gameObject.GetComponent<CapsuleCollider2D>() != null) capsuleCollider2D = gameObject.GetComponent<CapsuleCollider2D>();
+
+            // Chequeamos que tenga CapsuleCollider2D
+            if (gameObject.GetComponent<SpriteRenderer>() == null) Debug.LogError(gameObject.name + " no tiene componente SpriteRenderer");
+            if (gameObject.GetComponent<SpriteRenderer>() != null) spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         }
 
         private void Start()
@@ -300,6 +305,11 @@ namespace OnceUponAMemory.Main
             {
                 damageArea1.gameObject.SetActive(true);
 
+                if (transform.position.x > movePoints[nextPoint].position.x)
+                    spriteRenderer.flipX = true;
+                else
+                    spriteRenderer.flipX = false;
+
                 transform.position = Vector2.MoveTowards(transform.position, movePoints[nextPoint].position, movemetSpeed1 * Time.deltaTime);
 
                 if (Vector2.Distance(transform.position, movePoints[nextPoint].position) < 0.2f)
@@ -327,6 +337,11 @@ namespace OnceUponAMemory.Main
             else
             {
                 damageArea2.gameObject.SetActive(true);
+
+                if (transform.position.x > movePosition.transform.position.x)
+                    spriteRenderer.flipX = true;
+                else
+                    spriteRenderer.flipX = false;
 
                 transform.position = Vector2.MoveTowards(transform.position, movePosition.transform.position, movemetSpeed2 * Time.deltaTime);
 
