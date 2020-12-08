@@ -60,7 +60,6 @@ namespace OnceUponAMemory.Main
             else if (collision.gameObject.CompareTag("Player") && key.hasBlockKey)
             {
                 Debug.Log("now you can");
-                
             }
         }
     }

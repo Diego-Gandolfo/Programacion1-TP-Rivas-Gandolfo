@@ -22,11 +22,16 @@ namespace OnceUponAMemory.Main
         [SerializeField]
         private Animator deactivatedTrapAnimator;
 
+        [SerializeField]
+        private GameObject sound;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))
             {
-                SoundManager.PlaySound("HeavyChain");
+                sound.gameObject.SetActive(true);
+
+                //SoundManager.PlaySound("HeavyChain");
 
                 doorLight.SetActive(true);
 
@@ -38,6 +43,8 @@ namespace OnceUponAMemory.Main
 
                 Invoke(nameof(StopCutscene), 3f);
             }
+            else
+                sound.gameObject.SetActive(false);
         }
 
         void StopCutscene()
