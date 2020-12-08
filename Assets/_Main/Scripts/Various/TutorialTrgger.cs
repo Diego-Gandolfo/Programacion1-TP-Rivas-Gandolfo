@@ -17,6 +17,8 @@ public class TutorialTrgger : MonoBehaviour
     [SerializeField]
     private GameObject sound;
     */
+    [SerializeField]
+    private bool hasToHaveHUD = false;
 
     [SerializeField]
     private GameObject HUD = null;
@@ -45,7 +47,9 @@ public class TutorialTrgger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            HUD.gameObject.SetActive(true);
+            if (hasToHaveHUD)
+                HUD.gameObject.SetActive(true);
+            
 
             //sound.SetActive(true);
 
