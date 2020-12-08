@@ -60,7 +60,7 @@ public class TutorialTrgger : MonoBehaviour
 
         else
         {
-            HUD.gameObject.SetActive(false);
+            //HUD.gameObject.SetActive(false);
 
             //sound.SetActive(false);
 

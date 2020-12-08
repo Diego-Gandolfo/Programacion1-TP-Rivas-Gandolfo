@@ -28,12 +28,13 @@ namespace OnceUponAMemory.Main
         private float timeToGo = 3.0f;
         private float currentTimeToGo = 0.0f;
 
+        /*
         [SerializeField]
         private GameObject secondTutorial;
 
         [SerializeField]
         private Animator secondAnimator;
-
+        */
         [SerializeField]
         private GameObject HUD;
 
@@ -68,7 +69,7 @@ namespace OnceUponAMemory.Main
 
                 if (!canCount && (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.Mouse2) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)))
                 {
-                    secondAnimator.SetBool("KeyPressed", true);   
+                    //secondAnimator.SetBool("KeyPressed", true);   
 
                     animator.SetTrigger("KeyPressed1");
 
@@ -92,7 +93,7 @@ namespace OnceUponAMemory.Main
             else
             {
                 animator.SetBool("KeyPressed1", false);
-                secondAnimator.SetBool("KeyPressed", false);
+                //secondAnimator.SetBool("KeyPressed", false);
 
                 CutsceneTrigger.isCutsceneOn = true;
             }
