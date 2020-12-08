@@ -24,12 +24,5 @@ public class BossBattleMusicControl : MonoBehaviour
         {
             bossBattleMusic.gameObject.SetActive(true);
         }
-
-        else
-        {
-            bossBattleMusic.gameObject.SetActive(false);
-        }
     }
-
-
 }
