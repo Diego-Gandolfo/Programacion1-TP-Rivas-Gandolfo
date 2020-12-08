@@ -151,6 +151,8 @@ MonoBehaviour:
   summonPoint: {fileID: 5103701241242276758}
   player: {fileID: 0}
   maxDistance: 15
+  summonSound: {fileID: 7133233437062848403, guid: a920f090d2063df49b7462c8e9645099,
+    type: 3}
 --- !u!95 &2318489471612079928
 Animator:
   serializedVersion: 3

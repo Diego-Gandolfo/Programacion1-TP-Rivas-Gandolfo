@@ -44,6 +44,9 @@ namespace OnceUponAMemory.Main
         [SerializeField]
         private float maxDistance = 0;
 
+        [SerializeField]
+        private GameObject summonSound;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
@@ -58,32 +61,50 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
+            
+
             currentTimeToSummon += Time.deltaTime;
 
             if (Vector2.Distance(transform.position, player.transform.position) <= maxDistance)
             {
+                summonSound.SetActive(true);
+
                 if (currentTimeToSummon >= timeToSummon && canInstantiate)
                 {
                     GameObject enemyClone = Instantiate(enemy, summonPoint.position, Quaternion.identity);
                     FollowEnemy followEnemy = enemyClone.GetComponent<FollowEnemy>();
+
                     if (followEnemy != null) followEnemy.player = player;
                     else Debug.LogError($"{enemyClone} no tiene FollowEnemy donde se busca");
 
                     enemiesAmount++;
 
+                    
+
                     animator.SetTrigger("IsInvoking");
 
                     currentTimeToSummon = 0.0f;
+
+                    
                 }
+
+                
 
                 else if (!canInstantiate)
                 {
+                    
+
                     enemiesAmount = 0;
 
                     currentTimeToResume += Time.deltaTime;
 
                     if (currentTimeToSummon >= timeToResume)
+                    {
                         canInstantiate = true;
+
+                        summonSound.SetActive(false);
+                    }
+                        
                 }
             }
 
@@ -95,6 +116,13 @@ namespace OnceUponAMemory.Main
                 canInstantiate = false;
                 enemiesAmount = 0;
             }
+
+            else
+            {
+                
+            }
         }
+
+        
     }
 }

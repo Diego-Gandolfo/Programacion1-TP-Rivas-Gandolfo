@@ -49,12 +49,16 @@ namespace OnceUponAMemory.Main
                 case "Footsteps4":
                     _audioSource.PlayOneShot(Footsteps4);
                     break;
-                */
-                /*
+               
                 case "NotificationSound":
                     _audioSource.PlayOneShot(NotificationSound);
                     break;
+         
+                case "SummonSound":
+                    _audioSource.PlayOneShot(SummonSound);
+                    break;
                     */
+
                 case "GhostDamage":
                     _audioSource.PlayOneShot(GhostDamage);
                     break;
