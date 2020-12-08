@@ -12,7 +12,6 @@ namespace OnceUponAMemory.Main
     {
         [Header("General Settings")]
         [SerializeField] private Vector2 bossSize = new Vector2(0, 0);
-        [SerializeField] private float animationDieDuration = 0f;
 
         [Header("Fase 1")]
         [SerializeField] private float minAttackTime1 = 0f;
@@ -74,7 +73,6 @@ namespace OnceUponAMemory.Main
         private float maxHealth = 0f;
         private bool doingMoveAttack = false;
         private bool isDying = false;
-        private bool isConverting = false;
 
         private void Awake()
         {
@@ -211,10 +209,12 @@ namespace OnceUponAMemory.Main
                     }
                 }
 
-                if (stage == 1 && !doingMoveAttack && finishAnimation)
+                if (stage == 1 && currentHealth <= (maxHealth / 2))
                 {
-                    print("hola?");
-                    if (currentHealth <= (maxHealth / 2)) StartStage(2);
+                    if (!doingMoveAttack && finishAnimation)
+                    {
+                        StartStage(2);
+                    }
                 }
 
                 TimerAttack();
@@ -241,24 +241,6 @@ namespace OnceUponAMemory.Main
                 capsuleCollider2D.enabled = false;
                 animator.SetTrigger("Stage2");
                 Invoke("FinishConvertion", animationConvertionDuration);
-
-                /*
-                if (timerAnimation == 0)
-                {
-                    capsuleCollider2D.enabled = false;
-                    finishAnimation = false;
-                    animator.SetTrigger("Stage2");
-                }
-
-                TimerAnimation(animationConvertionDuration);
-
-                if (finishAnimation)
-                {
-                    capsuleCollider2D.enabled = true;
-                    timerAnimation = 0f;
-                    StartAttack();
-                }
-                */
             }
             else
             {
@@ -274,9 +256,9 @@ namespace OnceUponAMemory.Main
 
         private void StartAttack()
         {
-            //attackType = Random.Range(1, 3);
+            attackType = Random.Range(1, 3);
 
-            attackType = attackType == 1 ? 2 : 1; // Para testear y que haga una vez cada uno, COMENTAR AL TERMINAR !!!
+            //attackType = attackType == 1 ? 2 : 1; // Para testear y que haga una vez cada uno, COMENTAR AL TERMINAR !!!
             //attackType = 2; // Para testear y que siempre el mismo, COMENTAR AL TERMINAR !!!
 
             attackTime = stage == 1 ? Random.Range(minAttackTime1, maxAttackTime1) : Random.Range(minAttackTime2, maxAttackTime2);
