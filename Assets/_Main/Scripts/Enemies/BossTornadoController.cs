@@ -354,22 +354,7 @@ namespace OnceUponAMemory.Main
         private void Die()
         {
             isDying = true;
-            canAttack = false;
             damageArea2.gameObject.SetActive(false);
-
-            if (timerAnimation == 0)
-            {
-                finishAnimation = false;
-                animator.SetTrigger("IsDead");
-            }
-
-            TimerAnimation(animationDieDuration);
-            /*
-            if (finishAnimation)
-            {
-                timerAnimation = 0f;
-                //gameObject.SetActive(false);
-            }*/
         }
 
         private void TimerAttack()
