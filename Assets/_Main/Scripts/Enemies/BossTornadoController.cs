@@ -170,11 +170,11 @@ namespace OnceUponAMemory.Main
                                 finishAnimation = false;
                                 animator.SetTrigger("Anticipation1");
                                 animator.SetBool("IsMoving1", true);
+                                doingMoveAttack = true;
                             }
 
                             if (finishAnimation)
                             {
-                                doingMoveAttack = true;
                                 timerAnimation = 0f;
                                 MoveAttack();
                             }
@@ -190,11 +190,11 @@ namespace OnceUponAMemory.Main
                                 finishAnimation = false;
                                 animator.SetTrigger("Anticipation2");
                                 animator.SetBool("IsMoving2", true);
+                                doingMoveAttack = true;
                             }
 
                             if (finishAnimation)
                             {
-                                doingMoveAttack = true;
                                 timerAnimation = 0f;
                                 MoveAttack();
                             }
@@ -231,7 +231,6 @@ namespace OnceUponAMemory.Main
             if (stage == 2)
             {
                 damageArea1.gameObject.SetActive(false);
-                doingMoveAttack = false;
                 canAttack = false;
 
                 if (timerAnimation == 0)
