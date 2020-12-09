@@ -12,7 +12,6 @@ Assets/modules/Possibilities/AI/Backups/
 /Assets/modules/Possibilities/AI/*.BAK
 .BAK.meta
 /Debug
-*.rar
 /obj
 Logs/
 .idea/
@@ -20,7 +19,6 @@ Logs/
 Originals/Docs/~$ents Phase 1.docx
 Assets/UnityEngine.AssetGraph/Cache/
 Assets/ResonaiDownloads/
-Builds/
 Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll
 Assets/Plugins/Editor/JetBrains/
 Assets/ResonaiDownloads.meta
