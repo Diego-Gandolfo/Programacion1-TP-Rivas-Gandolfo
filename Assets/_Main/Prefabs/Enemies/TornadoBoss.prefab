@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e652f0e23a77943ac1c00428b462b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 50
   currentHeatlh: 0
   audioDamage: 
   takingDamage: 
@@ -837,6 +837,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossSize: {x: 8, y: 12}
+  evilLaughSound: {fileID: 0}
+  monsterDeathSound: {fileID: 0}
   minAttackTime1: 3.5
   maxAttackTime1: 5
   damageArea1: {fileID: 7051598730395442014}
