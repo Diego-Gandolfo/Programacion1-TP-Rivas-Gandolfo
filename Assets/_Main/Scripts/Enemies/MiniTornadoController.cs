@@ -21,14 +21,13 @@ namespace OnceUponAMemory.Main
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-
             if (collision.gameObject.CompareTag("Player"))
             {
                 PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
                 playerHealth.TakeDamage(damage);
             }
 
-            if (collision.gameObject.name != gameObject.name && collision.gameObject.name != "TornadoBoss")
+            if (collision.gameObject.name != gameObject.name && collision.gameObject.name != "TornadoBoss" && collision.gameObject.name != "BossBattleMusic(Trigger)")
             {
                 Destroy(gameObject);
             }

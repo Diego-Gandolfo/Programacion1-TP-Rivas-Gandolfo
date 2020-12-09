@@ -25,12 +25,10 @@ namespace OnceUponAMemory.Main
             {
                 if (transform.position.x > target.transform.position.x)
                 {// Chequeamos si nuestra posicion en Eje X es MAYOR que la del Player
-                    print("si");
                     spriteRenderer.flipX = true; // Volteamos
                 }
                 else // Si no es MENOR
                 {
-                    print("no");
                     spriteRenderer.flipX = false; // No volteamos
                 }
             }
