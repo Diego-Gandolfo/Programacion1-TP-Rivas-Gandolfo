@@ -25,7 +25,7 @@ namespace OnceUponAMemory.Main
         {
             CounterText = GetComponent<TextMeshProUGUI>(); // Lo cambie por un MeshPro
 
-            if (scene.name == "Level")
+            if (scene.name == "Level" || scene.name == "TutorialScene")
             {
                 Amount = 0;
             }
