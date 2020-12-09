@@ -35,7 +35,7 @@ namespace OnceUponAMemory.Main
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
 
-            heartbeatSound.SetActive(false);
+            if (heartbeatSound != null) heartbeatSound.SetActive(false);
         }
 
         private void Update()
@@ -44,13 +44,13 @@ namespace OnceUponAMemory.Main
             {
                 if (currentHealth <= 5)
                 {
-                    HUDanimator.SetBool("LowHealth", true);
-                    heartbeatSound.SetActive(true);
+                    if (HUDanimator != null) HUDanimator.SetBool("LowHealth", true);
+                    if (heartbeatSound != null) heartbeatSound.SetActive(true);
                 }
                 if (currentHealth >= 5)
                 {
-                    HUDanimator.SetBool("LowHealth", false);
-                    heartbeatSound.SetActive(false);
+                    if (HUDanimator != null) HUDanimator.SetBool("LowHealth", false);
+                    if (heartbeatSound != null) heartbeatSound.SetActive(false);
                 }
             }
 

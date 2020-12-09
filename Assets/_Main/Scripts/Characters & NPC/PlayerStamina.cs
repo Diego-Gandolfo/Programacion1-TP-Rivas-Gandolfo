@@ -25,8 +25,8 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
-            if (currentStamina <= 5) HUDanimator.SetBool("LowStamina", true);
-            if (currentStamina >= 5) HUDanimator.SetBool("LowStamina", false);
+            if (currentStamina < (maxStamina / 2) && HUDanimator != null) HUDanimator.SetBool("LowStamina", true);
+            if (currentStamina >= (maxStamina / 2) && HUDanimator != null) HUDanimator.SetBool("LowStamina", false);
 
             if (timer >= recoverTime)
             {
