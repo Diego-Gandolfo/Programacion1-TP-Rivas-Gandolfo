@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+namespace OnceUponAMemory.Main
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LevelManager : MonoBehaviour
     {
-        
-    }
+        private Scene scene;
+        private GameManager gameManager = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Awake()
+        {
+            gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            scene = SceneManager.GetActiveScene();
+        }
+
+        private void Start()
+        {
+            gameManager.SetLastLevel(scene.name);
+            print(scene.name);
+        }
     }
 }

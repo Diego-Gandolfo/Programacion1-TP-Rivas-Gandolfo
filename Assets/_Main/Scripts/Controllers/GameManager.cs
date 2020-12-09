@@ -10,7 +10,10 @@ namespace OnceUponAMemory.Main
     {
         private VictoryTrigger victoryTrigger = null; // Objeto que tiene la Condicion de Victoria
         private PlayerHealth playerHealth = null; // Objeto que tiene la condicion de Derrota
+        private FragmentosCounter fragmentosCounter = null;
         private string sceneToLoad = "";
+        private string lastLevel;
+        private int fragmentsSaved = 0;
 
         private void GameOver()
         {
@@ -20,6 +23,7 @@ namespace OnceUponAMemory.Main
         private void Victory()
         {
             print("EventVictory");
+            fragmentsSaved = fragmentosCounter.GetAmount();
             sceneToLoad = victoryTrigger.GetSceneName();
             SceneManager.LoadScene(sceneToLoad); // Cargamos el segundo nivel
         }
@@ -34,6 +38,31 @@ namespace OnceUponAMemory.Main
         {
             playerHealth = player;
             playerHealth.OnDie += GameOver; // Escuchamos el Evento de OnDie invocado en PlayerHealth y llamamos a la funcion GameOver
+        }
+
+        public void SetFragmentosCounter(FragmentosCounter counter)
+        {
+            fragmentosCounter = counter;
+        }
+
+        public void SetLastLevel(string scene)
+        {
+            lastLevel = scene;
+        }
+
+        public string GetLastLevel()
+        {
+            return lastLevel;
+        }
+
+        public void SetFragmentSaved(int amount)
+        {
+            fragmentsSaved = amount;
+        }
+
+        public int GetFragmentSaved()
+        {
+            return fragmentsSaved;
         }
     }
 }

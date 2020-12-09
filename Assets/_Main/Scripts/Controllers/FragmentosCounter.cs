@@ -11,21 +11,43 @@ namespace OnceUponAMemory.Main
     {
         TextMeshProUGUI CounterText;
         public static int Amount;
+        private GameManager gameManager = null;
+        private Scene scene;
 
         private void Awake()
         {
-            Scene scene = SceneManager.GetActiveScene();
-            if (scene.name == "Level") Amount = 0;
+            scene = SceneManager.GetActiveScene();
+            gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            gameManager.SetFragmentosCounter(this);
         }
 
         void Start()
         {
             CounterText = GetComponent<TextMeshProUGUI>(); // Lo cambie por un MeshPro
+
+            if (scene.name == "Level")
+            {
+                Amount = 0;
+            }
+            else if (scene.name == "SecondLevel")
+            {
+                int fragments = gameManager.GetFragmentSaved();
+
+                if (Amount != fragments)
+                {
+                    Amount = fragments;
+                }
+            }
         }
 
         void Update()
         {
-            if (CounterText != null)  CounterText.text = Amount.ToString(); // Solo le puse un chequeo por las dudas
+            if (CounterText != null) CounterText.text = Amount.ToString(); // Solo le puse un chequeo por las dudas
+        }
+
+        public int GetAmount()
+        {
+            return Amount;
         }
     }
 }
