@@ -7,6 +7,12 @@ namespace OnceUponAMemory.Main
 {
     public class PlayerHealth : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject heartbeatSound;
+
+        [SerializeField]
+        private Animator HUDanimator;
+
         public float maxHealth = 10f;
         public float currentHealth;
 
@@ -28,16 +34,34 @@ namespace OnceUponAMemory.Main
         {
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
+
+            heartbeatSound.SetActive(false);
         }
 
         private void Update()
         {
+            if (healthBar.brokenHeartIcon == null)
+            {
+                if (currentHealth <= 5)
+                {
+                    HUDanimator.SetBool("LowHealth", true);
+                    heartbeatSound.SetActive(true);
+                }
+                if (currentHealth >= 5)
+                {
+                    Debug.Log("LOLARDO");
+                    HUDanimator.SetBool("LowHealth", false);
+                    heartbeatSound.SetActive(false);
+                }
+            }
+
             if (healthBar.brokenHeartIcon != null)
             {
                 if (currentHealth <= 5)
                 {
                     healthBar.brokenHeartIcon.gameObject.SetActive(true);
                     healthBar.animator.SetTrigger("BrokenHeart");
+
                 }
                 else if (currentHealth >= 5)
                 {
@@ -59,6 +83,7 @@ namespace OnceUponAMemory.Main
             Instantiate(blood, transform.position, Quaternion.identity);
 
             if (currentHealth <= 0) Die();
+
         }
 
         void Die()
