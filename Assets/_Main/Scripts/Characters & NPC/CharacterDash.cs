@@ -145,6 +145,14 @@ namespace OnceUponAMemory.Main
             }
         }
 
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Wall"))
+            {
+                durationTimer = 0;
+            }
+        }
+
         private void OnCollisionExit2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Enemy"))
