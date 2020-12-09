@@ -59,6 +59,8 @@ namespace OnceUponAMemory.Main
                     GameObject instance = Instantiate(fragmentoDeMemoria, instantiator.transform.position, Quaternion.identity);
                     ShootingAI shootingAI = instance.GetComponent<ShootingAI>();
                     if (shootingAI != null) shootingAI.player = player;
+                    FollowEnemy followEnemy = instance.GetComponent<FollowEnemy>();
+                    if (followEnemy != null) followEnemy.player = player;
                 }
             }
         }
