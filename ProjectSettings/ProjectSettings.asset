@@ -13,8 +13,8 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Rivas-Gandolfo
-  productName: OnceUponATime
-  defaultCursor: {fileID: 0}
+  productName: OnceUponAMemory
+  defaultCursor: {fileID: 2800000, guid: fcc816e5c4355a740a1eea37bee149ed, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -263,7 +263,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 03c38acd0beed5c43a29755e2c14dcc2, type: 3}
+      m_Icon: {fileID: 2800000, guid: 7366ff92813474a4cb45f8617dadc995, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
