@@ -49,7 +49,6 @@ namespace OnceUponAMemory.Main
                 }
                 if (currentHealth >= 5)
                 {
-                    Debug.Log("LOLARDO");
                     HUDanimator.SetBool("LowHealth", false);
                     heartbeatSound.SetActive(false);
                 }

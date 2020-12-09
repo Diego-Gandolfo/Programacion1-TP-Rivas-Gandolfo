@@ -15,6 +15,8 @@ namespace OnceUponAMemory.Main
 
         [SerializeField] private HealthBar healthBar; // La Esfera de Stamina
 
+        [SerializeField] private Animator HUDanimator;
+
         void Start()
         {
             currentStamina = maxStamina;
@@ -23,6 +25,9 @@ namespace OnceUponAMemory.Main
 
         private void Update()
         {
+            if (currentStamina <= 5) HUDanimator.SetBool("LowStamina", true);
+            if (currentStamina >= 5) HUDanimator.SetBool("LowStamina", false);
+
             if (timer >= recoverTime)
             {
                 if (currentStamina < maxStamina)
@@ -37,6 +42,8 @@ namespace OnceUponAMemory.Main
             {
                 timer += Time.deltaTime;
             }
+
+            
 
             if (healthBar.brokenHeartIcon != null) // Esto lo dejo por si lo usamos para la animacion de cuando le queda poca Stamina
             {
