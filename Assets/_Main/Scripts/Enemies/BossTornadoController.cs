@@ -268,7 +268,7 @@ namespace OnceUponAMemory.Main
             attackType = Random.Range(1, 3);
 
             //attackType = attackType == 1 ? 2 : 1; // Para testear y que haga una vez cada uno, COMENTAR AL TERMINAR !!!
-            attackType = 1; // Para testear y que siempre el mismo, COMENTAR AL TERMINAR !!!
+            //attackType = 1; // Para testear y que siempre el mismo, COMENTAR AL TERMINAR !!!
 
             attackTime = stage == 1 ? Random.Range(minAttackTime1, maxAttackTime1) : Random.Range(minAttackTime2, maxAttackTime2);
 
