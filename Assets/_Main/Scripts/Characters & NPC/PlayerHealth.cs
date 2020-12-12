@@ -82,7 +82,6 @@ namespace OnceUponAMemory.Main
             Instantiate(blood, transform.position, Quaternion.identity);
 
             if (currentHealth <= 0) Die();
-
         }
 
         void Die()
